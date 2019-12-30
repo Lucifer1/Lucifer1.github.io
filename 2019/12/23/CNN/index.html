@@ -6,20 +6,18 @@
   <meta name="keywords" content=" CNN ">
   <meta name="description" content="卷积神经网络 | Lightman&#39;s blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="STGCN 时空图卷积网络####说明：  图卷积就是把一个有向图或者无向图的拉普拉斯矩阵进行谱分解，  拉普拉斯矩阵：  D为图的顶点的度矩阵，A为图的邻接矩阵，拉普拉斯矩阵L&#x3D;D-A  意义：  拉普拉斯矩阵是对称矩阵，可以进行特征分解（谱分解） 拉普拉斯矩阵只在中心顶点和一阶相连的顶点上（1-hop neighbor）有非0元素，其余之处均为0     矩阵的谱分解，特征分解，对角化都是同一">
+<meta name="description" content="1. 简介 作用：为了解决RNN存在的梯度消失问题，即无法实现对某些信息实现长期保存  原理：简单来说就是给RNN加上了一些记忆控制器，使用Forget Gate,Input Gate,Output Gate来控制信息的流动程度。如图： ![][Specify]  上一个LSTM单元得到一个信息a&lt;t-1&gt;，与这个单元的输入x&lt;t&gt;，通过forget门，使用sigmoid函">
 <meta property="og:type" content="article">
-<meta property="og:title" content="STGCN">
-<meta property="og:url" content="http://yoursite.com/2019/12/31/STGCN/index.html">
+<meta property="og:title" content="LSTM简介及代码">
+<meta property="og:url" content="http://yoursite.com/2019/12/23/LSTM/index.html">
 <meta property="og:site_name" content="Lightman&#39;s blog">
-<meta property="og:description" content="STGCN 时空图卷积网络####说明：  图卷积就是把一个有向图或者无向图的拉普拉斯矩阵进行谱分解，  拉普拉斯矩阵：  D为图的顶点的度矩阵，A为图的邻接矩阵，拉普拉斯矩阵L&#x3D;D-A  意义：  拉普拉斯矩阵是对称矩阵，可以进行特征分解（谱分解） 拉普拉斯矩阵只在中心顶点和一阶相连的顶点上（1-hop neighbor）有非0元素，其余之处均为0     矩阵的谱分解，特征分解，对角化都是同一">
+<meta property="og:description" content="1. 简介 作用：为了解决RNN存在的梯度消失问题，即无法实现对某些信息实现长期保存  原理：简单来说就是给RNN加上了一些记忆控制器，使用Forget Gate,Input Gate,Output Gate来控制信息的流动程度。如图： ![][Specify]  上一个LSTM单元得到一个信息a&lt;t-1&gt;，与这个单元的输入x&lt;t&gt;，通过forget门，使用sigmoid函">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="c:%5CUsers%5CCaesar%5CDesktop%5CFig2.PNG">
-<meta property="og:image" content="c:%5CUsers%5CCaesar%5CDesktop%5C1.jpg">
-<meta property="article:published_time" content="2019-12-30T16:22:47.600Z">
-<meta property="article:modified_time" content="2019-12-30T16:22:47.601Z">
+<meta property="article:published_time" content="2019-12-22T16:12:21.000Z">
+<meta property="article:modified_time" content="2019-12-30T16:48:46.380Z">
 <meta property="article:author" content="Lightman">
+<meta property="article:tag" content="LSTM">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="c:%5CUsers%5CCaesar%5CDesktop%5CFig2.PNG">
 
 
 <link rel="icon" href="/img/avatar.jpg">
@@ -76,7 +74,7 @@
     
         
             
-            <li><div data-rel="深度学习">深度学习<small>(6)</small></div>
+            <li><div data-rel="深度学习">深度学习<small>(7)</small></div>
                 
             </li>
             
@@ -92,7 +90,7 @@
     
         
             
-            <li><div data-rel="常用技术">常用技术<small>(1)</small></div>
+            <li><div data-rel="前端技术">前端技术<small>(2)</small></div>
                 
             </li>
             
@@ -100,7 +98,7 @@
     
         
             
-            <li><div data-rel="前端技术">前端技术<small>(2)</small></div>
+            <li><div data-rel="常用技术">常用技术<small>(1)</small></div>
                 
             </li>
             
@@ -199,11 +197,11 @@
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color2">协作开发软件</a>
+        <a class="color1">JavaScript</a>
     </li>
     
     <li class="article-tag-list-item">
-        <a class="color1">JavaScript</a>
+        <a class="color2">协作开发软件</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -212,6 +210,10 @@
     
     <li class="article-tag-list-item">
         <a class="color4">Q网络</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">GCN</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -264,14 +266,6 @@
             <span class="post-date" title="2019-12-23 00:12:21">2019/12/23</span>
         </a>
         
-        <a  class="深度学习 "
-           href="/2019/12/23/CNNAutoEncoder/"
-           data-tag="AutoEncoder,CNN"
-           data-author="" >
-            <span class="post-title" title="卷积自编码器">卷积自编码器</span>
-            <span class="post-date" title="2019-12-23 00:12:21">2019/12/23</span>
-        </a>
-        
         <a  class="英语 "
            href="/2019/12/23/EnglishPronunciation/"
            data-tag="连读发音"
@@ -288,11 +282,11 @@
             <span class="post-date" title="2019-12-23 00:12:21">2019/12/23</span>
         </a>
         
-        <a  class="常用技术 "
-           href="/2019/12/23/Git/"
-           data-tag="协作开发软件"
+        <a  class="深度学习 "
+           href="/2019/12/23/CNNAutoEncoder/"
+           data-tag="AutoEncoder,CNN"
            data-author="" >
-            <span class="post-title" title="Git教程">Git教程</span>
+            <span class="post-title" title="卷积自编码器">卷积自编码器</span>
             <span class="post-date" title="2019-12-23 00:12:21">2019/12/23</span>
         </a>
         
@@ -301,6 +295,14 @@
            data-tag="JavaScript"
            data-author="" >
             <span class="post-title" title="JavaScript 高级程序设计">JavaScript 高级程序设计</span>
+            <span class="post-date" title="2019-12-23 00:12:21">2019/12/23</span>
+        </a>
+        
+        <a  class="常用技术 "
+           href="/2019/12/23/Git/"
+           data-tag="协作开发软件"
+           data-author="" >
+            <span class="post-title" title="Git教程">Git教程</span>
             <span class="post-date" title="2019-12-23 00:12:21">2019/12/23</span>
         </a>
         
@@ -320,12 +322,12 @@
             <span class="post-date" title="2019-12-23 00:12:21">2019/12/23</span>
         </a>
         
-        <a  class=""
-           href="/2019/12/31/STGCN/"
-           data-tag=""
+        <a  class="深度学习 "
+           href="/2019/12/23/STGCN/"
+           data-tag="GCN"
            data-author="" >
-            <span class="post-title" title="STGCN">STGCN</span>
-            <span class="post-date" title="2019-12-31 00:22:47">2019/12/31</span>
+            <span class="post-title" title="时空图卷积网络">时空图卷积网络</span>
+            <span class="post-date" title="2019-12-23 00:12:21">2019/12/23</span>
         </a>
         
         <a  class="英语 "
@@ -404,7 +406,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-12-31 00:13:06'>2019-12-23 00:12</time>
+        创建时间:<time class="date" title='更新时间: 2019-12-31 00:48:51'>2019-12-23 00:12</time>
         
     </div>
     <div class="article-meta">
@@ -442,8 +444,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>#CNN</p>
-<h2 id="1-简介"><a href="#1-简介" class="headerlink" title="1. 简介"></a>1. 简介</h2><ul>
+        <h2 id="1-简介"><a href="#1-简介" class="headerlink" title="1. 简介"></a>1. 简介</h2><ul>
 <li><p><strong>卷积神经网络的一般结构：</strong>conv-&gt;pool-&gt;conv-&gt;pool-&gt;fc-&gt;fc-&gt;fc-&gt;softmax</p>
 <ul>
 <li>conv：卷积层</li>
@@ -704,7 +705,7 @@ predict()</code></pre><ul>
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#AutoEncoder','#CNN','#连读发音','#GAN','#协作开发软件','#JavaScript','#LSTM','#Q网络','#Ted','#Vue','#沉默的大多数','#算法','#Python',],
+            'data': ['#AutoEncoder','#CNN','#连读发音','#GAN','#JavaScript','#协作开发软件','#LSTM','#Q网络','#GCN','#Ted','#Vue','#沉默的大多数','#算法','#Python',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');
