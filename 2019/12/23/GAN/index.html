@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>GAN网络代码 | Lightman&#39;s blog</title>
+  <meta name="keywords" content=" GAN ">
+  <meta name="description" content="GAN网络代码 | Lightman&#39;s blog">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="STGCN 时空图卷积网络####说明：  图卷积就是把一个有向图或者无向图的拉普拉斯矩阵进行谱分解，  拉普拉斯矩阵：  D为图的顶点的度矩阵，A为图的邻接矩阵，拉普拉斯矩阵L&#x3D;D-A  意义：  拉普拉斯矩阵是对称矩阵，可以进行特征分解（谱分解） 拉普拉斯矩阵只在中心顶点和一阶相连的顶点上（1-hop neighbor）有非0元素，其余之处均为0     矩阵的谱分解，特征分解，对角化都是同一">
+<meta property="og:type" content="article">
+<meta property="og:title" content="STGCN">
+<meta property="og:url" content="http://yoursite.com/2019/12/31/STGCN/index.html">
+<meta property="og:site_name" content="Lightman&#39;s blog">
+<meta property="og:description" content="STGCN 时空图卷积网络####说明：  图卷积就是把一个有向图或者无向图的拉普拉斯矩阵进行谱分解，  拉普拉斯矩阵：  D为图的顶点的度矩阵，A为图的邻接矩阵，拉普拉斯矩阵L&#x3D;D-A  意义：  拉普拉斯矩阵是对称矩阵，可以进行特征分解（谱分解） 拉普拉斯矩阵只在中心顶点和一阶相连的顶点上（1-hop neighbor）有非0元素，其余之处均为0     矩阵的谱分解，特征分解，对角化都是同一">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="c:%5CUsers%5CCaesar%5CDesktop%5CFig2.PNG">
+<meta property="og:image" content="c:%5CUsers%5CCaesar%5CDesktop%5C1.jpg">
+<meta property="article:published_time" content="2019-12-30T16:22:47.600Z">
+<meta property="article:modified_time" content="2019-12-30T16:22:47.601Z">
+<meta property="article:author" content="Lightman">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="c:%5CUsers%5CCaesar%5CDesktop%5CFig2.PNG">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1.0.1" ></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.0.1" ></script>
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value="">
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.jpg" />
+</a>
+<div class="author">
+    <span>Lightman</span>
+</div>
+
+<div class="icon">
+    
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active">全部文章<small>(16)</small></div></li>
+    
+        
+            
+            <li><div data-rel="深度学习">深度学习<small>(6)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="英语">英语<small>(2)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="常用技术">常用技术<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="前端技术">前端技术<small>(2)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="强化学习">强化学习<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="读书笔记">读书笔记<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="算法">算法<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="后台技术">后台技术<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="16">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode==13){return false;}">
+        <input class="search" type="text" placeholder="Search..." autocomplete="off"id="local-search-input" >
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none" />
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a class="color2">AutoEncoder</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">CNN</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">连读发音</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">GAN</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">协作开发软件</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">JavaScript</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">LSTM</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">Q网络</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">Ted</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">Vue</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">沉默的大多数</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">算法</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">Python</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a  class="深度学习 "
+           href="/2019/12/23/AdvancedAutoEncoder/"
+           data-tag="AutoEncoder"
+           data-author="" >
+            <span class="post-title" title="AdvancedAutoEncoder">AdvancedAutoEncoder</span>
+            <span class="post-date" title="2019-12-23 00:12:21">2019/12/23</span>
+        </a>
+        
+        <a  class="深度学习 "
+           href="/2019/12/23/CNN/"
+           data-tag="CNN"
+           data-author="" >
+            <span class="post-title" title="卷积神经网络">卷积神经网络</span>
+            <span class="post-date" title="2019-12-23 00:12:21">2019/12/23</span>
+        </a>
+        
+        <a  class="深度学习 "
+           href="/2019/12/23/AutoEncoder/"
+           data-tag="AutoEncoder"
+           data-author="" >
+            <span class="post-title" title="AutoEncoder">AutoEncoder</span>
+            <span class="post-date" title="2019-12-23 00:12:21">2019/12/23</span>
+        </a>
+        
+        <a  class="深度学习 "
+           href="/2019/12/23/CNNAutoEncoder/"
+           data-tag="AutoEncoder,CNN"
+           data-author="" >
+            <span class="post-title" title="卷积自编码器">卷积自编码器</span>
+            <span class="post-date" title="2019-12-23 00:12:21">2019/12/23</span>
+        </a>
+        
+        <a  class="英语 "
+           href="/2019/12/23/EnglishPronunciation/"
+           data-tag="连读发音"
+           data-author="" >
+            <span class="post-title" title="连读规则">连读规则</span>
+            <span class="post-date" title="2019-12-23 00:12:21">2019/12/23</span>
+        </a>
+        
+        <a  class="深度学习 "
+           href="/2019/12/23/GAN/"
+           data-tag="GAN"
+           data-author="" >
+            <span class="post-title" title="GAN网络代码">GAN网络代码</span>
+            <span class="post-date" title="2019-12-23 00:12:21">2019/12/23</span>
+        </a>
+        
+        <a  class="常用技术 "
+           href="/2019/12/23/Git/"
+           data-tag="协作开发软件"
+           data-author="" >
+            <span class="post-title" title="Git教程">Git教程</span>
+            <span class="post-date" title="2019-12-23 00:12:21">2019/12/23</span>
+        </a>
+        
+        <a  class="前端技术 "
+           href="/2019/12/23/JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/"
+           data-tag="JavaScript"
+           data-author="" >
+            <span class="post-title" title="JavaScript 高级程序设计">JavaScript 高级程序设计</span>
+            <span class="post-date" title="2019-12-23 00:12:21">2019/12/23</span>
+        </a>
+        
+        <a  class="深度学习 "
+           href="/2019/12/23/LSTM/"
+           data-tag="LSTM"
+           data-author="" >
+            <span class="post-title" title="LSTM简介及代码">LSTM简介及代码</span>
+            <span class="post-date" title="2019-12-23 00:12:21">2019/12/23</span>
+        </a>
+        
+        <a  class="强化学习 "
+           href="/2019/12/23/ReinforcementLearning/"
+           data-tag="Q网络"
+           data-author="" >
+            <span class="post-title" title="强化学习简介">强化学习简介</span>
+            <span class="post-date" title="2019-12-23 00:12:21">2019/12/23</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/12/31/STGCN/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="STGCN">STGCN</span>
+            <span class="post-date" title="2019-12-31 00:22:47">2019/12/31</span>
+        </a>
+        
+        <a  class="英语 "
+           href="/2019/12/23/Ted_%E7%BB%99%E9%99%8C%E7%94%9F%E4%BA%BA%E7%9A%84%E6%83%85%E4%B9%A6/"
+           data-tag="Ted"
+           data-author="" >
+            <span class="post-title" title="汉娜·布伦雪尔：给陌生人的情书">汉娜·布伦雪尔：给陌生人的情书</span>
+            <span class="post-date" title="2019-12-23 00:12:21">2019/12/23</span>
+        </a>
+        
+        <a  class="前端技术 "
+           href="/2019/12/23/Vue/"
+           data-tag="Vue"
+           data-author="" >
+            <span class="post-title" title="Vue学习笔记">Vue学习笔记</span>
+            <span class="post-date" title="2019-12-23 00:12:21">2019/12/23</span>
+        </a>
+        
+        <a  class="读书笔记 "
+           href="/2019/12/23/%E6%B2%89%E9%BB%98%E7%9A%84%E5%A4%A7%E5%A4%9A%E6%95%B0/"
+           data-tag="沉默的大多数"
+           data-author="" >
+            <span class="post-title" title="沉默的大多数">沉默的大多数</span>
+            <span class="post-date" title="2019-12-23 00:12:21">2019/12/23</span>
+        </a>
+        
+        <a  class="算法 "
+           href="/2019/12/23/%E7%AE%97%E6%B3%95/"
+           data-tag="算法"
+           data-author="" >
+            <span class="post-title" title="算法速查">算法速查</span>
+            <span class="post-date" title="2019-12-23 00:12:21">2019/12/23</span>
+        </a>
+        
+        <a  class="后台技术 "
+           href="/2019/12/23/python/"
+           data-tag="Python"
+           data-author="" >
+            <span class="post-title" title="Python教程">Python教程</span>
+            <span class="post-date" title="2019-12-23 00:12:21">2019/12/23</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-GAN" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">GAN网络代码</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="深度学习">深度学习</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a class="color4">GAN</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2019-12-31 00:25:44'>2019-12-23 00:12</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li><p>导入头文件</p>
+<pre><code>import tensorflow as tf
+from tensorflow.examples.tutorials.mnist import input_data
+import numpy as np
+import matplotlib.pyplot as plt
+import matplotlib.gridspec as gridspec
+import os</code></pre></li>
+<li><p>该函数将给出权重初始化的方法</p>
+<pre><code>def variable_init(size):
+    in_dim = size[0]
+    #计算随机生成变量所服从的正态分布标准差
+    w_stddev = 1. / tf.sqrt(in_dim / 2.)
+    return tf.random_normal(shape=size, stddev=w_stddev)</code></pre></li>
+<li><p>定义一个可以生成m*n阶随机矩阵的函数，该矩阵的元素服从均匀分布，随机生成的z就为生成器的输入</p>
+<pre><code>def sample_Z(m, n):
+    return np.random.uniform(-1., 1., size=[m, n])</code></pre></li>
+<li><p>该函数用于输出生成图片</p>
+<pre><code>def plot(samples):
+    fig = plt.figure(figsize=(4, 4))
+    gs = gridspec.GridSpec(4, 4)
+    gs.update(wspace=0.05, hspace=0.05)
+
+    for i, sample in enumerate(samples):
+        ax = plt.subplot(gs[i])
+        plt.axis(&apos;off&apos;)
+        ax.set_xticklabels([])
+        ax.set_yticklabels([])
+        ax.set_aspect(&apos;equal&apos;)
+        plt.imshow(sample.reshape(28, 28), cmap=&apos;Greys_r&apos;)
+
+    return fig</code></pre></li>
+<li><p>定义判别器的权重</p>
+<pre><code>#定义输入矩阵的占位符，输入层单元为784，None代表批量大小的占位，X代表输入的真实图片。占位符的数值类型为32位浮点型
+X = tf.placeholder(tf.float32, shape=[None, 784])
+
+#定义判别器的权重矩阵和偏置项向量，由此可知判别网络为三层全连接网络
+D_W1 = tf.Variable(variable_init([784, 128]))
+D_b1 = tf.Variable(tf.zeros(shape=[128]))
+
+D_W2 = tf.Variable(variable_init([128, 1]))
+D_b2 = tf.Variable(tf.zeros(shape=[1]))
+
+theta_D = [D_W1, D_W2, D_b1, D_b2]</code></pre></li>
+<li><p>定义生成器的权重</p>
+<pre><code>#定义生成器的输入噪声为100维度的向量组，None根据批量大小确定
+Z = tf.placeholder(tf.float32, shape=[None, 100])
+
+#定义生成器的权重与偏置项。输入层为100个神经元且接受随机噪声，
+#输出层为784个神经元，并输出手写字体图片。生成网络根据原论文为三层全连接网络
+G_W1 = tf.Variable(variable_init([100, 128]))
+G_b1 = tf.Variable(tf.zeros(shape=[128]))
+
+G_W2 = tf.Variable(variable_init([128, 784]))
+G_b2 = tf.Variable(tf.zeros(shape=[784]))
+
+theta_G = [G_W1, G_W2, G_b1, G_b2]</code></pre></li>
+<li><p>定义生成器</p>
+<pre><code>def generator(z):
+    # 第一层先计算 y=z*G_W1+G-b1,然后投入激活函数计算G_h1=ReLU（y）,G_h1 为第二次层神经网络的输出激活值
+    G_h1 = tf.nn.relu(tf.matmul(z, G_W1) + G_b1)
+
+    # 以下两个语句计算第二层传播到第三层的激活结果，第三层的激活结果是含有784个元素的向量，该向量转化28×28就可以表示图像
+    G_log_prob = tf.matmul(G_h1, G_W2) + G_b2
+    G_prob = tf.nn.sigmoid(G_log_prob)
+    return G_prob</code></pre></li>
+<li><p>定义判别器</p>
+<pre><code>def discriminator(x):
+    # 计算D_h1=ReLU（x*D_W1+D_b1）,该层的输入为含784个元素的向量
+    D_h1 = tf.nn.relu(tf.matmul(x, D_W1) + D_b1)
+
+    # 计算第三层的输出结果。因为使用的是Sigmoid函数，则该输出结果是一个取值为[0,1]间的标量（见上述权重定义）
+    # 即判别输入的图像到底是真（=1）还是假（=0）
+    D_logit = tf.matmul(D_h1, D_W2) + D_b2
+    D_prob = tf.nn.sigmoid(D_logit)
+
+    # 返回判别为真的概率和第三层的输入值，输出D_logit是为了将其输入tf.nn.sigmoid_cross_entropy_with_logits()以构建损失函数
+    return D_prob, D_logit</code></pre></li>
+<li><p>损失函数</p>
+<pre><code>#输入随机噪声z而输出生成样本
+G_sample = generator(Z)
+
+#分别输入真实图片和生成的图片，并投入判别器以判断真伪
+D_real, D_logit_real = discriminator(X)
+D_fake, D_logit_fake = discriminator(G_sample)
+
+# 这里使用交叉熵作为判别器和生成器的损失函数，因为sigmoid_cross_entropy_with_logits内部会对预测输入执行Sigmoid函数，
+#所以这里取判别器最后一层未投入激活函数的值，即D_h1*D_W2+D_b2。
+#tf.ones_like(D_logit_real)创建维度和D_logit_real相等的全是1的标注，真实图片。
+D_loss_real = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(logits=D_logit_real, labels=tf.ones_like(D_logit_real)))
+D_loss_fake = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(logits=D_logit_fake, labels=tf.zeros_like(D_logit_fake)))
+
+#损失函数为两部分，即E[log(D(x))]+E[log(1-D(G(z)))]，将真的判别为假和将假的判别为真
+D_loss = D_loss_real + D_loss_fake
+
+#同样使用交叉熵构建生成器损失函数
+G_loss = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(logits=D_logit_fake, labels=tf.ones_like(D_logit_fake)))</code></pre></li>
+<li><p>优化</p>
+<pre><code>#定义判别器和生成器的优化方法为Adam算法，关键字var_list表明最小化损失函数所更新的权重矩阵
+D_solver = tf.train.AdamOptimizer().minimize(D_loss, var_list=theta_D)
+G_solver = tf.train.AdamOptimizer().minimize(G_loss, var_list=theta_G)</code></pre></li>
+<li><p>设置参数和读取数据</p>
+<pre><code>#选择训练的批量大小和随机生成噪声的维度
+mb_size = 128
+Z_dim = 100
+
+#读取数据集MNIST，并放在当前目录data文件夹下MNIST文件夹中，如果该地址没有数据，则下载数据至该文件夹
+mnist = input_data.read_data_sets(&quot;./MNIST_data/&quot;, one_hot=True)</code></pre></li>
+<li><p>训练过程及结果显示</p>
+<pre><code># 打开一个会话运行计算图
+sess = tf.Session()
+
+# 初始化所有定义的变量
+sess.run(tf.global_variables_initializer())
+
+# 如果当前目录下不存在out文件夹，则创建该文件夹
+if not os.path.exists(&apos;out/&apos;):
+    os.makedirs(&apos;out/&apos;)
+
+# 初始化，并开始迭代训练，2w次
+i = 0
+for it in range(20000):
+
+    # 每2000次输出一张生成器生成的图片
+    if it % 2000 == 0:
+        samples = sess.run(G_sample, feed_dict={Z: sample_Z(16, Z_dim)})
+
+        fig = plot(samples)
+        plt.savefig(&apos;out/{}.png&apos;.format(str(i).zfill(3)), bbox_inches=&apos;tight&apos;)
+        i += 1
+        plt.close(fig)
+
+    # next_batch抽取下一个批量的图片，该方法返回一个矩阵，即shape=[mb_size，784]，每一行是一张图片，共批量大小行
+    X_mb, _ = mnist.train.next_batch(mb_size)
+
+    # 投入数据并根据优化方法迭代一次，计算损失后返回损失值
+    _, D_loss_curr = sess.run([D_solver, D_loss], feed_dict={X: X_mb, Z: sample_Z(mb_size, Z_dim)})
+    _, G_loss_curr = sess.run([G_solver, G_loss], feed_dict={Z: sample_Z(mb_size, Z_dim)})
+
+    # 每迭代2000次输出迭代数、生成器损失和判别器损失
+    if it % 2000 == 0:
+        print(&apos;Iter: {}&apos;.format(it))
+        print(&apos;D loss: {:.4}&apos;.format(D_loss_curr))
+        print(&apos;G_loss: {:.4}&apos;.format(G_loss_curr))
+        print()</code></pre></li>
+</ol>
+
+      
+       
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2016-2019 Lightman</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+<div class="acParent"></div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.0.1" ></script>
+
+<script src="/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#AutoEncoder','#CNN','#连读发音','#GAN','#协作开发软件','#JavaScript','#LSTM','#Q网络','#Ted','#Vue','#沉默的大多数','#算法','#Python',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().split('\n').length - 1, widther='';
+            if (lines>99) {
+                widther = 'widther'
+            }
+            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
+            $(this).addClass('has-numbering ' + widther)
+                    .parent()
+                    .append($numbering);
+            for(var i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 1px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    code.has-numbering.widther{
+        margin-left: 35px;
+    }
+    .pre-numbering{
+        margin: 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 0.5em 3px 0.7em 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: #fafafa;
+    }
+    .pre-numbering.widther {
+        width: 35px;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+        .nav .hide-list.fullscreen {
+            left: 492px
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("https://i.loli.net/2019/07/22/5d3521411f3f169375.png");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

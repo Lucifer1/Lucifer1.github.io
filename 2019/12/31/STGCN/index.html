@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>STGCN | Lightman&#39;s blog</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="STGCN | Lightman&#39;s blog">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="STGCN 时空图卷积网络####说明：  图卷积就是把一个有向图或者无向图的拉普拉斯矩阵进行谱分解，  拉普拉斯矩阵：  D为图的顶点的度矩阵，A为图的邻接矩阵，拉普拉斯矩阵L&#x3D;D-A  意义：  拉普拉斯矩阵是对称矩阵，可以进行特征分解（谱分解） 拉普拉斯矩阵只在中心顶点和一阶相连的顶点上（1-hop neighbor）有非0元素，其余之处均为0     矩阵的谱分解，特征分解，对角化都是同一">
+<meta property="og:type" content="article">
+<meta property="og:title" content="STGCN">
+<meta property="og:url" content="http://yoursite.com/2019/12/31/STGCN/index.html">
+<meta property="og:site_name" content="Lightman&#39;s blog">
+<meta property="og:description" content="STGCN 时空图卷积网络####说明：  图卷积就是把一个有向图或者无向图的拉普拉斯矩阵进行谱分解，  拉普拉斯矩阵：  D为图的顶点的度矩阵，A为图的邻接矩阵，拉普拉斯矩阵L&#x3D;D-A  意义：  拉普拉斯矩阵是对称矩阵，可以进行特征分解（谱分解） 拉普拉斯矩阵只在中心顶点和一阶相连的顶点上（1-hop neighbor）有非0元素，其余之处均为0     矩阵的谱分解，特征分解，对角化都是同一">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="c:%5CUsers%5CCaesar%5CDesktop%5CFig2.PNG">
+<meta property="og:image" content="c:%5CUsers%5CCaesar%5CDesktop%5C1.jpg">
+<meta property="article:published_time" content="2019-12-30T16:22:47.600Z">
+<meta property="article:modified_time" content="2019-12-30T16:22:47.601Z">
+<meta property="article:author" content="Lightman">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="c:%5CUsers%5CCaesar%5CDesktop%5CFig2.PNG">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1.0.1" ></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.0.1" ></script>
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value="">
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.jpg" />
+</a>
+<div class="author">
+    <span>Lightman</span>
+</div>
+
+<div class="icon">
+    
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active">全部文章<small>(16)</small></div></li>
+    
+        
+            
+            <li><div data-rel="深度学习">深度学习<small>(6)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="英语">英语<small>(2)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="常用技术">常用技术<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="前端技术">前端技术<small>(2)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="强化学习">强化学习<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="读书笔记">读书笔记<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="算法">算法<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="后台技术">后台技术<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="16">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode==13){return false;}">
+        <input class="search" type="text" placeholder="Search..." autocomplete="off"id="local-search-input" >
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none" />
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a class="color2">AutoEncoder</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">CNN</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">连读发音</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">GAN</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">协作开发软件</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">JavaScript</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">LSTM</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">Q网络</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">Ted</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">Vue</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">沉默的大多数</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">算法</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">Python</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a  class="深度学习 "
+           href="/2019/12/23/AdvancedAutoEncoder/"
+           data-tag="AutoEncoder"
+           data-author="" >
+            <span class="post-title" title="AdvancedAutoEncoder">AdvancedAutoEncoder</span>
+            <span class="post-date" title="2019-12-23 00:12:21">2019/12/23</span>
+        </a>
+        
+        <a  class="深度学习 "
+           href="/2019/12/23/CNN/"
+           data-tag="CNN"
+           data-author="" >
+            <span class="post-title" title="卷积神经网络">卷积神经网络</span>
+            <span class="post-date" title="2019-12-23 00:12:21">2019/12/23</span>
+        </a>
+        
+        <a  class="深度学习 "
+           href="/2019/12/23/AutoEncoder/"
+           data-tag="AutoEncoder"
+           data-author="" >
+            <span class="post-title" title="AutoEncoder">AutoEncoder</span>
+            <span class="post-date" title="2019-12-23 00:12:21">2019/12/23</span>
+        </a>
+        
+        <a  class="深度学习 "
+           href="/2019/12/23/CNNAutoEncoder/"
+           data-tag="AutoEncoder,CNN"
+           data-author="" >
+            <span class="post-title" title="卷积自编码器">卷积自编码器</span>
+            <span class="post-date" title="2019-12-23 00:12:21">2019/12/23</span>
+        </a>
+        
+        <a  class="英语 "
+           href="/2019/12/23/EnglishPronunciation/"
+           data-tag="连读发音"
+           data-author="" >
+            <span class="post-title" title="连读规则">连读规则</span>
+            <span class="post-date" title="2019-12-23 00:12:21">2019/12/23</span>
+        </a>
+        
+        <a  class="深度学习 "
+           href="/2019/12/23/GAN/"
+           data-tag="GAN"
+           data-author="" >
+            <span class="post-title" title="GAN网络代码">GAN网络代码</span>
+            <span class="post-date" title="2019-12-23 00:12:21">2019/12/23</span>
+        </a>
+        
+        <a  class="常用技术 "
+           href="/2019/12/23/Git/"
+           data-tag="协作开发软件"
+           data-author="" >
+            <span class="post-title" title="Git教程">Git教程</span>
+            <span class="post-date" title="2019-12-23 00:12:21">2019/12/23</span>
+        </a>
+        
+        <a  class="前端技术 "
+           href="/2019/12/23/JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/"
+           data-tag="JavaScript"
+           data-author="" >
+            <span class="post-title" title="JavaScript 高级程序设计">JavaScript 高级程序设计</span>
+            <span class="post-date" title="2019-12-23 00:12:21">2019/12/23</span>
+        </a>
+        
+        <a  class="深度学习 "
+           href="/2019/12/23/LSTM/"
+           data-tag="LSTM"
+           data-author="" >
+            <span class="post-title" title="LSTM简介及代码">LSTM简介及代码</span>
+            <span class="post-date" title="2019-12-23 00:12:21">2019/12/23</span>
+        </a>
+        
+        <a  class="强化学习 "
+           href="/2019/12/23/ReinforcementLearning/"
+           data-tag="Q网络"
+           data-author="" >
+            <span class="post-title" title="强化学习简介">强化学习简介</span>
+            <span class="post-date" title="2019-12-23 00:12:21">2019/12/23</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/12/31/STGCN/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="STGCN">STGCN</span>
+            <span class="post-date" title="2019-12-31 00:22:47">2019/12/31</span>
+        </a>
+        
+        <a  class="英语 "
+           href="/2019/12/23/Ted_%E7%BB%99%E9%99%8C%E7%94%9F%E4%BA%BA%E7%9A%84%E6%83%85%E4%B9%A6/"
+           data-tag="Ted"
+           data-author="" >
+            <span class="post-title" title="汉娜·布伦雪尔：给陌生人的情书">汉娜·布伦雪尔：给陌生人的情书</span>
+            <span class="post-date" title="2019-12-23 00:12:21">2019/12/23</span>
+        </a>
+        
+        <a  class="前端技术 "
+           href="/2019/12/23/Vue/"
+           data-tag="Vue"
+           data-author="" >
+            <span class="post-title" title="Vue学习笔记">Vue学习笔记</span>
+            <span class="post-date" title="2019-12-23 00:12:21">2019/12/23</span>
+        </a>
+        
+        <a  class="读书笔记 "
+           href="/2019/12/23/%E6%B2%89%E9%BB%98%E7%9A%84%E5%A4%A7%E5%A4%9A%E6%95%B0/"
+           data-tag="沉默的大多数"
+           data-author="" >
+            <span class="post-title" title="沉默的大多数">沉默的大多数</span>
+            <span class="post-date" title="2019-12-23 00:12:21">2019/12/23</span>
+        </a>
+        
+        <a  class="算法 "
+           href="/2019/12/23/%E7%AE%97%E6%B3%95/"
+           data-tag="算法"
+           data-author="" >
+            <span class="post-title" title="算法速查">算法速查</span>
+            <span class="post-date" title="2019-12-23 00:12:21">2019/12/23</span>
+        </a>
+        
+        <a  class="后台技术 "
+           href="/2019/12/23/python/"
+           data-tag="Python"
+           data-author="" >
+            <span class="post-title" title="Python教程">Python教程</span>
+            <span class="post-date" title="2019-12-23 00:12:21">2019/12/23</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-STGCN" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">STGCN</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2019-12-31 00:22:47'>2019-12-31 00:22</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#STGCN-时空图卷积网络"><span class="toc-text">STGCN 时空图卷积网络</span></a></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="STGCN-时空图卷积网络"><a href="#STGCN-时空图卷积网络" class="headerlink" title="STGCN 时空图卷积网络"></a>STGCN 时空图卷积网络</h2><p>####说明：</p>
+<ol>
+<li><p>图卷积就是把一个有向图或者无向图的拉普拉斯矩阵进行谱分解，</p>
+</li>
+<li><p>拉普拉斯矩阵：</p>
+<ol>
+<li><p>D为图的顶点的度矩阵，A为图的邻接矩阵，拉普拉斯矩阵L=D-A</p>
+</li>
+<li><p>意义：</p>
+<ol>
+<li>拉普拉斯矩阵是对称矩阵，可以进行特征分解（谱分解）</li>
+<li>拉普拉斯矩阵只在中心顶点和一阶相连的顶点上（1-hop neighbor）有非0元素，其余之处均为0</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>矩阵的谱分解，特征分解，对角化都是同一个概念</p>
+</li>
+<li><p>L = U * （特征向量的对角矩阵） * U^T。</p>
+</li>
+<li><p>图的傅里叶变换与卷积的关系：</p>
+<p> 将两个数列经过傅里叶变换后在频域上做点积后再做逆傅里叶变换回到时域，其结果与两个向量的卷积是相同的。<br> 也就是说：两函数的傅里叶变换的乘积等于它们卷积后的傅里叶变换</p>
+</li>
+</ol>
+<p>这个代码我看来好久，也改了好久，效果都不是很好，最开始的时候跑起来时间很长，买了服务器跑一跑效果也不好，我不知道是它的评判方法有问题，还是我放入的数据有问题，后来改了一下时间问题解决了，但是结果还是不好。这里大体的给老师介绍一下，也为以后师兄去跑代码的时候做一点说明吧，希望有点帮助。底层代码我就不详细介绍了，我把大概的流程以及参数设置介绍一下。</p>
+<ol>
+<li><p><strong>环境介绍</strong></p>
+<p> Python3.6以上、TensorFlow、pandas、Numpy、Scipy</p>
+</li>
+<li><p>模型</p>
+<p> <img src="C:%5CUsers%5CCaesar%5CDesktop%5CFig2.PNG" alt="模型"></p>
+</li>
+<li><p><strong>超参数设置</strong></p>
+<pre><code>class Args(object):
+def __init__(self, n_route, n_his, n_pred, batch_size, epoch, save, ks, kt, lr, opt, graph, inf_mode):
+    self.n_route = n_route
+    self.n_his = n_his
+    self.n_pred = n_pred
+    self.batch_size = batch_size
+    self.epoch = epoch
+    self.save = save
+    self.ks = ks
+    self.kt = kt
+    self.lr = lr
+    self.opt = opt
+    self.graph = graph
+    self.inf_mode = inf_mode
+
+&apos;&apos;&apos;
+设置可以使用的命令行，我再chrome里存了用法
+这里应该是对超参数的设置
+&apos;&apos;&apos;
+# parser = argparse.ArgumentParser()
+# parser.add_argument(&apos;--n_route&apos;, type=int, default=103)     #选取了228个站点,中等数据为228，大型数据为1026
+# parser.add_argument(&apos;--n_his&apos;, type=int, default=48)        #使用60分钟作为历史事件窗口，因为默认5分钟为time_slot，所以为12
+# parser.add_argument(&apos;--n_pred&apos;, type=int, default=24)        #12个观测数据点（M = 12）用于预测接下来的15分钟，30分钟和45分钟（H = 3,6,9）的交通状况。这里可以设置为3或6或9
+# parser.add_argument(&apos;--batch_size&apos;, type=int, default=16)
+# parser.add_argument(&apos;--epoch&apos;, type=int, default=50)
+# parser.add_argument(&apos;--save&apos;, type=int, default=10)
+# parser.add_argument(&apos;--ks&apos;, type=int, default=3)            #ks是图卷积核的大小，它决定了卷积从中心节点开始的最大半径。一般来说，切比雪夫多项式Tk(x)被用于近似核，作为K−1阶展开的一部分，默认为3
+# parser.add_argument(&apos;--kt&apos;, type=int, default=3)            #kt为时间卷积核大小，时间卷积对输入元素kt个邻居进行操作，默认为3
+# parser.add_argument(&apos;--lr&apos;, type=float, default=1e-3)       #下边几项就是学习率，优化函数，以及训练模式
+# parser.add_argument(&apos;--opt&apos;, type=str, default=&apos;RMSProp&apos;)
+# parser.add_argument(&apos;--graph&apos;, type=str, default=&apos;default&apos;)
+# parser.add_argument(&apos;--inf_mode&apos;, type=str, default=&apos;merge&apos;)
+#
+# args = parser.parse_args()
+# print(f&apos;Training configs: {args}&apos;)
+
+args = Args(103, 12, 9, 16, 50, 10, 3, 3, 1e-3, &apos;RMSProp&apos;, &apos;default&apos;, &apos;merge&apos;)</code></pre><p> 这里它是使用CMD或者Ubuntu的终端来运行的，也就是说要运行 ‘python + 参数’来运行，我把代码改了，把超参数封装成一个类，可以从Pycharm里边直接修改超参数和运行。超参数共12个</p>
+<ol>
+<li><strong>n_route</strong>：表示图中的顶点数，源代码中是使用检测点来当做图中的顶点的，原代码为228个点，在我的代码中，我把地区作为了图的顶点，师兄给我的数据划分为了103个区，所以我设置为了13，用于生成邻接矩阵和数据生成和处理</li>
+<li><strong>n_his</strong>：多少个数据被当做为历史数据用于预测，原代码是5分钟划分为一个数据，所以一天24个小时就是24*12=288个数据，原代码n_his为12，就是把过去的1个小时作为历史窗口，我的代码把一天以1个小时作为一个数据来划分为24个数据，以12个小时作为历史窗口，来预测接下来9个小时的，其他的数据我也试过，得到的结果差不多，所以还是用了这个。<br>n_his&gt;=10，因为框架由2个ST-cov组成，每个ST-cov由两个时间卷积层和一个空间卷积层组成，每经过一个时间卷积层，数据会被缩小（Kt-1），Kt是时间卷积层中的一个一维卷积的卷积核大小，下边会详细介绍。为什么是10而不是9解释起来有点麻烦，简单的说就是它的最后的输出层使用的也是一个时间卷积层，而它设置了一个Ko（也就是output的卷积核的大小），用作输出层的卷积核的大小，Ko必须&gt;1，所以为10</li>
+<li><strong>n_pred</strong>：预测接下来多少时间的数据，原代码为9，我这里也为9</li>
+<li><strong>batch_size、epoch、save</strong>：数据的大小，共训练多少轮，多少轮保存一次模型。</li>
+<li><strong>Ks</strong>：空间卷积核，也就是图卷积核的大小，用于切比雪夫多项式，它决定了卷积从中心节点开始的最大半径。</li>
+<li><strong>Kt</strong>：时间卷积的大小，对输入元素的Kt个邻居进行操作，用于提取时间相关性</li>
+<li><strong>opt</strong>：使用哪个优化函数</li>
+<li><strong>graph和inf_mode</strong>：目前没发现具体作用。。。。</li>
+</ol>
+</li>
+<li><p>st-conv block的channel的设置以及拉普拉斯归一化、切比雪夫逼近</p>
+<pre><code>blocks = [[1, 32, 64], [64, 32, 128]]
+
+# Load wighted adjacency matrix W
+if args.graph == &apos;default&apos;:
+    W = weight_matrix(pjoin(&apos;./dataset&apos;, f&apos;dis_{n}.csv&apos;))
+else:
+    # load customized graph weight matrix
+    W = weight_matrix(pjoin(&apos;./dataset&apos;, args.graph))
+
+# Calculate graph kernel
+L = scaled_laplacian(W)     #使用拉普拉斯矩阵进行归一化
+# Alternative approximation method: 1st approx - first_approx(W, n).
+Lk = cheb_poly_approx(L, Ks, n)     #切比雪夫多项式逼近函数
+
+&apos;&apos;&apos;
+tf.add_to_collection：把变量放入一个集合，把很多变量变成一个列表
+tf.get_collection：从一个结合中取出全部变量，是一个列表
+&apos;&apos;&apos;
+tf.add_to_collection(name=&apos;graph_kernel&apos;, value=tf.cast(tf.constant(Lk), tf.float32))   #tf.cast数据类型转换函数，转换成tf.float32
+
+# Data Preprocessing
+data_file = f&apos;data_{n}.csv&apos;
+n_train, n_val, n_test = 40, 10, 10
+PeMS = data_gen(pjoin(&apos;./dataset&apos;, data_file), (n_train, n_val, n_test), n, n_his + n_pred)     #os.path.join()函数用于路径拼接文件路径
+print(f&apos;&gt;&gt; Loading dataset with Mean: {PeMS.mean:.2f}, STD: {PeMS.std:.2f}&apos;)
+
+if __name__ == &apos;__main__&apos;:
+    model_train(PeMS, blocks, args)
+    model_test(PeMS, PeMS.get_len(&apos;test&apos;), n_his, n_pred, args.inf_mode)</code></pre><ol>
+<li><strong>weight_matrix():</strong>根据他给的公式对邻接矩阵进行处理</li>
+<li><strong>scaled_laplacian():</strong>使用拉普拉斯矩阵进行归一化</li>
+<li><strong>cheb_poly_approx():</strong>切比雪夫多项式逼近函数</li>
+<li><strong>data_gen():</strong>处理数据</li>
+<li><strong>n_train, n_val, n_test:</strong>数据一共60天，40天用于训练集，10天用于测试集，10天用于验证集，如果时间间隔不是以1个小时为划分的话，这里也要进行对应的调整</li>
+<li><strong>PeMS:</strong>这里的这个用于训练和测试</li>
+<li><strong>model_train()和model_test():</strong>训练和测试</li>
+</ol>
+</li>
+<li><p>data_gen()介绍</p>
+<pre><code>def data_gen(file_path, data_config, n_route, n_frame=21, day_slot=24):
+    n_train, n_val, n_test = data_config
+    # generate training, validation and test data
+    try:
+        data_seq = pd.read_csv(file_path, header=None).values
+    except FileNotFoundError:
+        print(f&apos;ERROR: input file was not found in {file_path}.&apos;)
+
+    seq_train = seq_gen(n_train, data_seq, 0, n_frame, n_route, day_slot)
+    seq_val = seq_gen(n_val, data_seq, n_train, n_frame, n_route, day_slot)
+    seq_test = seq_gen(n_test, data_seq, n_train + n_val, n_frame, n_route, day_slot)
+
+    # x_stats: dict, the stats for the train dataset, including the value of mean and standard deviation.
+    x_stats = {&apos;mean&apos;: np.mean(seq_train), &apos;std&apos;: np.std(seq_train)}
+
+    # 归一化
+    # x_train, x_val, x_test: np.array, [sample_size, n_frame, n_route, channel_size].
+    x_train = z_score(seq_train, x_stats[&apos;mean&apos;], x_stats[&apos;std&apos;])       #使用z-score进行归一化操作
+    x_val = z_score(seq_val, x_stats[&apos;mean&apos;], x_stats[&apos;std&apos;])
+    x_test = z_score(seq_test, x_stats[&apos;mean&apos;], x_stats[&apos;std&apos;])
+
+    x_data = {&apos;train&apos;: x_train, &apos;val&apos;: x_val, &apos;test&apos;: x_test}
+    dataset = Dataset(x_data, x_stats)
+    return dataset</code></pre><ul>
+<li>根据对应的划分对数据进行处理，对于1个单独一天的数据，它是24个小时，我们12个小时用于历史数据，9个小时我们来预测，这样的话，1天的数据我们就会划分成24-12-9+1个数据，那么对于40天的训练集的数据总数就是40*（24-12-9+1）也就是160个数据，其他的以此类推  </li>
+<li>划分完后对数据归一化处理，并保存平均值和方差。</li>
+</ul>
+</li>
+<li><p>model_train()介绍：</p>
+<pre><code>def model_train(inputs, blocks, args, sum_path=&apos;./output/tensorboard&apos;):
+    &apos;&apos;&apos;
+    Train the base model.
+    :param inputs: instance of class Dataset, data source for training.
+    :param blocks: list, channel configs of st_conv blocks.
+    :param args: instance of class argparse, args for training.
+    &apos;&apos;&apos;
+    n, n_his, n_pred = args.n_route, args.n_his, args.n_pred
+    Ks, Kt = args.ks, args.kt
+    batch_size, epoch, inf_mode, opt = args.batch_size, args.epoch, args.inf_mode, args.opt
+
+    # Placeholder for model training
+    x = tf.placeholder(tf.float32, [None, n_his + 1, n, 1], name=&apos;data_input&apos;)
+    keep_prob = tf.placeholder(tf.float32, name=&apos;keep_prob&apos;)
+
+    # Define model loss
+    train_loss, pred = build_model(x, n_his, Ks, Kt, blocks, keep_prob)
+    tf.summary.scalar(&apos;train_loss&apos;, train_loss)     #用于tensorboard
+    copy_loss = tf.add_n(tf.get_collection(&apos;copy_loss&apos;))    #tf.add_n([p1, p2, p3....])函数是实现一个列表的元素的相加。就是输入的对象是一个列表，列表里的元素可以是向量，矩阵
+    tf.summary.scalar(&apos;copy_loss&apos;, copy_loss)
+
+    # Learning rate settings
+    global_steps = tf.Variable(0, trainable=False)
+    len_train = inputs.get_len(&apos;train&apos;)
+    if len_train % batch_size == 0:
+        epoch_step = len_train / batch_size
+    else:
+        epoch_step = int(len_train / batch_size) + 1
+    # Learning rate decay with rate 0.7 every 5 epochs.
+    lr = tf.train.exponential_decay(args.lr, global_steps, decay_steps=5 * epoch_step, decay_rate=0.7, staircase=True)
+    tf.summary.scalar(&apos;learning_rate&apos;, lr)
+    step_op = tf.assign_add(global_steps, 1)    #tf.assign_add（）将global_steps加上1，必须要经过参数初始化之后才能使用，书签有具体方法
+    with tf.control_dependencies([step_op]):
+        if opt == &apos;RMSProp&apos;:
+            train_op = tf.train.RMSPropOptimizer(lr).minimize(train_loss)
+        elif opt == &apos;ADAM&apos;:
+            train_op = tf.train.AdamOptimizer(lr).minimize(train_loss)
+        else:
+            raise ValueError(f&apos;ERROR: optimizer &quot;{opt}&quot; is not defined.&apos;)
+
+    merged = tf.summary.merge_all() #merge_all 可以将所有summary全部保存到磁盘，以便tensorboard显示。如果没有特殊要求，一般用这一句就可一显示训练时的各种信息了。
+
+    with tf.Session() as sess:
+        writer = tf.summary.FileWriter(pjoin(sum_path, &apos;train&apos;), sess.graph)
+        sess.run(tf.global_variables_initializer())
+
+        if inf_mode == &apos;sep&apos;:
+            # for inference mode &apos;sep&apos;, the type of step index is int.
+            step_idx = n_pred - 1
+            tmp_idx = [step_idx]
+            min_val = min_va_val = np.array([4e1, 1e5, 1e5])
+        elif inf_mode == &apos;merge&apos;:
+            # for inference mode &apos;merge&apos;, the type of step index is np.ndarray.
+            step_idx = tmp_idx = np.arange(3, n_pred + 1, 3) - 1
+            min_val = min_va_val = np.array([4e1, 1e5, 1e5] * len(step_idx))
+        else:
+            raise ValueError(f&apos;ERROR: test mode &quot;{inf_mode}&quot; is not defined.&apos;)
+
+        for i in range(epoch):
+            start_time = time.time()
+            for j, x_batch in enumerate(
+                    gen_batch(inputs.get_data(&apos;train&apos;), batch_size, dynamic_batch=True, shuffle=True)):
+                summary, _ = sess.run([merged, train_op], feed_dict={x: x_batch[:, 0:n_his + 1, :, :], keep_prob: 1.0})
+                writer.add_summary(summary, i * epoch_step + j)
+                # if j % 50 == 0:
+                loss_value = \
+                        sess.run([train_loss, copy_loss],
+                                 feed_dict={x: x_batch[:, 0:n_his + 1, :, :], keep_prob: 1.0})
+                print(f&apos;Epoch {i:2d}, Step {j:3d}: [{loss_value[0]:.3f}, {loss_value[1]:.3f}]&apos;)
+            print(f&apos;Epoch {i:2d} Training Time {time.time() - start_time:.3f}s&apos;)
+
+            start_time = time.time()
+            print(&apos;step_idx:&apos; + str(step_idx))
+            min_va_val, min_val = \
+                model_inference(sess, pred, inputs, batch_size, n_his, n_pred, step_idx, min_va_val, min_val)
+
+            for ix in tmp_idx:
+                va, te = min_va_val[ix - 2:ix + 1], min_val[ix - 2:ix + 1]
+                print(f&apos;Time Step {ix + 1}: &apos;
+                      f&apos;MAPE {va[0]:7.3%}, {te[0]:7.3%}; &apos;
+                      f&apos;MAE  {va[1]:4.3f}, {te[1]:4.3f}; &apos;
+                      f&apos;RMSE {va[2]:6.3f}, {te[2]:6.3f}.&apos;)
+            print(f&apos;Epoch {i:2d} Inference Time {time.time() - start_time:.3f}s&apos;)
+
+            if (i + 1) % args.save == 0:
+                model_save(sess, global_steps, &apos;STGCN&apos;)
+        writer.close()
+    print(&apos;Training model finished!&apos;)</code></pre><ul>
+<li><strong>build_model():</strong>构建时空图卷积模型</li>
+<li><strong>model_inference():</strong>将本轮训练好的模型用于预测，得到与真实值的损失</li>
+<li>其他的就是正常的设置占位符，然后给数据划分batch_size、设置好超参数准备进行训练</li>
+</ul>
+</li>
+<li><p>build_model()</p>
+<pre><code>def build_model(inputs, n_his, Ks, Kt, blocks, keep_prob):
+    &apos;&apos;&apos;
+    Build the base model.
+    :param inputs: placeholder.
+    :param n_his: int, size of historical records for training.
+    :param Ks: int, kernel size of spatial convolution.
+    :param Kt: int, kernel size of temporal convolution.
+    :param blocks: list, channel configs of st_conv blocks.
+    :param keep_prob: placeholder.
+    &apos;&apos;&apos;
+    x = inputs[:, 0:n_his, :, :]    #inputs为（?,n_his + 1,103,1）
+
+    # Ko&gt;0: kernel size of temporal convolution in the output layer.
+    Ko = n_his      #因为数据放入时间卷积层他的大小会减小（ks-1），Ko用来作为一个flag
+    # ST-Block
+    for i, channels in enumerate(blocks):
+        x = st_conv_block(x, Ks, Kt, channels, i, keep_prob, act_func=&apos;GLU&apos;)
+        Ko -= 2 * (Ks - 1)      #因为有两个时间卷积层，所以 *2
+
+    # Output Layer
+    if Ko &gt; 1:
+        y = output_layer(x, Ko, &apos;output_layer&apos;)
+    else:
+        raise ValueError(f&apos;ERROR: kernel size Ko must be greater than 1, but received &quot;{Ko}&quot;.&apos;)
+
+    tf.add_to_collection(name=&apos;copy_loss&apos;,
+                         value=tf.nn.l2_loss(inputs[:, n_his - 1:n_his, :, :] - inputs[:, n_his:n_his + 1, :, :]))
+    train_loss = tf.nn.l2_loss(y - inputs[:, n_his:n_his + 1, :, :])
+    single_pred = y[:, 0, :, :]
+    tf.add_to_collection(name=&apos;y_pred&apos;, value=single_pred)
+    return train_loss, single_pred</code></pre><ol>
+<li>这里使用到了最开始的blocks参数，对st-conv块来提供输入输出的限制。</li>
+<li><strong>st_conv_block():</strong>来对时空卷积块进行设置</li>
+<li><strong>output_layer():</strong>对输出层进行设置</li>
+<li><strong>train_loss = tf.nn.l2_loss(y - inputs[:, n_his:n_his + 1, :, :])</strong><br> 根据得到的预测值与真实值进行比较，得到损失值</li>
+</ol>
+</li>
+<li><p>st_conv_block()介绍：</p>
+<pre><code>def st_conv_block(x, Ks, Kt, channels, scope, keep_prob, act_func=&apos;GLU&apos;):
+    &apos;&apos;&apos;
+    Spatio-temporal convolutional block, which contains two temporal gated convolution layers
+    and one spatial graph convolution layer in the middle.
+    :param x: tensor, batch_size, time_step, n_route, c_in].
+    :param Ks: int, kernel size of spatial convolution.
+    :param Kt: int, kernel size of temporal convolution.
+    :param channels: list, channel configs of a single st_conv block.
+    :param scope: str, variable scope.
+    :param keep_prob: placeholder, prob of dropout.
+    :param act_func: str, activation function.
+    :return: tensor, [batch_size, time_step, n_route, c_out].
+    &apos;&apos;&apos;
+    c_si, c_t, c_oo = channels
+
+    with tf.variable_scope(f&apos;stn_block_{scope}_in&apos;):
+        x_s = temporal_conv_layer(x, Kt, c_si, c_t, act_func=act_func)
+        x_t = spatio_conv_layer(x_s, Ks, c_t, c_t)
+    with tf.variable_scope(f&apos;stn_block_{scope}_out&apos;):
+        x_o = temporal_conv_layer(x_t, Kt, c_t, c_oo)
+    x_ln = layer_norm(x_o, f&apos;layer_norm_{scope}&apos;)
+    return tf.nn.dropout(x_ln, keep_prob)</code></pre><p> 从这里就可以看见时空卷积块的具体搭建，类似于一个三明治<br> temporal_conv_layer()<br> spatio_conv_layer()<br> temporal_conv_layer()<br> 时间卷积层中使用了残差的概念，用了一半数量的卷积核完成卷积，这样就和 P 的维度一致了，然后直接和 P 相加，然后与 sigmoid 激活后的值进行点对点的相乘。</p>
+</li>
+<li><p>model_inference()</p>
+<pre><code>def model_inference(sess, pred, inputs, batch_size, n_his, n_pred, step_idx, min_va_val, min_val):
+    &apos;&apos;&apos;
+    Model inference function.
+    :param sess: tf.Session().
+    :param pred: placeholder.
+    :param inputs: instance of class Dataset, data source for inference.
+    :param batch_size: int, the size of batch.
+    :param n_his: int, the length of historical records for training.
+    :param n_pred: int, the length of prediction.
+    :param step_idx: int or list, index for prediction slice.
+    :param min_va_val: np.ndarray, metric values on validation set.
+    :param min_val: np.ndarray, metric values on test set.
+    &apos;&apos;&apos;
+    x_val, x_test, x_stats = inputs.get_data(&apos;val&apos;), inputs.get_data(&apos;test&apos;), inputs.get_stats()
+    x_tra = inputs.get_data(&apos;train&apos;)
+    if n_his + n_pred &gt; x_val.shape[1]:
+        raise ValueError(f&apos;ERROR: the value of n_pred &quot;{n_pred}&quot; exceeds the length limit.&apos;)
+
+    y_val, len_val = multi_pred(sess, pred, x_val, batch_size, n_his, n_pred, step_idx)
+    evl_val = evaluation(x_val[0:len_val, step_idx + n_his, :, :], y_val, x_stats)
+
+    # chks: indicator that reflects the relationship of values between evl_val and min_va_val.
+    chks = evl_val &lt; min_va_val
+    # update the metric on test set, if model&apos;s performance got improved on the validation.
+    if sum(chks):
+        min_va_val[chks] = evl_val[chks]
+        y_pred, len_pred = multi_pred(sess, pred, x_test, batch_size, n_his, n_pred, step_idx)
+        evl_pred = evaluation(x_test[0:len_pred, step_idx + n_his, :, :], y_pred, x_stats)
+        min_val = evl_pred
+    return min_va_val, min_val</code></pre><p> 将本轮训练好的模型用于测试集，然后得到MAPE、MAE和RMSE等评判标准</p>
+</li>
+<li><p>结果</p>
+<p><img src="C:%5CUsers%5CCaesar%5CDesktop%5C1.jpg" alt="结果"></p>
+<ol>
+<li><strong>Epoch 49,Step 0[数字1 数字2]:</strong>数字1为train_loss训练损失，用来计算真实值与预测值之间的误差<br> 数字2为copy_loss，代码为：copy_loss=tf.nn.l2_loss(inputs[:, n_his - 1:n_his, :, :] - inputs[:, n_his:n_his + 1, :, :]),目前没看懂有啥用。。。</li>
+<li>再下边就是各种评判标准了。。。不管怎么调整和修改都很离谱。。。</li>
+</ol>
+</li>
+</ol>
+
+      
+       
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2016-2019 Lightman</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+<div class="acParent"></div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.0.1" ></script>
+
+<script src="/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#AutoEncoder','#CNN','#连读发音','#GAN','#协作开发软件','#JavaScript','#LSTM','#Q网络','#Ted','#Vue','#沉默的大多数','#算法','#Python',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().split('\n').length - 1, widther='';
+            if (lines>99) {
+                widther = 'widther'
+            }
+            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
+            $(this).addClass('has-numbering ' + widther)
+                    .parent()
+                    .append($numbering);
+            for(var i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 1px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    code.has-numbering.widther{
+        margin-left: 35px;
+    }
+    .pre-numbering{
+        margin: 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 0.5em 3px 0.7em 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: #fafafa;
+    }
+    .pre-numbering.widther {
+        width: 35px;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+        .nav .hide-list.fullscreen {
+            left: 492px
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("https://i.loli.net/2019/07/22/5d3521411f3f169375.png");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>
