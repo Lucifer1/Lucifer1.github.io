@@ -6,17 +6,17 @@
   <meta name="keywords" content="">
   <meta name="description" content="Lightman&#39;s blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="1. 简介 作用：为了解决RNN存在的梯度消失问题，即无法实现对某些信息实现长期保存  原理：简单来说就是给RNN加上了一些记忆控制器，使用Forget Gate,Input Gate,Output Gate来控制信息的流动程度。如图： ![][Specify]  上一个LSTM单元得到一个信息a&lt;t-1&gt;，与这个单元的输入x&lt;t&gt;，通过forget门，使用sigmoid函">
+<meta name="description" content="台词   V: I can assure you,I mean you no harm   女主: Who are you?   V: Who?Who is but the form following the function of what and what I am is a man in a mask   女主: Oh,I can see that   V: Of course you">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LSTM简介及代码">
-<meta property="og:url" content="http://yoursite.com/2019/12/23/LSTM/index.html">
+<meta property="og:title" content="V 开场自我介绍">
+<meta property="og:url" content="http://yoursite.com/2020/02/17/V%E5%BC%80%E5%9C%BA%E5%8F%B0%E8%AF%8D/index.html">
 <meta property="og:site_name" content="Lightman&#39;s blog">
-<meta property="og:description" content="1. 简介 作用：为了解决RNN存在的梯度消失问题，即无法实现对某些信息实现长期保存  原理：简单来说就是给RNN加上了一些记忆控制器，使用Forget Gate,Input Gate,Output Gate来控制信息的流动程度。如图： ![][Specify]  上一个LSTM单元得到一个信息a&lt;t-1&gt;，与这个单元的输入x&lt;t&gt;，通过forget门，使用sigmoid函">
+<meta property="og:description" content="台词   V: I can assure you,I mean you no harm   女主: Who are you?   V: Who?Who is but the form following the function of what and what I am is a man in a mask   女主: Oh,I can see that   V: Of course you">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2019-12-22T16:12:21.000Z">
-<meta property="article:modified_time" content="2019-12-30T16:48:46.380Z">
+<meta property="article:published_time" content="2020-02-17T06:20:11.000Z">
+<meta property="article:modified_time" content="2020-02-17T06:21:59.631Z">
 <meta property="article:author" content="Lightman">
-<meta property="article:tag" content="LSTM">
+<meta property="article:tag" content="电影台词">
 <meta name="twitter:card" content="summary">
 
 
@@ -70,7 +70,7 @@
 
 
 <ul>
-    <li><div class="all active">全部文章<small>(17)</small></div></li>
+    <li><div class="all active">全部文章<small>(18)</small></div></li>
     
         
             
@@ -82,7 +82,7 @@
     
         
             
-            <li><div data-rel="英语">英语<small>(2)</small></div>
+            <li><div data-rel="英语">英语<small>(3)</small></div>
                 
             </li>
             
@@ -146,7 +146,7 @@
     </div>
     <div></div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="17">
+<input type="hidden" id="yelog_site_posts_number" value="18">
 
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
@@ -234,6 +234,10 @@
     
     <li class="article-tag-list-item">
         <a class="color2">沉默的大多数</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">电影台词</a>
     </li>
     
     <div class="clearfix"></div>
@@ -376,6 +380,14 @@
            data-author="" >
             <span class="post-title" title="沉默的大多数">沉默的大多数</span>
             <span class="post-date" title="2019-12-23 00:12:21">2019/12/23</span>
+        </a>
+        
+        <a  class="英语 "
+           href="/2020/02/17/V%E5%BC%80%E5%9C%BA%E5%8F%B0%E8%AF%8D/"
+           data-tag="电影台词"
+           data-author="" >
+            <span class="post-title" title="V 开场自我介绍">V 开场自我介绍</span>
+            <span class="post-date" title="2020-02-17 14:20:11">2020/02/17</span>
         </a>
         
     </nav>
@@ -642,7 +654,7 @@ origin  git@github.com:michaelliao/learngit.git (push)</code></pre><p>上面显�
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#AutoEncoder','#连读发音','#Flex','#CNN','#GAN','#JavaScript','#协作开发软件','#LSTM','#Q网络','#GCN','#Ted','#Python','#算法','#沉默的大多数',],
+            'data': ['#AutoEncoder','#连读发音','#Flex','#CNN','#GAN','#JavaScript','#协作开发软件','#LSTM','#Q网络','#GCN','#Ted','#Python','#算法','#沉默的大多数','#电影台词',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');
