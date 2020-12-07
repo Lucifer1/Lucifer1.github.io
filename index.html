@@ -1,3252 +1,852 @@
+<!DOCTYPE html>
+<html>
 
- <!DOCTYPE HTML>
-<html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <title>Lightman&#39;s blog</title>
+  <meta name="description" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="MobileOptimized" content="320" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="/css/component.css" />
+  <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+  <meta name="generator" content="Lightman's blog">
+  <script src="http://static.duoshuo.com/embed.js"></script>
   
-    <title>Lightman&#39;s blog</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
-    
-    <meta name="author" content="Lightman">
-    
-
-    
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Lightman&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="Lightman&#39;s blog">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="Lightman">
-<meta name="twitter:card" content="summary">
-
-    
-    <link rel="alternative" href="/atom.xml" title="Lightman&#39;s blog" type="application/atom+xml">
-    
-    
-    <link rel="icon" href="/img/favicon.ico">
-    
-    
-    <link rel="apple-touch-icon" href="/img/jacman.jpg">
-    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
-    
-    
-<link rel="stylesheet" href="/css/style.css">
-<link rel="stylesheet" href="/%02.css">
-<link rel="stylesheet" href="/.css">
-
-<meta name="generator" content="Hexo 4.2.1"></head>
-
-  <body>
-    <header>
-      
-<div>
-		
-			<div id="imglogo">
-				<a href="/"><img src="/img/logo.png" alt="Lightman&#39;s blog" title="Lightman&#39;s blog"/></a>
-			</div>
-			
-			<div id="textlogo">
-				<h1 class="site-name"><a href="/" title="Lightman&#39;s blog">Lightman&#39;s blog</a></h1>
-				<h2 class="blog-motto"></h2>
-			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
-			</a></div>
-			<nav class="animated">
-				<ul>
-					<ul>
-					 
-						<li><a href="/">Home</a></li>
-					
-						<li><a href="/archives">Archives</a></li>
-					
-						<li><a href="/about">About</a></li>
-					
-					<li>
- 					
-					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
-						<label>Search</label>
-						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
-						<input type="hidden" name="q" value="site:yoursite.com">
-					</form>
-					
-					</li>
-				</ul>
-			</nav>			
-</div>
-    </header>
-    <div id="container">
-      <div id="main">
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2020/12/01/Typescript/" title="Typescript 学习笔记" itemprop="url">Typescript 学习笔记</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Lightman" target="_blank" itemprop="author">Lightman</a>
-		
-  <p class="article-time">
-    <time datetime="2020-12-01T02:12:21.000Z" itemprop="datePublished"> Published 2020-12-01</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><h3 id="原始数据类型"><a href="#原始数据类型" class="headerlink" title="原始数据类型"></a>原始数据类型</h3><h4 id="1-布尔值"><a href="#1-布尔值" class="headerlink" title="1. 布尔值"></a>1. 布尔值</h4><ul>
-<li><p>Typescript中使用boolean来定义布尔值，而不是Boolean，其他的基础类型也是一样</p>
-</li>
-<li><p>例如：</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let isDone: boolean &#x3D; false;       &#x2F;&#x2F; 编译通过</span><br><span class="line"></span><br><span class="line">let createdByNewBoolean: boolean &#x3D; new Boolean(1);  &#x2F;&#x2F; 不通过</span><br></pre></td></tr></table></figure>
-
-<p>  因为使用构造函数<code>Boolean</code>创造的对象<strong>不是</strong>布尔值，<code>new Boolean()</code>事实上返回的是一个<code>Boolean</code>对象，如果改成：</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let createdByNewBoolean: Boolean &#x3D; new Boolean(1);  &#x2F;&#x2F; 通过</span><br></pre></td></tr></table></figure>
-
-<p>  此外，直接调用Boolean()也可以返回一个boolean类型：</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let createdByBoolean: boolean &#x3D; Boolean(1);</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h4 id="2-空值"><a href="#2-空值" class="headerlink" title="2. 空值"></a>2. 空值</h4><ul>
-<li><p>JavaScript 没有空值（Void）的概念，在 TypeScript 中，可以用 void 表示没有任何返回值的函数：</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function alertName(): void &#123;</span><br><span class="line">    alert(&#39;My name is Tom&#39;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>声明一个 void 类型的变量没有什么用，因为你只能将它赋值为 undefined 和 null</p>
-</li>
-</ul>
-<h4 id="3-Null-Undefined"><a href="#3-Null-Undefined" class="headerlink" title="3. Null Undefined"></a>3. Null Undefined</h4><ul>
-<li><p>在 TypeScript 中，可以使用 null 和 undefined 来定义这两个原始数据类型：</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let u: undefined &#x3D; undefined;</span><br><span class="line">let n: null &#x3D; null;</span><br></pre></td></tr></table></figure>
-
-<p>  与 void 的区别是，undefined 和 null 是所有类型的子类型。也就是说 undefined 类型的变量，可以赋值给 number 类型的变量：</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 这样不会报错</span><br><span class="line">let num: number &#x3D; undefined;</span><br><span class="line">&#x2F;&#x2F; 这样也不会报错</span><br><span class="line">let u: undefined;</span><br><span class="line">let num: number &#x3D; u;</span><br></pre></td></tr></table></figure>
-
-<p>  而 void 类型的变量不能赋值给 number 类型的变量：</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let u: void;</span><br><span class="line">let num: number &#x3D; u;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; Type &#39;void&#39; is not assignable to type &#39;number&#39;.</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h3 id="任意值-Any"><a href="#任意值-Any" class="headerlink" title="任意值(Any)"></a>任意值(Any)</h3><h4 id="1-什么是任意值类型"><a href="#1-什么是任意值类型" class="headerlink" title="1. 什么是任意值类型"></a>1. 什么是任意值类型</h4><ul>
-<li><p>任意值：一个普通类型在定义完之后，是不允许被赋值为其他类型的：</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let myFavoriteNumber: string &#x3D; &#39;seven&#39;;</span><br><span class="line">myFavoriteNumber &#x3D; 7;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; index.ts(2,1): error TS2322: Type &#39;number&#39; is not assignable to type &#39;string&#39;.</span><br></pre></td></tr></table></figure>
-
-<p>  只有当它为任意值时，才可以赋值为其他类型：</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let myFavoriteNumber: any &#x3D; &#39;seven&#39;;</span><br><span class="line">myFavoriteNumber &#x3D; 7;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h4 id="2-任意值的属性和方法"><a href="#2-任意值的属性和方法" class="headerlink" title="2. 任意值的属性和方法"></a>2. 任意值的属性和方法</h4><ul>
-<li>任意值可以访问任何属性，也可以调用任何方法</li>
-</ul>
-<h4 id="3-未声明类型的变量"><a href="#3-未声明类型的变量" class="headerlink" title="3. 未声明类型的变量"></a>3. 未声明类型的变量</h4><ul>
-<li><p>在ts中，如果没有给变量定义类型，那么它默认为<code>任意值</code>类型</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let something;</span><br><span class="line">something &#x3D; &#39;seven&#39;;</span><br><span class="line">something &#x3D; 7;</span><br><span class="line"></span><br><span class="line">something.setName(&#39;Tom&#39;);</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h3 id="类型推论"><a href="#类型推论" class="headerlink" title="类型推论"></a>类型推论</h3><ul>
-<li><p>如果没有明确指出，那么TS会依照类型推论原则，推断出一个类型： </p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let myFavoriteNumber &#x3D; &#39;seven&#39;;</span><br><span class="line">myFavoriteNumber &#x3D; 7;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; index.ts(2,1): error TS2322: Type &#39;number&#39; is not assignable to type &#39;string&#39;.</span><br></pre></td></tr></table></figure>
-
-<p>  根据类型推论，它等价于：</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let myFavoriteNumber: string &#x3D; &#39;seven&#39;;</span><br><span class="line">myFavoriteNumber &#x3D; 7;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; index.ts(2,1): error TS2322: Type &#39;number&#39; is not assignable to type &#39;string&#39;.</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>如果定义时没有赋值，不管之后有没有赋值，都会被推断成<code>any</code>类型，不会被类型检查：</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let myFavoriteNumber;</span><br><span class="line">myFavoriteNumber &#x3D; &#39;seven&#39;;</span><br><span class="line">myFavoriteNumber &#x3D; 7;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h3 id="联合类型"><a href="#联合类型" class="headerlink" title="联合类型"></a>联合类型</h3><h4 id="1-定义"><a href="#1-定义" class="headerlink" title="1. 定义"></a>1. 定义</h4><ul>
-<li><p>联合类型（Union Types）表示取值可以为多种类型中的一种:</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let myFavoriteNumber: string | number;</span><br><span class="line">myFavoriteNumber &#x3D; &#39;seven&#39;;</span><br><span class="line">myFavoriteNumber &#x3D; 7;</span><br></pre></td></tr></table></figure>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let myFavoriteNumber: string | number;</span><br><span class="line">myFavoriteNumber &#x3D; true;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; index.ts(2,1): error TS2322: Type &#39;boolean&#39; is not assignable to type &#39;string | number&#39;.</span><br><span class="line">&#x2F;&#x2F;   Type &#39;boolean&#39; is not assignable to type &#39;number&#39;.</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h4 id="2-访问联合类型的属性或方法"><a href="#2-访问联合类型的属性或方法" class="headerlink" title="2. 访问联合类型的属性或方法"></a>2. 访问联合类型的属性或方法</h4><ul>
-<li><p>在使用联合类型时，因为<code>typescript</code>不确定使用的是哪种类型，所以在调用变量的方式时，只能调用所有联合类型共有的方法：</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function getLength(something: string | number): number &#123;</span><br><span class="line">    return something.length;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; index.ts(2,22): error TS2339: Property &#39;length&#39; does not exist on type &#39;string | number&#39;.</span><br><span class="line">&#x2F;&#x2F;   Property &#39;length&#39; does not exist on type &#39;number&#39;.</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h4 id="3-联合属性的赋值"><a href="#3-联合属性的赋值" class="headerlink" title="3. 联合属性的赋值"></a>3. 联合属性的赋值</h4><ul>
-<li><p>联合类型在被赋值时，会根据类型推论的规则推断出一个类型：</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">let myFavoriteNumber: string | number;</span><br><span class="line">myFavoriteNumber &#x3D; &#39;seven&#39;;</span><br><span class="line">console.log(myFavoriteNumber.length); &#x2F;&#x2F; 5</span><br><span class="line">myFavoriteNumber &#x3D; 7;</span><br><span class="line">console.log(myFavoriteNumber.length); &#x2F;&#x2F; 编译时报错</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; index.ts(5,30): error TS2339: Property &#39;length&#39; does not exist on type &#39;number&#39;.</span><br></pre></td></tr></table></figure>
-<p>  上例中，第二行的 myFavoriteNumber 被推断成了 string，访问它的 length 属性不会报错。<br>  而第四行的 myFavoriteNumber 被推断成了 number，访问它的 length 属性时就报错了。</p>
-</li>
-</ul>
-<h3 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h3><h4 id="1-什么是接口"><a href="#1-什么是接口" class="headerlink" title="1. 什么是接口"></a>1. 什么是接口</h4><ul>
-<li><p>定义：TypeScript 中的接口是一个非常灵活的概念，除了可用于对类的一部分行为进行抽象以外，也常用于对「对象的形状（Shape）」进行描述。</p>
-</li>
-<li><p>简单实例</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">interface Person &#123;</span><br><span class="line">    name: string;</span><br><span class="line">    age: number;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let tom: Person &#x3D; &#123;</span><br><span class="line">    name: &#39;Tom&#39;,</span><br><span class="line">    age: 25</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>  注意：变量类型为接口的变量的形状必须与接口一致，多属性或者少属性都是不允许的，都会报错</p>
-</li>
-</ul>
-<h4 id="2-可选属性"><a href="#2-可选属性" class="headerlink" title="2. 可选属性"></a>2. 可选属性</h4><ul>
-<li><p>可选属性：希望不用完全匹配时，使用可选属性（但是只能使用定义好的可选属性，还是不能随意添加）</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">interface Person &#123;</span><br><span class="line">    name: string;</span><br><span class="line">    age?: number;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let tom: Person &#x3D; &#123;</span><br><span class="line">    name: &#39;Tom&#39;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">interface Person &#123;</span><br><span class="line">    name: string;</span><br><span class="line">    age?: number;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let tom: Person &#x3D; &#123;</span><br><span class="line">    name: &#39;Tom&#39;,</span><br><span class="line">    age: 25</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h4 id="3-任意属性"><a href="#3-任意属性" class="headerlink" title="3. 任意属性"></a>3. 任意属性</h4><ul>
-<li><p>任意属性：允许接口有任意属性时，使用该属性</p>
-<ul>
-<li><p>注意：使用任意属性时，确定属性和可选属性的类型都必须是任意属性的子类型</p>
-</li>
-<li><p>一个接口中只能拥有<strong>一个</strong>任意属性，需要使用多个类型是，可以使用联合类型</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">interface Person &#123;</span><br><span class="line">    name: string;</span><br><span class="line">    age?: number;</span><br><span class="line">    [propName: string]: any;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let tom: Person &#x3D; &#123;</span><br><span class="line">    name: &#39;Tom&#39;,</span><br><span class="line">    gender: &#39;male&#39;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>错误例子：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">interface Person &#123;</span><br><span class="line">    name: string;</span><br><span class="line">    age?: number;</span><br><span class="line">    [propName: string]: string;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let tom: Person &#x3D; &#123;</span><br><span class="line">    name: &#39;Tom&#39;,</span><br><span class="line">    age: 25,</span><br><span class="line">    gender: &#39;male&#39;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; index.ts(3,5): error TS2411: Property &#39;age&#39; of type &#39;number&#39; is not assignable to string index type &#39;string&#39;.</span><br><span class="line">&#x2F;&#x2F; index.ts(7,5): error TS2322: Type &#39;&#123; [x: string]: string | number; name: string; age: number; gender: string; &#125;&#39; is not assignable to type &#39;Person&#39;.</span><br><span class="line">&#x2F;&#x2F;   Index signatures are incompatible.</span><br><span class="line">&#x2F;&#x2F;     Type &#39;string | number&#39; is not assignable to type &#39;string&#39;.</span><br><span class="line">&#x2F;&#x2F;       Type &#39;number&#39; is not assignable to type &#39;string&#39;.</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="4-只读属性"><a href="#4-只读属性" class="headerlink" title="4. 只读属性"></a>4. 只读属性</h4><ul>
-<li><p>只读属性：只能用来读取，不能被赋值，使用readonly来定义</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">interface Person &#123;</span><br><span class="line">    readonly id: number;</span><br><span class="line">    name: string;</span><br><span class="line">    age?: number;</span><br><span class="line">    [propName: string]: any;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let tom: Person &#x3D; &#123;</span><br><span class="line">    id: 89757,</span><br><span class="line">    name: &#39;Tom&#39;,</span><br><span class="line">    gender: &#39;male&#39;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">tom.id &#x3D; 9527;</span><br></pre></td></tr></table></figure>
-<p>  <strong>注意：注意，只读的约束存在于第一次给对象赋值的时候，而不是第一次给只读属性赋值的时候：</strong></p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">interface Person &#123;</span><br><span class="line">    readonly id: number;</span><br><span class="line">    name: string;</span><br><span class="line">    age?: number;</span><br><span class="line">    [propName: string]: any;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let tom: Person &#x3D; &#123;</span><br><span class="line">    name: &#39;Tom&#39;,</span><br><span class="line">    gender: &#39;male&#39;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">tom.id &#x3D; 89757;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; index.ts(8,5): error TS2322: Type &#39;&#123; name: string; gender: string; &#125;&#39; is not assignable to type &#39;Person&#39;.</span><br><span class="line">&#x2F;&#x2F;   Property &#39;id&#39; is missing in type &#39;&#123; name: string; gender: string; &#125;&#39;.</span><br><span class="line">&#x2F;&#x2F; index.ts(13,5): error TS2540: Cannot assign to &#39;id&#39; because it is a constant or a read-only property.</span><br></pre></td></tr></table></figure>
-<p>  上例中，报错信息有两处，第一处是在对 tom 进行赋值的时候，没有给 id 赋值。<br>  第二处是在给 tom.id 赋值的时候，由于它是只读属性，所以报错了。</p>
-</li>
-</ul>
-<h3 id="数组的类型"><a href="#数组的类型" class="headerlink" title="数组的类型"></a>数组的类型</h3><h4 id="1-「类型-方括号」表示法"><a href="#1-「类型-方括号」表示法" class="headerlink" title="1. 「类型 + 方括号」表示法"></a>1. 「类型 + 方括号」表示法</h4><ul>
-<li><p>基本定义： 类型+方括号</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let fibonacci: number[] &#x3D; [1, 1, 2, 3, 5];</span><br></pre></td></tr></table></figure>
-<p>  不允许出现其他类型的变量</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let fibonacci: number[] &#x3D; [1, &#39;1&#39;, 2, 3, 5];</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; Type &#39;string&#39; is not assignable to type &#39;number&#39;.</span><br></pre></td></tr></table></figure>
-<p>  定义好类型后，对应的数组方法的类型也会被限制</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let fibonacci: number[] &#x3D; [1, 1, 2, 3, 5];</span><br><span class="line">fibonacci.push(&#39;8&#39;);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; Argument of type &#39;&quot;8&quot;&#39; is not assignable to parameter of type &#39;number&#39;.</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h4 id="2-数组泛型"><a href="#2-数组泛型" class="headerlink" title="2. 数组泛型"></a>2. 数组泛型</h4><ul>
-<li><p>数组泛型：</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let fibonacci: Array&lt;number&gt; &#x3D; [1, 1, 2, 3, 5];</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h4 id="3-用接口表示数组"><a href="#3-用接口表示数组" class="headerlink" title="3. 用接口表示数组"></a>3. 用接口表示数组</h4><ul>
-<li><p>用接口表示数组：这种方法<strong>不常用</strong></p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">interface NumberArray &#123;</span><br><span class="line">    [index: number]: number;</span><br><span class="line">&#125;</span><br><span class="line">let fibonacci: NumberArray &#x3D; [1, 1, 2, 3, 5];</span><br></pre></td></tr></table></figure>
-<p>  NumberArray 表示：只要索引的类型是数字时，那么值的类型必须是数字。<br>  <strong>不过它经常用来表示类数组</strong></p>
-</li>
-</ul>
-<h4 id="4-类数组"><a href="#4-类数组" class="headerlink" title="4. 类数组"></a>4. 类数组</h4><ul>
-<li><p>类数组：比如说arguments</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function sum() &#123;</span><br><span class="line">    let args: number[] &#x3D; arguments;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; Type &#39;IArguments&#39; is missing the following properties from type &#39;number[]&#39;: pop, push, concat, join, and 24 more.</span><br></pre></td></tr></table></figure>
-<p>  它不能用普通的数组来表示，一般使用<strong>接口</strong>的方式来表示</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function sum() &#123;</span><br><span class="line">    let args: &#123;</span><br><span class="line">        [index: number]: number;</span><br><span class="line">        length: number;</span><br><span class="line">        callee: Function;</span><br><span class="line">    &#125; &#x3D; arguments;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>  除了需要定义每个索引为数字时，变量也必须为数字外，还需要定义length和callee</p>
-<p>  常用的类数组都有自己的接口定义，类似于:<code>IArguments</code>,<code>NodeList</code>,<code>HTMLCollection</code>等</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function sum() &#123;</span><br><span class="line">    let args: IArguments &#x3D; arguments;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>  其中 IArguments 是 TypeScript 中定义好了的类型，它实际上就是：</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">interface IArguments &#123;</span><br><span class="line">    [index: number]: any;</span><br><span class="line">    length: number;</span><br><span class="line">    callee: Function;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h4 id="5-Any在数组中的应用"><a href="#5-Any在数组中的应用" class="headerlink" title="5. Any在数组中的应用"></a>5. Any在数组中的应用</h4><ul>
-<li><p>any在数组中的应用：表示数组中的变量可以为任意类型</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let list: any[] &#x3D; [&#39;xcatliu&#39;, 25, &#123; website: &#39;http:&#x2F;&#x2F;xcatliu.com&#39; &#125;];</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h3 id="函数的类型"><a href="#函数的类型" class="headerlink" title="函数的类型"></a>函数的类型</h3><h4 id="1-函数声明与函数表达式"><a href="#1-函数声明与函数表达式" class="headerlink" title="1. 函数声明与函数表达式"></a>1. 函数声明与函数表达式</h4><ul>
-<li><p>函数声明在JS中有两种方式：函数声明和函数表达式。在TS中，需要对函数的输入和输出都进行约束</p>
-<ul>
-<li><p>函数声明在TS中很简单：</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function sum(x: number, y: number): number &#123;</span><br><span class="line">    return x + y;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>  这时候，不允许输入多余的参数，或者输入的参数少于形参的数量</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function sum(x: number, y: number): number &#123;</span><br><span class="line">    return x + y;</span><br><span class="line">&#125;</span><br><span class="line">sum(1, 2, 3);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; index.ts(4,1): error TS2346: Supplied parameters do not match any signature of call target.</span><br></pre></td></tr></table></figure>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function sum(x: number, y: number): number &#123;</span><br><span class="line">    return x + y;</span><br><span class="line">&#125;</span><br><span class="line">sum(1);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; index.ts(4,1): error TS2346: Supplied parameters do not match any signature of call target.</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>函数表达式</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let mySum &#x3D; function (x: number, y: number): number &#123;</span><br><span class="line">    return x + y;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>  简单来写是这样的，不过这种形式没有明面上对mySum进行约束，而是通过类型推论来推断来的，完整的写法应该是：</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let mySum: (x: number, y: number) &#x3D;&gt; number &#x3D; function (x: number, y: number): number &#123;</span><br><span class="line">    return x + y;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>  这里的<code>=&gt;</code>和ES6中的箭头函数不同，它只是用来说明函数的输出类型的</p>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="2-用接口定义函数的形状"><a href="#2-用接口定义函数的形状" class="headerlink" title="2. 用接口定义函数的形状"></a>2. 用接口定义函数的形状</h4><ul>
-<li><p>用接口的形状来定义函数：</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">interface SearchFunc &#123;</span><br><span class="line">    (source: string, subString: string): boolean;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let mySearch: SearchFunc;</span><br><span class="line">mySearch &#x3D; function(source: string, subString: string) &#123;</span><br><span class="line">    return source.search(subString) !&#x3D;&#x3D; -1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>  采用函数表达式|接口定义函数的方式时，对等号左侧进行类型限制，可以保证以后对函数名赋值时保证参数个数、参数类型、返回值类型不变。</p>
-</li>
-</ul>
-<h4 id="3-可选参数"><a href="#3-可选参数" class="headerlink" title="3. 可选参数"></a>3. 可选参数</h4><ul>
-<li><p>可选参数：它的用法和接口中很类似，都是使用<code>?</code>来定义</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function buildName(firstName: string, lastName?: string) &#123;</span><br><span class="line">    if (lastName) &#123;</span><br><span class="line">        return firstName + &#39; &#39; + lastName;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        return firstName;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">let tomcat &#x3D; buildName(&#39;Tom&#39;, &#39;Cat&#39;);</span><br><span class="line">let tom &#x3D; buildName(&#39;Tom&#39;);</span><br></pre></td></tr></table></figure>
-<p>  <strong>注意，可选参数后边不能再接必需参数</strong></p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function buildName(firstName?: string, lastName: string) &#123;</span><br><span class="line">    if (firstName) &#123;</span><br><span class="line">        return firstName + &#39; &#39; + lastName;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        return lastName;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">let tomcat &#x3D; buildName(&#39;Tom&#39;, &#39;Cat&#39;);</span><br><span class="line">let tom &#x3D; buildName(undefined, &#39;Tom&#39;);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; index.ts(1,40): error TS1016: A required parameter cannot follow an optional parameter.</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h4 id="4-参数默认值"><a href="#4-参数默认值" class="headerlink" title="4. 参数默认值"></a>4. 参数默认值</h4><ul>
-<li><p>参数默认值：ES6中允许给函数添加默认值，TS中会把添加了默认值的参数识别成<strong>可选参数</strong></p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function buildName(firstName: string, lastName: string &#x3D; &#39;Cat&#39;) &#123;</span><br><span class="line">    return firstName + &#39; &#39; + lastName;</span><br><span class="line">&#125;</span><br><span class="line">let tomcat &#x3D; buildName(&#39;Tom&#39;, &#39;Cat&#39;);</span><br><span class="line">let tom &#x3D; buildName(&#39;Tom&#39;);</span><br></pre></td></tr></table></figure>
-<p>  <strong>此时就不再受可选参数必需在必需参数之后的约束了</strong></p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function buildName(firstName: string &#x3D; &#39;Tom&#39;, lastName: string) &#123;</span><br><span class="line">    return firstName + &#39; &#39; + lastName;</span><br><span class="line">&#125;</span><br><span class="line">let tomcat &#x3D; buildName(&#39;Tom&#39;, &#39;Cat&#39;);</span><br><span class="line">let cat &#x3D; buildName(undefined, &#39;Cat&#39;);</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h4 id="5-剩余参数"><a href="#5-剩余参数" class="headerlink" title="5. 剩余参数"></a>5. 剩余参数</h4><ul>
-<li><p>剩余参数：ES6 中，可以使用 …rest 的方式获取函数中的剩余参数（rest 参数），事实上，…rest是一个数组。所以我们可以用数组的类型来定义它：</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function push(array: any[], ...items: any[]) &#123;</span><br><span class="line">    items.forEach(function(item) &#123;</span><br><span class="line">        array.push(item);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let a &#x3D; [];</span><br><span class="line">push(a, 1, 2, 3);</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h4 id="6-重载"><a href="#6-重载" class="headerlink" title="6. 重载"></a>6. 重载</h4><ul>
-<li><p>重载：<strong>重载允许一个函数接受不同数量或类型的参数时，作出不同的处理。</strong><br>  比如，我们需要实现一个函数 reverse，输入数字 123 的时候，输出反转的数字 321，输入字符串 ‘hello’ 的时候，输出反转的字符串 ‘olleh’。</p>
-<p>  利用联合类型，我们可以这么实现：</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function reverse(x: number | string): number | string &#123;</span><br><span class="line">    if (typeof x &#x3D;&#x3D;&#x3D; &#39;number&#39;) &#123;</span><br><span class="line">        return Number(x.toString().split(&#39;&#39;).reverse().join(&#39;&#39;));</span><br><span class="line">    &#125; else if (typeof x &#x3D;&#x3D;&#x3D; &#39;string&#39;) &#123;</span><br><span class="line">        return x.split(&#39;&#39;).reverse().join(&#39;&#39;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>  然而这样有一个缺点，就是不能够精确的表达，输入为数字的时候，输出也应该为数字，输入为字符串的时候，输出也应该为字符串。</p>
-<p>  这时，我们可以使用重载定义多个 reverse 的函数类型：</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function reverse(x: number): number;</span><br><span class="line">function reverse(x: string): string;</span><br><span class="line">function reverse(x: number | string): number | string &#123;</span><br><span class="line">    if (typeof x &#x3D;&#x3D;&#x3D; &#39;number&#39;) &#123;</span><br><span class="line">        return Number(x.toString().split(&#39;&#39;).reverse().join(&#39;&#39;));</span><br><span class="line">    &#125; else if (typeof x &#x3D;&#x3D;&#x3D; &#39;string&#39;) &#123;</span><br><span class="line">        return x.split(&#39;&#39;).reverse().join(&#39;&#39;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>  上例中，我们重复定义了多次函数 reverse，前几次都是函数定义，最后一次是函数实现。在编辑器的代码提示中，可以正确的看到前两个提示。</p>
-<p>  注意，TypeScript 会优先从最前面的函数定义开始匹配，所以多个函数定义如果有包含关系，需要优先把精确的定义写在前面。</p>
-</li>
-</ul>
-<h3 id="类型断言"><a href="#类型断言" class="headerlink" title="类型断言"></a>类型断言</h3><p><strong>类型断言（Type Assertion）可以用来手动指定一个值的类型。</strong></p>
-<h4 id="1-语法"><a href="#1-语法" class="headerlink" title="1. 语法"></a>1. 语法</h4><ul>
-<li><p>语法： </p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">值 as 类型</span><br></pre></td></tr></table></figure>
-<p>  或</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;类型&gt;值</span><br></pre></td></tr></table></figure>
-<p>  在 tsx 语法（React 的 jsx 语法的 ts 版）中必须使用前者，即 值 as 类型。  </p>
-<p>  形如 <Foo> 的语法在 tsx 中表示的是一个 ReactNode，在 ts   中除了表示类型断言之外，也可能是表示一个泛型。  </p>
-<p>  故建议大家在使用类型断言时，统一使用 值 as 类型 这样的语法  </p>
-</li>
-</ul>
-<h4 id="2-断言的用途"><a href="#2-断言的用途" class="headerlink" title="2. 断言的用途"></a>2. 断言的用途</h4><ul>
-<li><p>断言的用途：</p>
-<ul>
-<li><p>将一个联合类型断言为其中一个类型</p>
-<p>  因为ts在联合类型时，没有确定是哪个类型时，只能使用联合类型共有的方法，但是有时我们需要提前使用，这时候就可以使用断言</p>
-<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function isFish(animal: Cat | Fish) &#123;</span><br><span class="line">    if (typeof (animal as Fish).swim &#x3D;&#x3D;&#x3D; &#39;function&#39;) &#123;</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line">    return false;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></code></pre></li>
-<li><p>将一个父类断言为更加具体的子类</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">class ApiError extends Error &#123;</span><br><span class="line">    code: number &#x3D; 0;</span><br><span class="line">&#125;</span><br><span class="line">class HttpError extends Error &#123;</span><br><span class="line">    statusCode: number &#x3D; 200;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function isApiError(error: Error) &#123;</span><br><span class="line">    if (typeof (error as ApiError).code &#x3D;&#x3D;&#x3D; &#39;number&#39;) &#123;</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line">    return false;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>将任何一个类型断言为any</p>
-<p>  理想情况下，TypeScript 的类型系统运转良好，每个值的类型都具体而精确。</p>
-<p>  当我们引用一个在此类型上不存在的属性或方法时，就会报错：</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const foo: number &#x3D; 1;</span><br><span class="line">foo.length &#x3D; 1;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; index.ts:2:5 - error TS2339: Property &#39;length&#39; does not exist on type &#39;number&#39;.</span><br></pre></td></tr></table></figure>
-<p>  上面的例子中，数字类型的变量 foo 上是没有 length 属性的，故 TypeScript 给出了相应的错误提示。</p>
-<p>  这种错误提示显然是非常有用的。</p>
-<p>  但有的时候，我们非常确定这段代码不会出错，比如下面这个例子：</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">window.foo &#x3D; 1;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; index.ts:1:8 - error TS2339: Property &#39;foo&#39; does not exist on type &#39;Window &amp; typeof globalThis&#39;.</span><br></pre></td></tr></table></figure>
-<p>  上面的例子中，我们需要将 window 上添加一个属性 foo，但 TypeScript 编译时会报错，提示我们 window 上不存在 foo 属性。</p>
-<p>  此时我们可以使用 as any 临时将 window 断言为 any 类型：</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(window as any).foo &#x3D; 1;</span><br></pre></td></tr></table></figure>
-<p>  在 any 类型的变量上，访问任何属性都是允许的。</p>
-<p>  <strong>需要注意的是，将一个变量断言为 any 可以说是解决 TypeScript 中类型问题的最后一个手段。</strong></p>
-<p>  <strong>它极有可能掩盖了真正的类型错误，所以如果不是非常确定，就不要使用 as any。</strong></p>
-<p>  上面的例子中，我们也可以通过[扩展 window 的类型（TODO）][]解决这个错误，不过如果只是临时的增加 foo 属性，as any 会更加方便。</p>
-<p>  总之，一方面不能滥用 as any，另一方面也不要完全否定它的作用，我们需要在类型的严格性和开发的便利性之间掌握平衡（这也是 TypeScript 的设计理念之一），才能发挥出 TypeScript 最大的价值。</p>
-</li>
-<li><p>将any断言为一个具体的类型</p>
-<p>  比如遇见历史遗留问题时，别人的写的代码全是any，我们为了明确类型，可以对变量或者返回值进行断言然后返回，这样提高代码的可维护性</p>
-<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function getCacheData(key: string): any &#123;</span><br><span class="line">    return (window as any).cache[key];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">interface Cat &#123;</span><br><span class="line">    name: string;</span><br><span class="line">    run(): void;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const tom &#x3D; getCacheData(&#39;tom&#39;) as Cat;</span><br><span class="line">tom.run();</span><br></pre></td></tr></table></figure></code></pre></li>
-</ul>
-</li>
-</ul>
-<h4 id="3-类型断言的限制"><a href="#3-类型断言的限制" class="headerlink" title="3. 类型断言的限制"></a>3. 类型断言的限制</h4><ul>
-<li>明确一点：<strong>并不是任何一个类型都可以被断言为任何另一个类型，</strong>具体来说，若 A 兼容 B，那么 A 能够被断言为 B，B 也能被断言为 A。</li>
-</ul>
-<h6 id="4-双重断言"><a href="#4-双重断言" class="headerlink" title="4. 双重断言"></a>4. 双重断言</h6><ul>
-<li>因为任何类型都可以被断言为any，any 可以被断言为任何类型，所以使用双重断言<code>as any as Foo</code>就可以将任何一个类型转换为任何另一个类型</li>
-<li>若你使用了这种双重断言，那么十有八九是非常错误的，它很可能会导致运行时错误。除非迫不得已，千万别用双重断言。**</li>
-</ul>
-<h4 id="5-类型断言-vs-类型转换"><a href="#5-类型断言-vs-类型转换" class="headerlink" title="5. 类型断言 vs 类型转换"></a>5. 类型断言 vs 类型转换</h4><ul>
-<li><p>类型断言只会影响 TypeScript 编译时的类型，类型断言语句在编译结果中会被删除：</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function toBoolean(something: any): boolean &#123;</span><br><span class="line">    return something as boolean;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">toBoolean(1);</span><br></pre></td></tr></table></figure>
-<p> // 返回值为 1<br> 在上面的例子中，将 something 断言为 boolean 虽然可以通过编译，但是并没有什么用，代码在编译后会变成：</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function toBoolean(something) &#123;</span><br><span class="line">    return something;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">toBoolean(1);</span><br><span class="line">&#x2F;&#x2F; 返回值为 1</span><br></pre></td></tr></table></figure>
-
-<p> 所以类型断言不是类型转换，它不会真的影响到变量的类型。</p>
-<p> 若要进行类型转换，需要直接调用类型转换的方法：</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function toBoolean(something: any): boolean &#123;</span><br><span class="line">    return Boolean(something);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">toBoolean(1);</span><br><span class="line">&#x2F;&#x2F; 返回值为 true</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h4 id="6-类型断言-vs-类型声明"><a href="#6-类型断言-vs-类型声明" class="headerlink" title="6. 类型断言 vs 类型声明"></a>6. 类型断言 vs 类型声明</h4><ul>
-<li>他们两个的区别主要体现在兼容性上</li>
-<li>animal 断言为 Cat，只需要满足 Animal 兼容 Cat 或 Cat 兼容 Animal 即可</li>
-<li>animal 赋值给 tom，需要满足 Cat 兼容 Animal 才行</li>
-<li><strong>类型声明是比类型断言更加严格的。</strong>所以为了增加代码的质量，我们最好优先使用类型声明，这也比类型断言的 as 语法更加优雅。</li>
-</ul>
-<h4 id="7-类型断言-vs-泛型"><a href="#7-类型断言-vs-泛型" class="headerlink" title="7. 类型断言 vs 泛型"></a>7. 类型断言 vs 泛型</h4><h3 id="声明文件"><a href="#声明文件" class="headerlink" title="声明文件"></a>声明文件</h3><p>当使用第三方库时，我们需要引用它的声明文件，才能获得对应的代码补全、接口提示等功能。</p>
-<h4 id="1-什么是声明语句"><a href="#1-什么是声明语句" class="headerlink" title="1. 什么是声明语句"></a>1. 什么是声明语句</h4><h4 id="2-什么是声明文件"><a href="#2-什么是声明文件" class="headerlink" title="2. 什么是声明文件"></a>2. 什么是声明文件</h4><ul>
-<li></li>
-</ul>
-<ul>
-<li>又一个小标签</li>
-</ul>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/">前端技术</a>
-</div>
-
-
-  <div class="article-tags">
   
-  <span></span> <a href="/tags/Typescript/">Typescript</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2020/06/17/Vue/" title="Vue" itemprop="url">Vue</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Lightman" target="_blank" itemprop="author">Lightman</a>
-		
-  <p class="article-time">
-    <time datetime="2020-06-17T11:03:09.673Z" itemprop="datePublished"> Published 2020-06-17</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>[TOC]</p>
-<h1 id="Vue"><a href="#Vue" class="headerlink" title="Vue"></a>Vue</h1><h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a><strong>注意</strong></h3><ol>
-<li>DOM里边使用定义的别名，需要在前边加上“~”</li>
-<li>this.$router 拿到的是vue-router这个对象，this.$route 拿到的是当前哪个路由处于活跃状态</li>
-</ol>
-<h3 id="ES6语法"><a href="#ES6语法" class="headerlink" title="ES6语法"></a><strong>ES6语法</strong></h3><ul>
-<li>ES6除了’’和””以外，还可以使用``（TAB上边的那个点）来定义字符串，他的好处是可以直接回车换行</li>
-</ul>
-<h3 id="1-计算属性"><a href="#1-计算属性" class="headerlink" title="1. 计算属性"></a>1. 计算属性</h3><ul>
-<li>计算属性(computed)本质上是一个属性，它有getter和setter，但是我们在使用时只是实现了getter，而没有实现setter</li>
-<li>计算属性在使用多次时，只会调用1次（因为他是有缓存的，效率比methods要高）</li>
-<li>v-show与v-if的区别：v-show是修改diplay属性，而v-if是dom是否渲染，是否存在</li>
-</ul>
-<h3 id="2-JavaScript高阶函数"><a href="#2-JavaScript高阶函数" class="headerlink" title="2. JavaScript高阶函数"></a>2. JavaScript高阶函数</h3><ul>
-<li><h5 id="回调函数："><a href="#回调函数：" class="headerlink" title="回调函数："></a>回调函数：</h5><ul>
-<li>被用于高级函数里边，作为参数传给高级函数的函数就称为回调函数。</li>
-<li>还有一种说法是，用来规范js函数的调用顺序。</li>
-</ul>
-</li>
-<li><h5 id="obj-filter-callbackfn"><a href="#obj-filter-callbackfn" class="headerlink" title="obj.filter(callbackfn)"></a>obj.filter(callbackfn)</h5><ul>
-<li>参数为回调函数，对obj执行callbackfn进行过滤</li>
-</ul>
-</li>
-<li><h5 id="obj-map"><a href="#obj-map" class="headerlink" title="obj.map()"></a>obj.map()</h5><ul>
-<li>对obj进行操作</li>
-</ul>
-</li>
-<li><h5 id="obj-reduce"><a href="#obj-reduce" class="headerlink" title="obj.reduce()"></a>obj.reduce()</h5><ul>
-<li>对obj进行汇总</li>
-</ul>
-</li>
-</ul>
-<h3 id="3-v-model"><a href="#3-v-model" class="headerlink" title="3. v-model"></a>3. v-model</h3><ul>
-<li>label要想互斥（只能2选1），要给label里边的input的name属性赋相同的值</li>
-<li>在vue里边，如果给label里边的input的value属性绑定相同的data也可以互斥</li>
-<li><strong>v-model本质为，v-bind:value + v-on:input=”data = $event.target.value”</strong></li>
-<li>v-model绑定checkbox，绑定单个值，data为boolean类型。绑定多个值时，只需要给data设置为[](list类型)即可</li>
-<li><h5 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h5><ul>
-<li>lazy：v-model是实时绑定的，当使用v-model.lazy时，可以实现用户敲回车或者点击空白（失去焦点）的时候再进行刷新绑定</li>
-<li>number：v-model进行值绑定时，默认为string类型，这时候使用v-model.number</li>
-<li>trim：v-model去掉多余的空格</li>
-</ul>
-</li>
-</ul>
-<h3 id="4-组件化"><a href="#4-组件化" class="headerlink" title="4. 组件化"></a>4. 组件化</h3><ul>
-<li><h5 id="什么是组件化？"><a href="#什么是组件化？" class="headerlink" title="什么是组件化？"></a>什么是组件化？</h5><ul>
-<li>将大的问题拆成一个又一个小的问题去解决</li>
-</ul>
-</li>
-<li><h5 id="Vue的组件化思想"><a href="#Vue的组件化思想" class="headerlink" title="Vue的组件化思想"></a>Vue的组件化思想</h5><ul>
-<li>可以让我们用一个又一个独立可复用的小组件来完成我们的应用</li>
-<li>任何应用都可以抽象成一个组件树（Vue官方有图）</li>
-</ul>
-</li>
-<li><h5 id="全局组件与局部组件"><a href="#全局组件与局部组件" class="headerlink" title="全局组件与局部组件"></a>全局组件与局部组件</h5><ul>
-<li><p>Vue.extend()来编写组件的构造器，但是现在用的很少了，一般直接使用语法糖</p>
-<pre><code>const myComponent = Vue.extend({
-    template: 
-    `
-        &lt;div&gt;lalalalal&lt;/div&gt;
-    `
-})
-Vue.component(&apos;cp1&apos;, myComponent)  #这里注册</code></pre></li>
-<li><p>通过Vue.component(‘标签名’,组件)来注册的组件为全局组件</p>
-</li>
-<li><p>在Vue示例当中，也就是new Vue({components:})里边注册的组件为局部组件</p>
-</li>
-<li><p>组件注册的语法糖</p>
-<ul>
-<li><p>就是省略Vue.extend()</p>
-<pre><code>Vue.component(&apos;cp1&apos;, {
-    template: 
-    `
-        &lt;div&gt;lalalalal&lt;/div&gt;
-    `
-})</code></pre></li>
-</ul>
-</li>
-<li><p>v-bind不能识别驼峰，要将驼峰进行转换，mustache是可以识别驼峰的</p>
-</li>
-</ul>
-</li>
-<li><h4 id="组件之间传值"><a href="#组件之间传值" class="headerlink" title="#组件之间传值"></a>#组件之间传值</h4><ul>
-<li><p>父传子：在子组件的props中定义数据（也可以称之为变量），然后在使用的时候绑定即可</p>
-<pre><code>例如：你在子组件中定义了name
-props: {
-    name: String  //这里的String是限制传过来的数据类型，可以不写
-}
-或者
-props: {
-    name: {
-        type: String,
-        default: 这是默认值
-    }
-}
-然后在使用的地方加上name属性即可，例如cpn组件
-&lt;cpn name=&apos;我是一个字符串&apos;&gt;&lt;/cpn&gt;
-&lt;cpn :name=&apos;父组件中的属性&apos;&gt;&lt;/cpn&gt;     //使用v-bind来绑定父组件中的属性</code></pre></li>
-<li><p>子传父：例如子组件为<cpn>。 使用自定义事件，this.$emit(‘传递的名称’, 传递的参数)，然后在组件进行监听&lt;cpn @传递的名称=’父组件的函数’&gt;  </p>
-<pre><code>this.$emit(&apos;btnClick&apos;, item)
-&lt;cpn @btnClick=&apos;cpnClick(item)&apos;&gt;    
-#(item)可以省略，系统默认把子组件传递的参数传给父组件
-#其实这里也是不能用驼峰的，但是脚手架里貌似可以用</code></pre><p>例如，点击button时向父组件传递数据</p>
-<pre><code>&lt;template&gt;
-    &lt;div&gt;
-        &lt;button @click=&quot;btnClick&quot;&gt;&lt;/button&gt;
-    &lt;/div&gt;
-&lt;/template&gt;
-methods: {
-    btnClick() {
-        this.$emit(&apos;随便起的名称&apos;, 这是数据)
-    }
-}
-
-&lt;cpn @随便起的名称=&quot;父组件的函数(这里是数据)&quot;&gt;&lt;/cpn&gt;</code></pre></li>
-</ul>
-</li>
-</ul>
-<h3 id="5-父子组件间的访问方式"><a href="#5-父子组件间的访问方式" class="headerlink" title="5. 父子组件间的访问方式"></a>5. 父子组件间的访问方式</h3><pre><code>有时候父组件需要直接访问子组件，而不是使用props通信的方式，子组件需要直接访问父组件或者根组件</code></pre><ul>
-<li><h5 id="父组件访问子组件"><a href="#父组件访问子组件" class="headerlink" title="父组件访问子组件"></a>父组件访问子组件</h5><ul>
-<li><p>$children 在父组件的methods里边任意的函数里边this.$children即可获取子组件，返回的是一个数组（在开发时一般不使用这个方法，只有我们需要拿所有子组件时才可能会用，一般使用$refs）</p>
-</li>
-<li><p>$refs 这个需要在子组件加一个ref属性，然后再在methods里边调用，默认时为空[]</p>
-<pre><code>&lt;cpn ref=&apos;aaa&apos;&gt;&lt;/cpn&gt;
-this.$refs.aaa</code></pre></li>
-</ul>
-</li>
-<li><h5 id="子组件访问父组件"><a href="#子组件访问父组件" class="headerlink" title="子组件访问父组件"></a>子组件访问父组件</h5><ul>
-<li>$parent 用的更少，因为不好复用，不建议使用，在子组件里this.$parent,</li>
-<li>$root 访问根组件</li>
-</ul>
-</li>
-</ul>
-<h3 id="6-插槽"><a href="#6-插槽" class="headerlink" title="6. 插槽"></a>6. 插槽</h3><ul>
-<li><h5 id="slot基本使用"><a href="#slot基本使用" class="headerlink" title="slot基本使用"></a>slot基本使用</h5><ul>
-<li><p><slot></slot> 如果在插槽中放东西，就是设置默认值，例如:</p>
-<pre><code>&lt;slot&gt;&lt;button&gt;&lt;/button&gt;&lt;/slot&gt;</code></pre><p>如果在使用组件时，没有使用插槽，就会显示默认值，使用了，就显示你想要的值</p>
-</li>
-</ul>
-</li>
-<li><h5 id="具名插槽slot"><a href="#具名插槽slot" class="headerlink" title="具名插槽slot"></a>具名插槽slot</h5><ul>
-<li><slot name=''></slot>，在使用时要给使用的地方加slot属性，例如 <span slot='这里是我们插槽的名字'></span></li>
-</ul>
-</li>
-<li><h5 id="作用域插槽slot"><a href="#作用域插槽slot" class="headerlink" title="作用域插槽slot"></a>作用域插槽slot</h5><ul>
-<li><p>父组件替换插槽里边的标签，但是内容是由子组件来提供， 例如cpn组件里边有一个languages的list</p>
-<pre><code>&lt;cpn&gt;
-    &lt;template slot=&apos;具名插槽&apos; slot-scope=&apos;myData&apos;&gt;  #这里的slot是可选选项，也就是说，作用域插槽可以用到具名插槽里边，myData也相当于是一个变量名称，可以随意定
-        &lt;span&gt;{{myData.languages}}&lt;/span&gt;   #在这里使用这种形来调用子组件中的数据
-    &lt;/template&gt;
-&lt;/cpn&gt;
-
-&lt;template id=&apos;cpn&apos;&gt;
-    &lt;slot :data=&apos;languages&apos;&gt;&lt;/slot&gt;         #这里的data可以为任意名称，这里相当于声明一个变量
-&lt;/template&gt;
-
-cpn: {
-    template: &quot;#cpn&quot;
-    data: {
-        return {
-            languages : [&apos;java&apos;,&apos;java&apos;,&apos;java&apos;]
-        }
-    }
-}</code></pre></li>
-</ul>
-</li>
-</ul>
-<h3 id="7-模块化开发"><a href="#7-模块化开发" class="headerlink" title="7. 模块化开发"></a>7. 模块化开发</h3><ul>
-<li><h5 id="ES5模块化"><a href="#ES5模块化" class="headerlink" title="ES5模块化"></a>ES5模块化</h5><ul>
-<li>ES5没有模块化，所以使用匿名函数的解决方案</li>
-</ul>
-</li>
-<li><h5 id="常见的模块化规范"><a href="#常见的模块化规范" class="headerlink" title="常见的模块化规范"></a>常见的模块化规范</h5><ul>
-<li><p>CommonJS、AMD、CMD、ES6的Modules</p>
-</li>
-<li><p>CommenJS(Webpack和Node.js用的多)：</p>
-<ul>
-<li><p>导出：</p>
-<pre><code>module.exports = {
-    flat: true,
-    test(a, b){
-        return a + b
-    }
-}</code></pre></li>
-<li><p>导入：</p>
-<pre><code>let obj = require(&apos;xxx.js&apos;) 
-let {flat, tent} = require(&apos;xxx.js&apos;) 也可以直接获取</code></pre></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><h5 id="ES6的模块化"><a href="#ES6的模块化" class="headerlink" title="ES6的模块化"></a>ES6的模块化</h5><ul>
-<li><p>模块化就是在script标签里边的type属性定义为module，然后在该js文件里边export导出，在使用的地方import导入即可，例如: import {name} from ‘xxx.js’</p>
-  <script type="module"></script>
-</li>
-<li><p>export default： 某些情况下，某个模块包含某个功能，我们并不希望给这个功能命名，而且让导入者自己命名，这时候我们就可以使用export default，<strong>一个js文件中只能有一个export default不允许存在多个，并且它后边只能跟一个值或对象</strong>，这里再使用import时可以不用使用{}了，直接为： import 我自己的命名 from ‘xxx.js’</p>
-</li>
-<li><p>当我们需要导入的东西太多时，例如:</p>
-<pre><code>import {name,age,aaa,bbb,ccc,ddd} from &apos;aaa.js&apos;</code></pre><p>  我们可以使用</p>
-<pre><code>import * as myName from &apos;aaa/js&apos;
-myName.name</code></pre></li>
-</ul>
-</li>
-</ul>
-<h3 id="8-Webpack"><a href="#8-Webpack" class="headerlink" title="8. Webpack"></a>8. Webpack</h3><ul>
-<li><h5 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h5><ul>
-<li><p>项目中要使用node依赖包时，要使用npm init命令安装依赖，这时候系统会生成package.json</p>
-</li>
-<li><p>webpack进行打包时，要有一个入口文件，例如main.js，在这个里边对你使用的各个文件，各个模块进行使用或者导入，然是在使用webpack对入口文件进行打包，webpack会自动处理与入口文件有关的各个模块各个依赖，然后进行打包，打包完成之后，webpack会生成一个js，在你想使用的页面中，使用打包后的js即可</p>
-<pre><code>require(&apos;./css/normal.css&apos;)
-require(&apos;./css/special.less&apos;)
-const {param1, param2} = require(./js/abc.js)  param1和param2为接收的变量</code></pre></li>
-</ul>
-</li>
-</ul>
-<pre><code>- webpack.config.js是webpack的配置文件，在里边对其进行配置，包括entry，output，loader等
-
-        const path = require(&apos;path&apos;)
-        module.exports = {
-            entry: &apos;.src/main.js&apos;,
-            output: {
-                // path: 这里必须是绝对地址，path是node的一个库，__dirname是获取本文件的绝对路径，path.resolve是拼接路径
-                path: path.resolve(__dirname, &apos;dist&apos;)
-                filename: &apos;bundle.js&apos;
-            }   
-        }
-
-- package.json里的scripts里边定义的指令，优先使用本地库，如果没有本地库才去找全局库，在所有cmd中，都优先使用全局库，所以当我们想使用本地库时，在package.json里边定义指令即可
-- npm install webpack --save-dev (--save-dev 是开始时依赖的意思，打包之后不用)</code></pre><ul>
-<li><h5 id="核心为loader，可以在官方文档里边查找使用方法，用来处理各个文件，进行打包"><a href="#核心为loader，可以在官方文档里边查找使用方法，用来处理各个文件，进行打包" class="headerlink" title="核心为loader，可以在官方文档里边查找使用方法，用来处理各个文件，进行打包"></a>核心为loader，可以在官方文档里边查找使用方法，用来处理各个文件，进行打包</h5><ul>
-<li>webpack 使用多个loader时，它是从右向左读取的</li>
-<li>url-loader 在使用时，options里边有一个limit选项，这里边限制了图片的大小，如果小于这个限制，url-loader会把图片编译成base64格式进行使用，大于这个限制还需要下载一个file-loader</li>
-<li>ES6 To ES5     <strong>babel-loader 脚手架里会有详细配置</strong></li>
-<li>vue<ul>
-<li>npm install vue-loader vue-template-compiler –save-dev 安装 </li>
-<li>再到 webpack.config.js里边进行配置</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><h5 id="plugin-在js文件里添加版权信息，webpack-BannerPlugin"><a href="#plugin-在js文件里添加版权信息，webpack-BannerPlugin" class="headerlink" title="plugin 在js文件里添加版权信息，webpack.BannerPlugin"></a>plugin 在js文件里添加版权信息，webpack.BannerPlugin</h5><pre><code>const webpack = require(&apos;webpack&apos;)
-module.exports = {
-    plugins: [
-        new webpack.BannerPlugin(&apos;最终版权归xxx所有&apos;)
-    ]
-}</code></pre></li>
-<li><h5 id="HtmlWebpackPlugin-插件"><a href="#HtmlWebpackPlugin-插件" class="headerlink" title="HtmlWebpackPlugin 插件"></a>HtmlWebpackPlugin 插件</h5><ul>
-<li><p>在dist文件（我们发布的文件）里边自动生成一个index.html文件（可以使用指定模板）</p>
-</li>
-<li><p>将打包的标签自动添加到body中的script标签当中</p>
-</li>
-<li><p>安装</p>
-<pre><code>npm install html-webpack-plugin --save-dev</code></pre></li>
-<li><p>使用</p>
-<pre><code>const HtmlWebpackPlugin = require(&apos;html-webpack-plugin&apos;)
-module.exports = {
-    plugins: [
-        new webpack.BannerPlugin(&apos;最终版权归xxx所有&apos;)
-        new HtmlWebpackPlugin()  //也可以有参数
-        new HtmlWebpackPlugin({
-            template: &apos;index.html&apos;  //根据index.html来生成，他会在当前的配置文件webpack.config.js所在的目录下找index.html，然后作为模板来生成
-        })
-    ]
-}   </code></pre></li>
-<li><p>js压缩的plugin</p>
-<ul>
-<li>uglifyjs-webpack-plugin</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><h5 id="webpack-dev-server搭建本地服务器"><a href="#webpack-dev-server搭建本地服务器" class="headerlink" title="webpack-dev-server搭建本地服务器"></a>webpack-dev-server搭建本地服务器</h5><ul>
-<li><p>这个本地服务器基于node.js，内部使用express框架</p>
-</li>
-<li><p>安装： npm install webpack-dev-server –save-dev</p>
-</li>
-<li><p>配置：</p>
-<pre><code>module.exports = {
-    devServer: {
-        contentBase: &apos;./dist&apos;,      //要服务于那个文件夹
-        inline: true                //是否实时刷新
-        port: 1234                  //还可以配置端口，默认为8080
-    }
-}</code></pre></li>
-<li><p>使用： 在package.json的scripts里边加上</p>
-<pre><code>&quot;scripts&quot;: {
-    &quot;serve&quot;: &quot;webpack-dev-server --open&quot;    //--open的作用是在跑完webpack-dev-server后，自动打开网页
-}</code></pre></li>
-</ul>
-</li>
-<li><h5 id="给文件夹起别名"><a href="#给文件夹起别名" class="headerlink" title="给文件夹起别名"></a>给文件夹起别名</h5><ul>
-<li><p>在webpack.base.config.js里边的resolve属性的alias属性里边起别名</p>
-<pre><code>resolve: {
-    alias: {
-        &apos;@&apos;: resolve(&apos;src&apos;)         //相当于给src起了别名为@，当我们使用/src/name时可以使用@/name
-    }
-}</code></pre><p>  在组件的script里边可以直接使用 import aaa from ‘@/name’<br>  <strong>注意：</strong>当我们的路径在dom里边使用，比如img里边，因为是src，所以不能直接使用，要使用~</p>
-<pre><code>&lt;img src=&quot;~@/name&quot;&gt;</code></pre></li>
-</ul>
-</li>
-</ul>
-<h3 id="9-Vue-CLI"><a href="#9-Vue-CLI" class="headerlink" title="9. Vue CLI"></a>9. Vue CLI</h3><ul>
-<li><h5 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h5><ul>
-<li>现在一般情况是使用的都是3.x的版本，通过 npm install @vue/cli -g来安装</li>
-<li>如果即想用2的模板进行创建，也想用3的，就需要拉取2的模板，使用 npn install @vue/cli-init -g来进行安装</li>
-</ul>
-</li>
-<li><h5 id="Vue-CLI2初始化项目"><a href="#Vue-CLI2初始化项目" class="headerlink" title="Vue CLI2初始化项目"></a>Vue CLI2初始化项目</h5><ul>
-<li><p>指令：</p>
-<pre><code>vue init webpack myProject</code></pre></li>
-<li><p>配置项：</p>
-<ul>
-<li>Project name: package.json中的项目的名称，直接敲回车的话，默认为初始化的名字</li>
-<li>Project description: 项目描述，保存在package.json中</li>
-<li>Author</li>
-<li>Vue build: 使用哪个版本的vue<ul>
-<li>Runtime-only版本不能使用template，可能会导致项目不能运行，<ul>
-<li>优点：它更小，运行效率更高，性能更高</li>
-</ul>
-</li>
-<li>Runtime + Compiler 适合大多数使用者</li>
-<li><strong>区别</strong>： <ul>
-<li>main.js里边有区别，compiler使用了template，runtime-only使用了render箭头函数，自动生成时为h函数(本质为createElement函数，参数有三个(‘标签名’，{标签的属性}, [标签的内容]))</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<pre><code>                    createElement(&apos;div&apos;, {class: &apos;box&apos;}, [&apos;hello&apos;, createElement(...)])   //内容里边可以继续嵌套
-                    createElement(cpn)      //也可以直接放入一个组件效果一样，但是因为省略的ast步骤，效率更高
-
-            - compiler里边的vue的运行过程：template -&gt; ast(abstract syntax tree抽象语法树) -&gt; render函数 -&gt; virtual DOM -&gt; real DOM(UI)
-            - runtime-only的运行过程为： render函数 -&gt; virtual DOM -&gt; real DOM(UI)
-            - 对比的话，only的性能更高，vue内部的代码量更少（因为它不需要写template -&gt; ast(abstract syntax tree抽象语法树) -&gt; render函数的处理的代码），runtime-only的.vue文件里边的template不需要使用template -&gt;ast，而是由vue-template-compiler这个库自己帮我们解析成了render函数
-    + vue-router: 
-    + ESLint: 是否使用ESLint对代码进行规范（ESLint当代码不规范时，编译直接报错）
-    + unit test: 单元测试
-    + e2e test with Nightwatch: end to end 使用Nightwatch进行端到端测试
-- **package-lock.json**：记录node_modules里安装的真实版本，在package.json（这里只会规定一个大概的版本）里边有时候要求的安装版本与node_modules里安装的会不同，这里进行记录
-- static文件：在build后，会原封不动的复制到dist文件当中</code></pre><ul>
-<li><h5 id="Vue-CLI3初始化项目"><a href="#Vue-CLI3初始化项目" class="headerlink" title="Vue CLI3初始化项目"></a>Vue CLI3初始化项目</h5><ul>
-<li><p>指令：</p>
-<pre><code>vue create myProject</code></pre></li>
-<li><p>配置项(按空格是选择或者取消)：</p>
-<ul>
-<li>please pick a preset<ul>
-<li>default(babel, ESlint)</li>
-<li>Manually</li>
-</ul>
-</li>
-<li>自己看吧。。。</li>
-</ul>
-</li>
-<li><p>public文件夹：在build后，原封不动的复制到dist当中</p>
-</li>
-<li><p>Vue CLI3的配置文件的修改方式：</p>
-<ul>
-<li>Vue UI：图形化界面进行修改</li>
-<li>node_modules/@vue/cli-service/webpack.config.js，进去你会发现一个require(‘./lib/Service’)你会发现各种各样的配置</li>
-<li>vue.config.js：在你当前这个项目的目录下创建这个文件，名字是固定的，在build时会进行合并</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><h5 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h5><ul>
-<li>如果箭头函数中只有一行代码，那么它会自动把这行代码返回</li>
-<li>箭头函数中this与正常的function定义不同</li>
-</ul>
-</li>
-</ul>
-<h3 id="10-Vue-router"><a href="#10-Vue-router" class="headerlink" title="10. Vue-router"></a>10. Vue-router</h3><ul>
-<li><h5 id="SPA页面（单页面富应用，-simple-page-web-application，前端路由阶段）"><a href="#SPA页面（单页面富应用，-simple-page-web-application，前端路由阶段）" class="headerlink" title="SPA页面（单页面富应用， simple page web application，前端路由阶段）"></a>SPA页面（单页面富应用， simple page web application，前端路由阶段）</h5><ul>
-<li>核心为:改变url整体页面不刷新</li>
-</ul>
-</li>
-<li><h5 id="如何实现改变url，页面不刷新"><a href="#如何实现改变url，页面不刷新" class="headerlink" title="如何实现改变url，页面不刷新"></a>如何实现改变url，页面不刷新</h5><ul>
-<li><p>更改url的hash，例如：</p>
-<pre><code>www.baidu.com
-console:  location.hash = &apos;aaa&apos;
-result: www.baidu.com/aaa，但是页面不会刷新</code></pre></li>
-<li><p>H5里边的history模式:</p>
-<ul>
-<li>history.pushState({}, ‘’, ‘aaa’)<br>history.back()<br>history.forward()<br>这两个可以配套，可以返回<br>history.go()  注：history.go(-1) == history.back(),history.go(1) == history.forward()</li>
-<li>history.replaceState({}, ‘’, ‘bbb’)  这个不能返回</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><h5 id="router-link"><a href="#router-link" class="headerlink" title="router-link"></a>router-link</h5><ul>
-<li><p>to属性： 定义要指向的url</p>
-<pre><code>&lt;router-link to=&apos;/home&apos;&gt;&lt;/router-link&gt;</code></pre></li>
-<li><p>tag: router-link最终默认渲染成a标签，我们可以手动改为别的</p>
-<pre><code>&lt;router-link tag=&apos;div&apos; or tag=&apos;button&apos;&gt;&lt;/router-link&gt;</code></pre></li>
-<li><p>router-link当使用h5的history时，默认使用pushState(可以使用网页中的后撤键)，我们可以手动设置成replaceState(禁止用户使用后撤键)</p>
-<pre><code>&lt;router-link to=&apos;/home&apos; tag=&apos;li&apos; replace&gt;&lt;/router-link&gt;</code></pre></li>
-<li><p>active-class:两个roter处于活跃状态时，添加的class(很少用)</p>
-<pre><code>&lt;router-link to=&apos;/home&apos; tag=&apos;li&apos; replace active-class=&apos;myClass&apos;&gt;&lt;/router-link&gt;</code></pre></li>
-<li><p>在组件当中使用时，是使用$router属性进行修改</p>
-<pre><code>this.$router.push(&apos;/home&apos;)</code></pre></li>
-<li><p>动态路由的使用：例如，要在home页面后边动态的拼接url，就需要在映射里边进行修改</p>
-<pre><code>routes: [
-    {
-        path: &apos;/home/:userId&apos;       //这个userId可以为任意名字
-        component： Home
-    }
-]</code></pre><p>  然后在调用的时候用v-bind进行绑定就行</p>
-<pre><code>&lt;router-link :to=&quot;&apos;/home&apos; + 我们data里边的数据名称&quot;&gt;&lt;/router-link&gt;</code></pre><p>  我们如何获取home后边的数据，并使用到我们的vue当中：使用this.$route</p>
-<pre><code>可以在methods或者computed里边
-this.$route.params.userId         //这里为什么是userId，是因为上边我们写的名字为userId，加入是abc，这里就是abc</code></pre><p>  this.$router和this.$route的区别：</p>
-<pre><code>+ this.$router:是我们在router.js里边我们const rou = new Router({})的常量
-+ this.$route是当前我们在使用哪个路由，也就是哪个路由处于活跃状态</code></pre></li>
-</ul>
-</li>
-<li><h5 id="路由的懒加载"><a href="#路由的懒加载" class="headerlink" title="路由的懒加载"></a>路由的懒加载</h5><ul>
-<li><p>vueCLI3，经过npm run build打包之后的js文件分为三个：</p>
-<ul>
-<li>app.哈希码.js：业务逻辑代码，也就是我们自己写的代码</li>
-<li>manifest.哈希码.js：底层的支撑，比如说对ES6，CommonJS的支撑等</li>
-<li>vendor.哈希码.js：项目里边引用的第三方的东西，例如vue和vue-router等</li>
-</ul>
-</li>
-<li><p>为什么使用懒加载</p>
-<ul>
-<li>项目在打包时，js文件可能会非常大，同时加载可能会影响加载速度，所以需要懒加载（用到时再加载）</li>
-<li>如果把不同的路由对应的组件分割成不同的代码块，当路由被访问时再加载对应的组件，效率就更好了（也就是用到时再加载）</li>
-<li>懒加载做的事情就是将路由对应的组件包装成一个又一个的小的js文件，用到时再加载</li>
-</ul>
-</li>
-<li><p>代码实现：</p>
-<pre><code>原来是：
-import Home from &apos;./components/home&apos;
-routes: [
-    {
-        path: &apos;/home&apos;
-        component： Home
-    }
-]
-
-懒加载：
-routes: [
-    {
-        path: &apos;/home&apos;
-        component： () =&gt; import(&apos;./components/home&apos;)
-    }
-]
-或者(这样写的话更简洁，方便统一管理)：
-const Home = () =&gt; import(&apos;./components/home&apos;)
-routes: [
-    {
-        path: &apos;/home&apos;
-        component： Home
-    }
-]</code></pre></li>
-</ul>
-</li>
-<li><h5 id="路由的嵌套："><a href="#路由的嵌套：" class="headerlink" title="路由的嵌套："></a>路由的嵌套：</h5><ul>
-<li><p>假如我们想在/home后边添加子路由/news，需要这样配置(子路由里边也可以设置默认值，设置redirect)：</p>
-<pre><code>routes: [
-    {
-        path: &apos;/home&apos;
-        component： () =&gt; import(&apos;./components/home&apos;)
-        children: [
-            {
-                path: &apos;news&apos;        //注意，这里不需要加/
-                component: import(&apos;./components/news&apos;)
-            },
-        ]
-    }
-]</code></pre><p>  然后需要到Home组件当中再添加一个router-view，并且router-link也要注意写全，而不是只写news</p>
-<pre><code>&lt;router-link to=&apos;/home/news&apos;&gt;&lt;/router-link&gt;
-&lt;router-view&gt;&lt;/router-view&gt;</code></pre></li>
-</ul>
-</li>
-<li><h5 id="路由的参数传递"><a href="#路由的参数传递" class="headerlink" title="路由的参数传递"></a>路由的参数传递</h5><ul>
-<li><p>第一种方式就是上边的动态路由</p>
-</li>
-<li><p>query方式</p>
-<ul>
-<li><p>要更改router-link中的to属性，用v-bind绑定，然后绑定一个{}对象，里边有path和query属性</p>
-<pre><code>&lt;router-link :to=&quot;{path: &apos;/user&apos;, query:{name:&apos;lalala&apos;, age: 18}}&quot;&gt;&lt;/router-link&gt;</code></pre><p>  然后在user.vue里边使用$route.query.age等来取出来进行使用</p>
-</li>
-</ul>
-</li>
-<li><p>在组件的methods中使用，也是使用this.$router.push()，然后在push里边输入上边的对象即可</p>
-<p>  methods: {</p>
-<pre><code>这是我的方法名() {
-    return this.$router.push({
-        path: &apos;/user&apos;, 
-        query: {
-            name:&apos;lalala&apos;, 
-            age: 18 
-        }
-    })
-}</code></pre><p>  }</p>
-</li>
-</ul>
-</li>
-<li><h5 id="导航守卫（去看看vue-router的官网）"><a href="#导航守卫（去看看vue-router的官网）" class="headerlink" title="导航守卫（去看看vue-router的官网）"></a>导航守卫（去看看vue-router的官网）</h5></li>
-<li><h5 id="keep-alive及其他问题"><a href="#keep-alive及其他问题" class="headerlink" title="keep-alive及其他问题"></a>keep-alive及其他问题</h5><ul>
-<li>vue组件除了created和beforeMouted等属性，还有activated和deactivated属性，不过这两个属性只有在组件被keep-alive包起来时才能使用</li>
-<li>它有两个非常重要的属性：<ul>
-<li>include：字符串或正则表达式，只有匹配的组件会被缓存</li>
-<li>exclude：字符串或正则表达式，任何匹配的组件都不会被缓存</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="11-符号的解释，例如-router"><a href="#11-符号的解释，例如-router" class="headerlink" title="11. $符号的解释，例如$router"></a>11. $符号的解释，例如$router</h3><ul>
-<li><p><strong>所有的vue组件都继承自vue类的原型</strong></p>
-<ul>
-<li><p>例如，当你给vue类的原型，添加一个属性时，那么所有的组件都可以使用这个属性</p>
-<pre><code>Vue.prototype.test = function(){
-    console.log(&apos;这是测试&apos;)
-} </code></pre><p>  那么你在任意的组件里边都可以使用this.test()进行调用，一般来说都使用$test来防止冲突</p>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="12-Promise"><a href="#12-Promise" class="headerlink" title="12. Promise"></a>12. Promise</h3><ul>
-<li><h5 id="Promise的基本使用："><a href="#Promise的基本使用：" class="headerlink" title="Promise的基本使用："></a>Promise的基本使用：</h5><ul>
-<li><p>什么情况下会用到promise？</p>
-<ul>
-<li>一般情况下，是有异步操作时，使用promise对异步操作进行封装</li>
-</ul>
-</li>
-<li><p>注意：</p>
-<ul>
-<li>Promise接收的参数是一个函数</li>
-<li>resolve和reject都是函数</li>
-<li>then和catch接收的也都是函数</li>
-</ul>
-</li>
-<li><p>链式调用使用方式：</p>
-<pre><code>new Promise((resolve, reject) =&gt; {
-    setTimeout((data) =&gt; {      //这里用setTimeout来模拟异步操作
-        resolve(data)           //用resolve函数来把data传给then函数
-        reject(&apos;error data&apos;)    //数据获取失败，使用reject
-    }, 1000)
-}).then(data =&gt; {               //当数据获取成功时，使用resolve函数，然后执行then函数
-    console.log(data)
-    return new Promise((resolve, reject) =&gt; {
-        //来这里进行嵌套调用
-    })
-}).catch(data =&gt; {
-    console.log(data)       //这里打印的就是error data这个字符串
-}) </code></pre></li>
-</ul>
-</li>
-<li><h5 id="Promise的链式调用"><a href="#Promise的链式调用" class="headerlink" title="Promise的链式调用"></a>Promise的链式调用</h5><ul>
-<li><p>简化过程：</p>
-<pre><code>new Promise((resolve, reject) =&gt; {
-    setTimeout((data) =&gt; {      
-        resolve(data)           
-        reject(&apos;error data&apos;)   
-    }, 1000)
-}).then(data =&gt; {               
-    console.log(data)       //拿到data后，想对data进行操作，比如拼接&apos;111&apos;
-    return new Promise((resolve, reject) =&gt; {       //这里的reject没用到，所以可以省略，写成resolve =&gt; {}
-        resolve(data + &apos;111&apos;)
-    })
-}).then(res =&gt; {
-    console.log(res)
-})</code></pre></li>
-<li><p>上边的过程进行简化(Promise提供了resolve方法，当然也有reject方法，可以在catch里边使用)</p>
-<pre><code>new Promise((resolve, reject) =&gt; {
-    setTimeout((data) =&gt; {      
-        resolve(data)           
-        reject(&apos;error data&apos;)   
-    }, 1000)
-}).then(data =&gt; {               
-    console.log(data)       
-    return Promise.resolve(data + &apos;111&apos;)
-}).then(res =&gt; {
-    console.log(res)
-})</code></pre></li>
-<li><p>再次简化(Promise自动对返回的数据使用Promise.resolve进行封装，reject不行)</p>
-<pre><code>new Promise((resolve, reject) =&gt; {
-    setTimeout((data) =&gt; {      
-        resolve(data)           
-        reject(&apos;error data&apos;)   
-    }, 1000)
-}).then(data =&gt; {               
-    console.log(data)       
-    return data + &apos;111&apos;
-}).then(res =&gt; {
-    console.log(res)
-})</code></pre></li>
-</ul>
-</li>
-</ul>
-<h3 id="13-axios"><a href="#13-axios" class="headerlink" title="13. axios"></a>13. axios</h3><ul>
-<li><h5 id="方法简介"><a href="#方法简介" class="headerlink" title="方法简介"></a>方法简介</h5><ul>
-<li><p>axios(config)</p>
-<pre><code>axios({
-    url:
-    params:
-    method:
-    timeout:
-    ...
-})</code></pre></li>
-<li><p>axios.get()</p>
-</li>
-<li><p>axios.post()</p>
-</li>
-<li><p>axios.delete()</p>
-</li>
-<li><p>axios.head()</p>
-</li>
-<li><p>axios.put()</p>
-</li>
-<li><p>axios.patch()</p>
-</li>
-</ul>
-</li>
-<li><h5 id="并发请求"><a href="#并发请求" class="headerlink" title="并发请求"></a>并发请求</h5><ul>
-<li><p>做一个功能，需要两个请求都到达后，才向下进行</p>
-</li>
-<li><p>axios.all(list)：</p>
-<ul>
-<li><p>参数：需要传入一个数组，需要几个同时到达，就在数组里边写几个数据请求</p>
-</li>
-<li><p>返回：一个数组</p>
-<pre><code>axios.all([axios(), axios()]).then(res =&gt; {
-    res[0].操作
-    res[1].操作
-})</code></pre><p>  还有一个方法axios.spread可以将结果展开</p>
-<pre><code>axios.all([axios(), axios()])
-.then(axios.spread((res1, res2) =&gt; {
-    res1.操作
-    res2.操作
-}))</code></pre></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><h5 id="关于配置config的相关信息"><a href="#关于配置config的相关信息" class="headerlink" title="关于配置config的相关信息"></a>关于配置config的相关信息</h5><ul>
-<li>axios.default.baseURL巴拉巴拉的</li>
-<li>baseURL</li>
-<li>timeout</li>
-<li>method</li>
-<li>transformRequest</li>
-<li>transformResponse</li>
-<li>headers</li>
-<li>params</li>
-</ul>
-</li>
-<li><h5 id="创建实例"><a href="#创建实例" class="headerlink" title="创建实例"></a>创建实例</h5><ul>
-<li><p>为了防止总是使用全局的axios产生混乱，或者处理不同请求的不同配置，需要为请求创建实例</p>
-</li>
-<li><p>axios.create(config)</p>
-<pre><code>const instance1 = axios.create({
-                        baseURL:
-                        timeout:
-                    })
-instance1({
-    url: &quot;&quot;
-}).then(res =&gt; {}).catch(err =&gt; {}) //catch捕捉异常</code></pre></li>
-</ul>
-</li>
-<li><h5 id="拦截器"><a href="#拦截器" class="headerlink" title="拦截器"></a>拦截器</h5><ul>
-<li><p>用于我们发送请求后，或者得到响应后，进行对应的处理</p>
-</li>
-<li><p>请求拦截:例如有一个instance1实例，那么拦截器代码为：</p>
-<ul>
-<li><p>instance1.interceptors.request.use(config =&gt; {}, err =&gt; {}) 拦截请求</p>
-</li>
-<li><p>use()代表你要使用这个拦截器，他有两个参数，两个参数都为函数</p>
-<ul>
-<li>config:请求成功时使用的函数</li>
-<li>err: 请求失败时的函数</li>
-</ul>
-</li>
-<li><p>使用：</p>
-<pre><code>instance1.interceptors.request.use(config =&gt; {
-    console.log(config)
-    return config   // **当你使用拦截器时，一定要返回，否则就被拦截掉了，无法请求到数据**
-}, err =&gt; {})</code></pre></li>
-<li><p>请求拦截的作用：</p>
-<ul>
-<li>比如我们在请求中，想添加那个圆圈动画，可以在config中添加，</li>
-<li>或者对config进行规范，这就是拦截器的作用</li>
-<li><strong>比如我们请求数据时，需要携带token，比如需要用户先登录，就可以先拦截下来，然后跳转到用户登录界面，进行登录，再继续请求数据</strong></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>响应拦截：</p>
-<ul>
-<li><p>instance1.interceptors.response 拦截响应</p>
-</li>
-<li><p>使用：</p>
-<pre><code>instance1.interceptors.response().use(res =&gt; {
-    一系列处理。。。。
-    return res //记得返回，否则请求的地方就拿不到结果
-    或者：
-    return res.data //只返回data，这样可以去掉服务器给我们的其他的乱七八糟的东西
-}, err =&gt; {})</code></pre></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="14-Vuex"><a href="#14-Vuex" class="headerlink" title="14. Vuex"></a>14. Vuex</h3><ul>
-<li><h5 id="Vuex简介"><a href="#Vuex简介" class="headerlink" title="Vuex简介"></a>Vuex简介</h5><ul>
-<li>什么是Vuex？<ul>
-<li>Vuex是专为Vus.js开发的一个状态管理模式</li>
-<li>所谓状态管理模式就是，有很多个组件需要共享多个变量，那么把这多个变量放到一个对象里边，然后把这个对象放到vue的顶层的示例里边，给所有组件共享（我们也可以自己写，但是Vuex是响应式的，自己实现比较麻烦）。</li>
-<li><strong>Vuex里边储存的一定是需要在多个页面共享的状态</strong></li>
-</ul>
-</li>
-<li>什么样的状态需要在多个组件之间共享，而不是使用父子组件传讯的方式？（token）<ul>
-<li>大型项目里边的状态，比如说：用户的登陆状态、地理位置信息、购物车状态等，这些状态就需要统一的地方保存和管理，并且还是响应式的</li>
-<li>token：在后台请求数据时，需要携带token（令牌）</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><h5 id="Vuex的使用"><a href="#Vuex的使用" class="headerlink" title="Vuex的使用"></a>Vuex的使用</h5><ul>
-<li><p>创建过程(真正创建的不是new Vuex而是 new Vuex.Store)：</p>
-<pre><code>import Vue from &apos;vue&apos;
-import Vuex from &apos;vuex&apos;
-
-Vue.use(Vuex)
-
-const store = new Vuex.Store({
-    state:{},       //存储数据状态
-    mutations:{},   //定义方法，
-    actions:{},     //用来处理异步操作
-    getters:{},     //类似于组件里边的计算属性
-    modules:{}      //划分模块，针对不同的模块再进行管理
-})
-
-export default store</code></pre><p>  &lt;然后再main class=”js里边导入并注册”&gt;&lt;/然后再main&gt;</p>
-</li>
-<li><p>state的修改过程：</p>
-<ul>
-<li>Vue components -(dispathc)-&gt; Actions -(commit)-&gt; Mutations -(mutate)-&gt; State -(Render)-&gt; Vue components 或者<br>Vue components –&gt; Mutations –&gt; State –&gt; Vue components</li>
-<li>Actions:它的作用是用来处理异步操作，异步网络请求，因为为了追踪State是在哪里被修改了，官方给Mutations开发了一个Chrome插件Devtools，而这个插件只能监听同步操作，无法监听异步，所以才需要Actions</li>
-</ul>
-</li>
-<li><p>核心模块详解：</p>
-<ul>
-<li><p>state：保存状态，推荐使用单一状态树，即只创建一个store</p>
-<ul>
-<li>单一状态树：就是建议在store.js里边只有一个new store</li>
-</ul>
-</li>
-<li><p>getters：类似于组件里边的计算属性computed，它也有默认的state参数，还可以有另外一个参数就是getters，也就是这个getters本身，用来获取getters里边的方法，例如sum(state, getters)，<strong>也就是说，不管你前两个参数叫什么名字，第一个参数代表的一定是state，第二个一定是getters</strong>，所以说如果想给getters传参，要使用其他方法：</p>
-<pre><code>getters: {
-    sum(state) {
-        return function(这是我想传入的参数){
-            //在这里使用参数即可
-        }
-    }
-}</code></pre><p>  因为返回的是个函数，所以在调用的时候以函数的形式使用，并传入参数即可</p>
-<pre><code>this.$store.getters.sum(我是参数)</code></pre></li>
-<li><p>mutations：这里边的方法会有一个默认参数为state，也就是上边这个state，比如说定义sum(),它相当于sun(state)</p>
-<ul>
-<li><p>使用mutations里边定义的函数的方法：</p>
-<pre><code>store.commit(&apos;mutations里边定义的方法名&apos;)
-components里边为this.$store.commit(&apos;sum&apos;)</code></pre></li>
-<li><p>传参方式：</p>
-<pre><code>首先：
-sum (state, num){           //在这里定义并使用
-    sum += num
-}
-store.commit(&apos;sum&apos;, count)  //先这里进行传参</code></pre></li>
-<li><p>另外一种提交方式：</p>
-<pre><code>store.commit({
-    type: &apos;sum&apos;,
-    count: count
-})</code></pre><p>  使用这种方式的时候就要注意，传过去的参数，不是一个数值，而是一个对象，在函数里边使用时，要用num.count才可以    </p>
-</li>
-<li><p>类型常量（去看一眼视频吧，理解了下边挺简单的，或者看官网)：就是单独创建了一个文件，在里边定义函数名并导出，然后后按照第二种方法的声明方式，在mutations里边和使用的地方进行统一，例如</p>
-<pre><code>export const MYPARAM = &apos;myparam&apos;
-import {MYPARAM} from &apos;xx.js&apos;
-原来函数定义为：
-myparam(){
-
-}
-因为可以定义为
-[&apos;myparam&apos;](){
-
-}
-所以现在可以为：
-[MYPARAN](){
-
-}</code></pre><p>  这样的话，在使用的时候，方法名得到了统一，哪怕我在export const MYPARAM = ‘myparam’写错了，对我的代码也没有影响，这是官方推荐形式</p>
-<ul>
-<li><p>方法的定义不光可以使用：</p>
-<pre><code>方法名(){
-
-}</code></pre><p>  也可以使用</p>
-<pre><code>[&apos;方法名&apos;](){
-
-}</code></pre></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>action：因为Devtool不能监听异步操作，所以所有异步操作都要在action里边进行</p>
-<pre><code>函数声明和mutations一样，只不过默认参数不一样：
-sum(context, param){        //这里的param是用来接收参数，没有传参可以不写，这里的context可以看成我们声明的store，也就是$store
-    setTimeout(() =&gt; {
-        //这里调用mutations里边的函数！注意这里不能跳过mutations直接操作state
-        context.state.myData = &apos;lalalal&apos;    //直接修改了所以是错误的
-        context.commit(&apos;mutations里边的方法&apos;)    //正确写法
-    }, 1000)
-}</code></pre><p>  在使用时，应该是</p>
-<pre><code>this.$store.dispatch(&apos;sum&apos;, &apos;这第二个参数，是我要传递的参数，可以不写&apos;)</code></pre><ul>
-<li><p>如何判断里边的异步函数已经完成，可以从action里边传回一个Promise(可以看看视频，我觉得天秀)：</p>
-<pre><code>sum(context, myParam){
-    return new Promise((resolve, reject) =&gt; {
-        setTimeout(() =&gt; {
-            context.commit(&apos;mutations里边的方法&apos;)
-            console.log(myParam)
-
-            resolve(&apos;这是我想传回去的参数&apos;)       
-        }, 1000)    //神奇的地方来了，不在这里写then，而是在调用的地方
-    })
-}
-
-this.$store.dispatch(&apos;sum&apos;, &apos;这是参数&apos;).then(res =&gt; {
-    console.log(&apos;里边的异步已经执行完了&apos;)
-    console.log(res)    //这是resolve给的数据
-})</code></pre><p>  <strong>解释</strong>：因为then函数是接在new Promise后边的，而sum函数return的就是一个new Promise，所以我们的this.$store.dispatch(‘sum’, ‘这是参数’)这句代码执行完之后，相当于被替换成了new Promise()，所以它后边可以接then（天秀！！！）</p>
-</li>
-</ul>
-</li>
-<li><p>modules：当你想要进行模块划分时，在这里边进行，举例：</p>
-<pre><code>const moduleC = {
-    state:{},
-    mutations:{},
-    actions:{},
-    getters:{},
-    modules:{}
-}
-
-modules: {
-    a: {
-        state:{},
-        mutations:{},
-        actions:{},
-        getters:{},
-        modules:{}
-    },
-    b: {
-        state:{},
-        mutations:{},
-        actions:{},
-        getters:{},
-        modules:{}
-    },
-    c: moduleC
-}</code></pre><p>  这样来进行你想要的划分，使用方法：</p>
-<ul>
-<li><p>state：modules里边的state在使用时，Vue是将它封装成一个对象，放在根state里边的，所以使用是： $store.state.a.name</p>
-</li>
-<li><p>mutations：modules里边的mutations的命名不能与根store里边的命名重复，因为它的使用是：$store.commit(‘modules里边的mutations的方法名’)，直接调用，如果重复了会有冲突</p>
-</li>
-<li><p>getters：modules里边的getters，可以直接调用自己本模块的getters，也可以直接调用根模块的getters</p>
-</li>
-<li><p>actions：与根模块相比，他的context多了两个属性：rootGetters和rootState</p>
-</li>
-<li><p>对象的解构：</p>
-<pre><code>const obj = {
-    name: &apos;123&apos;,
-    age: 19,
-    height:1.88
-}
-
-解构的使用办法为：
-const {name, height, age} = obj     //它是按名字取值的，不是按顺序</code></pre></li>
-</ul>
-</li>
-<li><p>目录结构：</p>
-<ul>
-<li>将mutations和actions等，抽成单个的文件，然后再store.js里边导入</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><h5 id="Vuex的数据响应式"><a href="#Vuex的数据响应式" class="headerlink" title="Vuex的数据响应式"></a>Vuex的数据响应式</h5><ul>
-<li><p>什么样的数据是响应式</p>
-<ul>
-<li><p><strong>必须是提前在store中初始化好的属性</strong>，也就是说我们后边通过一些方法添加的属性，不是响应式的，例如:</p>
-<pre><code>store.state.info[&apos;address&apos;] = &apos;lalala&apos;      //address是我们新添加的属性</code></pre></li>
-<li><p>我们可以使用Vue的方法来使我们添加的数据变为响应式</p>
-<ul>
-<li>Vue.set(要更改的数据, 下标或属性, value)     //当要改的数据为数组时，第二个参数为下标</li>
-<li>Vue.delete(要更改的数据, 下标或属性)</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2020/02/17/V开场台词/" title="V 开场自我介绍" itemprop="url">V 开场自我介绍</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Lightman" target="_blank" itemprop="author">Lightman</a>
-		
-  <p class="article-time">
-    <time datetime="2020-02-17T06:20:11.000Z" itemprop="datePublished"> Published 2020-02-17</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <ul>
-<li><p>台词</p>
-<p>  V: I can assure you,I mean you no harm</p>
-<p>  女主: Who are you?</p>
-<p>  V: Who?Who is but the form following the function of what and what I am is a man in a mask</p>
-<p>  女主: Oh,I can see that</p>
-<p>  V: Of course you can.I’m not questioning your powers of observation.I’m merely remarking upon the paradox of asking a masked man who he is.</p>
-<p>  女主: Right</p>
-<p>  V: But on this most auspicious of nights permit me then,in lieu of the more commonplace sobriquet to suggest the character of this dramatis persona.</p>
-<p>  V: Voila! In view,a humble vaudevillian veteran cast vicariously as both victim and villain by the vicissitudes of fate. This visage, no mere veneer of vanity is a vestige of the vox populi, now vacant, vanished. However, this valorous visitation of a bygone vexation stands vivified and has vowed to vanquish these venal and virulent vermin vanguarding vice and vouchsafing the violently vicious and voracious violation of volition. The only verdict is vengeance, a vendetta held as a votive not in vain, for the value and veracity of such shall one day vindicate the vigilant and the virtuous. Verily, this vichyssoise of verbiage veers most verbose. So let me simply add that it’s my very good honor to meet you and you may call me V.  </p>
-<p>  哇啦！ 我虽然看起来像个小丑，受到命运残酷的作弄，不得不戴上面具，被迫昼伏夜出，不见天日，但我仍不畏强权，挺身而出，发誓铲奸除恶，伸张正义，为饱受压迫的人民出一口气，唯一的方法就是复仇，这不是戏言，而是誓言，想要拯救水深火热中的同胞，就要使用以暴制暴的极端手段.我的冗长赘言就此结束，最后容我说，很荣幸认识你，你可以叫我V。</p>
-</li>
-</ul>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/%E8%8B%B1%E8%AF%AD/">英语</a>
-</div>
-
-
-  <div class="article-tags">
   
-  <span></span> <a href="/tags/电影台词/">电影台词</a>
-  </div>
 
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2019/12/23/AdvancedAutoEncoder/" title="AdvancedAutoEncoder" itemprop="url">AdvancedAutoEncoder</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Lightman" target="_blank" itemprop="author">Lightman</a>
-		
-  <p class="article-time">
-    <time datetime="2019-12-22T16:12:21.000Z" itemprop="datePublished"> Published 2019-12-23</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h2 id="1-简介"><a href="#1-简介" class="headerlink" title="1. 简介"></a>1. 简介</h2><p>这种方法是在编码阶段引入噪声来增强自编码器的鲁棒性，称为去噪编码器，也被称为“随机版本的自编码器”，其中的输入是随机损坏的，而生成同一个输入的未损坏版本是解码阶段的目标。直观来说，去噪编码器要完成两个任务：</p>
-<ul>
-<li>对输入编码，并保留主要信息</li>
-<li>降低甚至避免损坏输入的影响</li>
-</ul>
-<h2 id="2-代码简介"><a href="#2-代码简介" class="headerlink" title="2. 代码简介"></a>2. 代码简介</h2><ul>
-<li><p><strong>结果展示函数</strong></p>
-<pre><code>def plotresult(org_vec,noisy_vec,out_vec):
-    plt.matshow(np.reshape(org_vec, (28, 28)), cmap=plt.get_cmap(&quot;gray&quot;))
-    plt.title(&quot;Original Image&quot;)
-    plt.colorbar()
-    plt.matshow(np.reshape(noisy_vec, (28, 28)), cmap=plt.get_cmap(&quot;gray&quot;))
-    plt.title(&quot;Input Image&quot;)
-    plt.colorbar()
-
-    outimg = np.reshape(out_vec, (28, 28))
-    plt.matshow(outimg, cmap=plt.get_cmap(&apos;gray&apos;))
-    plt.title(&quot;Reconstructed Image&quot;)
-    plt.colorbar()
-    plt.show()</code></pre><p>  定义了一个函数来对最终的结果进行展示，有关matplotlib.pyplot这个库我没详细的看，总的来说就是展示结果用的，它会显示原始图像，噪声图像和预测图像</p>
-</li>
-<li><p><strong>参数定义</strong></p>
-<pre><code>n_input = 784
-n_hidden_1 = 256
-n_hidden_2 = 256
-n_output = 784
-
-epochs = 110
-batch_size = 100
-disp_step = 10</code></pre><p>  这边参数的定义与自编码器差不多，disp_step这个参数是用来在控制台打印cost用的，下边我会标注</p>
-<pre><code>mnist = input_data.read_data_sets(&quot;MNIST_Labels_Images&quot;,one_hot=True)
-trainimg = mnist.train.images
-trainlabel = mnist.train.labels
-testimg = mnist.test.images
-testlabel = mnist.test.labels</code></pre><p>  这边它对于训练图片，训练标签以及测试图片和测试标签单独定义了变量，只在展示结果，也就是plt中用到了，训练过程中没有用到</p>
-<pre><code>weights = {
-&apos;h1&apos;: tf.Variable(tf.random_normal([n_input, n_hidden_1])),
-&apos;h2&apos;: tf.Variable(tf.random_normal([n_hidden_1, n_hidden_2])),
-&apos;out&apos;: tf.Variable(tf.random_normal([n_hidden_2, n_output]))
-}
-biases = {
-    &apos;b1&apos;: tf.Variable(tf.random_normal([n_hidden_1])),
-    &apos;b2&apos;: tf.Variable(tf.random_normal([n_hidden_2])),
-    &apos;out&apos;: tf.Variable(tf.random_normal([n_output]))
-}
-
-encode_in = tf.nn.sigmoid(tf.add(tf.matmul(x, weights[&apos;h1&apos;]), biases[&apos;b1&apos;]))
-encode_out = tf.nn.dropout(encode_in, dropout_keep_prob)
-
-decode_in = tf.nn.sigmoid(tf.add(tf.matmul(encode_out, weights[&apos;h2&apos;]), biases[&apos;b2&apos;]))
-decode_out = tf.nn.dropout(decode_in, dropout_keep_prob)
-
-y_pred = tf.nn.sigmoid(tf.add(tf.matmul(decode_out, weights[&apos;out&apos;]), biases[&apos;out&apos;]))
-
-cost = tf.reduce_mean(tf.pow(y_pred - y, 2))
-optmizer = tf.train.RMSPropOptimizer(0.01).minimize(cost)</code></pre><p>  这边的定义与自编码器也大体相同，只有一点区别就是使用了<strong>dropout优化</strong></p>
-</li>
-<li><p><strong>dropout优化介绍</strong></p>
-<p>  <strong>介绍：</strong>在学习阶段，网络层与下一层的连接可以限制为神经元的子集，以减少需要更新的权重数量，这种学习优化技术成为dropout优化。<br>  <strong>作用：</strong>可以减少层数较多&nbsp;和\或&nbsp;神经元数量较多的网络的过拟合问题<br>  <strong>dropout层位置：</strong>dropout层一般置于训练神经元较多的网络层之后<br>  <strong>工作机制简介：</strong>每个隐藏单元都以概率p被随机从网络中忽略</p>
-</li>
-<li><p><strong>训练过程</strong></p>
-<pre><code>with tf.Session() as sess:
-init = tf.global_variables_initializer()
-sess.run(init)
-print(&quot;Start Training&quot;)
-for epoch in range(epochs):
-    num_batch = int(mnist.train.num_examples/batch_size)
-    total_cost = 0
-    for i in range(num_batch):
-        batch_xs, batch_ys = mnist.train.next_batch(batch_size)
-        batch_xs_noisy = batch_xs + 0.3*np.random.randn(batch_size, 784)
-        feeds = {x: batch_xs_noisy, y: batch_xs, dropout_keep_prob: 0.8}
-        sess.run(optmizer, feed_dict=feeds)
-        total_cost = sess.run(cost, feed_dict=feeds)
-
-    if epoch % disp_step == 0:
-        print(&quot;Epoch %02d/%02d average cost: %.6f&quot; % (epoch, epochs, total_cost/num_batch))</code></pre><p>  大部分代码还是TensorFlow的常规代码，最后一个if里边用到了disp_step，他只是展示结果用的不重要。<br>  最重要的代码是嵌套的for循环里边的几句：</p>
-<pre><code>batch_xs, batch_ys = mnist.train.next_batch(batch_size)
-batch_xs_noisy = batch_xs + 0.3*np.random.randn(batch_size, 784)
-feeds = {x: batch_xs_noisy, y: batch_xs, dropout_keep_prob: 0.8}
-sess.run(optmizer, feed_dict=feeds)
-total_cost = sess.run(cost, feed_dict=feeds)</code></pre><p>  <strong>第二行，使用numpy包中的random函数，随机损坏batch_xs数据集，然后使用被破坏的数据集进行</strong></p>
-<pre><code>randidx = np.random.randint(testimg.shape[0], size=1)
-orgvec = testimg[randidx, :]
-testvec = testimg[randidx, :]
-label = np.argmax(testlabel[randidx, :], 1)
-
-print(&quot;Test label is %d&quot; % (label))
-noisyvec = testvec + 0.3*np.random.randn(1, 784)
-outvec = sess.run(y_pred, feed_dict={x: noisyvec, dropout_keep_prob: 1 })
-
-plotresult(orgvec,noisyvec,outvec)</code></pre><p>  这里是为了测试该模型，随机从测试集中选取一个图像，并在选出的图像上运行训练出的模型，然后plotresult来显示原始图像、噪声图像和预测图像</p>
-</li>
-</ul>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习</a>
-</div>
-
-
-  <div class="article-tags">
   
-  <span></span> <a href="/tags/AutoEncoder/">AutoEncoder</a>
-  </div>
 
-</div>
+</head>
+<body>
+<div class="container">
+    <div class="mp-pusher" id="mp-pusher">
+        <i id="scroll-up" class="fa fa-angle-up"></i>
+        <nav id="mp-menu" class="mp-menu">
+            <div class="mp-level">
+                <a data-pjax class="back-home" style="font-size: 20px" href="/"><h2 ><i class="fa fa-home"></i>
+                        Home</h2></a>
+                <ul class="first-level">
+                    <li>
+                        <a class="fa fa-archive" href="#"><i class="fa fa-angle-left">
+                            </i>&nbsp;&nbsp;Archive</a>
+                        <div class="mp-level page-list">
+                            <h2 ><i class="fa fa-archive"></i>
+                                Archive</h2>
+                            <a class="mp-back" href="#">back</a>
+                            <form id="search-form" action="">
+                                <input type="text" class="search search-archive" placeholder="Search.."/>
+                            </form>
+                            <ul>
+                                <div class="mp-scroll">
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2020/12/01/Typescript/">Typescript 学习笔记</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2020/06/17/Vue/">Vue</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2020/02/17/V开场台词/">V 开场自我介绍</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2019/12/23/AdvancedAutoEncoder/">AdvancedAutoEncoder</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2019/12/23/AutoEncoder/">AutoEncoder</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2019/12/23/CNNAutoEncoder/">卷积自编码器</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2019/12/23/CNN/">卷积神经网络</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2019/12/23/EnglishPronunciation/">连读规则</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2019/12/23/GAN/">GAN网络代码</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2019/12/23/Git/">Git教程</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2019/12/23/JavaScript高级程序设计/">JavaScript 高级程序设计</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2019/12/23/LSTM/">LSTM简介及代码</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2019/12/23/Ted_给陌生人的情书/">汉娜·布伦雪尔：给陌生人的情书</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2019/12/23/ReinforcementLearning/">强化学习简介</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2019/12/23/STGCN/">时空图卷积网络</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2019/12/23/沉默的大多数/">沉默的大多数</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2019/12/23/算法/">算法速查</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2019/12/23/python/">Python教程</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2019/01/23/Flex/">Flex 布局</a>
+                                </li>
+                                
+                                </div>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="fa fa-copy" href="#"><i class="fa fa-angle-left">
+                            </i>&nbsp;&nbsp;Categories</a>
+
+                        <div class="mp-level page-list">
+                            <h2 ><i class="fa fa-copy"></i>
+                                Categories</h2>
+                            <a class="mp-back" href="#">back</a>
+                            <form id="search-form" action="">
+                                <input type="text" class="search search-category" placeholder="Search.."/>
+                            </form>
+                            <ul>
+                                <div class="mp-scroll">
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/前端技术/">&nbsp;&nbsp;&nbsp;前端技术</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/后台技术/">&nbsp;&nbsp;&nbsp;后台技术</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/常用技术/">&nbsp;&nbsp;&nbsp;常用技术</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/强化学习/">&nbsp;&nbsp;&nbsp;强化学习</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/深度学习/">&nbsp;&nbsp;&nbsp;深度学习</a>
+                                    <small>7</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/算法/">&nbsp;&nbsp;&nbsp;算法</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/英语/">&nbsp;&nbsp;&nbsp;英语</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/读书笔记/">&nbsp;&nbsp;&nbsp;读书笔记</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                </div>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="fa fa-tags" href="#"><i class="fa fa-angle-left">
+                            </i>&nbsp;&nbsp;Tags</a>
+                        <div class="mp-level page-list">
+                            <h2 ><i class="fa fa-tags"></i>
+                                Tags</h2>
+                            <a class="mp-back" href="#">back</a>
+                            <form id="search-form" action="">
+                                <input type="text" class="search search-tag" placeholder="Search.."/>
+                            </form>
+                            <ul>
+                                <div class="mp-scroll">
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/AutoEncoder/">&nbsp;&nbsp;&nbsp;AutoEncoder</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/CNN/">&nbsp;&nbsp;&nbsp;CNN</a>
+                                    <small>2</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/Flex/">&nbsp;&nbsp;&nbsp;Flex</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/GAN/">&nbsp;&nbsp;&nbsp;GAN</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/GCN/">&nbsp;&nbsp;&nbsp;GCN</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/JavaScript/">&nbsp;&nbsp;&nbsp;JavaScript</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/LSTM/">&nbsp;&nbsp;&nbsp;LSTM</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/Python/">&nbsp;&nbsp;&nbsp;Python</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/Q网络/">&nbsp;&nbsp;&nbsp;Q网络</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/Ted/">&nbsp;&nbsp;&nbsp;Ted</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/Typescript/">&nbsp;&nbsp;&nbsp;Typescript</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/协作开发软件/">&nbsp;&nbsp;&nbsp;协作开发软件</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/沉默的大多数/">&nbsp;&nbsp;&nbsp;沉默的大多数</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/电影台词/">&nbsp;&nbsp;&nbsp;电影台词</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/算法/">&nbsp;&nbsp;&nbsp;算法</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/连读发音/">&nbsp;&nbsp;&nbsp;连读发音</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                </div>
+                            </ul>
+                        </div>
+                    </li>
+                    
+                    <li class="mp-pjax"><a class="fa fa-user" href="/about">&nbsp;&nbsp;&nbsp;About me</a></li>
+                    <li><a class="fa fa-github" href="#">&nbsp;&nbsp;&nbsp;Github</a></li>
+
+                </ul>
+
+            </div>
+        </nav>
+        <div id="pjax">
+            <div class="pjax-hidden" style="display: none">
+                
+                    <a  data-pjax href="/2020/12/01/Typescript/">Typescript 学习笔记</a>
+                
+                    <a  data-pjax href="/2020/06/17/Vue/">Vue</a>
+                
+                    <a  data-pjax href="/2020/02/17/V开场台词/">V 开场自我介绍</a>
+                
+                    <a  data-pjax href="/2019/12/23/AdvancedAutoEncoder/">AdvancedAutoEncoder</a>
+                
+                    <a  data-pjax href="/2019/12/23/AutoEncoder/">AutoEncoder</a>
+                
+                    <a  data-pjax href="/2019/12/23/CNNAutoEncoder/">卷积自编码器</a>
+                
+                    <a  data-pjax href="/2019/12/23/CNN/">卷积神经网络</a>
+                
+                    <a  data-pjax href="/2019/12/23/EnglishPronunciation/">连读规则</a>
+                
+                    <a  data-pjax href="/2019/12/23/GAN/">GAN网络代码</a>
+                
+                    <a  data-pjax href="/2019/12/23/Git/">Git教程</a>
+                
+                    <a  data-pjax href="/2019/12/23/JavaScript高级程序设计/">JavaScript 高级程序设计</a>
+                
+                    <a  data-pjax href="/2019/12/23/LSTM/">LSTM简介及代码</a>
+                
+                    <a  data-pjax href="/2019/12/23/Ted_给陌生人的情书/">汉娜·布伦雪尔：给陌生人的情书</a>
+                
+                    <a  data-pjax href="/2019/12/23/ReinforcementLearning/">强化学习简介</a>
+                
+                    <a  data-pjax href="/2019/12/23/STGCN/">时空图卷积网络</a>
+                
+                    <a  data-pjax href="/2019/12/23/沉默的大多数/">沉默的大多数</a>
+                
+                    <a  data-pjax href="/2019/12/23/算法/">算法速查</a>
+                
+                    <a  data-pjax href="/2019/12/23/python/">Python教程</a>
+                
+                    <a  data-pjax href="/2019/01/23/Flex/">Flex 布局</a>
+                
+                
+                    <a data-pjax href="/categories/前端技术/">&nbsp;&nbsp;前端技术</a>
+                
+                    <a data-pjax href="/categories/后台技术/">&nbsp;&nbsp;后台技术</a>
+                
+                    <a data-pjax href="/categories/常用技术/">&nbsp;&nbsp;常用技术</a>
+                
+                    <a data-pjax href="/categories/强化学习/">&nbsp;&nbsp;强化学习</a>
+                
+                    <a data-pjax href="/categories/深度学习/">&nbsp;&nbsp;深度学习</a>
+                
+                    <a data-pjax href="/categories/算法/">&nbsp;&nbsp;算法</a>
+                
+                    <a data-pjax href="/categories/英语/">&nbsp;&nbsp;英语</a>
+                
+                    <a data-pjax href="/categories/读书笔记/">&nbsp;&nbsp;读书笔记</a>
+                
+                
+                    <a data-pjax href="/tags/AutoEncoder/">&nbsp;&nbsp;AutoEncoder</a>
+                
+                    <a data-pjax href="/tags/CNN/">&nbsp;&nbsp;CNN</a>
+                
+                    <a data-pjax href="/tags/Flex/">&nbsp;&nbsp;Flex</a>
+                
+                    <a data-pjax href="/tags/GAN/">&nbsp;&nbsp;GAN</a>
+                
+                    <a data-pjax href="/tags/GCN/">&nbsp;&nbsp;GCN</a>
+                
+                    <a data-pjax href="/tags/JavaScript/">&nbsp;&nbsp;JavaScript</a>
+                
+                    <a data-pjax href="/tags/LSTM/">&nbsp;&nbsp;LSTM</a>
+                
+                    <a data-pjax href="/tags/Python/">&nbsp;&nbsp;Python</a>
+                
+                    <a data-pjax href="/tags/Q网络/">&nbsp;&nbsp;Q网络</a>
+                
+                    <a data-pjax href="/tags/Ted/">&nbsp;&nbsp;Ted</a>
+                
+                    <a data-pjax href="/tags/Typescript/">&nbsp;&nbsp;Typescript</a>
+                
+                    <a data-pjax href="/tags/协作开发软件/">&nbsp;&nbsp;协作开发软件</a>
+                
+                    <a data-pjax href="/tags/沉默的大多数/">&nbsp;&nbsp;沉默的大多数</a>
+                
+                    <a data-pjax href="/tags/电影台词/">&nbsp;&nbsp;电影台词</a>
+                
+                    <a data-pjax href="/tags/算法/">&nbsp;&nbsp;算法</a>
+                
+                    <a data-pjax href="/tags/连读发音/">&nbsp;&nbsp;连读发音</a>
+                
+                <a data-pjax class="fa fa-user" href="/about">&nbsp;&nbsp;&nbsp;About me</a>
+            </div>
+            <nav class="nexus">
+                <li  style="border-left: 1px solid #c6d0da;">
+                    <a id="trigger" href="#"><i class="fa fa-bars"></i></a>
+                </li>
+                <li ><a id="nexus-back" data-pjax href="/">Lightman&#39;s blog</a></li>
+                
+                <div id="nav-container">
+                    <div class="post-navbar" style="line-height: 63px;display:none">
+                        <li id="navbar-title"><a href="#"></a></li>
+                        <li id="navbar-toc" style="border-left: none">
+                            <a style="padding-right: 15px">
+                                <span id="toc-content" >Introduction</span><i class="fa fa-chevron-down" ></i>
+                            </a>
+                            <div class="hidden-box">
+                                <ul id="toc"></ul>
+                            </div>
+                        </li>
+                    </div>
+                </div>
+                
+            </nav>
+
+            <div class="scroller">
+            <div class="scroller-inner">
 
 
+<!-- -->
+<!--<body class="home-template">-->
+<!---->
+  
+<main class="content" role="main">
 
+    
+    <article class="post">
 
-<div class="comments-count">
-	
-</div>
+        <header class="post-header">
+            <div class="tag-tile">
+                
+                
+                <a data-pjax href='/tags/Typescript/'>Typescript</a>
+                
+                
+                <span class="fa fa-bookmark" style="float:right;color:#f39c12"></span>
+            </div>
+            <h1 class="post-title"><a data-pjax href="/2020/12/01/Typescript/">Typescript 学习笔记</a>
+            </h1>
 
-</footer>
+            <div class="post-meta">
+                Post on<span class="fa fa-clock-o"></span>
+                <time datetime="2020-12-01T02:12:21.000Z"
+                      itemprop="datePublished">2020-12-01</time>
+            </div>
+        </header>
+        <section class="post-excerpt">
+            <p>
+                
+                基础原始数据类型1. 布尔值
+Typescript中使用boolean来定义布尔值，而不是Boolean，其他的基础类型也是一样
 
+例如：
+  123let isDone: boolean &#x3D; false;       &#x2F;&#x2F; 编译通过let createdByNewBoolean: boolean &#x3D; new Boolean(1);  &#x2F;&#x2F; 不通过
 
+  因为使用构造函数Boo
+                
+            </p>
+            
+        </section>
     </article>
-
-
-
-
-
-
-   
     
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
+    <article class="post">
+
+        <header class="post-header">
+            <div class="tag-tile">
+                
+                <span class="fa fa-bookmark" style="float:right;color:#f39c12"></span>
+            </div>
+            <h1 class="post-title"><a data-pjax href="/2020/06/17/Vue/">Vue</a>
+            </h1>
+
+            <div class="post-meta">
+                Post on<span class="fa fa-clock-o"></span>
+                <time datetime="2020-06-17T11:03:09.673Z"
+                      itemprop="datePublished">2020-06-17</time>
+            </div>
+        </header>
+        <section class="post-excerpt">
+            <p>
+                
+                [TOC]
+Vue注意
+DOM里边使用定义的别名，需要在前边加上“~”
+this.$router 拿到的是vue-router这个对象，this.$route 拿到的是当前哪个路由处于活跃状态
+
+ES6语法
+ES6除了’’和””以外，还可以使用``（TAB上边的那个点）来定义字符串，他的好处是可以直接回车换行
+
+1. 计算属性
+计算属性(computed)本质上是一个属性，它有getter和setter，但是我们在使用时只是实现了get
+                
+            </p>
+            
+        </section>
+    </article>
     
-      <a href="/2019/12/23/AutoEncoder/" title="AutoEncoder" itemprop="url">AutoEncoder</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Lightman" target="_blank" itemprop="author">Lightman</a>
-		
-  <p class="article-time">
-    <time datetime="2019-12-22T16:12:21.000Z" itemprop="datePublished"> Published 2019-12-23</time>
+    <article class="post">
+
+        <header class="post-header">
+            <div class="tag-tile">
+                
+                
+                <a data-pjax href='/tags/电影台词/'>电影台词</a>
+                
+                
+                <span class="fa fa-bookmark" style="float:right;color:#f39c12"></span>
+            </div>
+            <h1 class="post-title"><a data-pjax href="/2020/02/17/V开场台词/">V 开场自我介绍</a>
+            </h1>
+
+            <div class="post-meta">
+                Post on<span class="fa fa-clock-o"></span>
+                <time datetime="2020-02-17T06:20:11.000Z"
+                      itemprop="datePublished">2020-02-17</time>
+            </div>
+        </header>
+        <section class="post-excerpt">
+            <p>
+                
+                
+台词
+  V: I can assure you,I mean you no harm
+  女主: Who are you?
+  V: Who?Who is but the form following the function of what and what I am is a man in a mask
+  女主: Oh,I can see that
+  V: Of course you can.I’m not question
+                
+            </p>
+            
+        </section>
+    </article>
     
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h2 id="1-简介"><a href="#1-简介" class="headerlink" title="1. 简介"></a>1. 简介</h2><ul>
-<li><strong>作用：</strong>自编码器可以帮助我们将高维数据压缩到我们所希望的维度</li>
-<li><strong>实现原理：</strong>先对原数据进行压缩降维，再通过相反的过程解码得到结果，然后原原数据进行比较，通过修正权重偏置参数降低损失函数，提高对原数据的复原能力</li>
-<li><strong>大概可能利用的地方：</strong>可以通过前半段的编码过程得到可代表原数据的低维的“特征值”</li>
-</ul>
-<h2 id="2-代码解释"><a href="#2-代码解释" class="headerlink" title="2. 代码解释"></a>2. 代码解释</h2><ul>
-<li><p><strong>导入包数据，并且设置超参数</strong></p>
-<pre><code>import tensorflow as tf
+    <article class="post">
+
+        <header class="post-header">
+            <div class="tag-tile">
+                
+                
+                <a data-pjax href='/tags/AutoEncoder/'>AutoEncoder</a>
+                
+                
+                <span class="fa fa-bookmark" style="float:right;color:#f39c12"></span>
+            </div>
+            <h1 class="post-title"><a data-pjax href="/2019/12/23/AdvancedAutoEncoder/">AdvancedAutoEncoder</a>
+            </h1>
+
+            <div class="post-meta">
+                Post on<span class="fa fa-clock-o"></span>
+                <time datetime="2019-12-22T16:12:21.000Z"
+                      itemprop="datePublished">2019-12-23</time>
+            </div>
+        </header>
+        <section class="post-excerpt">
+            <p>
+                
+                1. 简介这种方法是在编码阶段引入噪声来增强自编码器的鲁棒性，称为去噪编码器，也被称为“随机版本的自编码器”，其中的输入是随机损坏的，而生成同一个输入的未损坏版本是解码阶段的目标。直观来说，去噪编码器要完成两个任务：
+
+对输入编码，并保留主要信息
+降低甚至避免损坏输入的影响
+
+2. 代码简介
+结果展示函数
+def plotresult(org_vec,noisy_vec,out_vec):
+    plt.matshow(np.resh
+                
+            </p>
+            
+        </section>
+    </article>
+    
+    <article class="post">
+
+        <header class="post-header">
+            <div class="tag-tile">
+                
+                
+                <a data-pjax href='/tags/AutoEncoder/'>AutoEncoder</a>
+                
+                
+                <span class="fa fa-bookmark" style="float:right;color:#f39c12"></span>
+            </div>
+            <h1 class="post-title"><a data-pjax href="/2019/12/23/AutoEncoder/">AutoEncoder</a>
+            </h1>
+
+            <div class="post-meta">
+                Post on<span class="fa fa-clock-o"></span>
+                <time datetime="2019-12-22T16:12:21.000Z"
+                      itemprop="datePublished">2019-12-23</time>
+            </div>
+        </header>
+        <section class="post-excerpt">
+            <p>
+                
+                1. 简介
+作用：自编码器可以帮助我们将高维数据压缩到我们所希望的维度
+实现原理：先对原数据进行压缩降维，再通过相反的过程解码得到结果，然后原原数据进行比较，通过修正权重偏置参数降低损失函数，提高对原数据的复原能力
+大概可能利用的地方：可以通过前半段的编码过程得到可代表原数据的低维的“特征值”
+
+2. 代码解释
+导入包数据，并且设置超参数
+import tensorflow as tf
 import numpy as np
-import matplotlib.pyplot as plt
-from tensorflow.examples.tutorials.mnist import input_data
-
-# 导入MNIST数据
-mnist = input_data.read_data_sets(&quot;MNIST_Labels_Images&quot;, one_hot=False)
-
-# 设置训练超参数
-learning_rate = 0.01  # 学习速率
-training_epochs = 10  # 训练轮数
-batch_size = 256  # 训练批次大小
-display_step = 1  # 显示间隔
-examples_to_show = 10  # 表示从测试集中选择十张图片去验证自动编码器的结果
-n_input = 784  # 数据的特征值个数</code></pre><p>  特征值为784的原因：因为MNIST的图片像素为为28*28=784，换算成一维数组就是784</p>
-<pre><code>X = tf.placeholder(&quot;float&quot;, [None, n_input])</code></pre><p>  x不是一个特定的值，而是一个占位符placeholder，用2维的浮点数张量来表示这些图，这个张量的形状是[None，784 ]。（这里的None表示此张量的第一个维度可以是任何长度的。）</p>
-</li>
-<li><p><strong>创建隐藏层和生成参数矩阵</strong></p>
-<pre><code># 用字典的方式存储各隐藏层的参数   网络参数
-n_hidden_1 = 256  # 第一编码层神经元个数256，也是特征值个数
-n_hidden_2 = 128  # 第二编码层神经元个数128，也是特征值个数
-
-# 权重参数矩阵维度是每层的 输入*输出，偏置参数维度取决于输出层的单元数
-weights = {
-    &apos;encoder_h1&apos;: tf.Variable(tf.random_normal([n_input, n_hidden_1])),
-    &apos;encoder_h2&apos;: tf.Variable(tf.random_normal([n_hidden_1, n_hidden_2])),
-    &apos;decoder_h1&apos;: tf.Variable(tf.random_normal([n_hidden_2, n_hidden_1])),
-    &apos;decoder_h2&apos;: tf.Variable(tf.random_normal([n_hidden_1, n_input])),
-}
-biases = {
-    &apos;encoder_b1&apos;: tf.Variable(tf.random_normal([n_hidden_1])),
-    &apos;encoder_b2&apos;: tf.Variable(tf.random_normal([n_hidden_2])),
-    &apos;decoder_b1&apos;: tf.Variable(tf.random_normal([n_hidden_1])),
-    &apos;decoder_b2&apos;: tf.Variable(tf.random_normal([n_input])),
-}</code></pre><ul>
-<li>这个神经网络一共为5层，2层编码层，2层解码层和1个输出层  </li>
-<li>第一编码层神经元个数256，第二编码层神经元个数128，解码层与编码层是相逆的,所以解码层1层为128，2层为256 </li>
-<li>权重参数矩阵维度是每层的 输入*输出，偏置参数维度取决于输出层的单元数，通过<strong><em>字典</em></strong>的方式进行保存</li>
-<li>random_normal是从正态分布中输出随机值，第一个参数为Shape</li>
-</ul>
-</li>
-<li><p><strong>构建编码器和解码器</strong></p>
-<pre><code># 定义有压缩函数，每一层结构都是 xW + b
-# 构建编码器
-def encoder(x):
-    layer_1 = tf.nn.sigmoid(tf.add(tf.matmul(x, weights[&apos;encoder_h1&apos;]),
-                                   biases[&apos;encoder_b1&apos;]))
-    layer_2 = tf.nn.sigmoid(tf.add(tf.matmul(layer_1, weights[&apos;encoder_h2&apos;]),
-                                   biases[&apos;encoder_b2&apos;]))
-    return layer_2
-# 定义解压函数
-# 构建解码器
-def decoder(x):
-    layer_1 = tf.nn.sigmoid(tf.add(tf.matmul(x, weights[&apos;decoder_h1&apos;]),
-                                   biases[&apos;decoder_b1&apos;]))
-    layer_2 = tf.nn.sigmoid(tf.add(tf.matmul(layer_1, weights[&apos;decoder_h2&apos;]),
-                                   biases[&apos;decoder_b2&apos;]))
-    return layer_2
-# 构建模型
-encoder_op = encoder(X)
-decoder_op = decoder(encoder_op)</code></pre><p>  自编码器的神经网络结构非常有规律性，都是xW + b的结构，每一层的激活函数使用Sigmoid函数</p>
-<p>  这一行代码：</p>
-<pre><code>layer_1 = tf.nn.sigmoid(tf.add(tf.matmul(x, weights[&apos;encoder_h1&apos;]),
-                                  biases[&apos;encoder_b1&apos;]))</code></pre></li>
-</ul>
-<pre><code>- tf.matmul()&amp;nbsp;&amp;nbsp;矩阵的乘法运算
-- tf.add(a,b)&amp;nbsp;&amp;nbsp;a+b
-- tf.nn.sigmoid 函数：f(z) = 1 / (1 + exp( − z))&amp;nbsp;&amp;nbsp;&amp;nbsp;这里z为xW + b
-- 所以这一句的意思就是&amp;nbsp;(None行784列) \* (784行256列)&amp;nbsp;得到None行256列
-- 将输入层784个特征压缩到256个
-- 下边一行同理，将256压缩到128  
-
-这一行解码层的代码：
-
-    layer_1 = tf.nn.sigmoid(tf.add(tf.matmul(x, weights[&apos;decoder_h1&apos;]),
-                                       biases[&apos;decoder_b1&apos;]))
-
-- 因为在构建模型时传入的是压缩之后的特征，所以这句代码就是&amp;nbsp;(None行128列) \* (128行256列)&amp;nbsp;得到不定行256列，将编码层第2层层128个特征解压到256个
-- 下边一行同理，将256解压到784 </code></pre><ul>
-<li><p><strong>预测、代价函数及优化器</strong></p>
-<pre><code># 预测
-y_pred = decoder_op  # 得出预测值
-y_true = X  # 输入值 即得出真实值
-
-# 定义代价函数和优化器
-cost = tf.reduce_mean(tf.pow(y_true - y_pred, 2))  # 最小二乘法 平方差取平均
-optimizer = tf.train.AdamOptimizer(learning_rate).minimize(cost)  
-# 优化器采用 AdamOptimizer 或者 RMSPropOptimizer</code></pre><ul>
-<li>通过神经网络得到的复原结果为预测值，输入为真实值x</li>
-<li>tf.reduce_mean()&nbsp;&nbsp;求平均值</li>
-<li>优化器使用的是TensorFlow提供的优化器，去最小化损失函数</li>
-</ul>
-</li>
-<li><p><strong>训练数据和评估模型</strong></p>
-<pre><code>with tf.Session() as sess:
-# tf.initialize_all_variables() no long valid from
-# 2017-03-02 if using tensorflow &gt;= 0.12
-# 检测当前TF版本
-if int((tf.__version__).split(&apos;.&apos;)[1]) &lt; 12 and int((tf.__version__).split(&apos;.&apos;)[0]) &lt; 1:
-    init = tf.initialize_all_variables()
-else:
-    init = tf.global_variables_initializer()
-sess.run(init)
-
-# 首先计算总批数，保证每次循环训练集中的每个样本都参与训练，不同于批量训练
-total_batch = int(mnist.train.num_examples / batch_size)  # 总批数
-for epoch in range(training_epochs):
-    for i in range(total_batch):
-        batch_xs, batch_ys = mnist.train.next_batch(batch_size)  # max(x) = 1, min(x) = 0
-        # Run optimization op (backprop) and cost op (to get loss value)
-        _, c = sess.run([optimizer, cost], feed_dict={X: batch_xs})
-    if epoch % display_step == 0:
-        print(&quot;Epoch:&quot;, &apos;%04d&apos; % (epoch + 1), &quot;cost=&quot;, &quot;{:.9f}&quot;.format(c))
-print(&quot;Optimization Finished!&quot;)</code></pre><ul>
-<li><p>首要要搞清楚一点，TensorFlow使用图 (graph) 来表示计算任务，在被称之为 会话 (Session) 的上下文 (context) 中执行图.</p>
-</li>
-<li><p>这个代码首先检查了TensorFlow的版本，因为不同版本初始化的代码有所改动</p>
-</li>
-<li><p>生成会话之后，所有tf.Variable实例都会立即通过调用各自初始化操作中的sess.run()函数进行初始化。</p>
-</li>
-<li><p><strong>total_batch：</strong>&nbsp;他把训练样本划分为了不同的批次，用&nbsp;样本总数&nbsp;/&nbsp;训练批次大小&nbsp;每个批次的数据只有batch_size=256个(这是最开始定义的超参数)，</p>
-</li>
-<li><p>使用双循环嵌套，第一个表示训练的总次数，第二个用来控制训练批次，每次只是用一个批次的数据</p>
-<p>这行代码：</p>
-<pre><code>batch_xs, batch_ys = mnist.train.next_batch(batch_size)  # max(x) = 1, min(x) = 0</code></pre></li>
-<li><p>mnist.train.next_batch()&nbsp;获取下一个批次的图片和标签，分别保存到batch_xs, batch_ys</p>
-<p>这行代码：</p>
-<pre><code>_, c = sess.run([optimizer, cost], feed_dict={X: batch_xs})</code></pre></li>
-<li><p>这里只使用了图片，而未使用标签，来对模型进行训练，因为optimizer在训练过程中不会产生输出，所以被舍弃，值保存了cost</p>
-</li>
-<li><p>最后通过循环，完成对模型的训练</p>
-</li>
-</ul>
-</li>
-<li><p><strong>对测试集应用训练网络</strong></p>
-<pre><code>encode_decode = sess.run(y_pred, feed_dict={X: mnist.test.images[:examples_to_show]})
-# 比较测试集原始图片和自动编码网络的重建结果
-f, a = plt.subplots(2, 10, figsize=(10, 2))
-for i in range(examples_to_show):
-    a[0][i].imshow(np.reshape(mnist.test.images[i], (28, 28)))  # 测试集
-    a[1][i].imshow(np.reshape(encode_decode[i], (28, 28)))  # 重建结果
-plt.show()</code></pre><p>  <strong>这时候我们就能够使用训练好的参数矩阵，也就是模型来做我们的试验了！！</strong></p>
-</li>
-</ul>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/AutoEncoder/">AutoEncoder</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
+import
+                
+            </p>
+            
+        </section>
     </article>
-
-
-
-
-
-
-   
     
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2019/12/23/CNNAutoEncoder/" title="卷积自编码器" itemprop="url">卷积自编码器</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Lightman" target="_blank" itemprop="author">Lightman</a>
-		
-  <p class="article-time">
-    <time datetime="2019-12-22T16:12:21.000Z" itemprop="datePublished"> Published 2019-12-23</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h2 id="1-简介"><a href="#1-简介" class="headerlink" title="1. 简介"></a>1. 简介</h2><ul>
-<li><strong>目的：</strong>卷积自编码器创建的目的就在于，利用卷积神经网络的卷积和池化操作，实现特征不变性提取（invariant feature）的无监督特征提取</li>
-<li><strong>作用：</strong>卷积自编码器可以用于图像的重构工作。例如，他们可以学习从图片中去除噪声，或者重构图片缺失的部分。<img src="C:%5CUsers%5CCaesar%5CDesktop%5C1.png" alt=""></li>
-<li><strong>原理：</strong>这里的原理和卷积差不多，不过这里使用了反卷积操作</li>
-</ul>
-<h2 id="2-代码"><a href="#2-代码" class="headerlink" title="2. 代码"></a>2. 代码</h2><ul>
-<li><p><strong>导入数据</strong></p>
-<pre><code>mnist = imput_data.read_data_sets(&apos;MNIST_Labels_Images&apos;,one_hot=&quot;True&quot;)
-trainimgs = mnist.train.images
-trainlabels = mnist.train.labels
-testimgs = mnist.test.images
-testlabels = mnist.test.labels
-ntrain = trainimgs.shape[0]
-ntest = trainimgs.shape[0]
-dim = trainimgs.shape[1]
-nout = trainlabels.shape[1]
-print(&quot;Packages loaded&quot;)</code></pre><p>  shape[0]是查看ndarray行数，shape[1]是查看列数，因为这个数据局一共有55000张图片，每个图片为28*28，所以shape[0]为55000，shape[1]为784</p>
-</li>
-<li><p><strong>占位符和各层参数</strong></p>
-<pre><code>n1 = 16
-n2 = 32
-n3 = 64
-ksize = 5
+    <article class="post">
 
-x = tf.placeholder(tf.float32, [None, dim])
-y = tf.placeholder(tf.float32, [None, dim])
-keepprob = tf.placeholder(tf.float32)</code></pre><p>  定义每层卷积核的数量，以及尺寸，x为带有噪声的输入数据的占位符，y为原始输入数据的占位符，因为要防止过拟合，所以使用了dropout优化，所以设置了keepprob占位符</p>
-</li>
-<li><p><strong>权重矩阵和偏置</strong></p>
-<pre><code>weights = {
-    &apos;ce1&apos;: tf.Variable(tf.random_normal([ksize, ksize, 1, n1], stddev=0.1)),
-    &apos;ce2&apos;: tf.Variable(tf.random_normal([ksize, ksize, n1, n2], stddev=0.1)),
-    &apos;ce3&apos;: tf.Variable(tf.random_normal([ksize, ksize, n2, n3], stddev=0.1)),
-    &apos;cd3&apos;: tf.Variable(tf.random_normal([ksize, ksize, n2, n3], stddev=0.1)),
-    &apos;cd2&apos;: tf.Variable(tf.random_normal([ksize, ksize, n1, n2], stddev=0.1)),
-    &apos;cd1&apos;: tf.Variable(tf.random_normal([ksize, ksize, 1, n1], stddev=0.1))
-}
+        <header class="post-header">
+            <div class="tag-tile">
+                
+                
+                <a data-pjax href='/tags/AutoEncoder/'>AutoEncoder</a>
+                
+                <a data-pjax href='/tags/CNN/'>CNN</a>
+                
+                
+                <span class="fa fa-bookmark" style="float:right;color:#f39c12"></span>
+            </div>
+            <h1 class="post-title"><a data-pjax href="/2019/12/23/CNNAutoEncoder/">卷积自编码器</a>
+            </h1>
 
-biases = {
-    &apos;be1&apos;: tf.Variable(tf.random_normal([n1], stddev=0.1)),
-    &apos;be2&apos;: tf.Variable(tf.random_normal([n2], stddev=0.1)),
-    &apos;be3&apos;: tf.Variable(tf.random_normal([n3], stddev=0.1)),
-    &apos;bd3&apos;: tf.Variable(tf.random_normal([n2], stddev=0.1)),
-    &apos;bd2&apos;: tf.Variable(tf.random_normal([n1], stddev=0.1)),
-    &apos;bd1&apos;: tf.Variable(tf.random_normal([1], stddev=0.1))</code></pre><ul>
-<li>‘ce1’:尺寸为5*5，通道为1，卷积核数量为n1，因为输入的数据通道为1，所以这里为1，而n1是第一层卷积层卷积核的数量，是由我们自己定义的</li>
-<li>‘ce2’:尺寸为5*5，因为上一层卷积层卷积核数量为n1，所以上一次的通道数就变成了n1，所以这里的通道数就为n1，第二层卷积层的卷积核数量为n2,</li>
-<li>‘ce3’:与前两个相同</li>
-<li><strong>注意：</strong>卷积操作tf.nn.conv2d中的filter(过滤器)参数它的格式为[filter_height, filter_width, in_channels, out_channels]的形式，而反卷积tf.nn.conv2d_transpose中的filter参数，是[filter_height, filter_width, out_channels，in_channels]的形式，注意in_channels和out_channels反过来了！因为两者互为反向，所以输入输出要调换位置</li>
-<li>由上可知’cd3’、’cd2’,’cd1’的定义</li>
-<li>偏置的定义要与每层的输出通道相同。</li>
-</ul>
-</li>
-<li><p><strong>定义神经网络</strong></p>
-<pre><code>def cae(_X, _W, _b, _keepprob):
-    _input_r = tf.reshape(_X, shape=[-1, 28, 28,1])
+            <div class="post-meta">
+                Post on<span class="fa fa-clock-o"></span>
+                <time datetime="2019-12-22T16:12:21.000Z"
+                      itemprop="datePublished">2019-12-23</time>
+            </div>
+        </header>
+        <section class="post-excerpt">
+            <p>
+                
+                1. 简介
+目的：卷积自编码器创建的目的就在于，利用卷积神经网络的卷积和池化操作，实现特征不变性提取（invariant feature）的无监督特征提取
+作用：卷积自编码器可以用于图像的重构工作。例如，他们可以学习从图片中去除噪声，或者重构图片缺失的部分。
+原理：这里的原理和卷积差不多，不过这里使用了反卷积操作
 
-    #Encoder
-    _ce1 = tf.nn.sigmoid(tf.add(tf.nn.conv2d(_input_r, _W[&apos;ce1&apos;], strides=[1, 2, 2, 1], padding=&apos;SAME&apos;), _b[&apos;be1&apos;]))
-    _ce1 = tf.nn.dropout(_ce1, _keepprob)
-
-    _ce2 = tf.nn.sigmoid(tf.add(tf.nn.conv2d(_ce1, _W[&apos;ce2&apos;], strides=[1, 2, 2, 1], padding=&apos;SAME&apos;), _b[&apos;be2&apos;]))
-    _ce2 = tf.nn.dropout(_ce2, _keepprob)
-
-    _ce3 = tf.nn.sigmoid(tf.add(tf.nn.conv2d(_ce2, _W[&apos;ce3&apos;], strides=[1, 2, 2, 1], padding=&apos;SAME&apos;), _b[&apos;be3&apos;]))
-    _ce3 = tf.nn.dropout(_ce3 , _keepprob)
-
-    #Decoder
-    _cd3 = tf.nn.sigmoid(tf.add(
-        tf.nn.conv2d_transpose(_ce3, _W[&apos;cd3&apos;], tf.stack([tf.shape(_X)[0], 7, 7,n2]),strides=[1, 2, 2, 1],
-                               padding=&apos;SAME&apos;), _b[&apos;bd3&apos;]))
-    _cd3 = tf.nn.dropout(_cd3, _keepprob)
-
-    _cd2 = tf.nn.sigmoid(tf.add(
-        tf.nn.conv2d_transpose(_cd3, _W[&apos;cd2&apos;], tf.stack([tf.shape(_X)[0], 14, 14, n1]), strides=[1, 2, 2, 1],
-                               padding=&apos;SAME&apos;), _b[&apos;bd2&apos;]))
-    _cd2 = tf.nn.dropout(_cd2, _keepprob)
-
-    _cd1 = tf.nn.sigmoid(tf.add(
-        tf.nn.conv2d_transpose(_cd2, _W[&apos;cd1&apos;], tf.stack([tf.shape(_X)[0], 28, 28, 1]), strides=[1, 2, 2, 1],
-                               padding=&apos;SAME&apos;), _b[&apos;bd3&apos;]))
-    _cd1 = tf.nn.dropout(_cd1, _keepprob)
-    _out = _cd1
-
-    return _out
-print(&quot;Network ready&quot;)
-pred = cae(x, weights, biases, keepprob)</code></pre><ul>
-<li><p>这个函数输入的数据为(x, weights, biases, keepprob)，所以</p>
-<pre><code>_input_r = tf.reshape(_X, shape=[-1, 28, 28,1])</code></pre><p>  这句话的意思就是改变输入数据的形状</p>
-</li>
-<li><p>编码层就是使用输入数据和每个编码层的权重矩阵进行卷积操作，激活函数为sigmoid函数，然后使用哪个dropout优化，防止过拟合</p>
-</li>
-<li><p>tf.nn.conv2d_transpose(value,filter,output_shape)</p>
-</li>
-<li><p>tf.stack()是一个矩阵拼接函数，这里定义了反卷积函数输出的矩阵的形状</p>
-</li>
-</ul>
-</li>
-<li><p><strong>损失和优化</strong></p>
-<pre><code>pred = cae(x, weights, biases, keepprob)
-cost = tf.reduce_sum(
-    tf.square(cae(x, weights, biases, keepprob))
-                + tf.reshape(y, shape=[-1, 28, 28, 1]))
-learning_rate = 0.001
-optm = tf.train.AdadeltaOptimizer(learning_rate).minimize(cost)
-init = tf.global_variables_initializer()
-print(&quot;Functions ready&quot;)
-saver = tf.train.Saver(max_to_keep=1)</code></pre><p>  定义损失函数，优化函数，定义初始化函数，定义保存函数，我将我运行的数据保存了，当再次运行时，可以选择直接运行已经跑完的module，也可以从头训练</p>
-</li>
-<li><p><strong>训练过程</strong></p>
-<pre><code>ef my_train():
-    with tf.Session() as sess:
-        sess.run(init)
-        mean_img = np.zeros((784))
-        batch_size = 128
-        n_epochs = 5
-
-        print(&quot;Strart training&quot;)
-        for epoch_i in range(n_epochs):
-            for batch_i in range(mnist.train.num_examples // batch_size):
-                batch_xs, _ = mnist.train.next_batch(batch_size)
-                trainbatch = np.array([img - mean_img for img in batch_xs]) #使batch_xs中的每个图像减去mean_img,并生成ndarray
-                # trainbatch = batch_xs
-                trainbatch_noisy = trainbatch + 0.3*np.random.randn(trainbatch.shape[0], 784)
-                sess.run(optm, feed_dict={x: trainbatch_noisy, y: trainbatch, keepprob: 0.7})
-
-            #saver.save(sess, &apos;./test&apos;, global_step= epoch_i+1)
-            print(&quot;[%02d/%02d] cost: %.4f&quot; % (epoch_i, n_epochs, sess.run(cost, feed_dict={x:trainbatch_noisy, y:trainbatch, keepprob: 1.})))</code></pre><p>  训练过程和其他的差不多，里边有一句我不是很理解：</p>
-<pre><code>trainbatch = np.array([img - mean_img for img in batch_xs]) #使batch_xs中的每个图像减去mean_img,并生成ndarray
-# trainbatch = batch_xs</code></pre><p>  它这里减去了一个自己定义的所有数据为0的ndarray，但是当我使用注释的那一句#trainbatch = batch_xs这一句，也就是使用它的原数据，没使用它的减掉ndarray这个操作，他们得到的cost是差不多的，我感觉没啥用- -</p>
-</li>
-<li><p><strong>结果展示</strong></p>
-<pre><code>if(epoch_i % 1) == 0:
-                n_examples = 5
-                test_xs, _ = mnist.test.next_batch(n_examples)
-                test_xs_noisy = test_xs + 0.3*np.random.randn(test_xs.shape[0], 784)
-                recon = sess.run(pred, feed_dict={x: test_xs_noisy, keepprob: 1.})
-                fig, axs = plt.subplots(2, n_examples,figsize=(15, 4))
-                for example_i in range(n_examples):
-                    axs[0][example_i].matshow(np.reshape(test_xs_noisy[example_i, :],(28, 28)), cmap=plt.get_cmap(&apos;gray&apos;))
-                    axs[1][example_i].matshow(np.reshape(np.reshape(recon[example_i, ...], (784,)) + mean_img, (28, 28)), cmap=plt.get_cmap(&apos;gray&apos;))
-                plt.show()</code></pre><p>  这部分属于plt库，这里总报错，我调<br>  了好久也没解决，所以在代码中被我注释掉了，但是这个并不影响模型的结果，只是不能看见结果，我把书上的结果放到这里看一哈<br><br>  <img src="C:%5CUsers%5CCaesar%5CDesktop%5Ccnn.png" alt=""></p>
-</li>
-</ul>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/AutoEncoder/">AutoEncoder</a><a href="/tags/CNN/">CNN</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
+2. 代码
+导入数据
+mnist = imput_data.read_data_sets(&apos;MNIST_Labe
+                
+            </p>
+            
+        </section>
     </article>
-
-
-
-
-
-
-   
     
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2019/12/23/CNN/" title="卷积神经网络" itemprop="url">卷积神经网络</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Lightman" target="_blank" itemprop="author">Lightman</a>
-		
-  <p class="article-time">
-    <time datetime="2019-12-22T16:12:21.000Z" itemprop="datePublished"> Published 2019-12-23</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h2 id="1-简介"><a href="#1-简介" class="headerlink" title="1. 简介"></a>1. 简介</h2><ul>
-<li><p><strong>卷积神经网络的一般结构：</strong>conv-&gt;pool-&gt;conv-&gt;pool-&gt;fc-&gt;fc-&gt;fc-&gt;softmax</p>
-<ul>
-<li>conv：卷积层</li>
-<li>pool：池化层</li>
-<li>fc：全连接层</li>
-<li>softmax：分类函数</li>
-</ul>
-</li>
-<li><p><strong>各层的作用：</strong></p>
-<ul>
-<li><strong>卷积层作用：</strong>可以使用卷积来提取自己想要的特征</li>
-<li><strong>池化层作用：</strong>对输入的特征图进行压缩，一方面使特征图变小，简化网络计算复杂度；一方面进行特征压缩，提取主要特征。主要分为两类<ul>
-<li>最大池化层：把每个区域的最大值输出</li>
-<li>平均池化层：把每个区域的平均值输出</li>
-</ul>
-</li>
-<li><strong>全连接层作用:</strong>连接所有特征，将输出值送给分类器</li>
-</ul>
-</li>
-</ul>
-<h2 id="2-代码"><a href="#2-代码" class="headerlink" title="2. 代码"></a>2. 代码</h2><ul>
-<li><p><strong>导入数据</strong></p>
-<pre><code>#导入input_data用于自动下载和安装MNIST数据集
-from tensorflow.examples.tutorials.mnist import input_data
-mnist = input_data.read_data_sets(&quot;MNIST_data/&quot;, one_hot=True)
+    <article class="post">
 
-#创建两个占位符，x为输入网络的图像，y_为输入网络的图像类别
-x = tf.placeholder(&quot;float&quot;, shape=[None, 784])
-y_ = tf.placeholder(&quot;float&quot;, shape=[None, 10])</code></pre><p>  导入MNIST数据集，并设置占位符来保存图片数据和预测信息</p>
-</li>
-<li><p><strong>初始化函数</strong></p>
-<pre><code>#权重初始化函数
-def weight_variable(shape):
-    #输出服从截尾正态分布的随机值
-    initial = tf.truncated_normal(shape, stddev=0.1)
-    return tf.Variable(initial)
+        <header class="post-header">
+            <div class="tag-tile">
+                
+                
+                <a data-pjax href='/tags/CNN/'>CNN</a>
+                
+                
+                <span class="fa fa-bookmark" style="float:right;color:#f39c12"></span>
+            </div>
+            <h1 class="post-title"><a data-pjax href="/2019/12/23/CNN/">卷积神经网络</a>
+            </h1>
 
-#偏置初始化函数
-def bias_variable(shape):
-    initial = tf.constant(0.1, shape=shape)
-    return tf.Variable(initial)</code></pre><p>  这里使用了函数来对权重和偏置进行初始化。</p>
-</li>
-<li><p><strong>卷积层和池化层函数</strong></p>
-<pre><code>#创建卷积op
-#x 是一个4维张量，shape为[batch,height,width,channels]
-#卷积核移动步长为1。填充类型为SAME,可以不丢弃任何像素点, VALID丢弃边缘像素点
-def conv2d(x, W):
-    return tf.nn.conv2d(x, W, strides=[1,1,1,1], padding=&quot;SAME&quot;)
+            <div class="post-meta">
+                Post on<span class="fa fa-clock-o"></span>
+                <time datetime="2019-12-22T16:12:21.000Z"
+                      itemprop="datePublished">2019-12-23</time>
+            </div>
+        </header>
+        <section class="post-excerpt">
+            <p>
+                
+                1. 简介
+卷积神经网络的一般结构：conv-&gt;pool-&gt;conv-&gt;pool-&gt;fc-&gt;fc-&gt;fc-&gt;softmax
 
-#创建池化op
-#采用最大池化，也就是取窗口中的最大值作为结果
-#x 是一个4维张量，shape为[batch,height,width,channels]
-#ksize表示pool窗口大小为2x2,也就是高2，宽2
-#strides，表示在height和width维度上的步长都为2
-def max_pool_2x2(x):
-    return tf.nn.max_pool(x, ksize=[1,2,2,1],
-                          strides=[1,2,2,1], padding=&quot;SAME&quot;)</code></pre><ul>
-<li>卷积层参数介绍：<ul>
-<li>x为输入的数据，shape为[batch,height,width,channels]，batch的数量，高和宽，以及它的通道数，这里使用的数据集的图片通道是1</li>
-<li>W为权重矩阵，这里的权重矩阵就是卷积核(过滤器)中的参数信息，举例：假如是5*5的过滤器，那么参数就有25个</li>
-<li>strides是步长，可以使一个实数也可以是一个4维向量，第一和第四默认为1（不知道具体意思，官方文档也没有介绍，好像是和通道有关），第二个为横向步长，第二个为纵向步长，这里表示在height和width维度上的步长都为1</li>
-<li>padding：有两个参数’same’和’valid’，’same’表示不舍弃边缘信息，’vaild’表示舍弃边缘信息.</li>
-</ul>
-</li>
-<li>池化层参数介绍：<ul>
-<li>x，strides和padding与卷积层的作用一样，这里strides表示在height和width维度上的步长都为2</li>
-<li>ksize表示的是池化层的大小，这里是高2，宽2</li>
-<li>这里使用的是最大池化层，也就是去窗口中的最大值作为结果</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p><strong>第一层卷积层</strong></p>
-<pre><code>#第1层，卷积层
-#初始化W为[5,5,1,6]的张量，表示卷积核大小为5*5，1表示图像通道数，6表示卷积核个数即输出6个特征图
-W_conv1 = weight_variable([5,5,1,6])
-#初始化b为[6],即输出大小
-b_conv1 = bias_variable([6])
-
-#把输入x(二维张量,shape为[batch, 784])变成4d的x_image，x_image的shape应该是[batch,28,28,1]
-#-1表示自动推测这个维度的size
-x_image = tf.reshape(x, [-1,28,28,1])
-
-#把x_image和权重进行卷积，加上偏置项，然后应用ReLU激活函数，最后进行max_pooling
-#h_pool1的输出即为第一层网络输出，shape为[batch,14,14,6]
-h_conv1 = tf.nn.relu(conv2d(x_image, W_conv1) + b_conv1)
-h_pool1 = max_pool_2x2(h_conv1)</code></pre><ul>
-<li>使用的卷积核(过滤器)是高宽5*5，通道1，一共有6个卷积核，偏置的数量要与卷积核数量相等，所以也是6</li>
-<li>因为要求输入的数据是[batch,height,width,channels]，而数据集的数据x是[batch, 784]，所以要reshape。-1表示自动推测这个维度的size，比如，x是一组图像的矩阵（BATCH_SIZE=100，大小为28×28），则执行x_image = tf.reshape(x, [-1, 28, 28，1])可以计算a=100×28×28/28/28/1=100。即image的维数为（100，28，28）。</li>
-<li>把x_image和权重进行卷积，加上偏置项，然后应用ReLU激活函数，最后进行max_pooling，形成第一层卷积层</li>
-<li>当池化层为2*2时，输出的图像高和宽会缩减一半，所以第一层网络输出，shape为[batch,14,14,6]，6是因为有6个卷积核，一个卷积核输出一个结果，最后6个结果叠到一起形成最终结果</li>
-</ul>
-</li>
-<li><p><strong>第二层卷积层</strong></p>
-<pre><code>#第2层，卷积层
-#卷积核大小依然是5*5，通道数为6，卷积核个数为16
-W_conv2 = weight_variable([5,5,6,16])
-b_conv2 = weight_variable([16])
-
-#h_pool2即为第二层网络输出，shape为[batch,7,7,16]
-h_conv2 = tf.nn.relu(conv2d(h_pool1, W_conv2) + b_conv2)
-h_pool2 = max_pool_2x2(h_conv2)</code></pre><ul>
-<li>卷积核5*5，通道数因为要与输入的数据的通道数相同，所以这里是6，卷积核数量为16</li>
-<li>其他的与第一层大致相同</li>
-</ul>
-</li>
-<li><p><strong>全连接层</strong></p>
-<pre><code>#第3层, 全连接层
-#这层是拥有120个神经元的全连接层
-#W的第1维size为7*7*16，7*7是h_pool2输出的size，16是第2层输出神经元个数
-W_fc1 = weight_variable([7*7*16, 120])
-b_fc1 = bias_variable([120])
-
-#计算前需要把第2层的输出reshape成[batch, 7*7*16]的张量
-h_pool2_flat = tf.reshape(h_pool2, [-1, 7*7*16])
-h_fc1 = tf.nn.relu(tf.matmul(h_pool2_flat, W_fc1) + b_fc1)
-
-#Dropout层
-#为了减少过拟合，在输出层前加入dropout
-keep_prob = tf.placeholder(&quot;float&quot;)
-h_fc1_drop = tf.nn.dropout(h_fc1, keep_prob)</code></pre><ul>
-<li>全连接层，是一个标准的神经网络层</li>
-<li>我们要想把上一个卷积层的输出reshape成一个1维列向量，7<em>7</em>16</li>
-<li>该层的神经元数是120个，所以权重矩阵为[7<em>7</em>16,120]</li>
-<li>为了防止过拟合加入了dropout层</li>
-</ul>
-</li>
-<li><p><strong>输出层(softmax层)</strong></p>
-<pre><code>#输出层
-#最后，添加一个softmax层
-#可以理解为另一个全连接层，只不过输出时使用softmax将网络输出值转换成了概率
-W_fc2 = weight_variable([120, 10])
-b_fc2 = bias_variable([10])
-
-y_conv = tf.nn.softmax(tf.matmul(h_fc1_drop, W_fc2) + b_fc2)</code></pre><ul>
-<li>因为手写数字有10个，所以最后的权重是[120,10]</li>
-</ul>
-</li>
-<li><p><strong>定义损失函数和梯度下降</strong></p>
-<pre><code>cross_entropy = -tf.reduce_sum(y_ * tf.log(y_conv))
-
-#train op, 使用ADAM优化器来做梯度下降。学习率为0.0001
-train_step = tf.train.AdamOptimizer(1e-4).minimize(cross_entropy)
-
-#评估模型，tf.argmax能给出某个tensor对象在某一维上数据最大值的索引。
-#因为标签是由0,1组成了one-hot vector，返回的索引就是数值为1的位置
-correct_predict = tf.equal(tf.argmax(y_conv, 1), tf.argmax(y_, 1))
-
-#计算正确预测项的比例，因为tf.equal返回的是布尔值，
-#使用tf.cast把布尔值转换成浮点数，然后用tf.reduce_mean求平均值
-accuracy = tf.reduce_mean(tf.cast(correct_predict, &quot;float&quot;))</code></pre><ul>
-<li>使用交叉熵来定义损失函数</li>
-<li>计算算法的准确率</li>
-</ul>
-</li>
-<li><p><strong>训练和预测</strong></p>
-<pre><code>saver = tf.train.Saver()
-
-#开始训练模型，循环20000次，每次随机从训练集中抓取50幅图像
-def cnn_train():
-    # 创建一个交互式Session
-    sess = tf.InteractiveSession()
-    sess.run(tf.initialize_all_variables())
-    for i in range(20000):
-        batch = mnist.train.next_batch(50)
-        if i%100 == 0:
-            #每100次输出一次日志
-            train_accuracy = accuracy.eval(feed_dict={
-                x:batch[0], y_:batch[1], keep_prob:1.0})
-            print (&quot;step %d, training accuracy %g&quot; % (i, train_accuracy))
-            saver.save(sess, &apos;./model&apos;)
-        train_step.run(feed_dict={x:batch[0], y_:batch[1], keep_prob:0.5})
-
-#预测
-def predict():
-    sess = tf.InteractiveSession()
-    sess.run(tf.global_variables_initializer())
-    saver = tf.train.Saver(tf.global_variables())
-    saver.restore(sess, &apos;model&apos;)
-    print( &quot;test accuracy %g&quot; % accuracy.eval(feed_dict={
-        x:mnist.test.images, y_:mnist.test.labels, keep_prob:1.0}))</code></pre><ul>
-<li>这里创建了一个Saver类来保存训练好的模型</li>
-<li>创建了一个开放的会话，InteractiveSession来保证在运行图的时候，可以随时插入一些计算图，Session要求必须在会话构建之前定义好全部的操作</li>
-</ul>
-</li>
-<li><p><strong>使用</strong></p>
-<pre><code>cnn_train()
-predict()</code></pre><ul>
-<li>由于我在运行时保存了模型，所以在运行时可以吧cnn_train()注释掉，直接运行，可以省略训练过程，如果想查看训练过程可以直接运行</li>
-</ul>
-</li>
-</ul>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习</a>
-</div>
+conv：卷积层
+pool：池化层
+fc：全连接层
+softmax：分类函数
 
 
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/CNN/">CNN</a>
-  </div>
+各层的作用：
 
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
+卷积层作用：可以使用卷积来提取自己想要的特征
+池化层作用：对输入的特征图进行压缩，一方面使特征图变小，简化网络计算复杂度；一方面进行特征压缩，提取主要特征。主要分为两类
+最大
+                
+            </p>
+            
+        </section>
     </article>
-
-
-
-
-
-
-   
     
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2019/12/23/EnglishPronunciation/" title="连读规则" itemprop="url">连读规则</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Lightman" target="_blank" itemprop="author">Lightman</a>
-		
-  <p class="article-time">
-    <time datetime="2019-12-22T16:12:21.000Z" itemprop="datePublished"> Published 2019-12-23</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h2 id="Pattern-1-Unvoiced-Consonant-gt-Voiced-Consonant"><a href="#Pattern-1-Unvoiced-Consonant-gt-Voiced-Consonant" class="headerlink" title="Pattern 1  Unvoiced Consonant -&gt; Voiced Consonant"></a>Pattern 1  Unvoiced Consonant -&gt; Voiced Consonant</h2><ol>
-<li><p>一个词中间的TT要发DD的音，如果TT前边是元音的话，还是TT</p>
-<p> 例如：</p>
-<ul>
-<li>DD的情况：butter(bu + der),better(be + der),mettle(me + dle)</li>
-<li>不变的情况：mattel,attest,attack</li>
-</ul>
-</li>
-<li><p>当前边是一个浊辅音节，或者是用es变复数的时候，s要发z的音，以ts结尾的单词都是清辅音</p>
-<ul>
-<li><p>浊辅音：有：[b] [d] [g] [v] [z] [D] [dr] [dz]，此外还有鼻音[m] [n] [ŋ] ，舌则音 [l] [r] 半元音 [w] [j][m] [n] [ŋ] ，这些也都属于浊辅音。</p>
-</li>
-<li><p>清辅音有：[p]、[t]、[k]、[f]、[θ]、[s]、[W]、[t∫]、[ts]、[tr]，[r]、[h]，合计12个。</p>
-<p>例如：</p>
-</li>
-<li><p>rides(rid + z),ladies(ladi + z),bugs(bug + z),angels(angel + z)</p>
-</li>
-<li><p>hats,hates</p>
-</li>
-</ul>
-</li>
-<li><p>在一个单词的中间，T要发成齿龈闪音（我感觉是d的音，慢慢体会一哈）</p>
-<p> 例如：</p>
-<ul>
-<li>gated(ga + ded),laterel(la + derel),notable(no + dable),water(wa + der)</li>
-</ul>
-</li>
-<li><p>of要发成ov或者uh</p>
-<p> 例如：</p>
-<ul>
-<li>game of thrones</li>
-<li>bottle of water</li>
-<li>cup of tea</li>
-</ul>
-</li>
-</ol>
-<h2 id="Pattern-2-Consonant-Vowel"><a href="#Pattern-2-Consonant-Vowel" class="headerlink" title="Pattern 2  Consonant + Vowel"></a>Pattern 2  Consonant + Vowel</h2><ol>
-<li><p>第一个单词以辅音结尾，第二个单词以元音结尾，一般会把两个发音融合起来</p>
-<p> 例如：</p>
-<ul>
-<li>Can I have this?  -&gt;  Ca nI have this?</li>
-<li>And I think you’re right.  -&gt;  An dI think you’ (r)ight</li>
-<li>How’s it going?  -&gt;  How (z)it going?</li>
-<li>Can a cat climb trees  -&gt;  Ca na cat climb tree(z)</li>
-</ul>
-</li>
-</ol>
-<h2 id="Pattern-3-Consonant-Consonant"><a href="#Pattern-3-Consonant-Consonant" class="headerlink" title="Pattern 3  Consonant + Consonant"></a>Pattern 3  Consonant + Consonant</h2><ol>
-<li><p>两个辅音相同的情况下，把音稍微的拖长（包括:S,L,F,M,N,D,J,W,H,V,Z）</p>
-<p> 例如：</p>
-<ul>
-<li>This Saturday</li>
-<li>until later</li>
-<li>half finished</li>
-</ul>
-</li>
-<li><p>当两个辅音相同的情况下，在两个音中间做非常短的一个停顿（包括:T,P,K,B,G,C）</p>
-<p> 例如：</p>
-<ul>
-<li>Wet towel</li>
-<li>Big game</li>
-<li>Gag gift</li>
-<li>Black cat</li>
-</ul>
-</li>
-</ol>
-<h2 id="Pattern-4-Linking-“the”-连读the"><a href="#Pattern-4-Linking-“the”-连读the" class="headerlink" title="Pattern 4 Linking “the”(连读the)"></a>Pattern 4 Linking “the”(连读the)</h2><ol>
-<li><p>the + consonant：如果后边的是辅音，the发的发音为the(倒过来的e)</p>
-<p> 例如：</p>
-<ul>
-<li>The dog,The cat,The woman</li>
-</ul>
-</li>
-<li><p>the + vowel(长音e除外)：可以发成the(倒过来的e)或者the(ee)</p>
-<p> 例如： the apple</p>
-</li>
-<li><p>the + 长音e：发the(ee)</p>
-<p> 例如：</p>
-<ul>
-<li>the election</li>
-<li>the evil</li>
-<li>the eagle</li>
-</ul>
-</li>
-</ol>
-<h2 id="Pattern-5-Vowel-Vowel"><a href="#Pattern-5-Vowel-Vowel" class="headerlink" title="Pattern 5 Vowel + Vowel"></a>Pattern 5 Vowel + Vowel</h2><ol>
-<li><p>当元音ee,ih,ay,aye,oi后面紧接的单词是元音的时候，为了因为过度更加自然加入y这个音</p>
-<p> 例如：</p>
-<ul>
-<li>He is happy = He(y)iz happy</li>
-<li>She ate a burger = She(y)ate a burger</li>
-<li>That boy is hungry = That bo(y)is hungry</li>
-<li>I ate lunch = I (y)ate lunch</li>
-</ul>
-</li>
-<li><p>Ooh,oh,ow + Vowel：中间插入w</p>
-<p> 例如：</p>
-<ul>
-<li>Go in = Go(w)in</li>
-<li>Do it = Do(w)it</li>
-<li>You are = You(w)are</li>
-<li>Go out =Go(w)out</li>
-<li>How are you = Ho(w)are you</li>
-</ul>
-</li>
-</ol>
-<h2 id="Pattern-6-Deletion"><a href="#Pattern-6-Deletion" class="headerlink" title="Pattern 6 Deletion"></a>Pattern 6 Deletion</h2><ol>
-<li><p>H-省略</p>
-<p> 例如：</p>
-<ul>
-<li>Did he get it = Di diy ge dit</li>
-<li>he -&gt; iy</li>
-<li>him -&gt; im</li>
-<li>him -&gt; iz</li>
-<li>her -&gt; (倒过来的e)r</li>
-</ul>
-</li>
-<li><p>无论什么时候，当t或者d在两个辅音之间时都要省略</p>
-<p> 例如：</p>
-<ul>
-<li>Old man = Ol man</li>
-<li>Gold ring = Gol ring</li>
-<li>Most famous = Mos’ famous</li>
-<li>Hand bag = Han’ bag</li>
-<li>Next day = nex day</li>
-</ul>
-</li>
-</ol>
-<h2 id="Pattern-7-Transformation-assimilation"><a href="#Pattern-7-Transformation-assimilation" class="headerlink" title="Pattern 7 Transformation(assimilation)"></a>Pattern 7 Transformation(assimilation)</h2><ol>
-<li><p>当t后边是j的时候，要发tj(炸 - -|音译来的)的音，</p>
-<p> 例如：</p>
-<ul>
-<li>what do you want = watchu want</li>
-</ul>
-</li>
-<li><p>当d后边是j的时候，要发dj(炸。。。)，貌似就是进行浊化</p>
-<p> 例如：</p>
-<ul>
-<li>would you = wouldju   </li>
-</ul>
-</li>
-</ol>
-<p><a href="https://www.bilibili.com/video/av5243511?from=search&seid=3192579220492672794" target="_blank" rel="noopener">原视频地址</a></p>
+    <article class="post">
 
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
+        <header class="post-header">
+            <div class="tag-tile">
+                
+                
+                <a data-pjax href='/tags/连读发音/'>连读发音</a>
+                
+                
+                <span class="fa fa-bookmark" style="float:right;color:#f39c12"></span>
+            </div>
+            <h1 class="post-title"><a data-pjax href="/2019/12/23/EnglishPronunciation/">连读规则</a>
+            </h1>
 
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/%E8%8B%B1%E8%AF%AD/">英语</a>
-</div>
+            <div class="post-meta">
+                Post on<span class="fa fa-clock-o"></span>
+                <time datetime="2019-12-22T16:12:21.000Z"
+                      itemprop="datePublished">2019-12-23</time>
+            </div>
+        </header>
+        <section class="post-excerpt">
+            <p>
+                
+                Pattern 1  Unvoiced Consonant -&gt; Voiced Consonant
+一个词中间的TT要发DD的音，如果TT前边是元音的话，还是TT
+ 例如：
+
+DD的情况：butter(bu + der),better(be + der),mettle(me + dle)
+不变的情况：mattel,attest,attack
 
 
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/连读发音/">连读发音</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
+当前边是一个浊辅音节，或者是用es变复数的时候，s要发z的音，以ts结尾的单词都是清辅
+                
+            </p>
+            
+        </section>
     </article>
-
-
-
-
-
-
-   
     
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2019/12/23/GAN/" title="GAN网络代码" itemprop="url">GAN网络代码</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Lightman" target="_blank" itemprop="author">Lightman</a>
-		
-  <p class="article-time">
-    <time datetime="2019-12-22T16:12:21.000Z" itemprop="datePublished"> Published 2019-12-23</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <ol>
-<li><p>导入头文件</p>
-<pre><code>import tensorflow as tf
+    <article class="post">
+
+        <header class="post-header">
+            <div class="tag-tile">
+                
+                
+                <a data-pjax href='/tags/GAN/'>GAN</a>
+                
+                
+                <span class="fa fa-bookmark" style="float:right;color:#f39c12"></span>
+            </div>
+            <h1 class="post-title"><a data-pjax href="/2019/12/23/GAN/">GAN网络代码</a>
+            </h1>
+
+            <div class="post-meta">
+                Post on<span class="fa fa-clock-o"></span>
+                <time datetime="2019-12-22T16:12:21.000Z"
+                      itemprop="datePublished">2019-12-23</time>
+            </div>
+        </header>
+        <section class="post-excerpt">
+            <p>
+                
+                
+导入头文件
+import tensorflow as tf
 from tensorflow.examples.tutorials.mnist import input_data
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.gridspec as gridspec
-import os</code></pre></li>
-<li><p>该函数将给出权重初始化的方法</p>
-<pre><code>def variable_init(size):
-    in_dim = size[0]
-    #计算随机生成变量所服从的正态分布标准差
-    w_stddev = 1. / tf.sqrt(in_dim / 2.)
-    return tf.random_normal(shape=size, stddev=w_stddev)</code></pre></li>
-<li><p>定义一个可以生成m*n阶随机矩阵的函数，该矩阵的元素服从均匀分布，随机生成的z就为生成器的输入</p>
-<pre><code>def sample_Z(m, n):
-    return np.random.uniform(-1., 1., size=[m, n])</code></pre></li>
-<li><p>该函数用于输出生成图片</p>
-<pre><code>def plot(samples):
-    fig = plt.figure(figsize=(4, 4))
-    gs = gridspec.GridSpec(4, 4)
-    gs.update(wspace=0.05, hspace=0.05)
-
-    for i, sample in enumerate(samples):
-        ax = plt.subplot(gs[i])
-        plt.axis(&apos;off&apos;)
-        ax.set_xticklabels([])
-        ax.set_yticklabels([])
-        ax.set_aspect(&apos;equal&apos;)
-        plt.imshow(sample.reshape(28, 28), cmap=&apos;Greys_r&apos;)
-
-    return fig</code></pre></li>
-<li><p>定义判别器的权重</p>
-<pre><code>#定义输入矩阵的占位符，输入层单元为784，None代表批量大小的占位，X代表输入的真实图片。占位符的数值类型为32位浮点型
-X = tf.placeholder(tf.float32, shape=[None, 784])
-
-#定义判别器的权重矩阵和偏置项向量，由此可知判别网络为三层全连接网络
-D_W1 = tf.Variable(variable_init([784, 128]))
-D_b1 = tf.Variable(tf.zeros(shape=[128]))
-
-D_W2 = tf.Variable(variable_init([128, 1]))
-D_b2 = tf.Variable(tf.zeros(shape=[1]))
-
-theta_D = [D_W1, D_W2, D_b1, D_b2]</code></pre></li>
-<li><p>定义生成器的权重</p>
-<pre><code>#定义生成器的输入噪声为100维度的向量组，None根据批量大小确定
-Z = tf.placeholder(tf.float32, shape=[None, 100])
-
-#定义生成器的权重与偏置项。输入层为100个神经元且接受随机噪声，
-#输出层为784个神经元，并输出手写字体图片。生成网络根据原论文为三层全连接网络
-G_W1 = tf.Variable(variable_init([100, 128]))
-G_b1 = tf.Variable(tf.zeros(shape=[128]))
-
-G_W2 = tf.Variable(variable_init([128, 784]))
-G_b2 = tf.Variable(tf.zeros(shape=[784]))
-
-theta_G = [G_W1, G_W2, G_b1, G_b2]</code></pre></li>
-<li><p>定义生成器</p>
-<pre><code>def generator(z):
-    # 第一层先计算 y=z*G_W1+G-b1,然后投入激活函数计算G_h1=ReLU（y）,G_h1 为第二次层神经网络的输出激活值
-    G_h1 = tf.nn.relu(tf.matmul(z, G_W1) + G_b1)
-
-    # 以下两个语句计算第二层传播到第三层的激活结果，第三层的激活结果是含有784个元素的向量，该向量转化28×28就可以表示图像
-    G_log_prob = tf.matmul(G_h1, G_W2) + G_b2
-    G_prob = tf.nn.sigmoid(G_log_prob)
-    return G_prob</code></pre></li>
-<li><p>定义判别器</p>
-<pre><code>def discriminator(x):
-    # 计算D_h1=ReLU（x*D_W1+D_b1）,该层的输入为含784个元素的向量
-    D_h1 = tf.nn.relu(tf.matmul(x, D_W1) + D_b1)
-
-    # 计算第三层的输出结果。因为使用的是Sigmoid函数，则该输出结果是一个取值为[0,1]间的标量（见上述权重定义）
-    # 即判别输入的图像到底是真（=1）还是假（=0）
-    D_logit = tf.matmul(D_h1, D_W2) + D_b2
-    D_prob = tf.nn.sigmoid(D_logit)
-
-    # 返回判别为真的概率和第三层的输入值，输出D_logit是为了将其输入tf.nn.sigmoid_cross_entropy_with_logits()以构建损失函数
-    return D_prob, D_logit</code></pre></li>
-<li><p>损失函数</p>
-<pre><code>#输入随机噪声z而输出生成样本
-G_sample = generator(Z)
-
-#分别输入真实图片和生成的图片，并投入判别器以判断真伪
-D_real, D_logit_real = discriminator(X)
-D_fake, D_logit_fake = discriminator(G_sample)
-
-# 这里使用交叉熵作为判别器和生成器的损失函数，因为sigmoid_cross_entropy_with_logits内部会对预测输入执行Sigmoid函数，
-#所以这里取判别器最后一层未投入激活函数的值，即D_h1*D_W2+D_b2。
-#tf.ones_like(D_logit_real)创建维度和D_logit_real相等的全是1的标注，真实图片。
-D_loss_real = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(logits=D_logit_real, labels=tf.ones_like(D_logit_real)))
-D_loss_fake = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(logits=D_logit_fake, labels=tf.zeros_like(D_logit_fake)))
-
-#损失函数为两部分，即E[log(D(x))]+E[log(1-D(G(z)))]，将真的判别为假和将假的判别为真
-D_loss = D_loss_real + D_loss_fake
-
-#同样使用交叉熵构建生成器损失函数
-G_loss = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(logits=D_logit_fake, labels=tf.ones_like(D_logit_fake)))</code></pre></li>
-<li><p>优化</p>
-<pre><code>#定义判别器和生成器的优化方法为Adam算法，关键字var_list表明最小化损失函数所更新的权重矩阵
-D_solver = tf.train.AdamOptimizer().minimize(D_loss, var_list=theta_D)
-G_solver = tf.train.AdamOptimizer().minimize(G_loss, var_list=theta_G)</code></pre></li>
-<li><p>设置参数和读取数据</p>
-<pre><code>#选择训练的批量大小和随机生成噪声的维度
-mb_size = 128
-Z_dim = 100
-
-#读取数据集MNIST，并放在当前目录data文件夹下MNIST文件夹中，如果该地址没有数据，则下载数据至该文件夹
-mnist = input_data.read_data_sets(&quot;./MNIST_data/&quot;, one_hot=True)</code></pre></li>
-<li><p>训练过程及结果显示</p>
-<pre><code># 打开一个会话运行计算图
-sess = tf.Session()
-
-# 初始化所有定义的变量
-sess.run(tf.global_variables_initializer())
-
-# 如果当前目录下不存在out文件夹，则创建该文件夹
-if not os.path.exists(&apos;out/&apos;):
-    os.makedirs(&apos;out/&apos;)
-
-# 初始化，并开始迭代训练，2w次
-i = 0
-for it in range(20000):
-
-    # 每2000次输出一张生成器生成的图片
-    if it % 2000 == 0:
-        samples = sess.run(G_sample, feed_dict={Z: sample_Z(16, Z_dim)})
-
-        fig = plot(samples)
-        plt.savefig(&apos;out/{}.png&apos;.format(str(i).zfill(3)), bbox_inches=&apos;tight&apos;)
-        i += 1
-        plt.close(fig)
-
-    # next_batch抽取下一个批量的图片，该方法返回一个矩阵，即shape=[mb_size，784]，每一行是一张图片，共批量大小行
-    X_mb, _ = mnist.train.next_batch(mb_size)
-
-    # 投入数据并根据优化方法迭代一次，计算损失后返回损失值
-    _, D_loss_curr = sess.run([D_solver, D_loss], feed_dict={X: X_mb, Z: sample_Z(mb_size, Z_dim)})
-    _, G_loss_curr = sess.run([G_solver, G_loss], feed_dict={Z: sample_Z(mb_size, Z_dim)})
-
-    # 每迭代2000次输出迭代数、生成器损失和判别器损失
-    if it % 2000 == 0:
-        print(&apos;Iter: {}&apos;.format(it))
-        print(&apos;D loss: {:.4}&apos;.format(D_loss_curr))
-        print(&apos;G_loss: {:.4}&apos;.format(G_loss_curr))
-        print()</code></pre></li>
-</ol>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/GAN/">GAN</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
+import os
+该函数将给出权重初始化的方法
+def variable_in
+                
+            </p>
+            
+        </section>
     </article>
-
-
-
-
-
-
-   
     
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2019/12/23/Git/" title="Git教程" itemprop="url">Git教程</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Lightman" target="_blank" itemprop="author">Lightman</a>
-		
-  <p class="article-time">
-    <time datetime="2019-12-22T16:12:21.000Z" itemprop="datePublished"> Published 2019-12-23</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>学习<a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="noopener">廖雪峰Git教程</a>笔记</p>
-<h2 id="1-创建版本库"><a href="#1-创建版本库" class="headerlink" title="1. 创建版本库"></a>1. 创建版本库</h2><ul>
-<li><p><strong>git init</strong><br>进入文件夹之后再输入指令，将文件创建为一个git管理的文件夹</p>
-<pre><code>cd f
+    <article class="post">
+
+        <header class="post-header">
+            <div class="tag-tile">
+                
+                
+                <a data-pjax href='/tags/协作开发软件/'>协作开发软件</a>
+                
+                
+                <span class="fa fa-bookmark" style="float:right;color:#f39c12"></span>
+            </div>
+            <h1 class="post-title"><a data-pjax href="/2019/12/23/Git/">Git教程</a>
+            </h1>
+
+            <div class="post-meta">
+                Post on<span class="fa fa-clock-o"></span>
+                <time datetime="2019-12-22T16:12:21.000Z"
+                      itemprop="datePublished">2019-12-23</time>
+            </div>
+        </header>
+        <section class="post-excerpt">
+            <p>
+                
+                学习廖雪峰Git教程笔记
+1. 创建版本库
+git init进入文件夹之后再输入指令，将文件创建为一个git管理的文件夹
+cd f
 cd learnGit
 git init
-显示：Initialized empty Git repository</code></pre></li>
-<li><p><strong>git add</strong><br>添加一个文件 readme.txt</p>
-<pre><code>git add readme.txt </code></pre></li>
-<li><p><strong>git commit</strong>  </p>
-<pre><code>git commit -m &quot;wrote a readme file&quot;
-&quot;-m&quot;是对本次操作的注释</code></pre></li>
-<li><p><strong>git push</strong></p>
-<pre><code>git push
-执行完add和commit之后，push到远程仓库当中</code></pre></li>
-</ul>
-<h2 id="2-版本管理"><a href="#2-版本管理" class="headerlink" title="2. 版本管理"></a>2. 版本管理</h2><ul>
-<li><p><strong>git status</strong><br>查看版本库的当前状态，是否有文件进行改动</p>
-<pre><code>$ git status
-# On branch master
-# Changes not staged for commit:
-#   (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
-#   (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)
-#
-#    modified:   readme.txt
-#
-no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)</code></pre></li>
-<li><p><strong>git diff</strong><br>显示文件修改的具体内容</p>
-<pre><code>$ git diff readme.txt 
-diff --git a/readme.txt b/readme.txt
-index 46d49bf..9247db6 100644
---- a/readme.txt
-+++ b/readme.txt
-@@ -1,2 +1,2 @@
--Git is a version control system.
-+Git is a distributed version control system.
- Git is free software.</code></pre></li>
-<li><p><strong>git log</strong><br>显示最近的提交日志，提交的详细信息</p>
-<pre><code>$ git log
-commit 3628164fb26d48395383f8f31179f24e0882e1e0
-Author: Michael Liao &lt;askxuefeng@gmail.com&gt;
-Date:   Tue Aug 20 15:11:49 2013 +0800
-
-    append GPL
-
-commit ea34578d5496d7dd233c827ed32a8cd576c5ee85
-Author: Michael Liao &lt;askxuefeng@gmail.com&gt;
-Date:   Tue Aug 20 14:53:12 2013 +0800
-
-    add distributed
-
-commit cb926e7ea50ad11b8f9e909c05226233bf755030
-Author: Michael Liao &lt;askxuefeng@gmail.com&gt;
-Date:   Mon Aug 19 17:51:55 2013 +0800
-
-    wrote a readme file</code></pre></li>
-<li><p><strong>git reset –hard</strong><br>可以通过git log获得版本信息，HEAD表示当前版本，HEAD^表示上一个版本，HEAD^^表示上上版本，HEAD~100表示前100个版本，也可以在hard后边直接加上版本号，返回对应版本，但是返回之后，git log中返回版本的后边的所有记录会消失，例如：返回到 add distributed版本，那么append GPL就会消失。</p>
-<pre><code>当前处于 append GPL版本
-
-$ git reset --hard HEAD^
-HEAD is now at ea34578 add distributed
-
-对应的git log
-$ git log
-commit ea34578d5496d7dd233c827ed32a8cd576c5ee85
-Author: Michael Liao &lt;askxuefeng@gmail.com&gt;
-Date:   Tue Aug 20 14:53:12 2013 +0800
-
-    add distributed
-
-commit cb926e7ea50ad11b8f9e909c05226233bf755030
-Author: Michael Liao &lt;askxuefeng@gmail.com&gt;
-Date:   Mon Aug 19 17:51:55 2013 +0800
-
-    wrote a readme file
-
-即使后边在log中消失，也可以使用版本号复原，它只是把指针移到了distributed版本
-，但是并没有删除，只是看不到了，所以通过版本号还是可以把指针移回去
-$ git reset --hard 3628164
-HEAD is now at 3628164 append GPL</code></pre></li>
-<li><p><strong>git reflog</strong><br>此命令是用来记录每一次命令，即使退回到某版本，也可以找到后边的版本号，可以确定回到未来哪个版本</p>
-<pre><code>$ git reflog
-ea34578 HEAD@{0}: reset: moving to HEAD^
-3628164 HEAD@{1}: commit: append GPL
-ea34578 HEAD@{2}: commit: add distributed
-cb926e7 HEAD@{3}: commit (initial): wrote a readme file</code></pre></li>
-</ul>
-<h2 id="3-暂缓区"><a href="#3-暂缓区" class="headerlink" title="3. 暂缓区"></a>3. 暂缓区</h2><p>git add之后是把在工作区修改和新增的文件加入到暂存区，git commit是把暂存区的文件添加到版本库当中，接下来考虑一种情况：</p>
-<pre><code>第一次修改 -&gt; git add -&gt; 第二次修改 -&gt; git commit</code></pre><p>那么这次commit的内容为第一次修改的内容，因为第一次修改通过git add加入到了暂存区当中，而第二次修改没有，而commit只是把暂存区中的内容加入到版本库中，所以这次的内容为第一次修改的内容，如果修改成为下列顺序则没有问题，因为相当于合并两次添加</p>
-<pre><code>第一次修改 -&gt; git add -&gt; 第二次修改 -&gt; git add -&gt; git commit</code></pre><h2 id="4-撤回修改"><a href="#4-撤回修改" class="headerlink" title="4. 撤回修改"></a>4. 撤回修改</h2><ul>
-<li><p><strong>git checkout – file</strong><br>如果还没有加入到缓存区的时候用，可以通过git status来查看对应指令</p>
-<pre><code>$ git checkout -- readme.txt</code></pre><p>命令git checkout – readme.txt意思就是，把readme.txt文件在工作区的修改全部撤销，这里有两种情况：<br>一种是readme.txt自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；<br>一种是readme.txt已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态。<br>总之，就是让这个文件回到最近一次git commit或git add时的状态。</p>
-</li>
-<li><p><strong>git reset HEAD file</strong><br>加入到缓存区后想要撤销的时候用，可以通过git satus来查看对应的指令</p>
-<pre><code>$ git reset HEAD readme.txt
-Unstaged changes after reset:
-M       readme.txt</code></pre></li>
-<li><p><em>如果加入到版本库中想要撤回只需返回上一个版本即可，对应命令去上边找*</em></p>
-</li>
-<li><p><em>如果已经加入到远程库当中，那就GG*</em></p>
-</li>
-</ul>
-<h2 id="5-删除文件"><a href="#5-删除文件" class="headerlink" title="5. 删除文件"></a>5. 删除文件</h2><ul>
-<li><strong>rm file</strong>  <pre><code>$ rm test.txt</code></pre>删除之后有两种情况</li>
-</ul>
-<ol>
-<li><p>确实要删除此文件，那么就问git rm file删掉，然后commit</p>
-<pre><code>$ git rm test.txt
-rm &apos;test.txt&apos;
-$ git commit -m &quot;remove test.txt&quot;
-[master d17efd8] remove test.txt
- 1 file changed, 1 deletion(-)
- delete mode 100644 test.txt</code></pre></li>
-<li><p>删错了，那么撤回，和上节一样git checkout – file</p>
-<pre><code>$ git checkout -- test.txt</code></pre></li>
-</ol>
-<p><strong><em>注意：</em></strong>命令git rm用于删除一个文件。如果一个文件已经被提交到版本库，那么你永远不用担心误删，但是要小心，你只能恢复文件到最新版本，你会丢失最近一次提交后你修改的内容。</p>
-<h2 id="6-远程仓库"><a href="#6-远程仓库" class="headerlink" title="6. 远程仓库"></a>6. 远程仓库</h2><ol>
-<li><p>注册<a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>账号</p>
-</li>
-<li><p>如果在主目录下没有.ssh文件夹，则用Git Bash创建，创建过程中一路回车即可，不需设密码，当然如果你想也可以，id_rsa是私钥，不能泄露，id_rsa.pub是公钥，用来添加到GitHub当中，可以放心使用，如果到其他地方办公，只需把办公地的公钥添加到GitHub中即可</p>
-<pre><code>$ ssh-keygen -t rsa -C &quot;youremail@example.com&quot;</code></pre></li>
-<li><p>登录后，打开setting，找到Add SSH，填上任意Title，在Key文本框里粘贴id_rsa.pub文件的内容</p>
-</li>
-<li><p>本地库和远程库建立连接，现在GitHub中建立一个新的repository</p>
-</li>
-<li><p>根据提示将本地库的内容添加到远程库中</p>
-<pre><code>$ git remote add origin git@github.com:michaelliao/learngit.git
-请千万注意，把上面的michaelliao替换成你自己的GitHub账户名</code></pre></li>
-</ol>
-<p><strong>关联后，使用如下命令第一次推送master分支的所有内容，由于远程库是空的，我们第一次推送master分支时，加上了-u参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令。推送成功后，可以立刻在GitHub页面中看到远程库的内容已经和本地一模一样</strong></p>
-<pre><code>git push -u origin master</code></pre><p>此后，每次本地提交后，只要有必要，就可以使用一下命令推送最新修改</p>
-<pre><code>git push origin master</code></pre><ol start="6">
-<li><p><strong>git clone</strong>  </p>
-<pre><code>$ git clone git@github.com:michaelliao/gitskills.git
-Cloning into &apos;gitskills&apos;...
-remote: Counting objects: 3, done.
-remote: Total 3 (delta 0), reused 0 (delta 0)
-Receiving objects: 100% (3/3), done.</code></pre><p>你也许还注意到，GitHub给出的地址不止一个，还可以用<a href="https://github.com/michaelliao/gitskills.git这样的地址。实际上，Git支持多种协议，默认的git://使用ssh，但也可以使用https等其他协议。使用https除了速度慢以外，还有个最大的麻烦是每次推送都必须输入口令，但是在某些只开放http端口的公司内部就无法使用ssh协议而只能用https。" target="_blank" rel="noopener">https://github.com/michaelliao/gitskills.git这样的地址。实际上，Git支持多种协议，默认的git://使用ssh，但也可以使用https等其他协议。使用https除了速度慢以外，还有个最大的麻烦是每次推送都必须输入口令，但是在某些只开放http端口的公司内部就无法使用ssh协议而只能用https。</a><br>&nbsp;</p>
-</li>
-<li><p>要克隆一个仓库，首先必须知道仓库的地址，然后使用git clone命令克隆。</p>
-</li>
-<li><p>Git支持多种协议，包括https，但通过ssh支持的原生git协议速度最快。</p>
-</li>
-</ol>
-<h2 id="7-创建分支"><a href="#7-创建分支" class="headerlink" title="7. 创建分支"></a>7. 创建分支</h2><ul>
-<li><p><strong>git checkout -b dev</strong><br>这个指令为创建一个名为dev的分支，并切换到dev分支，相当于<br>git branch dev,git checkout dev两个合二为一</p>
-</li>
-<li><p><strong>git branch</strong><br>查看当前所有分支，*为当前使用的分支</p>
-</li>
-<li><p><strong>git merge</strong><br>合并指定分支到当前分支，默认使用Fast forword模式例：</p>
-<pre><code>切换到master分支，输入：
-$ git merge dev
-就是把dev合并到master分支上</code></pre></li>
-<li><p><strong>git branch -d dev</strong><br>删除指定分支</p>
-</li>
-<li><p><strong>解决冲突</strong><br>要去本地库中手动解决冲突，然后再进行合并，用git log –graph命令可以看到分支合并图。</p>
-</li>
-<li><p><strong>其他合并模式</strong><br>通常，合并分支时，如果可能，Git会用Fast forward模式，但这种模式下，删除分支后，会丢掉分支信息。<br>如果要强制禁用Fast forward模式，Git就会在merge时生成一个新的commit，这样，从分支历史上就可以看出分支信息。</p>
-<pre><code>$ git merge --no-ff -m &quot;merge with no-ff&quot; dev
-Merge made by the &apos;recursive&apos; strategy.
-readme.txt |    1 +
-1 file changed, 1 insertion(+)</code></pre><p>因为本次合并要创建一个新的commit，所以加上-m参数，把commit描述写进去。<br>合并后，我们用git log看看分支历史：<br>$ git log –graph –pretty=oneline –abbrev-commit</p>
-<pre><code>+   7825a50 merge with no-ff
-|\
-| * 6224937 add merge
-|/
-+   59bc1cb conflict fixed
-...</code></pre></li>
-<li><p><strong>BUG分支</strong><br>软件开发中，bug就像家常便饭一样。有了bug就需要修复，在Git中，由于分支是如此的强大，所以，每个bug都可以通过一个新的临时分支来修复，修复后，合并分支，然后将临时分支删除。<br>当你接到一个修复一个代号101的bug的任务时，很自然地，你想创建一个分支issue-101来修复它，但是当前正在dev上进行的工作还没有提交，利用</p>
-<pre><code>$ git stash
-Saved working directory and index state WIP on dev: 6224937 add merge
-HEAD is now at 6224937 add merge</code></pre><p>现在，用git status查看工作区，就是干净的（除非有没有被Git管理的文件），因此可以放心地创建分支来修复bug。<br>工作区是干净的，刚才的工作现场存到哪去了？用git stash list命令看看：</p>
-<pre><code>$ git stash list
-stash@{0}: WIP on dev: 6224937 add merge</code></pre><p>一是用git stash apply恢复，但是恢复后，stash内容并不删除，你需要用git stash drop来删除；<br>另一种方式是用git stash pop，恢复的同时把stash内容也删了</p>
-</li>
-<li><p><strong>多人协作</strong><br>当你从远程仓库克隆时，实际上Git自动把本地的master分支和远程的master分支对应起来了，并且，远程仓库的默认名称是origin。<br>要查看远程库的信息，用git remote：</p>
-<pre><code>$ git remote
-origin</code></pre><p>或者，用git remote -v显示更详细的信息：</p>
-<pre><code>$ git remote -v
-origin  git@github.com:michaelliao/learngit.git (fetch)
-origin  git@github.com:michaelliao/learngit.git (push)</code></pre><p>上面显示了可以抓取和推送的origin的地址。如果没有推送权限，就看不到push的地址。</p>
-</li>
-</ul>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/%E5%B8%B8%E7%94%A8%E6%8A%80%E6%9C%AF/">常用技术</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/协作开发软件/">协作开发软件</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
+显示：Initialized empty Git repository
+git add添加一个文件 readme.txt
+git add readme.txt 
+git commit  
+git commit -m &quot;wrote a readme file
+                
+            </p>
+            
+        </section>
     </article>
-
-
-
-
-
-
-
-  <nav id="page-nav" class="clearfix">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next&lt;span&gt;&lt;&#x2F;span&gt;</a>
-  </nav>
-
-</div>
-      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
-
-<div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
-<aside class="clearfix">
-
-  
-
-
-  
-<div class="categorieslist">
-	<p class="asidetitle">Categories</p>
-		<ul>
-		
-		  
-			<li><a href="/categories/前端技术/" title="前端技术">前端技术<sup>3</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/后台技术/" title="后台技术">后台技术<sup>1</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/常用技术/" title="常用技术">常用技术<sup>1</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/强化学习/" title="强化学习">强化学习<sup>1</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/深度学习/" title="深度学习">深度学习<sup>7</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/算法/" title="算法">算法<sup>1</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/英语/" title="英语">英语<sup>3</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/读书笔记/" title="读书笔记">读书笔记<sup>1</sup></a></li>
-		  
-		
-		</ul>
-</div>
-
-
-  
-<div class="tagslist">
-	<p class="asidetitle">Tags</p>
-		<ul class="clearfix">
-		
-			
-				<li><a href="/tags/AutoEncoder/" title="AutoEncoder">AutoEncoder<sup>3</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/CNN/" title="CNN">CNN<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/连读发音/" title="连读发音">连读发音<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/GAN/" title="GAN">GAN<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/协作开发软件/" title="协作开发软件">协作开发软件<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/Flex/" title="Flex">Flex<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/JavaScript/" title="JavaScript">JavaScript<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/LSTM/" title="LSTM">LSTM<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/Ted/" title="Ted">Ted<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/Typescript/" title="Typescript">Typescript<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/Q网络/" title="Q网络">Q网络<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/GCN/" title="GCN">GCN<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/电影台词/" title="电影台词">电影台词<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/沉默的大多数/" title="沉默的大多数">沉默的大多数<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/算法/" title="算法">算法<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/Python/" title="Python">Python<sup>1</sup></a></li>
-			
-		
-		</ul>
-</div>
-
-
-  <div class="linkslist">
-  <p class="asidetitle">Links</p>
-    <ul>
+    
+    <nav class="pagination" role="pagination">
         
-          <li>
-            
-            	<a href="https://coderq.com" target="_blank" title="一个面向程序员交流分享的新一代社区">码农圈</a>
-            
-          </li>
+        <span class="page-number">Page 1 of 2</span>
         
-          <li>
-            
-            	<a href="http://wuchong.me" target="_blank" title="Jark&#39;s Blog">Jark&#39;s Blog</a>
-            
-          </li>
+        <a data-pjax class="older-posts" href="/page/2/">Older Posts →</a>
         
-    </ul>
-</div>
+    </nav>
+</main>
+
 
   
-
-
-  <div class="rsspart">
-	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
-</div>
-
-  <div class="weiboshow">
-  <p class="asidetitle">Weibo</p>
-    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=&verifier=b3593ceb&dpc=1"></iframe>
-</div>
-
-
-</aside>
-</div>
+<footer class="site-footer">
+    
+    <div class="inner">
+        <section class="copyright"><a href="/"></a> &copy; Lightman's blog 2014</section>
+        <section class="poweredby">Published with <a target="_blank" href="http://hexo.io/">Hexo   </a> and Theme by <a target="_blank" href="https://github.com/yuche/hexo-theme-kael">Kael</a></section>
     </div>
-    <footer><div id="footer" >
-	
-	<div class="line">
-		<span></span>
-		<div class="author"></div>
-	</div>
-	
-	
-	<section class="info">
-		<p> Hello ,I&#39;m Larry Page in Google. <br/>
-			This is my blog,believe it or not.</p>
-	</section>
-	 
-	<div class="social-font" class="clearfix">
-		
-		<a href="http://weibo.com/2176287895" target="_blank" class="icon-weibo" title="微博"></a>
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-	</div>
-			
-		
-
-		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2020 
-		
-		<a href="/about" target="_blank" title="Lightman">Lightman</a>
-		
-		
-		</p>
-</div>
 </footer>
-    <script src="/js/jquery-2.0.3.min.js"></script>
-<script src="/js/jquery.imagesloaded.min.js"></script>
-<script src="/js/gallery.js"></script>
-<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+</div>
+</div><!-- /scroller -->
 
-<script type="text/javascript">
-$(document).ready(function(){ 
-  $('.navbar').click(function(){
-    $('header nav').toggleClass('shownav');
-  });
-  var myWidth = 0;
-  function getSize(){
-    if( typeof( window.innerWidth ) == 'number' ) {
-      myWidth = window.innerWidth;
-    } else if( document.documentElement && document.documentElement.clientWidth) {
-      myWidth = document.documentElement.clientWidth;
-    };
-  };
-  var m = $('#main'),
-      a = $('#asidepart'),
-      c = $('.closeaside'),
-      o = $('.openaside');
-  c.click(function(){
-    a.addClass('fadeOut').css('display', 'none');
-    o.css('display', 'block').addClass('fadeIn');
-    m.addClass('moveMain');
-  });
-  o.click(function(){
-    o.css('display', 'none').removeClass('beforeFadeIn');
-    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
-    m.removeClass('moveMain');
-  });
-  $(window).scroll(function(){
-    o.css("top",Math.max(80,260-$(this).scrollTop()));
-  });
+</div><!-- /pusher -->
+</div><!-- /container -->
+</div>
+
+<!-- Easter eggs -->
+
+<div class="egg animated">
+    <a id="close-button" href="#">X</a>
+    <div class="block">
+        <div class="loading">
+            <span class="ball1"></span>
+            <span class="ball2"></span>
+        </div>
+    </div>
+</div>
   
-  $(window).resize(function(){
-    getSize(); 
-    if (myWidth >= 1024) {
-      $('header nav').removeClass('shownav');
-    }else{
-      m.removeClass('moveMain');
-      a.css('display', 'block').removeClass('fadeOut');
-      o.css('display', 'none');
-        
-    }
-  });
-});
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){ 
-  $('.article-content').each(function(i){
-    $(this).find('img').each(function(){
-      if ($(this).parent().hasClass('fancybox')) return;
-      var alt = this.alt;
-      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
-      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
-    });
-    $(this).find('.fancybox').each(function(){
-      $(this).attr('rel', 'article' + i);
-    });
-  });
-  if($.fancybox){
-    $('.fancybox').fancybox();
-  }
-}); 
-</script>
-
-
-
-<!-- Analytics Begin -->
-
-
-
+<script src="//cdn.staticfile.org/jquery/1.11.0/jquery.min.js"></script>
 <script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
+    if (!window.jQuery) {
+        var script = document.createElement('script');
+        script.src = "/js/jquery.min.js";
+        document.body.appendChild(script);
+    }
 </script>
+<script type="text/javascript" src="/js/lib.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
 
 
 
-<!-- Analytics End -->
-
-<!-- Totop Begin -->
-
-	<div id="totop">
-	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
-	</div>
-	<script src="/js/totop.js"></script>
-
-<!-- Totop End -->
-
-<!-- MathJax Begin -->
-<!-- mathjax config similar to math.stackexchange -->
 
 
-<!-- MathJax End -->
 
-<!-- Tiny_search Begin -->
 
-<!-- Tiny_search End -->
-
-  </body>
- </html>
+</body>
+</html>

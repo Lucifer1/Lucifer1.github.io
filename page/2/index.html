@@ -1,424 +1,547 @@
+<!DOCTYPE html>
+<html>
 
- <!DOCTYPE HTML>
-<html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <title>Lightman&#39;s blog</title>
+  <meta name="description" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="MobileOptimized" content="320" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="/css/component.css" />
+  <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+  <meta name="generator" content="Lightman's blog">
+  <script src="http://static.duoshuo.com/embed.js"></script>
   
-    <title>Lightman&#39;s blog</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
-    
-    <meta name="author" content="Lightman">
-    
+  
+  
+
+  
+
+</head>
+<body>
+<div class="container">
+    <div class="mp-pusher" id="mp-pusher">
+        <i id="scroll-up" class="fa fa-angle-up"></i>
+        <nav id="mp-menu" class="mp-menu">
+            <div class="mp-level">
+                <a data-pjax class="back-home" style="font-size: 20px" href="/"><h2 ><i class="fa fa-home"></i>
+                        Home</h2></a>
+                <ul class="first-level">
+                    <li>
+                        <a class="fa fa-archive" href="#"><i class="fa fa-angle-left">
+                            </i>&nbsp;&nbsp;Archive</a>
+                        <div class="mp-level page-list">
+                            <h2 ><i class="fa fa-archive"></i>
+                                Archive</h2>
+                            <a class="mp-back" href="#">back</a>
+                            <form id="search-form" action="">
+                                <input type="text" class="search search-archive" placeholder="Search.."/>
+                            </form>
+                            <ul>
+                                <div class="mp-scroll">
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2020/12/01/Typescript/">Typescript 学习笔记</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2020/06/17/Vue/">Vue</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2020/02/17/V开场台词/">V 开场自我介绍</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2019/12/23/AdvancedAutoEncoder/">AdvancedAutoEncoder</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2019/12/23/AutoEncoder/">AutoEncoder</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2019/12/23/CNNAutoEncoder/">卷积自编码器</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2019/12/23/CNN/">卷积神经网络</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2019/12/23/EnglishPronunciation/">连读规则</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2019/12/23/GAN/">GAN网络代码</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2019/12/23/Git/">Git教程</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2019/12/23/JavaScript高级程序设计/">JavaScript 高级程序设计</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2019/12/23/LSTM/">LSTM简介及代码</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2019/12/23/Ted_给陌生人的情书/">汉娜·布伦雪尔：给陌生人的情书</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2019/12/23/ReinforcementLearning/">强化学习简介</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2019/12/23/STGCN/">时空图卷积网络</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2019/12/23/沉默的大多数/">沉默的大多数</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2019/12/23/算法/">算法速查</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2019/12/23/python/">Python教程</a>
+                                </li>
+                                
+                                <li class="search-archive-li mp-pjax">
+                                    <a href="/2019/01/23/Flex/">Flex 布局</a>
+                                </li>
+                                
+                                </div>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="fa fa-copy" href="#"><i class="fa fa-angle-left">
+                            </i>&nbsp;&nbsp;Categories</a>
+
+                        <div class="mp-level page-list">
+                            <h2 ><i class="fa fa-copy"></i>
+                                Categories</h2>
+                            <a class="mp-back" href="#">back</a>
+                            <form id="search-form" action="">
+                                <input type="text" class="search search-category" placeholder="Search.."/>
+                            </form>
+                            <ul>
+                                <div class="mp-scroll">
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/前端技术/">&nbsp;&nbsp;&nbsp;前端技术</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/后台技术/">&nbsp;&nbsp;&nbsp;后台技术</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/常用技术/">&nbsp;&nbsp;&nbsp;常用技术</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/强化学习/">&nbsp;&nbsp;&nbsp;强化学习</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/深度学习/">&nbsp;&nbsp;&nbsp;深度学习</a>
+                                    <small>7</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/算法/">&nbsp;&nbsp;&nbsp;算法</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/英语/">&nbsp;&nbsp;&nbsp;英语</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-category-li mp-pjax">
+                                    <a href="/categories/读书笔记/">&nbsp;&nbsp;&nbsp;读书笔记</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                </div>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="fa fa-tags" href="#"><i class="fa fa-angle-left">
+                            </i>&nbsp;&nbsp;Tags</a>
+                        <div class="mp-level page-list">
+                            <h2 ><i class="fa fa-tags"></i>
+                                Tags</h2>
+                            <a class="mp-back" href="#">back</a>
+                            <form id="search-form" action="">
+                                <input type="text" class="search search-tag" placeholder="Search.."/>
+                            </form>
+                            <ul>
+                                <div class="mp-scroll">
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/AutoEncoder/">&nbsp;&nbsp;&nbsp;AutoEncoder</a>
+                                    <small>3</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/CNN/">&nbsp;&nbsp;&nbsp;CNN</a>
+                                    <small>2</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/Flex/">&nbsp;&nbsp;&nbsp;Flex</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/GAN/">&nbsp;&nbsp;&nbsp;GAN</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/GCN/">&nbsp;&nbsp;&nbsp;GCN</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/JavaScript/">&nbsp;&nbsp;&nbsp;JavaScript</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/LSTM/">&nbsp;&nbsp;&nbsp;LSTM</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/Python/">&nbsp;&nbsp;&nbsp;Python</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/Q网络/">&nbsp;&nbsp;&nbsp;Q网络</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/Ted/">&nbsp;&nbsp;&nbsp;Ted</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/Typescript/">&nbsp;&nbsp;&nbsp;Typescript</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/协作开发软件/">&nbsp;&nbsp;&nbsp;协作开发软件</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/沉默的大多数/">&nbsp;&nbsp;&nbsp;沉默的大多数</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/电影台词/">&nbsp;&nbsp;&nbsp;电影台词</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/算法/">&nbsp;&nbsp;&nbsp;算法</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                <li class="search-tag-li mp-pjax">
+                                    <a href="/tags/连读发音/">&nbsp;&nbsp;&nbsp;连读发音</a>
+                                    <small>1</small>
+                                </li>
+                                
+                                </div>
+                            </ul>
+                        </div>
+                    </li>
+                    
+                    <li class="mp-pjax"><a class="fa fa-user" href="/about">&nbsp;&nbsp;&nbsp;About me</a></li>
+                    <li><a class="fa fa-github" href="#">&nbsp;&nbsp;&nbsp;Github</a></li>
+
+                </ul>
+
+            </div>
+        </nav>
+        <div id="pjax">
+            <div class="pjax-hidden" style="display: none">
+                
+                    <a  data-pjax href="/2020/12/01/Typescript/">Typescript 学习笔记</a>
+                
+                    <a  data-pjax href="/2020/06/17/Vue/">Vue</a>
+                
+                    <a  data-pjax href="/2020/02/17/V开场台词/">V 开场自我介绍</a>
+                
+                    <a  data-pjax href="/2019/12/23/AdvancedAutoEncoder/">AdvancedAutoEncoder</a>
+                
+                    <a  data-pjax href="/2019/12/23/AutoEncoder/">AutoEncoder</a>
+                
+                    <a  data-pjax href="/2019/12/23/CNNAutoEncoder/">卷积自编码器</a>
+                
+                    <a  data-pjax href="/2019/12/23/CNN/">卷积神经网络</a>
+                
+                    <a  data-pjax href="/2019/12/23/EnglishPronunciation/">连读规则</a>
+                
+                    <a  data-pjax href="/2019/12/23/GAN/">GAN网络代码</a>
+                
+                    <a  data-pjax href="/2019/12/23/Git/">Git教程</a>
+                
+                    <a  data-pjax href="/2019/12/23/JavaScript高级程序设计/">JavaScript 高级程序设计</a>
+                
+                    <a  data-pjax href="/2019/12/23/LSTM/">LSTM简介及代码</a>
+                
+                    <a  data-pjax href="/2019/12/23/Ted_给陌生人的情书/">汉娜·布伦雪尔：给陌生人的情书</a>
+                
+                    <a  data-pjax href="/2019/12/23/ReinforcementLearning/">强化学习简介</a>
+                
+                    <a  data-pjax href="/2019/12/23/STGCN/">时空图卷积网络</a>
+                
+                    <a  data-pjax href="/2019/12/23/沉默的大多数/">沉默的大多数</a>
+                
+                    <a  data-pjax href="/2019/12/23/算法/">算法速查</a>
+                
+                    <a  data-pjax href="/2019/12/23/python/">Python教程</a>
+                
+                    <a  data-pjax href="/2019/01/23/Flex/">Flex 布局</a>
+                
+                
+                    <a data-pjax href="/categories/前端技术/">&nbsp;&nbsp;前端技术</a>
+                
+                    <a data-pjax href="/categories/后台技术/">&nbsp;&nbsp;后台技术</a>
+                
+                    <a data-pjax href="/categories/常用技术/">&nbsp;&nbsp;常用技术</a>
+                
+                    <a data-pjax href="/categories/强化学习/">&nbsp;&nbsp;强化学习</a>
+                
+                    <a data-pjax href="/categories/深度学习/">&nbsp;&nbsp;深度学习</a>
+                
+                    <a data-pjax href="/categories/算法/">&nbsp;&nbsp;算法</a>
+                
+                    <a data-pjax href="/categories/英语/">&nbsp;&nbsp;英语</a>
+                
+                    <a data-pjax href="/categories/读书笔记/">&nbsp;&nbsp;读书笔记</a>
+                
+                
+                    <a data-pjax href="/tags/AutoEncoder/">&nbsp;&nbsp;AutoEncoder</a>
+                
+                    <a data-pjax href="/tags/CNN/">&nbsp;&nbsp;CNN</a>
+                
+                    <a data-pjax href="/tags/Flex/">&nbsp;&nbsp;Flex</a>
+                
+                    <a data-pjax href="/tags/GAN/">&nbsp;&nbsp;GAN</a>
+                
+                    <a data-pjax href="/tags/GCN/">&nbsp;&nbsp;GCN</a>
+                
+                    <a data-pjax href="/tags/JavaScript/">&nbsp;&nbsp;JavaScript</a>
+                
+                    <a data-pjax href="/tags/LSTM/">&nbsp;&nbsp;LSTM</a>
+                
+                    <a data-pjax href="/tags/Python/">&nbsp;&nbsp;Python</a>
+                
+                    <a data-pjax href="/tags/Q网络/">&nbsp;&nbsp;Q网络</a>
+                
+                    <a data-pjax href="/tags/Ted/">&nbsp;&nbsp;Ted</a>
+                
+                    <a data-pjax href="/tags/Typescript/">&nbsp;&nbsp;Typescript</a>
+                
+                    <a data-pjax href="/tags/协作开发软件/">&nbsp;&nbsp;协作开发软件</a>
+                
+                    <a data-pjax href="/tags/沉默的大多数/">&nbsp;&nbsp;沉默的大多数</a>
+                
+                    <a data-pjax href="/tags/电影台词/">&nbsp;&nbsp;电影台词</a>
+                
+                    <a data-pjax href="/tags/算法/">&nbsp;&nbsp;算法</a>
+                
+                    <a data-pjax href="/tags/连读发音/">&nbsp;&nbsp;连读发音</a>
+                
+                <a data-pjax class="fa fa-user" href="/about">&nbsp;&nbsp;&nbsp;About me</a>
+            </div>
+            <nav class="nexus">
+                <li  style="border-left: 1px solid #c6d0da;">
+                    <a id="trigger" href="#"><i class="fa fa-bars"></i></a>
+                </li>
+                <li ><a id="nexus-back" data-pjax href="/">Lightman&#39;s blog</a></li>
+                
+                <div id="nav-container">
+                    <div class="post-navbar" style="line-height: 63px;display:none">
+                        <li id="navbar-title"><a href="#"></a></li>
+                        <li id="navbar-toc" style="border-left: none">
+                            <a style="padding-right: 15px">
+                                <span id="toc-content" >Introduction</span><i class="fa fa-chevron-down" ></i>
+                            </a>
+                            <div class="hidden-box">
+                                <ul id="toc"></ul>
+                            </div>
+                        </li>
+                    </div>
+                </div>
+                
+            </nav>
+
+            <div class="scroller">
+            <div class="scroller-inner">
+
+
+<!-- -->
+<!--<body class="home-template">-->
+<!---->
+  
+<main class="content" role="main">
 
     
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Lightman&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/page/2/index.html">
-<meta property="og:site_name" content="Lightman&#39;s blog">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="Lightman">
-<meta name="twitter:card" content="summary">
+    <article class="post">
 
-    
-    <link rel="alternative" href="/atom.xml" title="Lightman&#39;s blog" type="application/atom+xml">
-    
-    
-    <link rel="icon" href="/img/favicon.ico">
-    
-    
-    <link rel="apple-touch-icon" href="/img/jacman.jpg">
-    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
-    
-    
-<link rel="stylesheet" href="/css/style.css">
-<link rel="stylesheet" href="/%02.css">
-<link rel="stylesheet" href="/.css">
+        <header class="post-header">
+            <div class="tag-tile">
+                
+                
+                <a data-pjax href='/tags/JavaScript/'>JavaScript</a>
+                
+                
+                <span class="fa fa-bookmark" style="float:right;color:#f39c12"></span>
+            </div>
+            <h1 class="post-title"><a data-pjax href="/2019/12/23/JavaScript高级程序设计/">JavaScript 高级程序设计</a>
+            </h1>
 
-<meta name="generator" content="Hexo 4.2.1"></head>
+            <div class="post-meta">
+                Post on<span class="fa fa-clock-o"></span>
+                <time datetime="2019-12-22T16:12:21.000Z"
+                      itemprop="datePublished">2019-12-23</time>
+            </div>
+        </header>
+        <section class="post-excerpt">
+            <p>
+                
+                注意：
+TypeError: Cannot read property ‘0’ of undefined：很有可能是数组越界
 
-  <body>
-    <header>
-      
-<div>
-		
-			<div id="imglogo">
-				<a href="/"><img src="/img/logo.png" alt="Lightman&#39;s blog" title="Lightman&#39;s blog"/></a>
-			</div>
-			
-			<div id="textlogo">
-				<h1 class="site-name"><a href="/" title="Lightman&#39;s blog">Lightman&#39;s blog</a></h1>
-				<h2 class="blog-motto"></h2>
-			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
-			</a></div>
-			<nav class="animated">
-				<ul>
-					<ul>
-					 
-						<li><a href="/">Home</a></li>
-					
-						<li><a href="/archives">Archives</a></li>
-					
-						<li><a href="/about">About</a></li>
-					
-					<li>
- 					
-					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
-						<label>Search</label>
-						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
-						<input type="hidden" name="q" value="site:yoursite.com">
-					</form>
-					
-					</li>
-				</ul>
-			</nav>			
-</div>
-    </header>
-    <div id="container">
-      <div id="main">
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2019/12/23/JavaScript高级程序设计/" title="JavaScript 高级程序设计" itemprop="url">JavaScript 高级程序设计</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Lightman" target="_blank" itemprop="author">Lightman</a>
-		
-  <p class="article-time">
-    <time datetime="2019-12-22T16:12:21.000Z" itemprop="datePublished"> Published 2019-12-23</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h3 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h3><ul>
-<li><p>TypeError: Cannot read property ‘0’ of undefined：很有可能是数组越界</p>
-</li>
-<li><p>switch在涉及逻辑判断时，速度会下降特别多，所以说不如直接多写几个case。例：</p>
-<pre><code>for(let i = 1; i&lt; s.length; i ++){
+switch在涉及逻辑判断时，速度会下降特别多，所以说不如直接多写几个case。例：
+for(let i = 1; i&lt; s.length; i ++){
     console.log(myArr)
     switch(true){
-        case s[i] == &quot;(&quot; || s[i] == &quot;[&quot; || s[i] == &quot;{&quot;:
-            myArr.push(s[i]);
-            break;
-        case s[i] == &quot;)&quot;:
-            if(myArr[myArr.length - 1] == &quot;(&quot;){
-                myArr.pop()
-            }else{
-                myArr.push(s[i])
-            }
-            break;
-        case s[i] == &quot;]&quot;:
-            if(myArr[myArr.length - 1] == &quot;[&quot;){
-                myArr.pop()
-            }else{
-                myArr.push(s[i])
-            }
-            break;
-        case s[i] == &quot;}&quot;:
-            if(myArr[myArr.length - 1] == &quot;{&quot;){
-                myArr.pop()
-            }else{
-                myArr.push(s[i])
-            }
-            break;
-    }
-}
-
-for(let i = 1; i&lt; s.length; i ++){
-    switch(s[i]){
-        case &quot;(&quot;:
-            myArr.push(s[i]);
-            break;
-        case &quot;[&quot;:
-            myArr.push(s[i]);
-            break;
-        case &quot;{&quot;:
-            myArr.push(s[i]);
-            break;
-        case &quot;)&quot;:
-            if(myArr[myArr.length - 1] == &quot;(&quot;){
-                myArr.pop()
-            }else{
-                myArr.push(s[i])
-            }
-            break;
-        case &quot;]&quot;:
-            if(myArr[myArr.length - 1] == &quot;[&quot;){
-                myArr.pop()
-            }else{
-                myArr.push(s[i])
-            }
-            break;
-        case &quot;}&quot;:
-            if(myArr[myArr.length - 1] == &quot;{&quot;){
-                myArr.pop()
-            }else{
-                myArr.push(s[i])
-            }
-            break;
-    }
-}</code></pre><p>  这两个代码，速度差<strong>7倍</strong>！</p>
-</li>
-</ul>
-<h3 id="第二章：在HTML中使用JavaScript"><a href="#第二章：在HTML中使用JavaScript" class="headerlink" title="第二章：在HTML中使用JavaScript"></a>第二章：在HTML中使用JavaScript</h3><h3 id="第二章：在HTML中使用JavaScript-1"><a href="#第二章：在HTML中使用JavaScript-1" class="headerlink" title="第二章：在HTML中使用JavaScript"></a>第二章：在HTML中使用JavaScript</h3><p>* </p>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/">前端技术</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/JavaScript/">JavaScript</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
+        case s[i] == &quot;(&quot;
+                
+            </p>
+            
+        </section>
     </article>
-
-
-
-
-
-
-   
     
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2019/12/23/LSTM/" title="LSTM简介及代码" itemprop="url">LSTM简介及代码</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Lightman" target="_blank" itemprop="author">Lightman</a>
-		
-  <p class="article-time">
-    <time datetime="2019-12-22T16:12:21.000Z" itemprop="datePublished"> Published 2019-12-23</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h2 id="1-简介"><a href="#1-简介" class="headerlink" title="1. 简介"></a>1. 简介</h2><ul>
-<li><p><strong>作用：</strong>为了解决RNN存在的梯度消失问题，即无法实现对某些信息实现长期保存</p>
-</li>
-<li><p><strong>原理：</strong>简单来说就是给RNN加上了一些记忆控制器，使用Forget Gate,Input Gate,Output Gate来控制信息的流动程度。<br>如图：</p>
-<div align=center>![][Specify]</div>
-</li>
-<li><p>上一个LSTM单元得到一个信息a&lt;t-1&gt;，与这个单元的输入x&lt;t&gt;，通过forget门，使用sigmoid函数得到一个值</p>
-</li>
-<li><p>然后通过update门，使用sigmoid函数得到一个值，再通过tanh函数的得到一个值</p>
-</li>
-<li><p>三个值，使用如图公式来决定c&lt;t-1&gt;（也就是上一个单元保存的信息）是否需要更新，来得到c&lt;t&gt;</p>
-</li>
-<li><p>最后通过output门使用tanh函数来得到a&lt;t&gt;来给下一个单元提供信息</p>
-</li>
-</ul>
-<h2 id="2-代码简介"><a href="#2-代码简介" class="headerlink" title="2. 代码简介"></a>2. 代码简介</h2><ul>
-<li><p><strong>参数介绍</strong></p>
-<pre><code>BATCH_SIZE = 100        # BATCH的大小，相当于一次处理100个image
-TIME_STEP = 28          # 一个LSTM中，输入序列的长度，image有28行
-INPUT_SIZE = 28         # x_i 的向量长度，image有28列</code></pre><p>  列表中每一个元素都分别对应网络展开的时间步。比如在 MNIST 数据集中，我们有 28x28 像素的图像，每一张都可以看成拥有 28 行 28 个像素的图像。我们将网络按 28 个时间步展开，以使在每一个时间步中，可以输入一行28个像素（input_size），从而经过 28 个时间步输入整张图像。给定图像的 batch_size 值，则每一个时间步将分别收到 batch_size 个图像。如图：</p>
-  <div align=center>![][time_step]</div>
+    <article class="post">
 
-<pre><code>NUM_UNITS = 100         # 多少个LSTM单元</code></pre><p>  一个LSTM中有多少个LSTM单元。如图：</p>
-  <div align=center>![][num_units]</div>
+        <header class="post-header">
+            <div class="tag-tile">
+                
+                
+                <a data-pjax href='/tags/LSTM/'>LSTM</a>
+                
+                
+                <span class="fa fa-bookmark" style="float:right;color:#f39c12"></span>
+            </div>
+            <h1 class="post-title"><a data-pjax href="/2019/12/23/LSTM/">LSTM简介及代码</a>
+            </h1>
 
-<pre><code>image = tf.reshape(train_x, [-1, TIME_STEP, INPUT_SIZE])      
-# 输入的是二维数据，将其还原为三维，维度是[BATCH_SIZE, TIME_STEP, INPUT_SIZE]</code></pre><p>  这里是将一组图像矩阵train_x重建为新的矩阵，该新矩阵的维数为（a，28，28），其中-1表示a由实际情况来定。比如，x是一组图像的矩阵（BATCH_SIZE=100，大小为28×28），则执行x_image = tf.reshape(x, [-1, 28, 28])可以计算a=100×28×28/28/28=100。即image的维数为（100，28，28）。</p>
-<pre><code>rnn_cell = tf.contrib.rnn.BasicLSTMCell(num_units=NUM_UNITS)</code></pre><p>  定义一个LSTM的LSTM单元数(num_units)</p>
-<pre><code>outputs,final_state = tf.nn.dynamic_rnn(
-    cell=rnn_cell,              # 选择传入的cell
-    inputs=image,               # 传入的数据
-    initial_state=None,         # 初始状态
-    dtype=tf.float32,           # 数据类型
-    time_major=False,           
-    # False: (batch, time step, input); True: (time step, batch, input)，这里根据image结构选择False
-)
-output = tf.layers.dense(inputs=outputs[:, -1, :], units=N_CLASSES)</code></pre><p>  这里outputs,final_state = tf.nn.dynamic_rnn（…）.final_state包含两个量：  </p>
-<ul>
-<li><p>第一个为c保存了每个LSTM任务最后一个cell中每个神经元的状态值，状态值是用来确定前边保存的值是否需要更新。</p>
-</li>
-<li><p>第二个量h保存了每个LSTM任务最后一个cell中每个神经元的输出值，所以c和h的维度都是[BATCH_SIZE,NUM_UNITS]。</p>
-<p>outputs的维度是[BATCH_SIZE,TIME_STEP,NUM_UNITS],保存了每个step中cell的输出值h。<br>由于这里是一个many to one的任务，只需要最后一个step的输出outputs[:, -1, :]，output = tf.layers.dense(inputs=outputs[:, -1, :], units=N_CLASSES) 通过一个全连接层将输出限制为N_CLASSES。</p>
-<p>  loss = tf.losses.softmax_cross_entropy(onehot_labels=train_y, logits=output)      # 计算loss<br>  train_op = tf.train.AdamOptimizer(LR).minimize(loss)      #选择优化方法</p>
-<p>  correct_prediction = tf.equal(tf.argmax(train_y, axis=1),tf.argmax(output, axis=1))<br>  accuracy = tf.reduce_mean(tf.cast(correct_prediction,’float’))  #计算正确率</p>
-<p>定义损失函数，优化算法和计算准确率的方法</p>
-<p>  sess = tf.Session()<br>  sess.run(tf.global_variables_initializer())     # 初始化计算图中的变量</p>
-<p>  for step in range(ITERATIONS):    # 开始训练</p>
-<pre><code>x, y = mnist.train.next_batch(BATCH_SIZE)
-test_x, test_y = mnist.test.next_batch(5000)
-_, loss_ = sess.run([train_op, loss], {train_x: x, train_y: y})
-if step % 500 == 0:      # test（validation）
-    accuracy_ = sess.run(accuracy, {train_x: test_x, train_y: test_y})
-    print(&apos;train loss: %.4f&apos; % loss_, &apos;| test accuracy: %.2f&apos; % accuracy_)</code></pre><p>这里就是TensorFlow常规的运行规则：</p>
-</li>
-<li><p>定义一个Session，并初始化上边定义的变量</p>
-</li>
-<li><p>每次每次获取BATCH_SIZE个图像</p>
-</li>
-<li><p>对模型进行训练，得到loss</p>
-</li>
-<li><p>打印准确率</p>
-</li>
-</ul>
-</li>
-</ul>
+            <div class="post-meta">
+                Post on<span class="fa fa-clock-o"></span>
+                <time datetime="2019-12-22T16:12:21.000Z"
+                      itemprop="datePublished">2019-12-23</time>
+            </div>
+        </header>
+        <section class="post-excerpt">
+            <p>
+                
+                1. 简介
+作用：为了解决RNN存在的梯度消失问题，即无法实现对某些信息实现长期保存
 
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
+原理：简单来说就是给RNN加上了一些记忆控制器，使用Forget Gate,Input Gate,Output Gate来控制信息的流动程度。如图：
+![][Specify]
 
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习</a>
-</div>
+上一个LSTM单元得到一个信息a&lt;t-1&gt;，与这个单元的输入x&lt;t&gt;，通过forget门，使用sigmoid函数得到一个值
 
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/LSTM/">LSTM</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
+然后通过update门，
+                
+            </p>
+            
+        </section>
     </article>
-
-
-
-
-
-
-   
     
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2019/12/23/Ted_给陌生人的情书/" title="汉娜·布伦雪尔：给陌生人的情书" itemprop="url">汉娜·布伦雪尔：给陌生人的情书</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Lightman" target="_blank" itemprop="author">Lightman</a>
-		
-  <p class="article-time">
-    <time datetime="2019-12-22T16:12:21.000Z" itemprop="datePublished"> Published 2019-12-23</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h2 id="1-原版"><a href="#1-原版" class="headerlink" title="1. 原版"></a>1. 原版</h2><p>I was one of the only kids in college who had a reason to go the P.O. box at the end of the day,and that was mainly because my mother has never believed in email,in Facebook.in texting or cell phones in general.And so while other kids were BBM-ing their parents I was literally waiting by the mailbox to get a letter from home to see how the weekend had gone,which was a little frustrating when Grandma was in the hospital,but I just looking for some sort of scribble,some unkempt cursive from my mother.</p>
-<p>So I move to New York city after college and got completely sucker-punched in the face by depression,I did the only thing I could think of at the time.I wrote those same kinds of letters that my mother had written me for strangers,and tucked them all throughout the city, dozens and dozens of them.I left them everywhere,in cafes and in libraries,at the U.N.,everywhere.I blogged about those letters and the days when they were necessary,and I posed a kind of crazy promise to the Internet:that if you asked me for a hand-written letter,I would written you one,no questions asked.Overnight,my in box morphed into this harbor of heartbreak – a single mother in Sacramento,a girl being bullied in rural Kansas,all asking me,a 22-year-old girl,who barely even knew her own coffee order,to write them a love letter and give them a reason to wait by the mailbox.</p>
-<p>Well,today I fuel a global organization that is fueled by those trips to the mailbox,fueled by the ways in which we can harness social media like never before to write and mail strangers letters when they need them most,but most of all,fueled by crates of mail like this one,my trusty mail crate,filled with the scripting of ordinary people,strangers writing letters to other strangers not because they’re ever going to meet and laugh over a cup of coffee,but because they have found one another by way of letter-writing.But,you know,the thing that always gets me about these letters is that most of them have been wirten by people that have never known themselves loved on a piece of paper.They could not tell you about the ink of their own love letters.They’re the ones from my generation,the ones of us that have grown up into a world where everything is paperless,and where some of our best coversations have happened upon a screen.We have learned to diary our pain onto Facebook,and we speak swiftly in 140 characters or less.But what if its not about effiency this time?I was on the subway yesterday with this mail crate,which is a coversation starter,let me tell you.If you ever need one,just carry one of these.And a man just stared at me,and he was like,”Well,why dont you use the Internet?”And I thought,”Well,sir,I am not a strategist,nor am I specialist.I am merely a storyteller.”And so I could tell you about a wowen whose husband has just come home from Afghanistan,and she is having a hard time unearthing this thing called conversation,and so she tucks love letters throughout the house as a way to say,”Come back to me.Find me when you can.”Or a girl who decides that she is going to leave love letters arrounds her campus in Dubuque,Iowa,only to find her efforts ripple-effected the next day when she walks out onto the quad and finds </p>
-<p>love letters hanging from the trees,tucked in the bushes and the benches.Or a man who decides that he is going to take his life,uses the Facebook as a way to say goodbye to friends and family.Well,tonight he sleeps safely with a stack of letters just like this one tucked beneath his pillow,scripted by strangers who were there for him when.These are kinds of stories that convinced me that letter-writing will never again need to flip back her hair and talk about the effiency,because she is an art form now,all the parts of her,the signing,the scripting,the mailing,the doodles in the margins.The mere fact that somebody would even just sit down,pull out a piece of paper and think about someone the whole way through,with an intention thai is so much harder to unearth when the browser is up and the iphone is pinging and we’ve got six conversations rolling in at once,that is a art form that does not fall down to the Goliath of “get faster,”no matter how many social networks we might join.We still cluth close those letters to our chest,to the words that speak louder than loud,when we turn pages into palettes to say the things that we have need to say,the words we have needed to write,to sisters and brothers and even to strangers,for far too long.Thank you.</p>
-<h2 id="2-精简版"><a href="#2-精简版" class="headerlink" title="2. 精简版"></a>2. 精简版</h2><p><strong>When I grow up,I move to New York city after college /and got completely sucker-punched in the face by depression/,I did the only thing I could think of at the time.I wrote those same kinds of letters for strangers,and tucked them all throughout the city, dozens and dozens of them.I left them everywhere,in cafes and in libraries,at the U.N.,everywhere.I blogged about those letters and the days when they were necessary,and I posed a kind of crazy promise to the Internet:that if you asked me for a hand-written letter,I would written you one,no questions asked.Overnight,my inbox morphed into this harbor of heartbreak – a single mother in Sacramento,a girl being bullied in rural Kansas,all asking me,a 22-year-old girl,who barely even knew her own coffee order,to write them a love letter and give them a reason to wait by the mailbox.</strong></p>
-<p><strong>Well,today I fuel a global organization/ that is fueled by those trips to the mailbox,/fueled by the ways in which we can harness social media like never before /to write and mail strangers letters when they need them most,but most of all,fueled by crates of mail. like this one,my trusty mail crate,filled with the scripting of ordinary people,strangers writing letters to other strangers not because they’re ever going to meet and laugh over a cup of coffee,but because they have found one another by way of letter-writing.But,you know,the thing that always gets me about these letters/ is that most of them have been wirten /by people that have never known themselves loved on a piece of paper.They could not tell you about the ink of their own love letters.They’re the ones from my generation,the ones of us that have grown up into a world /where everything is paperless,and where some of our best coversations have happened upon a screen.We have learned to diary our pain onto Facebook,and we speak swiftly in 140 characters or less.But what if its not about effiency this time?</strong></p>
-<p><strong>I was on the subway yesterday with this mail crate,which is a coversation starter,let me tell you.If you ever need one,just carry one of these.And a man just stared at me,and he was like,”Well,why dont you use the Internet?”And I thought,”Well,sir,I am not a strategist,nor am I specialist.I am merely a storyteller.”And so I could tell you about a women whose husband has just come home from Afghanistan,and she is having a hard time unearthing this thing called conversation,and so she tucks love letters throughout the house/ as a way to say,”Come back to me.Find me when you can.”Or a girl who decides that she is going to leave love letters /arrounds her campus in Dubuque,Iowa,/only to find her efforts ripple-effected the next day when she walks out onto the quad /and finds love letters hanging from the trees,/tucked in the bushes and the benches.Or a man who decides that he is going to take his life,/uses the Facebook as a way /to say goodbye/ to friends and family.Well,tonight he sleeps safely with a stack of letters just like this one /tucked beneath his pillow,scripted by strangers who were there for him when.These are kinds of stories that convinced me that letter-writing will never again need to flip back her hair /and talk about the effiency,because she is an art form now,all the parts of her,the signing,the scripting,the mailing,the doodles in the margins.The mere fact that somebody would even just sit down,pull out a piece of paper and think about someone the whole way through,with an intention that is so much harder to unearth/ when the browser is up and the iphone is pinging and we’ve got six conversations rolling in at once,that is an art form /that does not fall down to the Goliath of “get faster,”no matter how many social networks we might join.We still clutch close these letters to our chest,to the words that speak louder than loud,when we turn pages into palettes to say the things that we have need to say,the words we have needed to write,to sisters and brothers /and even to strangers,for far too long.Thank you.</strong></p>
+    <article class="post">
 
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
+        <header class="post-header">
+            <div class="tag-tile">
+                
+                
+                <a data-pjax href='/tags/Ted/'>Ted</a>
+                
+                
+                <span class="fa fa-bookmark" style="float:right;color:#f39c12"></span>
+            </div>
+            <h1 class="post-title"><a data-pjax href="/2019/12/23/Ted_给陌生人的情书/">汉娜·布伦雪尔：给陌生人的情书</a>
+            </h1>
 
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/%E8%8B%B1%E8%AF%AD/">英语</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/Ted/">Ted</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
+            <div class="post-meta">
+                Post on<span class="fa fa-clock-o"></span>
+                <time datetime="2019-12-22T16:12:21.000Z"
+                      itemprop="datePublished">2019-12-23</time>
+            </div>
+        </header>
+        <section class="post-excerpt">
+            <p>
+                
+                1. 原版I was one of the only kids in college who had a reason to go the P.O. box at the end of the day,and that was mainly because my mother has never believed in email,in Facebook.in texting or cell phones in general.And 
+                
+            </p>
+            
+        </section>
     </article>
-
-
-
-
-
-
-   
     
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2019/12/23/ReinforcementLearning/" title="强化学习简介" itemprop="url">强化学习简介</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Lightman" target="_blank" itemprop="author">Lightman</a>
-		
-  <p class="article-time">
-    <time datetime="2019-12-22T16:12:21.000Z" itemprop="datePublished"> Published 2019-12-23</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <ol>
-<li><p>规则简介</p>
-<pre><code>增强学习需要我们定义奖励函数(reward function)，在我们选择的实验环境中： 
+    <article class="post">
+
+        <header class="post-header">
+            <div class="tag-tile">
+                
+                
+                <a data-pjax href='/tags/Q网络/'>Q网络</a>
+                
+                
+                <span class="fa fa-bookmark" style="float:right;color:#f39c12"></span>
+            </div>
+            <h1 class="post-title"><a data-pjax href="/2019/12/23/ReinforcementLearning/">强化学习简介</a>
+            </h1>
+
+            <div class="post-meta">
+                Post on<span class="fa fa-clock-o"></span>
+                <time datetime="2019-12-22T16:12:21.000Z"
+                      itemprop="datePublished">2019-12-23</time>
+            </div>
+        </header>
+        <section class="post-excerpt">
+            <p>
+                
+                
+规则简介
+增强学习需要我们定义奖励函数(reward function)，在我们选择的实验环境中： 
 Agent到达G节点，游戏结束，得到奖励1 
 Agent到达H节点，游戏结束，得到奖励0 
 Agent到达F或S节点，游戏继续，得到奖励0
@@ -426,1976 +549,242 @@ Agent到达F或S节点，游戏继续，得到奖励0
 SFFF       (S: 起始点, 安全)
 FHFH       (F: 冰层, 安全)
 FFFH       (H: 空洞, 跌落危险)
-HFFG       (G: 目的地, 飞盘所在地)</code></pre></li>
-<li><p>导入包及实验环境</p>
-<pre><code>import gym
-import numpy as np
-import random
-import tensorflow as tf
-import matplotlib.pyplot as plt
-
-env = gym.make(&apos;FrozenLake-v0&apos;)   # 加载实验环境
-
-tf.reset_default_graph()    #重新设置计算图(这句话可以省略，没啥影响)</code></pre></li>
-<li><p>设置占位符</p>
-<pre><code>inputs1 = tf.placeholder(shape=[1,16], dtype=tf.float32)    # 建立用于选择行为的网络的前向传播部分
-W = tf.Variable(tf.random_uniform([16,4], 0, 0.01))
-Qout = tf.matmul(inputs1, W)
-predict = tf.argmax(Qout, 1)
-nextQ = tf.placeholder(shape=[1,4], dtype=tf.float32)</code></pre></li>
-</ol>
-<p>上边这五行：</p>
-<ul>
-<li>inputs1：因为这个问题是一个4<em>4的格子，每个格子都有一个状态（也就是S,F,H,G,开头提到了），所以这里需要一个1</em>16的张量来保存状态</li>
-<li>W：每个格子都有4个选择，也就是上下左右移动，所以是一个16*4的矩阵</li>
-<li>Qout：四个方向的Q值，也就是奖励值</li>
-<li>predict：我们预测的下一步的移动方向</li>
-<li>nextQ：我们移动之后的，可以获得的奖励值</li>
-</ul>
-<ol start="4">
-<li><p>计算损失及优化</p>
-<pre><code># 计算预期Q值和目标Q值的差值平方和（损失值）
-loss = tf.reduce_sum(tf.square(nextQ - Qout))
-trainer = tf.train.GradientDescentOptimizer(learning_rate=0.1)
-updateModel = trainer.minimize(loss)</code></pre></li>
-<li><p>参数初始化及超参数定义</p>
-<pre><code># 训练网络
-init = tf.initialize_all_variables()    #初始化
-# 设置超参数
-y = .99 
-e = 0.1 
-num_episodes = 2000    
-# 创建episodes中包含当前奖励值和步骤的列表
-jList = []  
-rList = []  </code></pre></li>
-</ol>
-<ul>
-<li>y:这里就是文档里提到的gamma值，也就是折扣参数</li>
-<li>e:这份代码有一个随机事件，就是偶尔会有一阵风吹过，使agent被吹到并非它选择的区域，e为随机事件的概率</li>
-<li>num_episodes:这个是我们要进行多少次游戏，也就是要训练多少次</li>
-<li>jList:用来保存步骤</li>
-<li>rList:用来保存奖励</li>
-</ul>
-<ol start="6">
-<li><p>进行训练</p>
-<pre><code>with tf.Session() as sess:
-    sess.run(init)
-    for i in range(num_episodes):
-        # 初始化环境，得到第一个状态观测值
-        s = env.reset()
-        rAll = 0
-        d = False   
-        j = 0
-        # Q网络
-        while j &lt; 99:   
-            j += 1
-            a, allQ = sess.run([predict, Qout], feed_dict={inputs1:np.identity(16)[s:s+1]}) 
-            if np.random.rand(1) &lt; e:   #判断是否发生随机事件
-                a[0] = env.action_space.sample()
-            # 获取新的状态值和奖励值
-            s1, r, d, _ = env.step(a[0])  #d用来判断游戏是否结束，d为true时，游戏结束
-            # 通过将新的状态值传入网络获取Q&apos;值
-            Q1 = sess.run(Qout, feed_dict={inputs1:np.identity(16)[s1:s1+1]})   #判断新的状态我们能获取的奖励值
-            # 获取最大的Q值并选定我们的动作
-            maxQ1 = np.max(Q1)
-            targetQ = allQ
-            targetQ[0, a[0]] = r + y*maxQ1  #根据当前奖励以及未来奖励的和来选定我们的动作
-            # 用目标Q值和预测Q值训练网络
-            _, W1 = sess.run([updateModel, W], feed_dict={inputs1:np.identity(16)[s:s+1], nextQ:targetQ})   #更新权重
-            rAll += r
-            s = s1  #更新状态和奖励值
-            if d == True:   # 随着训练的进行不断减小随机行动的可能性
-                e = 1./((i/50) + 10)
-                break
-        jList.append(j) #添加轨迹
-        rList.append(rAll)  #添加奖励，用于判断是否成功
-        if i%500 == 0:  #每500次显示一次成功的数量，根据比值计算准确率，20000次的话，准确率大概在60%多
-            print(&quot;Percent of succesful episodes:[%d,%d],%f &quot; % (sum(rList),i,sum(rList) / num_episodes))
-print(&quot;Percent of succesful episodes: &quot; + str(sum(rList)/num_episodes))</code></pre></li>
-</ol>
-<ul>
-<li><p>d:设置d来判断当前游戏是否结束</p>
-</li>
-<li><p>j:这个99，我估计是只要足够他完成游戏即可，大小可以自己设置</p>
-</li>
-<li><p>rAll:来保存奖励</p>
-</li>
-<li><p>这段：</p>
-<pre><code>a, allQ = sess.run([predict, Qout], feed_dict={inputs1:np.identity(16)[s:s+1]}) </code></pre><p>  根据Q网络和贪心算法(有随机行动的可能)，来选定当前的动作，以及所有动作的Q值（奖励值）</p>
-</li>
-<li><p>这段：</p>
-<pre><code>if np.random.rand(1) &lt; e:  
-   a[0] = env.action_space.sample()</code></pre><p>  上边提到，这份代码包含一个随机事件，在这里进行判断，生成一个随机数，如果小于e，则发生随机事件，使agent被吹到并非它选择的区域 </p>
-</li>
-<li><p>这段：</p>
-<pre><code>s1, r, d, _ = env.step(a[0])
-Q1 = sess.run(Qout, feed_dict={inputs1:np.identity(16)[s1:s1+1]})   
-maxQ1 = np.max(Q1)
-targetQ = allQ
-targetQ[0, a[0]] = r + y*maxQ1</code></pre><p>  从上到下：</p>
-<pre><code>1. 获取新的状态值和奖励值，d用来判断游戏是否结束，d为true时，游戏结束
-2. 通过将新的状态值传入网络获取Q&apos;值
-3. 判断新的状态我们能获取的奖励值，获取最大的Q值并选定我们的动作
-4. 根据当前奖励以及未来奖励的和来选定我们的动作</code></pre></li>
-<li><p>这段：</p>
-<pre><code>_, W1 = sess.run([updateModel, W], feed_dict={inputs1:np.identity(16)[s:s+1], nextQ:targetQ})   #更新权重
-rAll += r
-s = s1  #更新状态和奖励值
-if d == True:   # 随着训练的进行不断减小随机行动的可能性
-    e = 1./((i/50) + 10)
-    break</code></pre><ul>
-<li>更新权重，状态及奖励值</li>
-</ul>
-</li>
-</ul>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/">强化学习</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/Q网络/">Q网络</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
+HFFG   
+                
+            </p>
+            
+        </section>
     </article>
-
-
-
-
-
-
-   
     
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2019/12/23/STGCN/" title="时空图卷积网络" itemprop="url">时空图卷积网络</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Lightman" target="_blank" itemprop="author">Lightman</a>
-		
-  <p class="article-time">
-    <time datetime="2019-12-22T16:12:21.000Z" itemprop="datePublished"> Published 2019-12-23</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>####说明：</p>
-<p>这个代码我看来好久，也改了好久，效果都不是很好，最开始的时候跑起来时间很长，买了服务器跑一跑效果也不好，我不知道是它的评判方法有问题，还是我放入的数据有问题，后来改了一下时间问题解决了，但是结果还是不好。这里大体的给老师介绍一下，也为以后师兄去跑代码的时候做一点说明吧，希望有点帮助。底层代码我就不详细介绍了，我把大概的流程以及参数设置介绍一下。</p>
-<ol>
-<li><p><strong>环境介绍</strong></p>
-<p> Python3.6以上、TensorFlow、pandas、Numpy、Scipy</p>
-</li>
-<li><p>模型</p>
-<p> <img src="C:%5CUsers%5CCaesar%5CDesktop%5CFig2.PNG" alt="模型"></p>
-</li>
-<li><p><strong>超参数设置</strong></p>
-<pre><code>class Args(object):
-def __init__(self, n_route, n_his, n_pred, batch_size, epoch, save, ks, kt, lr, opt, graph, inf_mode):
-    self.n_route = n_route
-    self.n_his = n_his
-    self.n_pred = n_pred
-    self.batch_size = batch_size
-    self.epoch = epoch
-    self.save = save
-    self.ks = ks
-    self.kt = kt
-    self.lr = lr
-    self.opt = opt
-    self.graph = graph
-    self.inf_mode = inf_mode
+    <article class="post">
 
-&apos;&apos;&apos;
-设置可以使用的命令行，我再chrome里存了用法
-这里应该是对超参数的设置
-&apos;&apos;&apos;
-# parser = argparse.ArgumentParser()
-# parser.add_argument(&apos;--n_route&apos;, type=int, default=103)     #选取了228个站点,中等数据为228，大型数据为1026
-# parser.add_argument(&apos;--n_his&apos;, type=int, default=48)        #使用60分钟作为历史事件窗口，因为默认5分钟为time_slot，所以为12
-# parser.add_argument(&apos;--n_pred&apos;, type=int, default=24)        #12个观测数据点（M = 12）用于预测接下来的15分钟，30分钟和45分钟（H = 3,6,9）的交通状况。这里可以设置为3或6或9
-# parser.add_argument(&apos;--batch_size&apos;, type=int, default=16)
-# parser.add_argument(&apos;--epoch&apos;, type=int, default=50)
-# parser.add_argument(&apos;--save&apos;, type=int, default=10)
-# parser.add_argument(&apos;--ks&apos;, type=int, default=3)            #ks是图卷积核的大小，它决定了卷积从中心节点开始的最大半径。一般来说，切比雪夫多项式Tk(x)被用于近似核，作为K−1阶展开的一部分，默认为3
-# parser.add_argument(&apos;--kt&apos;, type=int, default=3)            #kt为时间卷积核大小，时间卷积对输入元素kt个邻居进行操作，默认为3
-# parser.add_argument(&apos;--lr&apos;, type=float, default=1e-3)       #下边几项就是学习率，优化函数，以及训练模式
-# parser.add_argument(&apos;--opt&apos;, type=str, default=&apos;RMSProp&apos;)
-# parser.add_argument(&apos;--graph&apos;, type=str, default=&apos;default&apos;)
-# parser.add_argument(&apos;--inf_mode&apos;, type=str, default=&apos;merge&apos;)
-#
-# args = parser.parse_args()
-# print(f&apos;Training configs: {args}&apos;)
+        <header class="post-header">
+            <div class="tag-tile">
+                
+                
+                <a data-pjax href='/tags/GCN/'>GCN</a>
+                
+                
+                <span class="fa fa-bookmark" style="float:right;color:#f39c12"></span>
+            </div>
+            <h1 class="post-title"><a data-pjax href="/2019/12/23/STGCN/">时空图卷积网络</a>
+            </h1>
 
-args = Args(103, 12, 9, 16, 50, 10, 3, 3, 1e-3, &apos;RMSProp&apos;, &apos;default&apos;, &apos;merge&apos;)</code></pre><p> 这里它是使用CMD或者Ubuntu的终端来运行的，也就是说要运行 ‘python + 参数’来运行，我把代码改了，把超参数封装成一个类，可以从Pycharm里边直接修改超参数和运行。超参数共12个</p>
-<ol>
-<li><strong>n_route</strong>：表示图中的顶点数，源代码中是使用检测点来当做图中的顶点的，原代码为228个点，在我的代码中，我把地区作为了图的顶点，师兄给我的数据划分为了103个区，所以我设置为了13，用于生成邻接矩阵和数据生成和处理</li>
-<li><strong>n_his</strong>：多少个数据被当做为历史数据用于预测，原代码是5分钟划分为一个数据，所以一天24个小时就是24*12=288个数据，原代码n_his为12，就是把过去的1个小时作为历史窗口，我的代码把一天以1个小时作为一个数据来划分为24个数据，以12个小时作为历史窗口，来预测接下来9个小时的，其他的数据我也试过，得到的结果差不多，所以还是用了这个。<br>n_his&gt;=10，因为框架由2个ST-cov组成，每个ST-cov由两个时间卷积层和一个空间卷积层组成，每经过一个时间卷积层，数据会被缩小（Kt-1），Kt是时间卷积层中的一个一维卷积的卷积核大小，下边会详细介绍。为什么是10而不是9解释起来有点麻烦，简单的说就是它的最后的输出层使用的也是一个时间卷积层，而它设置了一个Ko（也就是output的卷积核的大小），用作输出层的卷积核的大小，Ko必须&gt;1，所以为10</li>
-<li><strong>n_pred</strong>：预测接下来多少时间的数据，原代码为9，我这里也为9</li>
-<li><strong>batch_size、epoch、save</strong>：数据的大小，共训练多少轮，多少轮保存一次模型。</li>
-<li><strong>Ks</strong>：空间卷积核，也就是图卷积核的大小，用于切比雪夫多项式，它决定了卷积从中心节点开始的最大半径。</li>
-<li><strong>Kt</strong>：时间卷积的大小，对输入元素的Kt个邻居进行操作，用于提取时间相关性</li>
-<li><strong>opt</strong>：使用哪个优化函数</li>
-<li><strong>graph和inf_mode</strong>：目前没发现具体作用。。。。</li>
-</ol>
-</li>
-<li><p>st-conv block的channel的设置以及拉普拉斯归一化、切比雪夫逼近</p>
-<pre><code>blocks = [[1, 32, 64], [64, 32, 128]]
+            <div class="post-meta">
+                Post on<span class="fa fa-clock-o"></span>
+                <time datetime="2019-12-22T16:12:21.000Z"
+                      itemprop="datePublished">2019-12-23</time>
+            </div>
+        </header>
+        <section class="post-excerpt">
+            <p>
+                
+                ####说明：
+这个代码我看来好久，也改了好久，效果都不是很好，最开始的时候跑起来时间很长，买了服务器跑一跑效果也不好，我不知道是它的评判方法有问题，还是我放入的数据有问题，后来改了一下时间问题解决了，但是结果还是不好。这里大体的给老师介绍一下，也为以后师兄去跑代码的时候做一点说明吧，希望有点帮助。底层代码我就不详细介绍了，我把大概的流程以及参数设置介绍一下。
 
-# Load wighted adjacency matrix W
-if args.graph == &apos;default&apos;:
-    W = weight_matrix(pjoin(&apos;./dataset&apos;, f&apos;dis_{n}.csv&apos;))
-else:
-    # load customized graph weight matrix
-    W = weight_matrix(pjoin(&apos;./dataset&apos;, args.graph))
-
-# Calculate graph kernel
-L = scaled_laplacian(W)     #使用拉普拉斯矩阵进行归一化
-# Alternative approximation method: 1st approx - first_approx(W, n).
-Lk = cheb_poly_approx(L, Ks, n)     #切比雪夫多项式逼近函数
-
-&apos;&apos;&apos;
-tf.add_to_collection：把变量放入一个集合，把很多变量变成一个列表
-tf.get_collection：从一个结合中取出全部变量，是一个列表
-&apos;&apos;&apos;
-tf.add_to_collection(name=&apos;graph_kernel&apos;, value=tf.cast(tf.constant(Lk), tf.float32))   #tf.cast数据类型转换函数，转换成tf.float32
-
-# Data Preprocessing
-data_file = f&apos;data_{n}.csv&apos;
-n_train, n_val, n_test = 40, 10, 10
-PeMS = data_gen(pjoin(&apos;./dataset&apos;, data_file), (n_train, n_val, n_test), n, n_his + n_pred)     #os.path.join()函数用于路径拼接文件路径
-print(f&apos;&gt;&gt; Loading dataset with Mean: {PeMS.mean:.2f}, STD: {PeMS.std:.2f}&apos;)
-
-if __name__ == &apos;__main__&apos;:
-    model_train(PeMS, blocks, args)
-    model_test(PeMS, PeMS.get_len(&apos;test&apos;), n_his, n_pred, args.inf_mode)</code></pre><ol>
-<li><strong>weight_matrix():</strong>根据他给的公式对邻接矩阵进行处理</li>
-<li><strong>scaled_laplacian():</strong>使用拉普拉斯矩阵进行归一化</li>
-<li><strong>cheb_poly_approx():</strong>切比雪夫多项式逼近函数</li>
-<li><strong>data_gen():</strong>处理数据</li>
-<li><strong>n_train, n_val, n_test:</strong>数据一共60天，40天用于训练集，10天用于测试集，10天用于验证集，如果时间间隔不是以1个小时为划分的话，这里也要进行对应的调整</li>
-<li><strong>PeMS:</strong>这里的这个用于训练和测试</li>
-<li><strong>model_train()和model_test():</strong>训练和测试</li>
-</ol>
-</li>
-<li><p>data_gen()介绍</p>
-<pre><code>def data_gen(file_path, data_config, n_route, n_frame=21, day_slot=24):
-    n_train, n_val, n_test = data_config
-    # generate training, validation and test data
-    try:
-        data_seq = pd.read_csv(file_path, header=None).values
-    except FileNotFoundError:
-        print(f&apos;ERROR: input file was not found in {file_path}.&apos;)
-
-    seq_train = seq_gen(n_train, data_seq, 0, n_frame, n_route, day_slot)
-    seq_val = seq_gen(n_val, data_seq, n_train, n_frame, n_route, day_slot)
-    seq_test = seq_gen(n_test, data_seq, n_train + n_val, n_frame, n_route, day_slot)
-
-    # x_stats: dict, the stats for the train dataset, including the value of mean and standard deviation.
-    x_stats = {&apos;mean&apos;: np.mean(seq_train), &apos;std&apos;: np.std(seq_train)}
-
-    # 归一化
-    # x_train, x_val, x_test: np.array, [sample_size, n_frame, n_route, channel_size].
-    x_train = z_score(seq_train, x_stats[&apos;mean&apos;], x_stats[&apos;std&apos;])       #使用z-score进行归一化操作
-    x_val = z_score(seq_val, x_stats[&apos;mean&apos;], x_stats[&apos;std&apos;])
-    x_test = z_score(seq_test, x_stats[&apos;mean&apos;], x_stats[&apos;std&apos;])
-
-    x_data = {&apos;train&apos;: x_train, &apos;val&apos;: x_val, &apos;test&apos;: x_test}
-    dataset = Dataset(x_data, x_stats)
-    return dataset</code></pre><ul>
-<li>根据对应的划分对数据进行处理，对于1个单独一天的数据，它是24个小时，我们12个小时用于历史数据，9个小时我们来预测，这样的话，1天的数据我们就会划分成24-12-9+1个数据，那么对于40天的训练集的数据总数就是40*（24-12-9+1）也就是160个数据，其他的以此类推  </li>
-<li>划分完后对数据归一化处理，并保存平均值和方差。</li>
-</ul>
-</li>
-<li><p>model_train()介绍：</p>
-<pre><code>def model_train(inputs, blocks, args, sum_path=&apos;./output/tensorboard&apos;):
-    &apos;&apos;&apos;
-    Train the base model.
-    :param inputs: instance of class Dataset, data source for training.
-    :param blocks: list, channel configs of st_conv blocks.
-    :param args: instance of class argparse, args for training.
-    &apos;&apos;&apos;
-    n, n_his, n_pred = args.n_route, args.n_his, args.n_pred
-    Ks, Kt = args.ks, args.kt
-    batch_size, epoch, inf_mode, opt = args.batch_size, args.epoch, args.inf_mode, args.opt
-
-    # Placeholder for model training
-    x = tf.placeholder(tf.float32, [None, n_his + 1, n, 1], name=&apos;data_input&apos;)
-    keep_prob = tf.placeholder(tf.float32, name=&apos;keep_prob&apos;)
-
-    # Define model loss
-    train_loss, pred = build_model(x, n_his, Ks, Kt, blocks, keep_prob)
-    tf.summary.scalar(&apos;train_loss&apos;, train_loss)     #用于tensorboard
-    copy_loss = tf.add_n(tf.get_collection(&apos;copy_loss&apos;))    #tf.add_n([p1, p2, p3....])函数是实现一个列表的元素的相加。就是输入的对象是一个列表，列表里的元素可以是向量，矩阵
-    tf.summary.scalar(&apos;copy_loss&apos;, copy_loss)
-
-    # Learning rate settings
-    global_steps = tf.Variable(0, trainable=False)
-    len_train = inputs.get_len(&apos;train&apos;)
-    if len_train % batch_size == 0:
-        epoch_step = len_train / batch_size
-    else:
-        epoch_step = int(len_train / batch_size) + 1
-    # Learning rate decay with rate 0.7 every 5 epochs.
-    lr = tf.train.exponential_decay(args.lr, global_steps, decay_steps=5 * epoch_step, decay_rate=0.7, staircase=True)
-    tf.summary.scalar(&apos;learning_rate&apos;, lr)
-    step_op = tf.assign_add(global_steps, 1)    #tf.assign_add（）将global_steps加上1，必须要经过参数初始化之后才能使用，书签有具体方法
-    with tf.control_dependencies([step_op]):
-        if opt == &apos;RMSProp&apos;:
-            train_op = tf.train.RMSPropOptimizer(lr).minimize(train_loss)
-        elif opt == &apos;ADAM&apos;:
-            train_op = tf.train.AdamOptimizer(lr).minimize(train_loss)
-        else:
-            raise ValueError(f&apos;ERROR: optimizer &quot;{opt}&quot; is not defined.&apos;)
-
-    merged = tf.summary.merge_all() #merge_all 可以将所有summary全部保存到磁盘，以便tensorboard显示。如果没有特殊要求，一般用这一句就可一显示训练时的各种信息了。
-
-    with tf.Session() as sess:
-        writer = tf.summary.FileWriter(pjoin(sum_path, &apos;train&apos;), sess.graph)
-        sess.run(tf.global_variables_initializer())
-
-        if inf_mode == &apos;sep&apos;:
-            # for inference mode &apos;sep&apos;, the type of step index is int.
-            step_idx = n_pred - 1
-            tmp_idx = [step_idx]
-            min_val = min_va_val = np.array([4e1, 1e5, 1e5])
-        elif inf_mode == &apos;merge&apos;:
-            # for inference mode &apos;merge&apos;, the type of step index is np.ndarray.
-            step_idx = tmp_idx = np.arange(3, n_pred + 1, 3) - 1
-            min_val = min_va_val = np.array([4e1, 1e5, 1e5] * len(step_idx))
-        else:
-            raise ValueError(f&apos;ERROR: test mode &quot;{inf_mode}&quot; is not defined.&apos;)
-
-        for i in range(epoch):
-            start_time = time.time()
-            for j, x_batch in enumerate(
-                    gen_batch(inputs.get_data(&apos;train&apos;), batch_size, dynamic_batch=True, shuffle=True)):
-                summary, _ = sess.run([merged, train_op], feed_dict={x: x_batch[:, 0:n_his + 1, :, :], keep_prob: 1.0})
-                writer.add_summary(summary, i * epoch_step + j)
-                # if j % 50 == 0:
-                loss_value = \
-                        sess.run([train_loss, copy_loss],
-                                 feed_dict={x: x_batch[:, 0:n_his + 1, :, :], keep_prob: 1.0})
-                print(f&apos;Epoch {i:2d}, Step {j:3d}: [{loss_value[0]:.3f}, {loss_value[1]:.3f}]&apos;)
-            print(f&apos;Epoch {i:2d} Training Time {time.time() - start_time:.3f}s&apos;)
-
-            start_time = time.time()
-            print(&apos;step_idx:&apos; + str(step_idx))
-            min_va_val, min_val = \
-                model_inference(sess, pred, inputs, batch_size, n_his, n_pred, step_idx, min_va_val, min_val)
-
-            for ix in tmp_idx:
-                va, te = min_va_val[ix - 2:ix + 1], min_val[ix - 2:ix + 1]
-                print(f&apos;Time Step {ix + 1}: &apos;
-                      f&apos;MAPE {va[0]:7.3%}, {te[0]:7.3%}; &apos;
-                      f&apos;MAE  {va[1]:4.3f}, {te[1]:4.3f}; &apos;
-                      f&apos;RMSE {va[2]:6.3f}, {te[2]:6.3f}.&apos;)
-            print(f&apos;Epoch {i:2d} Inference Time {time.time() - start_time:.3f}s&apos;)
-
-            if (i + 1) % args.save == 0:
-                model_save(sess, global_steps, &apos;STGCN&apos;)
-        writer.close()
-    print(&apos;Training model finished!&apos;)</code></pre><ul>
-<li><strong>build_model():</strong>构建时空图卷积模型</li>
-<li><strong>model_inference():</strong>将本轮训练好的模型用于预测，得到与真实值的损失</li>
-<li>其他的就是正常的设置占位符，然后给数据划分batch_size、设置好超参数准备进行训练</li>
-</ul>
-</li>
-<li><p>build_model()</p>
-<pre><code>def build_model(inputs, n_his, Ks, Kt, blocks, keep_prob):
-    &apos;&apos;&apos;
-    Build the base model.
-    :param inputs: placeholder.
-    :param n_his: int, size of historical records for training.
-    :param Ks: int, kernel size of spatial convolution.
-    :param Kt: int, kernel size of temporal convolution.
-    :param blocks: list, channel configs of st_conv blocks.
-    :param keep_prob: placeholder.
-    &apos;&apos;&apos;
-    x = inputs[:, 0:n_his, :, :]    #inputs为（?,n_his + 1,103,1）
-
-    # Ko&gt;0: kernel size of temporal convolution in the output layer.
-    Ko = n_his      #因为数据放入时间卷积层他的大小会减小（ks-1），Ko用来作为一个flag
-    # ST-Block
-    for i, channels in enumerate(blocks):
-        x = st_conv_block(x, Ks, Kt, channels, i, keep_prob, act_func=&apos;GLU&apos;)
-        Ko -= 2 * (Ks - 1)      #因为有两个时间卷积层，所以 *2
-
-    # Output Layer
-    if Ko &gt; 1:
-        y = output_layer(x, Ko, &apos;output_layer&apos;)
-    else:
-        raise ValueError(f&apos;ERROR: kernel size Ko must be greater than 1, but received &quot;{Ko}&quot;.&apos;)
-
-    tf.add_to_collection(name=&apos;copy_loss&apos;,
-                         value=tf.nn.l2_loss(inputs[:, n_his - 1:n_his, :, :] - inputs[:, n_his:n_his + 1, :, :]))
-    train_loss = tf.nn.l2_loss(y - inputs[:, n_his:n_his + 1, :, :])
-    single_pred = y[:, 0, :, :]
-    tf.add_to_collection(name=&apos;y_pred&apos;, value=single_pred)
-    return train_loss, single_pred</code></pre><ol>
-<li>这里使用到了最开始的blocks参数，对st-conv块来提供输入输出的限制。</li>
-<li><strong>st_conv_block():</strong>来对时空卷积块进行设置</li>
-<li><strong>output_layer():</strong>对输出层进行设置</li>
-<li><strong>train_loss = tf.nn.l2_loss(y - inputs[:, n_his:n_his + 1, :, :])</strong><br> 根据得到的预测值与真实值进行比较，得到损失值</li>
-</ol>
-</li>
-<li><p>st_conv_block()介绍：</p>
-<pre><code>def st_conv_block(x, Ks, Kt, channels, scope, keep_prob, act_func=&apos;GLU&apos;):
-    &apos;&apos;&apos;
-    Spatio-temporal convolutional block, which contains two temporal gated convolution layers
-    and one spatial graph convolution layer in the middle.
-    :param x: tensor, batch_size, time_step, n_route, c_in].
-    :param Ks: int, kernel size of spatial convolution.
-    :param Kt: int, kernel size of temporal convolution.
-    :param channels: list, channel configs of a single st_conv block.
-    :param scope: str, variable scope.
-    :param keep_prob: placeholder, prob of dropout.
-    :param act_func: str, activation function.
-    :return: tensor, [batch_size, time_step, n_route, c_out].
-    &apos;&apos;&apos;
-    c_si, c_t, c_oo = channels
-
-    with tf.variable_scope(f&apos;stn_block_{scope}_in&apos;):
-        x_s = temporal_conv_layer(x, Kt, c_si, c_t, act_func=act_func)
-        x_t = spatio_conv_layer(x_s, Ks, c_t, c_t)
-    with tf.variable_scope(f&apos;stn_block_{scope}_out&apos;):
-        x_o = temporal_conv_layer(x_t, Kt, c_t, c_oo)
-    x_ln = layer_norm(x_o, f&apos;layer_norm_{scope}&apos;)
-    return tf.nn.dropout(x_ln, keep_prob)</code></pre><p> 从这里就可以看见时空卷积块的具体搭建，类似于一个三明治<br> temporal_conv_layer()<br> spatio_conv_layer()<br> temporal_conv_layer()<br> 时间卷积层中使用了残差的概念，用了一半数量的卷积核完成卷积，这样就和 P 的维度一致了，然后直接和 P 相加，然后与 sigmoid 激活后的值进行点对点的相乘。</p>
-</li>
-<li><p>model_inference()</p>
-<pre><code>def model_inference(sess, pred, inputs, batch_size, n_his, n_pred, step_idx, min_va_val, min_val):
-    &apos;&apos;&apos;
-    Model inference function.
-    :param sess: tf.Session().
-    :param pred: placeholder.
-    :param inputs: instance of class Dataset, data source for inference.
-    :param batch_size: int, the size of batch.
-    :param n_his: int, the length of historical records for training.
-    :param n_pred: int, the length of prediction.
-    :param step_idx: int or list, index for prediction slice.
-    :param min_va_val: np.ndarray, metric values on validation set.
-    :param min_val: np.ndarray, metric values on test set.
-    &apos;&apos;&apos;
-    x_val, x_test, x_stats = inputs.get_data(&apos;val&apos;), inputs.get_data(&apos;test&apos;), inputs.get_stats()
-    x_tra = inputs.get_data(&apos;train&apos;)
-    if n_his + n_pred &gt; x_val.shape[1]:
-        raise ValueError(f&apos;ERROR: the value of n_pred &quot;{n_pred}&quot; exceeds the length limit.&apos;)
-
-    y_val, len_val = multi_pred(sess, pred, x_val, batch_size, n_his, n_pred, step_idx)
-    evl_val = evaluation(x_val[0:len_val, step_idx + n_his, :, :], y_val, x_stats)
-
-    # chks: indicator that reflects the relationship of values between evl_val and min_va_val.
-    chks = evl_val &lt; min_va_val
-    # update the metric on test set, if model&apos;s performance got improved on the validation.
-    if sum(chks):
-        min_va_val[chks] = evl_val[chks]
-        y_pred, len_pred = multi_pred(sess, pred, x_test, batch_size, n_his, n_pred, step_idx)
-        evl_pred = evaluation(x_test[0:len_pred, step_idx + n_his, :, :], y_pred, x_stats)
-        min_val = evl_pred
-    return min_va_val, min_val</code></pre><p> 将本轮训练好的模型用于测试集，然后得到MAPE、MAE和RMSE等评判标准</p>
-</li>
-<li><p>结果</p>
-<p><img src="C:%5CUsers%5CCaesar%5CDesktop%5C1.jpg" alt="结果"></p>
-<ol>
-<li><strong>Epoch 49,Step 0[数字1 数字2]:</strong>数字1为train_loss训练损失，用来计算真实值与预测值之间的误差<br> 数字2为copy_loss，代码为：copy_loss=tf.nn.l2_loss(inputs[:, n_his - 1:n_his, :, :] - inputs[:, n_his:n_his + 1, :, :]),目前没看懂有啥用。。。</li>
-<li>再下边就是各种评判标准了。。。不管怎么调整和修改都很离谱。。。</li>
-</ol>
-</li>
-</ol>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/GCN/">GCN</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
+环境介绍
+ Python3.6以上、TensorFlow、pandas、N
+                
+            </p>
+            
+        </section>
     </article>
-
-
-
-
-
-
-   
     
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2019/12/23/沉默的大多数/" title="沉默的大多数" itemprop="url">沉默的大多数</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Lightman" target="_blank" itemprop="author">Lightman</a>
-		
-  <p class="article-time">
-    <time datetime="2019-12-22T16:12:21.000Z" itemprop="datePublished"> Published 2019-12-23</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <ol>
-<li>人人有权争胜负，无人有权论是非。实际上，人只要争得了论是非的权利，他已经不战而胜了。</li>
-<li>假设某君思想高尚，我是十分敬佩的，可是如果你因此想把我的的脑子挖出来扔掉，换上他的，我绝不肯。人既然活着，就有权保证他思想的连续性，到死方休。</li>
-<li>我当然希望自己变得更加善良，但这种善良应该是我变得更聪明造成的，而不是相反。更何况赫拉克利特早就说过，善与恶为一，正如上坡和下坡时同一条路。不知道何为恶，焉知何为善？</li>
-<li>明辨是非的前提就是发展智力，增广见识。(p15)</li>
-<li>倘若对自己做价值判断，还要付出一些代价，对别人做价值判断，那就太简单、太舒服了。（p17)</li>
-<li>与其大呼小叫说要去解放它们，让人家苦等，倒不如一声不吭，忽然有一天把他们解放，给他们一个意外惊喜。</li>
-<li>很多伟大的学者都有狡猾的一面，比如牛顿提出了三大定理之后，为什么要说上帝是万物运动的第一推动力？显然也是朝上帝买个好，万一他真的存在，死后见了面也好说话。</li>
-<li>我国传统文化里有“文死谏”之说，这就是说，中国常常就是花刺子模，这种传统就是号召大家做敬业的心事，拿着屁股和脑袋往君王德刀子板子上撞。很显然，只要不是悲观厌世，谁也不喜欢牺牲自己的脑袋和屁股。所以这种号召也是出于滑头分子之后，变着法说君王有理，这样号召只会起反作用。</li>
-<li><strong>对于我国的传统文化、现代文化，只从诚实的一面理解是不够的，还要从狡猾的一面来理解。</strong></li>
-<li>面对公众和领导时，大家都是信使（这里提到了很多信使因为传递好消息得到了帝王的奖赏，坏消息就被拉去喂老虎），而且都要耍点滑头：捡好听的说或许不至于，起码都在提防着自己不要讲出难听的来–假如混得不好，就该检讨一下自己的嘴是不是不够甜。</li>
-</ol>
+    <article class="post">
 
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
+        <header class="post-header">
+            <div class="tag-tile">
+                
+                
+                <a data-pjax href='/tags/沉默的大多数/'>沉默的大多数</a>
+                
+                
+                <span class="fa fa-bookmark" style="float:right;color:#f39c12"></span>
+            </div>
+            <h1 class="post-title"><a data-pjax href="/2019/12/23/沉默的大多数/">沉默的大多数</a>
+            </h1>
 
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/沉默的大多数/">沉默的大多数</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
+            <div class="post-meta">
+                Post on<span class="fa fa-clock-o"></span>
+                <time datetime="2019-12-22T16:12:21.000Z"
+                      itemprop="datePublished">2019-12-23</time>
+            </div>
+        </header>
+        <section class="post-excerpt">
+            <p>
+                
+                
+人人有权争胜负，无人有权论是非。实际上，人只要争得了论是非的权利，他已经不战而胜了。
+假设某君思想高尚，我是十分敬佩的，可是如果你因此想把我的的脑子挖出来扔掉，换上他的，我绝不肯。人既然活着，就有权保证他思想的连续性，到死方休。
+我当然希望自己变得更加善良，但这种善良应该是我变得更聪明造成的，而不是相反。更何况赫拉克利特早就说过，善与恶为一，正如上坡和下坡时同一条路。不知道何为恶，焉知何为善？
+明辨是非的前提就是发展智力，增广见识。(
+                
+            </p>
+            
+        </section>
     </article>
-
-
-
-
-
-
-   
     
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2019/12/23/算法/" title="算法速查" itemprop="url">算法速查</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Lightman" target="_blank" itemprop="author">Lightman</a>
-		
-  <p class="article-time">
-    <time datetime="2019-12-22T16:12:21.000Z" itemprop="datePublished"> Published 2019-12-23</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h1 id="1-动态规划与分治法"><a href="#1-动态规划与分治法" class="headerlink" title="1. 动态规划与分治法"></a><strong>1. 动态规划与分治法</strong></h1><ul>
-<li>动态规划算法通常用于求解具有某种最优性质的问题。在这类问题中,可能会有许多可行解。每一个解都对应于一个值,我们希望找到具有最优值的解。</li>
-<li>基本思想：动态规划算法与分治法类似,其基本思想也是将待求解问题分解成若干个子问题,先求解子问题,然后从这些子问题的解得到原问题的解。</li>
-<li>与分治法区别：与分治法不同的是,适合于用<strong>动态规划</strong>求解的问题,经分解得到子问题往往<strong>不是互相独立</strong>的。若用分治法来解这类问题,则分解得到的子问题数目太多,有些子问题被重复计算了很多次。如果我们能够保存已解决的子问题的答案,而在需要时再找出已求得的答案,这样就可以避免大量的重复计算,节省时间。我们可以用一个表来记录所有已解的子问题的答案。<strong>不管该子问题以后是否被用到,只要它被计算过,就将其结果填入表中</strong>。这就是动态规划法的基本思路。具体的动态规划算法多种多样,但它们具有相同的填表格式。</li>
-</ul>
+    <article class="post">
 
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
+        <header class="post-header">
+            <div class="tag-tile">
+                
+                
+                <a data-pjax href='/tags/算法/'>算法</a>
+                
+                
+                <span class="fa fa-bookmark" style="float:right;color:#f39c12"></span>
+            </div>
+            <h1 class="post-title"><a data-pjax href="/2019/12/23/算法/">算法速查</a>
+            </h1>
 
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/算法/">算法</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
+            <div class="post-meta">
+                Post on<span class="fa fa-clock-o"></span>
+                <time datetime="2019-12-22T16:12:21.000Z"
+                      itemprop="datePublished">2019-12-23</time>
+            </div>
+        </header>
+        <section class="post-excerpt">
+            <p>
+                
+                1. 动态规划与分治法
+动态规划算法通常用于求解具有某种最优性质的问题。在这类问题中,可能会有许多可行解。每一个解都对应于一个值,我们希望找到具有最优值的解。
+基本思想：动态规划算法与分治法类似,其基本思想也是将待求解问题分解成若干个子问题,先求解子问题,然后从这些子问题的解得到原问题的解。
+与分治法区别：与分治法不同的是,适合于用动态规划求解的问题,经分解得到子问题往往不是互相独立的。若用分治法来解这类问题,则分解得到的子问题数目太多
+                
+            </p>
+            
+        </section>
     </article>
-
-
-
-
-
-
-   
     
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2019/12/23/python/" title="Python教程" itemprop="url">Python教程</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Lightman" target="_blank" itemprop="author">Lightman</a>
-		
-  <p class="article-time">
-    <time datetime="2019-12-22T16:12:21.000Z" itemprop="datePublished"> Published 2019-12-23</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p><strong>注意：</strong></p>
-<pre><code>* 不要使用python的内置函数当参数名</code></pre><h2 id="Python基础-大小写敏感"><a href="#Python基础-大小写敏感" class="headerlink" title="Python基础(大小写敏感)"></a>Python基础(大小写敏感)</h2><ol>
-<li><p>‘&#39; 转义字符</p>
-</li>
-<li><p>r’’ 整体转义</p>
-</li>
-<li><p>‘’’……’’’ 可以表示多行，不需要\n</p>
-<p> 例如：</p>
-<pre><code>&gt;&gt;&gt; print(&apos;&apos;&apos;line1
+    <article class="post">
+
+        <header class="post-header">
+            <div class="tag-tile">
+                
+                
+                <a data-pjax href='/tags/Python/'>Python</a>
+                
+                
+                <span class="fa fa-bookmark" style="float:right;color:#f39c12"></span>
+            </div>
+            <h1 class="post-title"><a data-pjax href="/2019/12/23/python/">Python教程</a>
+            </h1>
+
+            <div class="post-meta">
+                Post on<span class="fa fa-clock-o"></span>
+                <time datetime="2019-12-22T16:12:21.000Z"
+                      itemprop="datePublished">2019-12-23</time>
+            </div>
+        </header>
+        <section class="post-excerpt">
+            <p>
+                
+                注意：
+* 不要使用python的内置函数当参数名Python基础(大小写敏感)
+‘&#39; 转义字符
+
+r’’ 整体转义
+
+‘’’……’’’ 可以表示多行，不需要\n
+ 例如：
+&gt;&gt;&gt; print(&apos;&apos;&apos;line1
     ... line2
     ... line3&apos;&apos;&apos;)
     line1
     line2
-    line3</code></pre></li>
-<li><p>and、or、not</p>
-</li>
-<li><p>encode()编码、decode()解码</p>
-</li>
-<li><p>有些时候，字符串里面的%是一个普通字符怎么办，这个时候就需要转义，用%%来表示一个%</p>
-</li>
-<li><p>定义的不是tuple，是1这个数！这是因为括号()既可以表示tuple，又可以表示数学公式中的小括号，这就产生了歧义，因此，Python规定，这种情况下，按小括号进行计算，计算结果自然是1。<br>所以，只有1个元素的tuple定义时必须加一个逗号,，来消除歧义：</p>
-<p> 例如：</p>
-<pre><code>&gt;&gt;&gt; t = (1)
-&gt;&gt;&gt; t
-1
-&gt;&gt;&gt; t = (1,)
-&gt;&gt;&gt; t
-(1,)</code></pre></li>
-<li><p>定义默认参数要牢记一点：默认参数必须指向不变对象！Python函数在定义的时候，默认参数L的值就被计算出来了，即[]，因为默认参数L也是一个变量，它指向对象[]，每次调用该函数，如果改变了L的内容，则下次调用时，默认参数的内容就变了，不再是函数定义时的[]了</p>
-</li>
-</ol>
-<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><ol start="9">
-<li><p><strong>可变参数</strong></p>
-<p>定义可变参数和定义一个list或tuple参数相比，仅仅在参数前面加了一个*号。在函数内部，参数numbers接收到的是一个tuple，因此，函数代码完全不变。(与上边进行对比，收到的是tuple而不是list，所以默认参数不会随着调用而被更改。如果默认参数被更改，那么每次调用函数时，得到的返回参数不一样。)</p>
-</li>
-<li><p>Python允许你在list或tuple前面加一个*号，把list或tuple的元素变成可变参数传进去</p>
-<p>例如：</p>
-<pre><code>&gt;&gt;&gt; nums = [1, 2, 3]
-&gt;&gt;&gt; calc(nums[0], nums[1], nums[2])
-14
-&gt;&gt;&gt; nums = [1, 2, 3]
-&gt;&gt;&gt; calc(*nums)
-14</code></pre></li>
-<li><p><strong>关键字参数</strong></p>
-<p>可变参数允许你传入0个或任意个参数，这些可变参数在函数调用时自动组装为一个tuple。而关键字参数允许你传入0个或任意个含参数名的参数，这些关键字参数在函数内部自动组装为一个dict。请看示例：</p>
-<pre><code>def person(name, age, **kw):
-    print(&apos;name:&apos;, name, &apos;age:&apos;, age, &apos;other:&apos;, kw)</code></pre><p>函数person除了必选参数name和age外，还接受关键字参数kw。在调用该函数时，可以只传入必选参数：</p>
-<pre><code>&gt;&gt;&gt; person(&apos;Michael&apos;, 30)
-name: Michael age: 30 other: {}</code></pre><p>也可以传入任意个数的关键字参数：</p>
-<pre><code>&gt;&gt;&gt; person(&apos;Bob&apos;, 35, city=&apos;Beijing&apos;)
-name: Bob age: 35 other: {&apos;city&apos;: &apos;Beijing&apos;}
-&gt;&gt;&gt; person(&apos;Adam&apos;, 45, gender=&apos;M&apos;, job=&apos;Engineer&apos;)
-name: Adam age: 45 other: {&apos;gender&apos;: &apos;M&apos;, &apos;job&apos;: &apos;Engineer&apos;}</code></pre><p>关键字参数有什么用？它可以<strong>扩展函数</strong>的功能。比如，在person函数里，我们保证能接收到name和age这两个参数，但是，如果调用者愿意提供更多的参数，我们也能收到。试想你正在做一个用户注册的功能，<strong>除了用户名和年龄是必填项外，其他都是可选项，利用关键字参数来定义这个函数就能满足注册的需求。</strong></p>
-<p>和可变参数类似，也可以先组装出一个dict，然后，把该dict转换为关键字参数传进去：</p>
-<pre><code>&gt;&gt;&gt; extra = {&apos;city&apos;: &apos;Beijing&apos;, &apos;job&apos;: &apos;Engineer&apos;}
-&gt;&gt;&gt; person(&apos;Jack&apos;, 24, city=extra[&apos;city&apos;], job=extra[&apos;job&apos;])
-name: Jack age: 24 other: {&apos;city&apos;: &apos;Beijing&apos;, &apos;job&apos;: &apos;Engineer&apos;}</code></pre><p>当然，上面复杂的调用可以用简化的写法：</p>
-<pre><code>&gt;&gt;&gt; extra = {&apos;city&apos;: &apos;Beijing&apos;, &apos;job&apos;: &apos;Engineer&apos;}
-&gt;&gt;&gt; person(&apos;Jack&apos;, 24, **extra)
-name: Jack age: 24 other: {&apos;city&apos;: &apos;Beijing&apos;, &apos;job&apos;: &apos;Engineer&apos;}</code></pre><p>**extra表示把extra这个dict的所有key-value用关键字参数传入到函数的**kw参数，kw将获得一个dict，注意kw获得的dict是extra的一份拷贝，对kw的改动不会影响到函数外的extra。</p>
-</li>
-<li><p>命名关键字参数</p>
-<p>如果要限制关键字参数的名字，就可以用命名关键字参数，例如，只接收city和job作为关键字参数。这种方式定义的函数如下：</p>
-<pre><code>def person(name, age, *, city, job):
-    print(name, age, city, job)</code></pre><p>和关键字参数*<em>kw不同，命名关键字参数需要一个特殊分隔符</em>，*后面的参数被视为命名关键字参数。</p>
-<p>调用方式如下：</p>
-<pre><code>&gt;&gt;&gt; person(&apos;Jack&apos;, 24, city=&apos;Beijing&apos;, job=&apos;Engineer&apos;)
-Jack 24 Beijing Engineer</code></pre><p>如果函数定义中已经有了一个可变参数，后面跟着的命名关键字参数就不再需要一个特殊分隔符*了：</p>
-<pre><code>def person(name, age, *args, city, job):
-    print(name, age, args, city, job)</code></pre><p>命名关键字参数必须传入参数名，这和位置参数不同。如果没有传入参数名，调用将报错：</p>
-<pre><code>&gt;&gt;&gt; person(&apos;Jack&apos;, 24, &apos;Beijing&apos;, &apos;Engineer&apos;)
-Traceback (most recent call last):
-  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
-TypeError: person() takes 2 positional arguments but 4 were given</code></pre><p>由于调用时缺少参数名city和job，Python解释器把这4个参数均视为位置参数，但person()函数仅接受2个位置参数。</p>
-<p>命名关键字参数可以有缺省值，从而简化调用：</p>
-<pre><code>def person(name, age, *, city=&apos;Beijing&apos;, job):
-    print(name, age, city, job)</code></pre><p>由于命名关键字参数city具有默认值，调用时，可不传入city参数：</p>
-<pre><code>&gt;&gt;&gt; person(&apos;Jack&apos;, 24, job=&apos;Engineer&apos;)
-Jack 24 Beijing Engineer</code></pre><p>使用命名关键字参数时，要特别注意，如果没有可变参数，就必须加一个<em>作为特殊分隔符。如果缺少</em>，Python解释器将无法识别位置参数和命名关键字参数：</p>
-<pre><code>def person(name, age, city, job):
-    # 缺少 *，city和job被视为位置参数
-    pass</code></pre></li>
-<li><p><strong>关于*args与**kw</strong></p>
-<p>*args是可变参数，args接收的是一个tuple；<br>**kw是关键字参数，kw接收的是一个dict。</p>
-</li>
-<li><p>列表生成式</p>
-<pre><code>&gt;&gt;&gt; [x * x for x in range(1, 11)]
-[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]</code></pre></li>
-</ol>
-<h2 id="高级特性"><a href="#高级特性" class="headerlink" title="高级特性"></a>高级特性</h2><ol start="15">
-<li><p><strong>生成器</strong></p>
-<ol>
-<li><p>要创建一个generator，有很多种方法。第一种方法很简单，只要把一个列表生成式的[]改成()，就创建了一个generator：</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>L = [x * x for x in range(10)]<br>L<br> [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]<br>g = (x * x for x in range(10))<br>g<br> &lt;generator object <genexpr> at 0x1022ef630&gt;</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</li>
-<li><p>定义generator的另一种方法。如果一个函数定义中包含yield关键字，那么这个函数就不再是一个普通函数，而是一个generator：</p>
-<p> def fib(max):<br> n, a, b = 0, 0, 1<br> while n &lt; max:</p>
-<pre><code>yield b
-a, b = b, a + b
-n = n + 1</code></pre><p> return ‘done’</p>
-</li>
-</ol>
-<p><em>注意：</em>这里，最难理解的就是generator和函数的执行流程不一样。函数是顺序执行，遇到return语句或者最后一行函数语句就返回。而变成generator的函数，在每次调用next()的时候执行，遇到yield语句返回，再次执行时从上次返回的yield语句处继续执行。</p>
-<p>举个简单的例子，定义一个generator，依次返回数字1，3，5：</p>
-<pre><code>def odd():
-    print(&apos;step 1&apos;)
-    yield 1
-    print(&apos;step 2&apos;)
-    yield(3)
-    print(&apos;step 3&apos;)
-    yield(5)</code></pre><p>调用该generator时，首先要生成一个generator对象，然后用next()函数不断获得下一个返回值：</p>
-<pre><code>&gt;&gt;&gt; o = odd()
-&gt;&gt;&gt; next(o)
-step 1
-1
-&gt;&gt;&gt; next(o)
-step 2
-3
-&gt;&gt;&gt; next(o)
-step 3
-5
-&gt;&gt;&gt; next(o)
-Traceback (most recent call last):
-  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
-StopIteration</code></pre></li>
-<li><p>迭代器 Interator</p>
-<p>凡是可作用于for循环的对象都是Iterable类型；</p>
-<p>凡是可作用于next()函数的对象都是Iterator类型，它们表示一个惰性计算的序列；</p>
-<p>集合数据类型如list、dict、str等是Iterable但不是Iterator，不过可以通过iter()函数获得一个Iterator对象</p>
-</li>
-</ol>
-<h2 id="函数式编程"><a href="#函数式编程" class="headerlink" title="函数式编程"></a>函数式编程</h2><ol start="17">
-<li><p>高级函数：可以以函数作为参数的函数</p>
-<ul>
-<li><p>map()函数：接收两个参数，一个是函数，一个是Iterable，map将传入的函数依次作用到序列的每个元素，并把结果作为新的Iterator返回。<br>举例说明，比如我们有一个函数f(x)=x2，要把这个函数作用在一个list [1, 2, 3, 4, 5, 6, 7, 8, 9]上，就可以用map()实现如下：</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>def f(x):<br>  …     return x * x<br>  …<br>r = map(f, [1, 2, 3, 4, 5, 6, 7, 8, 9])<br>list(r)<br>  [1, 4, 9, 16, 25, 36, 49, 64, 81]</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</li>
-<li><p>reduce()函数：reduce把一个函数作用在一个序列[x1, x2, x3, …]上，这个函数必须接收两个参数，reduce把结果继续和序列的下一个元素做累积计算，其效果就是：</p>
-<p>  reduce(f, [x1, x2, x3, x4]) = f(f(f(x1, x2), x3), x4)</p>
-</li>
-</ul>
-<p>比方说对一个序列求和，就可以用reduce实现：</p>
-<pre><code>&gt;&gt;&gt; from functools import reduce
-&gt;&gt;&gt; def add(x, y):
-...     return x + y
-...
-&gt;&gt;&gt; reduce(add, [1, 3, 5, 7, 9])
-25</code></pre><ul>
-<li><p>sorted()函数：也是一个高阶函数，它还可以接收一个key函数来实现自定义的排序，例如按绝对值大小排序：</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>sorted([36, 5, -12, 9, -21], key=abs)<br>  [5, 9, -12, -21, 36]</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</li>
-</ul>
-<p>key指定的函数将作用于list的每一个元素上，并根据key函数返回的结果进行排序。对比原始的list和经过key=abs处理过的list：</p>
-<pre><code>list = [36, 5, -12, 9, -21]
-keys = [36, 5,  12, 9,  21]</code></pre><p>要进行反向排序，不必改动key函数，可以传入第三个参数reverse=True：</p>
-<pre><code>&gt;&gt;&gt; sorted([&apos;bob&apos;, &apos;about&apos;, &apos;Zoo&apos;, &apos;Credit&apos;], key=str.lower, reverse=True)
-[&apos;Zoo&apos;, &apos;Credit&apos;, &apos;bob&apos;, &apos;about&apos;]</code></pre></li>
-<li><p><strong>闭包</strong></p>
-<pre><code>def lazy_sum(*args):
-def sum():
-    ax = 0
-    for n in args:
-        ax = ax + n
-    return ax
-return sum</code></pre><p>当我们调用lazy_sum()时，返回的并不是求和结果，而是求和函数：</p>
-<pre><code>&gt;&gt;&gt; f = lazy_sum(1, 3, 5, 7, 9)
-&gt;&gt;&gt; f
-&lt;function lazy_sum.&lt;locals&gt;.sum at 0x101c6ed90&gt;</code></pre><p>注意到返回的函数在其定义内部引用了局部变量args，所以，当一个函数返回了一个函数后，其内部的局部变量还被新函数引用，所以，闭包用起来简单，实现起来可不容易。</p>
-<p>另一个需要注意的问题是，返回的函数并没有立刻执行，而是直到调用了f()才执行。我们来看一个例子：</p>
-<pre><code>def count():
-    fs = []
-    for i in range(1, 4):
-        def f():
-             return i*i
-        fs.append(f)
-    return fs
-
-f1, f2, f3 = count()</code></pre><p>在上面的例子中，每次循环，都创建了一个新的函数，然后，把创建的3个函数都返回了。</p>
-<p>你可能认为调用f1()，f2()和f3()结果应该是1，4，9，但实际结果是：</p>
-<pre><code>&gt;&gt;&gt; f1()
-9
-&gt;&gt;&gt; f2()
-9
-&gt;&gt;&gt; f3()
-9</code></pre><p>全部都是9！原因就在于返回的函数引用了变量i，但它并非立刻执行。等到3个函数都返回时，它们所引用的变量i已经变成了3，因此最终结果为9。</p>
-<p><strong>返回闭包时牢记一点：返回函数不要引用任何循环变量，或者后续会发生变化的变量。</strong></p>
-<p>如果一定要引用循环变量怎么办？方法是再创建一个函数，用该函数的参数绑定循环变量当前的值，无论该循环变量后续如何更改，已绑定到函数参数的值不变：</p>
-<pre><code>def count():
-    def f(j):
-        def g():
-            return j*j
-        return g
-    fs = []
-    for i in range(1, 4):
-        fs.append(f(i)) # f(i)立刻被执行，因此i的当前值被传入f()
-    return fs</code></pre><p>再看看结果：</p>
-<pre><code>&gt;&gt;&gt; f1, f2, f3 = count()
-&gt;&gt;&gt; f1()
-1
-&gt;&gt;&gt; f2()
-4
-&gt;&gt;&gt; f3()
-9</code></pre><p>缺点是代码较长，可利用lambda函数缩短代码。</p>
-</li>
-<li><p><strong>匿名函数</strong></p>
-<p>当我们在传入函数时，有些时候，不需要显式地定义函数，直接传入匿名函数更方便。</p>
-<p>在Python中，对匿名函数提供了有限支持。还是以map()函数为例，计算f(x)=x2时，除了定义一个f(x)的函数外，还可以直接传入匿名函数：</p>
-<pre><code>&gt;&gt;&gt; list(map(lambda x: x * x, [1, 2, 3, 4, 5, 6, 7, 8, 9]))
-[1, 4, 9, 16, 25, 36, 49, 64, 81]</code></pre><p>通过对比可以看出，匿名函数lambda x: x * x实际上就是：</p>
-<pre><code>def f(x):
-    return x * x</code></pre><p>关键字lambda表示匿名函数，冒号前面的x表示函数参数。</p>
-<p>匿名函数有个限制，就是只能有一个表达式，不用写return，返回值就是该表达式的结果。</p>
-<p>用匿名函数有个好处，因为函数没有名字，不必担心函数名冲突。此外，匿名函数也是一个函数对象，也可以把匿名函数赋值给一个变量，再利用变量来调用该函数：</p>
-<pre><code>&gt;&gt;&gt; f = lambda x: x * x
-&gt;&gt;&gt; f
-&lt;function &lt;lambda&gt; at 0x101c6ef28&gt;
-&gt;&gt;&gt; f(5)
-25</code></pre><p>同样，也可以把匿名函数作为返回值返回，比如：</p>
-<pre><code>def build(x, y):
-    return lambda: x * x + y * y </code></pre></li>
-<li><p><strong>装饰器</strong></p>
-<p>由于函数也是一个对象，而且函数对象可以被赋值给变量，所以，通过变量也能调用该函数。</p>
-<pre><code>&gt;&gt;&gt; def now():
-...     print(&apos;2015-3-25&apos;)
-...
-&gt;&gt;&gt; f = now
-&gt;&gt;&gt; f()
-2015-3-25</code></pre><p>函数对象有一个<strong>name</strong>属性，可以拿到函数的名字：</p>
-<pre><code>&gt;&gt;&gt; now.__name__
-&apos;now&apos;
-&gt;&gt;&gt; f.__name__
-&apos;now&apos;</code></pre><p>现在，假设我们要增强now()函数的功能，比如，在函数调用前后自动打印日志，但又不希望修改now()函数的定义，这种在代码运行期间动态增加功能的方式，称之为“装饰器”（Decorator）。</p>
-<p>本质上，decorator就是一个返回函数的高阶函数。所以，我们要定义一个能打印日志的decorator，可以定义如下：</p>
-<pre><code>def log(func):
-    def wrapper(*args, **kw):
-        print(&apos;call %s():&apos; % func.__name__)
-        return func(*args, **kw)
-    return wrapper</code></pre><p>观察上面的log，因为它是一个decorator，所以接受一个函数作为参数，并返回一个函数。我们要借助Python的@语法，把decorator置于函数的定义处：</p>
-<pre><code>@log
-def now():
-    print(&apos;2015-3-25&apos;)</code></pre><p>调用now()函数，不仅会运行now()函数本身，还会在运行now()函数前打印一行日志：</p>
-<pre><code>&gt;&gt;&gt; now()
-call now():
-2015-3-25</code></pre><p>把@log放到now()函数的定义处，相当于执行了语句：</p>
-<pre><code>now = log(now)</code></pre><p>以上两种decorator的定义都没有问题，但还差最后一步。因为我们讲了函数也是对象，它有<strong>name</strong>等属性，但你去看经过decorator装饰之后的函数，它们的<strong>name</strong>已经从原来的’now’变成了’wrapper’：</p>
-<pre><code>&gt;&gt;&gt; now.__name__
-&apos;wrapper&apos;</code></pre><p>因为返回的那个wrapper()函数名字就是’wrapper’，所以，需要把原始函数的<strong>name</strong>等属性复制到wrapper()函数中，否则，有些依赖函数签名的代码执行就会出错。</p>
-<p>不需要编写wrapper.<strong>name</strong> = func.<strong>name</strong>这样的代码，Python内置的functools.wraps就是干这个事的，所以，一个完整的decorator的写法如下：</p>
-<pre><code>import functools
-
-def log(func):
-    @functools.wraps(func)
-    def wrapper(*args, **kw):
-        print(&apos;call %s():&apos; % func.__name__)
-        return func(*args, **kw)
-    return wrapper</code></pre><p>或者针对带参数的decorator：</p>
-<pre><code>import functools
-
-def log(text):
-    def decorator(func):
-        @functools.wraps(func)
-        def wrapper(*args, **kw):
-            print(&apos;%s %s():&apos; % (text, func.__name__))
-            return func(*args, **kw)
-        return wrapper
-    return decorator</code></pre><p>import functools是导入functools模块。模块的概念稍候讲解。现在，只需记住在定义wrapper()的前面加上<strong>@functools.wraps(func)</strong>即可。</p>
-</li>
-<li><p>偏函数</p>
-<p>functools.partial就是帮助我们创建一个偏函数的，不需要我们自己定义int2()，可以直接使用下面的代码创建一个新的函数int2：</p>
-<pre><code>&gt;&gt;&gt; import functools
-&gt;&gt;&gt; int2 = functools.partial(int, base=2)
-&gt;&gt;&gt; int2(&apos;1000000&apos;)
-64
-&gt;&gt;&gt; int2(&apos;1010101&apos;)
-85</code></pre><p>所以，简单总结functools.partial的作用就是，把一个函数的某些参数给固定住（也就是设置默认值），返回一个新的函数，调用这个新函数会更简单。</p>
-</li>
-<li><p><strong>sys模块的argv变量</strong></p>
-<p>sys模块有一个argv变量，用list存储了命令行的所有参数。argv至少有一个元素，因为第一个参数永远是该.py文件的名称，例如：</p>
-<p>运行python3 hello.py获得的sys.argv就是[‘hello.py’]；</p>
-<p>运行python3 hello.py Michael获得的sys.argv就是[‘hello.py’, ‘Michael]。</p>
-</li>
-</ol>
-<h2 id="面向对象编程"><a href="#面向对象编程" class="headerlink" title="面向对象编程"></a>面向对象编程</h2><ol start="23">
-<li><p>类和示例</p>
-<p>例如：仍以Student类为例，在Python中，定义类是通过class关键字：</p>
-<pre><code>class Student(object):
-    pass</code></pre><ul>
-<li>类名通常是大写开头的单词</li>
-<li>紧接着是(object)，表示该类是从哪个类继承下来的，通常，如果没有合适的继承类，就使用object类，这是所有类最终都会继承的类。</li>
-</ul>
-<p>可以自由地给一个实例变量绑定属性，比如，给实例bart绑定一个name属性（可以随时绑定属性）：</p>
-<pre><code>&gt;&gt;&gt; bart.name = &apos;Bart Simpson&apos;
-&gt;&gt;&gt; bart.name
-&apos;Bart Simpson&apos;</code></pre></li>
-<li><p>访问限制（私有属性）</p>
-<p>如果要让内部属性不被外部访问，可以把属性的名称前加上两个下划线<strong>__</strong>，在Python中，实例的变量名如果以__开头，就变成了一个私有变量（private），只有内部可以访问，外部不能访问，所以，我们把Student类改一改：</p>
-<pre><code>class Student(object):
-
-    def __init__(self, name, score):
-        self.__name = name
-        self.__score = score
-
-    def print_score(self):
-        print(&apos;%s: %s&apos; % (self.__name, self.__score))</code></pre><p>改完后，对于外部代码来说，没什么变动，但是已经无法从外部访问实例变量.<strong>name和实例变量.</strong>score了：</p>
-<pre><code>&gt;&gt;&gt; bart = Student(&apos;Bart Simpson&apos;, 59)
-&gt;&gt;&gt; bart.__name
-Traceback (most recent call last):
-  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
-AttributeError: &apos;Student&apos; object has no attribute &apos;__name&apos;</code></pre><p>这样就确保了外部代码不能随意修改对象内部的状态，这样通过访问限制的保护，代码更加健壮。</p>
-<p><strong>注意：</strong>  </p>
-<p>需要注意的是，在Python中，变量名类似<strong>xxx</strong>的，也就是以双下划线开头，并且以双下划线结尾的，是特殊变量，特殊变量是可以直接访问的，不是private变量，所以，不能用<strong>name</strong>、__score__这样的变量名。</p>
-<p>有些时候，你会看到以一个下划线开头的实例变量名，比如_name，这样的实例变量外部是可以访问的，但是，按照约定俗成的规定，当你看到这样的变量时，意思就是，“虽然我可以被访问，但是，请把我视为私有变量，不要随意访问”。</p>
-<p>双下划线开头的实例变量是不是一定不能从外部访问呢？其实也不是。不能直接访问<strong>name是因为Python解释器对外把</strong>name变量改成了_Student__name，所以，仍然可以通过_Student__name来访问__name变量：</p>
-<pre><code>&gt;&gt;&gt; bart._Student__name
-&apos;Bart Simpson&apos;</code></pre><p>但是强烈建议你不要这么干，因为不同版本的Python解释器可能会把__name改成不同的变量名。</p>
-<p>总的来说就是，Python本身没有任何机制阻止你干坏事，一切全靠自觉。</p>
-</li>
-<li><p>继承和多态（Python的继承不是特别的严格！）</p>
-<p><strong>静态语言 VS 动态语言</strong></p>
-<p>对于静态语言（例如Java）来说，如果需要传入Animal类型，则传入的对象必须是Animal类型或者它的子类，否则，将无法调用run()方法。</p>
-<p>对于Python这样的动态语言来说，则不一定需要传入Animal类型。我们只需要保证传入的对象有一个run()方法就可以了：</p>
-<pre><code>class Timer(object):
-    def run(self):
-        print(&apos;Start...&apos;)</code></pre><p>这就是动态语言的“鸭子类型”，它并不要求严格的继承体系，一个对象只要“看起来像鸭子，走起路来像鸭子”，那它就可以被看做是鸭子。</p>
-<p>Python的“file-like object“就是一种鸭子类型。对真正的文件对象，它有一个read()方法，返回其内容。但是，许多对象，只要有read()方法，都被视为“file-like object“。许多函数接收的参数就是“file-like object“，你不一定要传入真正的文件对象，完全可以传入任何实现了read()方法的对象。</p>
-</li>
-<li><p>isinstance()</p>
-<p>对于class的继承关系来说，使用type()就很不方便。我们要判断class的类型，可以使用isinstance()函数。</p>
-<p>我们回顾上次的例子，如果继承关系是：</p>
-<p>object -&gt; Animal -&gt; Dog -&gt; Husky<br>那么，isinstance()就可以告诉我们，一个对象是否是某种类型。先创建3种类型的对象：</p>
-<pre><code>&gt;&gt;&gt; a = Animal()
-&gt;&gt;&gt; d = Dog()
-&gt;&gt;&gt; h = Husky()</code></pre><p>然后，判断：</p>
-<pre><code>&gt;&gt;&gt; isinstance(h, Husky)
-True</code></pre><p>没有问题，因为h变量指向的就是Husky对象。</p>
-<p>再判断：</p>
-<pre><code>&gt;&gt;&gt; isinstance(h, Dog)
-True</code></pre><p>h虽然自身是Husky类型，但由于Husky是从Dog继承下来的，所以，h也还是Dog类型。换句话说，isinstance()判断的是一个对象是否是该类型本身，或者位于该类型的父继承链上。</p>
-<p>因此，我们可以确信，h还是Animal类型：</p>
-<pre><code>&gt;&gt;&gt; isinstance(h, Animal)
-True</code></pre></li>
-<li><p><strong>dir() 函数</strong>：可以获得一个对象的所有属性和方法，它返回一个包含字符串的list</p>
-<p>类似<strong>xxx</strong>的属性和方法在Python中都是有特殊用途的，比如<strong>len</strong>方法返回长度。在Python中，如果你调用len()函数试图获取一个对象的长度，实际上，在len()函数内部，它自动去调用该对象的<strong>len</strong>()方法，所以，下面的代码是等价的：</p>
-<pre><code>&gt;&gt;&gt; len(&apos;ABC&apos;)
-3
-&gt;&gt;&gt; &apos;ABC&apos;.__len__()
-3</code></pre><p>我们自己写的类，如果也想用len(myObj)的话，就自己写一个<strong>len</strong>()方法：</p>
-<pre><code>&gt;&gt;&gt; class MyDog(object):
-...     def __len__(self):
-...         return 100
-...
-&gt;&gt;&gt; dog = MyDog()
-&gt;&gt;&gt; len(dog)
-100</code></pre></li>
-</ol>
-<h2 id="面对对象高级编程"><a href="#面对对象高级编程" class="headerlink" title="面对对象高级编程"></a>面对对象高级编程</h2><ol start="28">
-<li><p>__slots__</p>
-<p>但是，如果我们想要限制实例的属性怎么办？比如，只允许对Student实例添加name和age属性。</p>
-<p>为了达到限制的目的，Python允许在定义class的时候，定义一个特殊的<strong>slots</strong>变量，来限制该class实例能添加的属性：</p>
-<pre><code>class Student(object):
-    __slots__ = (&apos;name&apos;, &apos;age&apos;) # 用tuple定义允许绑定的属性名称</code></pre><p>然后，我们试试：</p>
-<pre><code>&gt;&gt;&gt; s = Student() # 创建新的实例
-&gt;&gt;&gt; s.name = &apos;Michael&apos; # 绑定属性&apos;name&apos;
-&gt;&gt;&gt; s.age = 25 # 绑定属性&apos;age&apos;
-&gt;&gt;&gt; s.score = 99 # 绑定属性&apos;score&apos;
-Traceback (most recent call last):
-  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
-AttributeError: &apos;Student&apos; object has no attribute &apos;score&apos;</code></pre><p>由于’score’没有被放到<strong>slots</strong>中，所以不能绑定score属性，试图绑定score将得到AttributeError的错误。</p>
-<p>使用<strong>slots</strong>要注意，<strong>slots</strong>定义的属性仅对当前类实例起作用，对继承的子类是不起作用的：</p>
-<pre><code>&gt;&gt;&gt; class GraduateStudent(Student):
-...     pass
-...
-&gt;&gt;&gt; g = GraduateStudent()
-&gt;&gt;&gt; g.score = 9999</code></pre><p>除非在子类中也定义<strong>slots</strong>，这样，子类实例允许定义的属性就是自身的<strong>slots</strong>加上父类的<strong>slots</strong>。</p>
-</li>
-<li><p>@property</p>
-<p>在绑定属性时，如果我们直接把属性暴露出去，虽然写起来很简单，但是，没办法检查参数，导致可以把成绩随便改：</p>
-<pre><code>s = Student()
-s.score = 9999</code></pre><p>这显然不合逻辑。为了限制score的范围，可以通过一个set_score()方法来设置成绩，再通过一个get_score()来获取成绩，这样，在set_score()方法里，就可以检查参数：</p>
-<pre><code>class Student(object):
-
-    def get_score(self):
-         return self._score
-
-    def set_score(self, value):
-        if not isinstance(value, int):
-            raise ValueError(&apos;score must be an integer!&apos;)
-        if value &lt; 0 or value &gt; 100:
-            raise ValueError(&apos;score must between 0 ~ 100!&apos;)
-        self._score = value</code></pre><p>现在，对任意的Student实例进行操作，就不能随心所欲地设置score了：</p>
-<pre><code>&gt;&gt;&gt; s = Student()
-&gt;&gt;&gt; s.set_score(60) # ok!
-&gt;&gt;&gt; s.get_score()
-60
-&gt;&gt;&gt; s.set_score(9999)
-Traceback (most recent call last):
-  ...
-ValueError: score must between 0 ~ 100!</code></pre><p>但是，上面的调用方法又略显复杂，没有直接用属性这么直接简单。</p>
-<p>有没有既能检查参数，又可以用类似属性这样简单的方式来访问类的变量呢？对于追求完美的Python程序员来说，这是必须要做到的！</p>
-<p>还记得装饰器（decorator）可以给函数动态加上功能吗？对于类的方法，装饰器一样起作用。Python内置的@property装饰器就是负责把一个方法变成属性调用的：</p>
-<pre><code>class Student(object):
-
-    @property
-    def score(self):
-        return self._score
-
-    @score.setter
-    def score(self, value):
-        if not isinstance(value, int):
-            raise ValueError(&apos;score must be an integer!&apos;)
-        if value &lt; 0 or value &gt; 100:
-            raise ValueError(&apos;score must between 0 ~ 100!&apos;)
-        self._score = value</code></pre><p>@property的实现比较复杂，我们先考察如何使用。把一个getter方法变成属性，只需要加上@property就可以了，此时，@property本身又创建了另一个装饰器@score.setter，负责把一个setter方法变成属性赋值，于是，我们就拥有一个可控的属性操作：</p>
-<pre><code>&gt;&gt;&gt; s = Student()
-&gt;&gt;&gt; s.score = 60 # OK，实际转化为s.set_score(60)
-&gt;&gt;&gt; s.score # OK，实际转化为s.get_score()
-60
-&gt;&gt;&gt; s.score = 9999
-Traceback (most recent call last):
-  ...
-ValueError: score must between 0 ~ 100!</code></pre><p>注意到这个神奇的@property，我们在对实例属性操作的时候，就知道该属性很可能不是直接暴露的，而是通过getter和setter方法来实现的。</p>
-<p>还可以定义只读属性，只定义getter方法，不定义setter方法就是一个只读属性：</p>
-<pre><code>class Student(object):
-
-    @property
-    def birth(self):
-        return self._birth
-
-    @birth.setter
-    def birth(self, value):
-        self._birth = value
-
-    @property
-    def age(self):
-        return 2015 - self._birth</code></pre><p>上面的birth是可读写属性，而age就是一个只读属性，因为age可以根据birth和当前时间计算出来。</p>
-<p><strong>总结：</strong>这个方法就是把<em>方法</em>变成了<em>类</em>，同时通过<strong>类名.setter</strong>来实现对类名的验证</p>
-</li>
-<li><p><strong>多重继承</strong></p>
-<ul>
-<li><p>命名规则：</p>
-<p>  MixIn：在设计类的继承关系时，通常，主线都是单一继承下来的，例如，Ostrich继承自Bird。但是，如果需要“混入”额外的功能，通过多重继承就可以实现，比如，让Ostrich除了继承自Bird外，再同时继承Runnable。这种设计通常称之为MixIn。</p>
-<p>  为了更好地看出继承关系，我们把Runnable和Flyable改为RunnableMixIn和FlyableMixIn。类似的，你还可以定义出肉食动物CarnivorousMixIn和植食动物HerbivoresMixIn，让某个动物同时拥有好几个MixIn：</p>
-<pre><code>class Dog(Mammal, RunnableMixIn, CarnivorousMixIn):
-    pass</code></pre></li>
-</ul>
-</li>
-<li><p>定制类（自己去翻教程！！）</p>
-</li>
-<li><p>枚举类（自己去翻教程！！）</p>
-</li>
-</ol>
-<h2 id="错误、调试和测试"><a href="#错误、调试和测试" class="headerlink" title="错误、调试和测试"></a>错误、调试和测试</h2><ol start="33">
-<li><p>try、except、finally</p>
-<ul>
-<li><p>如果使用了try、except、finally，不管有没有出错，<strong>finally一定会被执行</strong></p>
-</li>
-<li><p>如果没有错误发生，可以在except语句块后面加一个else，当没有错误发生时，会自动执行else语句：</p>
-<p>  try:</p>
-<pre><code>print(&apos;try...&apos;)
-r = 10 / int(&apos;2&apos;)
-print(&apos;result:&apos;, r)</code></pre><p>  except ValueError as e:</p>
-<pre><code>print(&apos;ValueError:&apos;, e)</code></pre><p>  except ZeroDivisionError as e:</p>
-<pre><code>print(&apos;ZeroDivisionError:&apos;, e)</code></pre><p>  else:</p>
-<pre><code>print(&apos;no error!&apos;)</code></pre><p>  finally:</p>
-<pre><code>print(&apos;finally...&apos;)</code></pre><p>  print(‘END’)</p>
-</li>
-</ul>
-</li>
-<li><p>记录错误</p>
-<p>如果不捕获错误，自然可以让Python解释器来打印出错误堆栈，但程序也被结束了。既然我们能捕获错误，就可以把错误堆栈打印出来，然后分析错误原因，同时，让程序继续执行下去。</p>
-<p>Python内置的logging模块可以非常容易地记录错误信息：</p>
-<pre><code># err_logging.py
-
-import logging
-
-def foo(s):
-    return 10 / int(s)
-
-def bar(s):
-    return foo(s) * 2
-
-def main():
-    try:
-        bar(&apos;0&apos;)
-    except Exception as e:
-        logging.exception(e)
-
-main()
-print(&apos;END&apos;)</code></pre><p>同样是出错，但程序打印完错误信息后会继续执行，并正常退出：</p>
-<pre><code>$ python3 err_logging.py
-ERROR:root:division by zero
-Traceback (most recent call last):
-  File &quot;err_logging.py&quot;, line 13, in main
-    bar(&apos;0&apos;)
-  File &quot;err_logging.py&quot;, line 9, in bar
-    return foo(s) * 2
-  File &quot;err_logging.py&quot;, line 6, in foo
-    return 10 / int(s)
-ZeroDivisionError: division by zero
-END</code></pre><p>通过配置，logging还可以把错误记录到日志文件里，方便事后排查。</p>
-</li>
-<li><p><strong>调试</strong>可以不用print来调试的方法！！！！！！！！</p>
-<ol>
-<li><p>凡是用print()来辅助查看的地方，都可以用断言（assert）来替代：</p>
-<pre><code>def foo(s):
-    n = int(s)
-    assert n != 0, &apos;n is zero!&apos;
-    return 10 / n</code></pre></li>
-</ol>
-</li>
-</ol>
-<pre><code>    def main():
-        foo(&apos;0&apos;)
-
-assert的意思是，表达式n != 0应该是True，否则，根据程序运行的逻辑，后面的代码肯定会出错。
-
-如果断言失败，assert语句本身就会抛出AssertionError：
-
-    $ python err.py
-    Traceback (most recent call last):
-      ...
-    AssertionError: n is zero!
-
-程序中如果到处充斥着assert，和print()相比也好不到哪去。不过，启动Python解释器时可以用-O参数来关闭assert：
-
-    $ python -O err.py
-    Traceback (most recent call last):
-      ...
-    ZeroDivisionError: division by zero
-
-关闭后，你可以把所有的assert语句当成pass来看。</code></pre><h2 id="io编程"><a href="#io编程" class="headerlink" title="io编程"></a>io编程</h2><ol start="36">
-<li><p>文件读写</p>
-<ol>
-<li><p>文件关闭问题</p>
-<p> 如果文件打开成功，接下来，调用read()方法可以一次读取文件的全部内容，Python把内容读到内存，用一个str对象表示：</p>
-<pre><code>&gt;&gt;&gt; f.read()
-&apos;Hello, world!&apos;</code></pre><p> 最后一步是调用close()方法关闭文件。文件使用完毕后必须关闭，因为文件对象会占用操作系统的资源，并且操作系统同一时间能打开的文件数量也是有限的：</p>
-<pre><code>&gt;&gt;&gt; f.close()
-&gt;&gt;&gt; </code></pre><p> 由于文件读写时都有可能产生IOError，一旦出错，后面的f.close()就不会调用。所以，为了保证无论是否出错都能正确地关闭文件，我们可以使用try … finally来实现：</p>
-<pre><code>try:
-    f = open(&apos;/path/to/file&apos;, &apos;r&apos;)
-    print(f.read())
-finally:
-    if f:
-        f.close()</code></pre><p> 但是每次都这么写实在太繁琐，所以，Python引入了with语句来自动帮我们调用close()方法：</p>
-<pre><code>with open(&apos;/path/to/file&apos;, &apos;r&apos;) as f:
-    print(f.read())</code></pre><p> 这和前面的try … finally是一样的，但是代码更佳简洁，并且不必调用f.close()方法。</p>
-</li>
-<li><p>读取大小问题</p>
-<p> 调用read()会一次性读取文件的全部内容，如果文件有10G，内存就爆了，所以，要保险起见，可以反复调用read(size)方法，每次最多读取size个字节的内容。另外，调用readline()可以每次读取一行内容，调用readlines()一次读取所有内容并按行返回list。因此，要根据需要决定怎么调用。</p>
-<p> 如果文件很小，read()一次性读取最方便；如果不能确定文件大小，反复调用read(size)比较保险；如果是配置文件，调用readlines()最方便：</p>
-</li>
-</ol>
-</li>
-<li><p>二进制文件</p>
-<p>前面讲的默认都是读取文本文件，并且是UTF-8编码的文本文件。要读取二进制文件，比如图片、视频等等，用’rb’模式打开文件即可：</p>
-<pre><code>&gt;&gt;&gt; f = open(&apos;/Users/michael/test.jpg&apos;, &apos;rb&apos;)
-&gt;&gt;&gt; f.read()
-b&apos;\xff\xd8\xff\xe1\x00\x18Exif\x00\x00...&apos; # 十六进制表示的字节</code></pre></li>
-<li><p>字符编码</p>
-<p>要读取非UTF-8编码的文本文件，需要给open()函数传入encoding参数，例如，读取GBK编码的文件：</p>
-<pre><code>&gt;&gt;&gt; f = open(&apos;/Users/michael/gbk.txt&apos;, &apos;r&apos;, encoding=&apos;gbk&apos;)
-&gt;&gt;&gt; f.read()
-&apos;测试&apos;</code></pre><p>遇到有些编码不规范的文件，你可能会遇到UnicodeDecodeError，因为在文本文件中可能夹杂了一些非法编码的字符。遇到这种情况，open()函数还接收一个errors参数，表示如果遇到编码错误后如何处理。最简单的方式是直接忽略：</p>
-<pre><code>&gt;&gt;&gt; f = open(&apos;/Users/michael/gbk.txt&apos;, &apos;r&apos;, encoding=&apos;gbk&apos;, errors=&apos;ignore&apos;)</code></pre></li>
-<li><p>写文件</p>
-<p>要写入特定编码的文本文件，请给open()函数传入encoding参数，将字符串自动转换成指定编码。</p>
-<p>细心的童鞋会发现，以’w’模式写入文件时，如果文件已存在，会直接覆盖（相当于删掉后新写入一个文件）。如果我们希望追加到文件末尾怎么办？可以传入’a’以追加（append）模式写入。</p>
-</li>
-<li><p>file-like Object（也就是前边在<em>继承</em>那里提到的鸭子类型）</p>
-<p>像open()函数返回的这种有个read()方法的对象，在Python中统称为file-like Object。除了file外，还可以是内存的字节流，网络流，自定义流等等。file-like Object不要求从特定类继承，只要写个read()方法就行。</p>
-<p>StringIO就是在内存中创建的file-like Object，常用作临时缓冲。</p>
-</li>
-<li><p><strong>JSON</strong></p>
-<ol>
-<li><p>Python内置的json模块提供了非常完善的Python对象到JSON格式的转换。我们先看看如何把Python对象变成一个JSON：</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>import json<br>d = dict(name=’Bob’, age=20, score=88)<br>json.dumps(d)<br> ‘{“age”: 20, “score”: 88, “name”: “Bob”}’</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</li>
-</ol>
-<p>dumps()方法返回一个str，内容就是标准的JSON。类似的，dump()方法可以直接把JSON写入一个file-like Object。</p>
-<p>要把JSON反序列化为Python对象，用loads()或者对应的load()方法，前者把JSON的字符串反序列化，后者从file-like Object中读取字符串并反序列化：</p>
-<pre><code>&gt;&gt;&gt; json_str = &apos;{&quot;age&quot;: 20, &quot;score&quot;: 88, &quot;name&quot;: &quot;Bob&quot;}&apos;
-&gt;&gt;&gt; json.loads(json_str)
-{&apos;age&apos;: 20, &apos;score&apos;: 88, &apos;name&apos;: &apos;Bob&apos;}</code></pre><p>由于JSON标准规定JSON编码是UTF-8，所以我们总是能正确地在Python的str与JSON的字符串之间转换。</p>
-<ol start="2">
-<li>当我们想保存一个class时，内置的json是不能直接使用的，我们需要参考他的参数，以及自己制定一个转换函数</li>
-</ol>
-<p>可选参数就是让我们来定制JSON序列化。前面的代码之所以无法把Student类实例序列化为JSON，是因为默认情况下，dumps()方法不知道如何将Student实例变为一个JSON的{}对象。</p>
-<p>可选参数default就是把任意一个对象变成一个可序列为JSON的对象，我们只需要为Student专门写一个转换函数，再把函数传进去即可：</p>
-<pre><code>def student2dict(std):
-    return {
-        &apos;name&apos;: std.name,
-        &apos;age&apos;: std.age,
-        &apos;score&apos;: std.score
-    }</code></pre><p>这样，Student实例首先被student2dict()函数转换成dict，然后再被顺利序列化为JSON：</p>
-<pre><code>&gt;&gt;&gt; print(json.dumps(s, default=student2dict))
-{&quot;age&quot;: 20, &quot;name&quot;: &quot;Bob&quot;, &quot;score&quot;: 88}</code></pre><p>不过，下次如果遇到一个Teacher类的实例，照样无法序列化为JSON。我们可以偷个懒，把任意class的实例变为dict：</p>
-<pre><code>print(json.dumps(s, default=lambda obj: obj.__dict__))</code></pre><p>因为通常class的实例都有一个<strong>dict</strong>属性，它就是一个dict，用来存储实例变量。也有少数例外，比如定义了<strong>slots</strong>的class。</p>
-<p>同样的道理，如果我们要把JSON反序列化为一个Student对象实例，loads()方法首先转换出一个dict对象，然后，我们传入的object_hook函数负责把dict转换为Student实例：</p>
-<pre><code>def dict2student(d):
-    return Student(d[&apos;name&apos;], d[&apos;age&apos;], d[&apos;score&apos;])</code></pre><p>运行结果如下：</p>
-<pre><code>&gt;&gt;&gt; json_str = &apos;{&quot;age&quot;: 20, &quot;score&quot;: 88, &quot;name&quot;: &quot;Bob&quot;}&apos;
-&gt;&gt;&gt; print(json.loads(json_str, object_hook=dict2student))
-&lt;__main__.Student object at 0x10cd3c190&gt;</code></pre><p>打印出的是反序列化的Student实例对象。</p>
-</li>
-</ol>
-<h2 id="进程与线程（没看！！！！）"><a href="#进程与线程（没看！！！！）" class="headerlink" title="进程与线程（没看！！！！）"></a>进程与线程（没看！！！！）</h2><h2 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a><strong>正则表达式</strong></h2><ol start="42">
-<li><p>基础知识</p>
-<p>字符串是编程时涉及到的最多的一种数据结构，对字符串进行操作的需求几乎无处不在。比如判断一个字符串是否是合法的Email地址，虽然可以编程提取@前后的子串，再分别判断是否是单词和域名，但这样做不但麻烦，而且代码难以复用。</p>
-<p>正则表达式是一种用来匹配字符串的强有力的武器。它的设计思想是用一种描述性的语言来给字符串定义一个规则，凡是符合规则的字符串，我们就认为它“匹配”了，否则，该字符串就是不合法的。</p>
-<p>所以我们判断一个字符串是否是合法的Email的方法是：</p>
-<p>创建一个匹配Email的正则表达式；</p>
-<p>用该正则表达式去匹配用户的输入来判断是否合法。</p>
-<p>因为正则表达式也是用字符串表示的，所以，我们要首先了解如何用字符来描述字符。</p>
-<p>在正则表达式中，如果直接给出字符，就是精确匹配。用\d可以匹配一个数字，\w可以匹配一个字母或数字，所以：</p>
-<ul>
-<li><p>‘00\d’可以匹配’007’，但无法匹配’00A’；</p>
-</li>
-<li><p>‘\d\d\d’可以匹配’010’；</p>
-</li>
-<li><p>‘\w\w\d’可以匹配’py3’；</p>
-</li>
-</ul>
-<p>.可以匹配任意字符，所以：</p>
-<ul>
-<li>‘py.’可以匹配’pyc’、’pyo’、’py!’等等。</li>
-</ul>
-<p><strong>要匹配变长的字符，在正则表达式中，用*表示任意个字符（包括0个），用+表示至少一个字符，用?表示0个或1个字符，用{n}表示n个字符，用{n,m}表示n-m个字符：</strong></p>
-<p>来看一个复杂的例子：\d{3}\s+\d{3,8}。</p>
-<p>我们来从左到右解读一下：</p>
-<ol>
-<li><p>\d{3}表示匹配3个数字，例如’010’；</p>
-</li>
-<li><p>\s可以匹配一个空格（也包括Tab等空白符），所以\s+表示至少有一个空格，例如匹配’ ‘，’ ‘等；</p>
-</li>
-<li><p>\d{3,8}表示3-8个数字，例如’1234567’。</p>
-</li>
-</ol>
-<p>综合起来，上面的正则表达式可以匹配以任意个空格隔开的带区号的电话号码。</p>
-<p>如果要匹配’010-12345’这样的号码呢？由于’-‘是特殊字符，在正则表达式中，要用’&#39;转义，所以，上面的正则是\d{3}-\d{3,8}。</p>
-<p>但是，仍然无法匹配’010 - 12345’，因为带有空格。所以我们需要更复杂的匹配方式。</p>
-</li>
-<li><p><strong>进阶</strong>  </p>
-<p>要做更精确地匹配，可以用[]表示范围，比如：</p>
-<p>[0-9a-zA-Z_]可以匹配一个数字、字母或者下划线；</p>
-<p>[0-9a-zA-Z_]+可以匹配至少由一个数字、字母或者下划线组成的字符串，比如’a100’，’0_Z’，’Py3000’等等；</p>
-<p>[a-zA-Z_][0-9a-zA-Z_]*可以匹配由字母或下划线开头，后接任意个由一个数字、字母或者下划线组成的字符串，也就是Python合法的变量；</p>
-<p>[a-zA-Z_][0-9a-zA-Z_]{0, 19}更精确地限制了变量的长度是1-20个字符（前面1个字符+后面最多19个字符）。</p>
-<p>A|B可以匹配A或B，所以(P|p)ython可以匹配’Python’或者’python’。</p>
-<p>^表示行的开头，^\d表示必须以数字开头。</p>
-<p>$表示行的结束，\d$表示必须以数字结束。</p>
-<p>你可能注意到了，py也可以匹配’python’，但是加上^py$就变成了整行匹配，就只能匹配’py’了。</p>
-</li>
-<li><p>Python中使用正则表达式</p>
-<ol>
-<li>re模块</li>
-</ol>
-<p>有了准备知识，我们就可以在Python中使用正则表达式了。Python提供re模块，包含所有正则表达式的功能。由于Python的字符串本身也用\转义，所以要特别注意：</p>
-<pre><code>s = &apos;ABC\\-001&apos; # Python的字符串
-# 对应的正则表达式字符串变成：
-# &apos;ABC\-001&apos;</code></pre><p>因此我们强烈建议使用Python的r前缀，就不用考虑转义的问题了：</p>
-<pre><code>s = r&apos;ABC\-001&apos; # Python的字符串
-# 对应的正则表达式字符串不变：
-# &apos;ABC\-001&apos;</code></pre><p>先看看如何判断正则表达式是否匹配：</p>
-<pre><code>&gt;&gt;&gt; import re
-&gt;&gt;&gt; re.match(r&apos;^\d{3}\-\d{3,8}$&apos;, &apos;010-12345&apos;)
-&lt;_sre.SRE_Match object; span=(0, 9), match=&apos;010-12345&apos;&gt;
-&gt;&gt;&gt; re.match(r&apos;^\d{3}\-\d{3,8}$&apos;, &apos;010 12345&apos;)
-&gt;&gt;&gt;</code></pre><p>match()方法判断是否匹配，如果匹配成功，返回一个Match对象，否则返回None。常见的判断方法就是：</p>
-<pre><code>test = &apos;用户输入的字符串&apos;
-if re.match(r&apos;正则表达式&apos;, test):
-    print(&apos;ok&apos;)
-else:
-    print(&apos;failed&apos;)</code></pre><ol start="2">
-<li>使用re模块进行字符串切割（如果用户输入了一组标签，用正则表达式来把不规范的输入转化成正确的数组。）</li>
-</ol>
-<p>用正则表达式切分字符串比用固定的字符更灵活，请看正常的切分代码：</p>
-<pre><code>&gt;&gt;&gt; &apos;a b   c&apos;.split(&apos; &apos;)
-[&apos;a&apos;, &apos;b&apos;, &apos;&apos;, &apos;&apos;, &apos;c&apos;]</code></pre><p>嗯，无法识别连续的空格，用正则表达式试试：</p>
-<pre><code>&gt;&gt;&gt; re.split(r&apos;\s+&apos;, &apos;a b   c&apos;)
-[&apos;a&apos;, &apos;b&apos;, &apos;c&apos;]</code></pre><p>无论多少个空格都可以正常分割。加入,试试：</p>
-<pre><code>&gt;&gt;&gt; re.split(r&apos;[\s\,]+&apos;, &apos;a,b, c  d&apos;)
-[&apos;a&apos;, &apos;b&apos;, &apos;c&apos;, &apos;d&apos;]</code></pre><p>再加入;试试：</p>
-<pre><code>&gt;&gt;&gt; re.split(r&apos;[\s\,\;]+&apos;, &apos;a,b;; c  d&apos;)
-[&apos;a&apos;, &apos;b&apos;, &apos;c&apos;, &apos;d&apos;]</code></pre><ol start="3">
-<li>提取子串，进行分组</li>
-</ol>
-<p>除了简单地判断是否匹配之外，正则表达式还有提取子串的强大功能。用<strong>()</strong>表示的就是要提取的分组（Group）。比如：</p>
-<p>^(\d{3})-(\d{3,8})$分别定义了两个组，可以直接从匹配的字符串中提取出区号和本地号码：</p>
-<pre><code>&gt;&gt;&gt; m = re.match(r&apos;^(\d{3})-(\d{3,8})$&apos;, &apos;010-12345&apos;)
-&gt;&gt;&gt; m
-&lt;_sre.SRE_Match object; span=(0, 9), match=&apos;010-12345&apos;&gt;
-&gt;&gt;&gt; m.group(0)
-&apos;010-12345&apos;
-&gt;&gt;&gt; m.group(1)
-&apos;010&apos;
-&gt;&gt;&gt; m.group(2)
-&apos;12345&apos;</code></pre><p>如果正则表达式中定义了组，就可以在Match对象上用group()方法提取出子串来。</p>
-<p>注意到group(0)永远是原始字符串，group(1)、group(2)……表示第1、2、……个子串。</p>
-<ol start="4">
-<li>贪婪匹配</li>
-</ol>
-<p>最后需要特别指出的是，正则匹配默认是贪婪匹配，也就是匹配尽可能多的字符。举例如下，匹配出数字后面的0：</p>
-<pre><code>&gt;&gt;&gt; re.match(r&apos;^(\d+)(0*)$&apos;, &apos;102300&apos;).groups()
-(&apos;102300&apos;, &apos;&apos;)</code></pre><p>由于\d+采用贪婪匹配，直接把后面的0全部匹配了，结果0*只能匹配空字符串了。</p>
-<p>必须让\d+采用非贪婪匹配（也就是尽可能少匹配），才能把后面的0匹配出来，加个?就可以让\d+采用非贪婪匹配：</p>
-<pre><code>&gt;&gt;&gt; re.match(r&apos;^(\d+?)(0*)$&apos;, &apos;102300&apos;).groups()
-(&apos;1023&apos;, &apos;00&apos;)</code></pre></li>
-</ol>
-<h2 id="常用内建模块"><a href="#常用内建模块" class="headerlink" title="常用内建模块"></a>常用内建模块</h2><ol start="45">
-<li><p>常用</p>
-<ul>
-<li><p>datetime 时间</p>
-</li>
-<li><p>collections 集合</p>
-<ul>
-<li><p>双向列表</p>
-<p>  deque<br>  使用list存储数据时，按索引访问元素很快，但是插入和删除元素就很慢了，因为list是线性存储，数据量大的时候，插入和删除效率很低。</p>
-<p>  deque是为了高效实现插入和删除操作的双向列表，适合用于队列和栈：</p>
-<pre><code>&gt;&gt;&gt; from collections import deque
-&gt;&gt;&gt; q = deque([&apos;a&apos;, &apos;b&apos;, &apos;c&apos;])
-&gt;&gt;&gt; q.append(&apos;x&apos;)
-&gt;&gt;&gt; q.appendleft(&apos;y&apos;)
-&gt;&gt;&gt; q
-deque([&apos;y&apos;, &apos;a&apos;, &apos;b&apos;, &apos;c&apos;, &apos;x&apos;])</code></pre><p>  deque除了实现list的append()和pop()外，还支持appendleft()和popleft()，这样就可以非常高效地往头部添加或删除元素。</p>
-</li>
-<li><p>计数器</p>
-<p>  Counter是一个简单的计数器，例如，统计字符出现的个数：</p>
-<pre><code>&gt;&gt;&gt; from collections import Counter
-&gt;&gt;&gt; c = Counter()
-&gt;&gt;&gt; for ch in &apos;programming&apos;:
-...     c[ch] = c[ch] + 1
-...
-&gt;&gt;&gt; c
-Counter({&apos;g&apos;: 2, &apos;m&apos;: 2, &apos;r&apos;: 2, &apos;a&apos;: 1, &apos;i&apos;: 1, &apos;o&apos;: 1, &apos;n&apos;: 1, &apos;p&apos;: 1})</code></pre><p>  Counter实际上也是dict的一个子类，上面的结果可以看出，字符’g’、’m’、’r’各出现了两次，其他字符各出现了一次。</p>
-</li>
-</ul>
-</li>
-<li><p>Base64 是一种用64个字符来表示任意二进制数据的方法。</p>
-</li>
-<li><p>struct 解决bytes和其他二进制数据类型的转换。</p>
-</li>
-<li><p>hashlib 提供了常见的摘要算法，如MD5，SHA1等等。（<strong>用于密码加密，用到的时候可以详细看一下<a href="https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/0014319556588648dd1fb0047a34d0c945ee33e8f4c90cc000" target="_blank" rel="noopener">网址</a></strong>）</p>
-<ul>
-<li>什么是摘要算法呢？摘要算法又称哈希算法、散列算法。它通过一个函数，把任意长度的数据转换为一个长度固定的数据串（通常用16进制的字符串表示）。</li>
-</ul>
-</li>
-<li><p>hmac 与hashlib一起使用</p>
-<ul>
-<li><p>通过哈希算法，我们可以验证一段数据是否有效，方法就是对比该数据的哈希值，例如，判断用户口令是否正确，我们用保存在数据库中的password_md5对比计算md5(password)的结果，如果一致，用户输入的口令就是正确的。</p>
-<p>为了防止黑客通过彩虹表根据哈希值反推原始口令，在计算哈希的时候，不能仅针对原始输入计算，需要增加一个salt来使得相同的输入也能得到不同的哈希，这样，大大增加了黑客破解的难度。</p>
-<p>如果salt是我们自己随机生成的，通常我们计算MD5时采用md5(message + salt)。但实际上，把salt看做一个“口令”，加salt的哈希就是：计算一段message的哈希时，根据不通口令计算出不同的哈希。要验证哈希值，必须同时提供正确的口令。</p>
-<p>这实际上就是Hmac算法：Keyed-Hashing for Message Authentication。它通过一个标准算法，在计算哈希的过程中，把key混入计算过程中。</p>
-<p>和我们自定义的加salt算法不同，Hmac算法针对所有哈希算法都通用，无论是MD5还是SHA-1。采用Hmac替代我们自己的salt算法，可以使程序算法更标准化，也更安全。</p>
-<p>Python自带的hmac模块实现了标准的Hmac算法。</p>
-</li>
-</ul>
-</li>
-<li><p>itertools Python的内建模块itertools提供了非常有用的用于操作迭代对象的函数。</p>
-</li>
-<li><p>contextlib</p>
-</li>
-<li><p>urllib(爬虫可能偶尔会用)</p>
-</li>
-<li><p>XML</p>
-</li>
-<li><p>HTMLPaeser</p>
-</li>
-</ul>
-</li>
-</ol>
-<h2 id="连接数据库MySQL"><a href="#连接数据库MySQL" class="headerlink" title="连接数据库MySQL"></a><strong>连接数据库MySQL</strong></h2><ol start="46">
-<li><p>安装MySQL驱动</p>
-<p>由于MySQL服务器以独立的进程运行，并通过网络对外服务，所以，需要支持Python的MySQL驱动来连接到MySQL服务器。MySQL官方提供了mysql-connector-python驱动，但是安装的时候需要给pip命令加上参数–allow-external：</p>
-<pre><code>$ pip install mysql-connector-python --allow-external mysql-connector-python</code></pre><p>如果上面的命令安装失败，可以试试另一个驱动：</p>
-<pre><code>$ pip install mysql-connector</code></pre><p>我们演示如何连接到MySQL服务器的test数据库：</p>
-<pre><code># 导入MySQL驱动:
-&gt;&gt;&gt; import mysql.connector
-# 注意把password设为你的root口令:
-&gt;&gt;&gt; conn = mysql.connector.connect(user=&apos;root&apos;, password=&apos;password&apos;, database=&apos;test&apos;)
-&gt;&gt;&gt; cursor = conn.cursor()
-# 创建user表:
-&gt;&gt;&gt; cursor.execute(&apos;create table user (id varchar(20) primary key, name varchar(20))&apos;)
-# 插入一行记录，注意MySQL的占位符是%s:
-&gt;&gt;&gt; cursor.execute(&apos;insert into user (id, name) values (%s, %s)&apos;, [&apos;1&apos;, &apos;Michael&apos;])
-&gt;&gt;&gt; cursor.rowcount
-1
-# 提交事务:
-&gt;&gt;&gt; conn.commit()
-&gt;&gt;&gt; cursor.close()
-# 运行查询:
-&gt;&gt;&gt; cursor = conn.cursor()
-&gt;&gt;&gt; cursor.execute(&apos;select * from user where id = %s&apos;, (&apos;1&apos;,))
-&gt;&gt;&gt; values = cursor.fetchall()
-&gt;&gt;&gt; values
-[(&apos;1&apos;, &apos;Michael&apos;)]
-# 关闭Cursor和Connection:
-&gt;&gt;&gt; cursor.close()
-True
-&gt;&gt;&gt; conn.close()
-由于Python的DB-API定义都是通用的，所以，操作MySQL的数据库代码和SQLite类似。</code></pre></li>
-</ol>
-<h2 id="Web开发（内涵MVC简单介绍）"><a href="#Web开发（内涵MVC简单介绍）" class="headerlink" title="Web开发（内涵MVC简单介绍）"></a>Web开发（内涵MVC简单介绍）</h2><ol start="47">
-<li><p>CS与BS的区别（今天才知道- -）：</p>
-<p>CS架构不适合Web，最大的原因是Web应用程序的修改和升级非常迅速，而CS架构需要每个客户端逐个升级桌面App，因此，Browser/Server模式开始流行，简称BS架构。在BS架构下，客户端只需要浏览器，应用程序的逻辑和数据都存储在服务器端。浏览器只需要请求服务器，获取Web页面，并把Web页面展示给用户即可。</p>
-</li>
-<li><p><strong>WSGI</strong></p>
-<p>需要一个统一的接口，让我们专心用Python编写Web业务。<br>这个接口就是WSGI：Web Server Gateway Interface。</p>
-<pre><code>def application(environ, start_response):
-start_response(&apos;200 OK&apos;, [(&apos;Content-Type&apos;, &apos;text/html&apos;)])
-return [b&apos;&lt;h1&gt;Hello, web!&lt;/h1&gt;&apos;]</code></pre><p>上面的application()函数就是符合WSGI标准的一个HTTP处理函数，它接收两个参数：</p>
-<p>environ：一个包含所有HTTP请求信息的dict对象；</p>
-<p>start_response：一个发送HTTP响应的函数。</p>
-<p>在application()函数中，调用：</p>
-<pre><code>start_response(&apos;200 OK&apos;, [(&apos;Content-Type&apos;, &apos;text/html&apos;)])</code></pre><p>就发送了HTTP响应的Header，注意Header只能发送一次，也就是只能调用一次start_response()函数。start_response()函数接收两个参数，一个是HTTP响应码，一个是一组list表示的HTTP Header，每个Header用一个包含两个str的tuple表示。</p>
-<p>通常情况下，都应该把Content-Type头发送给浏览器。其他很多常用的HTTP Header也应该发送。</p>
-<p>然后，函数的返回值b’<h1>Hello, web!</h1>‘将作为HTTP响应的Body发送给浏览器。</p>
-<p>有了WSGI，我们关心的就是如何从environ这个dict对象拿到HTTP请求信息，然后构造HTML，通过start_response()发送Header，最后返回Body。</p>
-<p>整个application()函数本身没有涉及到任何解析HTTP的部分，也就是说，底层代码不需要我们自己编写，我们只负责在更高层次上考虑如何响应请求就可以了。</p>
-</li>
-<li><p><strong>使用模板</strong>（这里介绍了MVC）<a href="https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/0014320129740415df73bf8f81e478982bf4d5c8aa3817a000" target="_blank" rel="noopener">MVC</a></p>
-</li>
-</ol>
-<h2 id="异步IO"><a href="#异步IO" class="headerlink" title="异步IO"></a>异步IO</h2><ol start="50">
-<li>(去翻教程吧，一句两句总结不清楚)</li>
-</ol>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/%E5%90%8E%E5%8F%B0%E6%8A%80%E6%9C%AF/">后台技术</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/Python/">Python</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
+    line3
+and、or、no
+                
+            </p>
+            
+        </section>
     </article>
-
-
-
-
-
-
-   
     
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2019/01/23/Flex/" title="Flex 布局" itemprop="url">Flex 布局</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Lightman" target="_blank" itemprop="author">Lightman</a>
-		
-  <p class="article-time">
-    <time datetime="2019-01-22T16:12:21.000Z" itemprop="datePublished"> Published 2019-01-23</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p><a href="https://www.runoob.com/w3cnote/flex-grammar.html" target="_blank" rel="noopener">链接</a></p>
+    <article class="post">
 
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
+        <header class="post-header">
+            <div class="tag-tile">
+                
+                
+                <a data-pjax href='/tags/Flex/'>Flex</a>
+                
+                
+                <span class="fa fa-bookmark" style="float:right;color:#f39c12"></span>
+            </div>
+            <h1 class="post-title"><a data-pjax href="/2019/01/23/Flex/">Flex 布局</a>
+            </h1>
 
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/">前端技术</a>
-</div>
+            <div class="post-meta">
+                Post on<span class="fa fa-clock-o"></span>
+                <time datetime="2019-01-22T16:12:21.000Z"
+                      itemprop="datePublished">2019-01-23</time>
+            </div>
+        </header>
+        <section class="post-excerpt">
+            <p>
+                
+                链接
 
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/Flex/">Flex</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
+                
+            </p>
+            
+        </section>
     </article>
-
-
-
-
-
-
-
-  <nav id="page-nav" class="clearfix">
-    <a class="extend prev" rel="prev" href="/">&lt;span&gt;&lt;&#x2F;span&gt;Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
-  </nav>
-
-</div>
-      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
-
-<div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
-<aside class="clearfix">
-
-  
-
-
-  
-<div class="categorieslist">
-	<p class="asidetitle">Categories</p>
-		<ul>
-		
-		  
-			<li><a href="/categories/前端技术/" title="前端技术">前端技术<sup>3</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/后台技术/" title="后台技术">后台技术<sup>1</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/常用技术/" title="常用技术">常用技术<sup>1</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/强化学习/" title="强化学习">强化学习<sup>1</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/深度学习/" title="深度学习">深度学习<sup>7</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/算法/" title="算法">算法<sup>1</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/英语/" title="英语">英语<sup>3</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/读书笔记/" title="读书笔记">读书笔记<sup>1</sup></a></li>
-		  
-		
-		</ul>
-</div>
-
-
-  
-<div class="tagslist">
-	<p class="asidetitle">Tags</p>
-		<ul class="clearfix">
-		
-			
-				<li><a href="/tags/AutoEncoder/" title="AutoEncoder">AutoEncoder<sup>3</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/CNN/" title="CNN">CNN<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/连读发音/" title="连读发音">连读发音<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/GAN/" title="GAN">GAN<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/协作开发软件/" title="协作开发软件">协作开发软件<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/Flex/" title="Flex">Flex<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/JavaScript/" title="JavaScript">JavaScript<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/LSTM/" title="LSTM">LSTM<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/Ted/" title="Ted">Ted<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/Typescript/" title="Typescript">Typescript<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/Q网络/" title="Q网络">Q网络<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/GCN/" title="GCN">GCN<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/电影台词/" title="电影台词">电影台词<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/沉默的大多数/" title="沉默的大多数">沉默的大多数<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/算法/" title="算法">算法<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/Python/" title="Python">Python<sup>1</sup></a></li>
-			
-		
-		</ul>
-</div>
-
-
-  <div class="linkslist">
-  <p class="asidetitle">Links</p>
-    <ul>
+    
+    <nav class="pagination" role="pagination">
         
-          <li>
-            
-            	<a href="https://coderq.com" target="_blank" title="一个面向程序员交流分享的新一代社区">码农圈</a>
-            
-          </li>
+        <a data-pjax class="newer-posts" href="/">← Newer Posts</a>
         
-          <li>
-            
-            	<a href="http://wuchong.me" target="_blank" title="Jark&#39;s Blog">Jark&#39;s Blog</a>
-            
-          </li>
+        <span class="page-number">Page 2 of 2</span>
         
-    </ul>
-</div>
+    </nav>
+</main>
+
 
   
-
-
-  <div class="rsspart">
-	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
-</div>
-
-  <div class="weiboshow">
-  <p class="asidetitle">Weibo</p>
-    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=&verifier=b3593ceb&dpc=1"></iframe>
-</div>
-
-
-</aside>
-</div>
+<footer class="site-footer">
+    
+    <div class="inner">
+        <section class="copyright"><a href="/"></a> &copy; Lightman's blog 2014</section>
+        <section class="poweredby">Published with <a target="_blank" href="http://hexo.io/">Hexo   </a> and Theme by <a target="_blank" href="https://github.com/yuche/hexo-theme-kael">Kael</a></section>
     </div>
-    <footer><div id="footer" >
-	
-	<div class="line">
-		<span></span>
-		<div class="author"></div>
-	</div>
-	
-	
-	<section class="info">
-		<p> Hello ,I&#39;m Larry Page in Google. <br/>
-			This is my blog,believe it or not.</p>
-	</section>
-	 
-	<div class="social-font" class="clearfix">
-		
-		<a href="http://weibo.com/2176287895" target="_blank" class="icon-weibo" title="微博"></a>
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-	</div>
-			
-		
-
-		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2020 
-		
-		<a href="/about" target="_blank" title="Lightman">Lightman</a>
-		
-		
-		</p>
-</div>
 </footer>
-    <script src="/js/jquery-2.0.3.min.js"></script>
-<script src="/js/jquery.imagesloaded.min.js"></script>
-<script src="/js/gallery.js"></script>
-<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+</div>
+</div><!-- /scroller -->
 
-<script type="text/javascript">
-$(document).ready(function(){ 
-  $('.navbar').click(function(){
-    $('header nav').toggleClass('shownav');
-  });
-  var myWidth = 0;
-  function getSize(){
-    if( typeof( window.innerWidth ) == 'number' ) {
-      myWidth = window.innerWidth;
-    } else if( document.documentElement && document.documentElement.clientWidth) {
-      myWidth = document.documentElement.clientWidth;
-    };
-  };
-  var m = $('#main'),
-      a = $('#asidepart'),
-      c = $('.closeaside'),
-      o = $('.openaside');
-  c.click(function(){
-    a.addClass('fadeOut').css('display', 'none');
-    o.css('display', 'block').addClass('fadeIn');
-    m.addClass('moveMain');
-  });
-  o.click(function(){
-    o.css('display', 'none').removeClass('beforeFadeIn');
-    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
-    m.removeClass('moveMain');
-  });
-  $(window).scroll(function(){
-    o.css("top",Math.max(80,260-$(this).scrollTop()));
-  });
+</div><!-- /pusher -->
+</div><!-- /container -->
+</div>
+
+<!-- Easter eggs -->
+
+<div class="egg animated">
+    <a id="close-button" href="#">X</a>
+    <div class="block">
+        <div class="loading">
+            <span class="ball1"></span>
+            <span class="ball2"></span>
+        </div>
+    </div>
+</div>
   
-  $(window).resize(function(){
-    getSize(); 
-    if (myWidth >= 1024) {
-      $('header nav').removeClass('shownav');
-    }else{
-      m.removeClass('moveMain');
-      a.css('display', 'block').removeClass('fadeOut');
-      o.css('display', 'none');
-        
-    }
-  });
-});
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){ 
-  $('.article-content').each(function(i){
-    $(this).find('img').each(function(){
-      if ($(this).parent().hasClass('fancybox')) return;
-      var alt = this.alt;
-      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
-      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
-    });
-    $(this).find('.fancybox').each(function(){
-      $(this).attr('rel', 'article' + i);
-    });
-  });
-  if($.fancybox){
-    $('.fancybox').fancybox();
-  }
-}); 
-</script>
-
-
-
-<!-- Analytics Begin -->
-
-
-
+<script src="//cdn.staticfile.org/jquery/1.11.0/jquery.min.js"></script>
 <script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
+    if (!window.jQuery) {
+        var script = document.createElement('script');
+        script.src = "/js/jquery.min.js";
+        document.body.appendChild(script);
+    }
 </script>
+<script type="text/javascript" src="/js/lib.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
 
 
 
-<!-- Analytics End -->
-
-<!-- Totop Begin -->
-
-	<div id="totop">
-	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
-	</div>
-	<script src="/js/totop.js"></script>
-
-<!-- Totop End -->
-
-<!-- MathJax Begin -->
-<!-- mathjax config similar to math.stackexchange -->
 
 
-<!-- MathJax End -->
 
-<!-- Tiny_search Begin -->
 
-<!-- Tiny_search End -->
-
-  </body>
- </html>
+</body>
+</html>
