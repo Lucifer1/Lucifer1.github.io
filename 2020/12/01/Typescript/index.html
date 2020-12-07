@@ -1,483 +1,110 @@
-<!DOCTYPE html>
-<html>
+
+ <!DOCTYPE HTML>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Typescript 学习笔记 | Lightman&#39;s blog</title>
-  <meta name="keywords" content=" Typescript ">
-  <meta name="description" content="Typescript 学习笔记 | Lightman&#39;s blog">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="[TOC] Typescript基础原始数据类型1. 布尔值 Typescript中使用boolean来定义布尔值，而不是Boolean，其他的基础类型也是一样  例如：   123let isDone: boolean &#x3D; false;       &#x2F;&#x2F; 编译通过let createdByNewBoolean: boolean &#x3D; new Boolean(">
+  <meta charset="UTF-8">
+  
+    <title>Typescript 学习笔记 | Lightman&#39;s blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="Lightman">
+    
+
+    
+    <meta name="description" content="基础原始数据类型1. 布尔值 Typescript中使用boolean来定义布尔值，而不是Boolean，其他的基础类型也是一样  例如：   123let isDone: boolean &#x3D; false;       &#x2F;&#x2F; 编译通过let createdByNewBoolean: boolean &#x3D; new Boolean(1);  &#x2F;&amp;#x2F">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Typescript 学习笔记">
 <meta property="og:url" content="http://yoursite.com/2020/12/01/Typescript/index.html">
 <meta property="og:site_name" content="Lightman&#39;s blog">
-<meta property="og:description" content="[TOC] Typescript基础原始数据类型1. 布尔值 Typescript中使用boolean来定义布尔值，而不是Boolean，其他的基础类型也是一样  例如：   123let isDone: boolean &#x3D; false;       &#x2F;&#x2F; 编译通过let createdByNewBoolean: boolean &#x3D; new Boolean(">
+<meta property="og:description" content="基础原始数据类型1. 布尔值 Typescript中使用boolean来定义布尔值，而不是Boolean，其他的基础类型也是一样  例如：   123let isDone: boolean &#x3D; false;       &#x2F;&#x2F; 编译通过let createdByNewBoolean: boolean &#x3D; new Boolean(1);  &#x2F;&amp;#x2F">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-12-01T02:12:21.000Z">
-<meta property="article:modified_time" content="2020-12-07T14:55:40.272Z">
+<meta property="article:modified_time" content="2020-12-07T15:32:18.852Z">
 <meta property="article:author" content="Lightman">
 <meta property="article:tag" content="Typescript">
 <meta name="twitter:card" content="summary">
 
-
-<link rel="icon" href="/img/avatar.jpg">
-
-<link href="/css/style.css?v=1.0.1" rel="stylesheet">
-
-<link href="/css/hl_theme/atom-light.css?v=1.0.1" rel="stylesheet">
-
-<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
-<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-
-<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
-<script src="/js/jquery.autocomplete.min.js?v=1.0.1" ></script>
-
-<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-<script>
-    hljs.initHighlightingOnLoad();
-</script>
-
-<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
-
-
-
-<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
-
-<script src="/js/iconfont.js?v=1.0.1" ></script>
+    
+    <link rel="alternative" href="/atom.xml" title="Lightman&#39;s blog" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    
+<link rel="stylesheet" href="/css/style.css">
 
 <meta name="generator" content="Hexo 4.2.1"></head>
-<div style="display: none">
-  <input class="theme_disqus_on" value="false">
-  <input class="theme_preload_comment" value="false">
-  <input class="theme_blog_path" value="">
-</div>
 
-<body>
-<aside class="nav">
-    <div class="nav-left">
-        <a href="/" class="avatar_target">
-    <img class="avatar" src="/img/avatar.jpg" />
-</a>
-<div class="author">
-    <span>Lightman</span>
-</div>
-
-<div class="icon">
-    
-</div>
-
-
-
-
-<ul>
-    <li><div class="all active">全部文章<small>(19)</small></div></li>
-    
-        
-            
-            <li><div data-rel="深度学习">深度学习<small>(7)</small></div>
-                
-            </li>
-            
-        
-    
-        
-            
-            <li><div data-rel="英语">英语<small>(3)</small></div>
-                
-            </li>
-            
-        
-    
-        
-            
-            <li><div data-rel="常用技术">常用技术<small>(1)</small></div>
-                
-            </li>
-            
-        
-    
-        
-            
-            <li><div data-rel="前端技术">前端技术<small>(3)</small></div>
-                
-            </li>
-            
-        
-    
-        
-            
-            <li><div data-rel="强化学习">强化学习<small>(1)</small></div>
-                
-            </li>
-            
-        
-    
-        
-            
-            <li><div data-rel="读书笔记">读书笔记<small>(1)</small></div>
-                
-            </li>
-            
-        
-    
-        
-            
-            <li><div data-rel="算法">算法<small>(1)</small></div>
-                
-            </li>
-            
-        
-    
-        
-            
-            <li><div data-rel="后台技术">后台技术<small>(1)</small></div>
-                
-            </li>
-            
-        
-    
-</ul>
-<div class="left-bottom">
-    <div class="menus">
-    
-    
-    
-    
-    </div>
-    <div></div>
-</div>
-<input type="hidden" id="yelog_site_posts_number" value="19">
-
-<div style="display: none">
-    <span id="busuanzi_value_site_uv"></span>
-    <span id="busuanzi_value_site_pv"></span>
-</div>
-
-    </div>
-    <div class="nav-right">
-        <div class="friends-area">
-    <div class="friends-title">
-        友情链接
-        <i class="back-title-list"></i>
-    </div>
-    <div class="friends-content">
-        <ul>
-            
-            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
-            
-        </ul>
-    </div>
-</div>
-        <div class="title-list">
-    <form onkeydown="if(event.keyCode==13){return false;}">
-        <input class="search" type="text" placeholder="Search..." autocomplete="off"id="local-search-input" >
-        <i class="cross"></i>
-        <span>
-            <label for="tagswitch">Tags:</label>
-            <input id="tagswitch" type="checkbox" style="display: none" />
-            <i id="tagsWitchIcon"></i>
-        </span>
-    </form>
-    <div class="tags-list">
-    
-    <li class="article-tag-list-item">
-        <a class="color2">AutoEncoder</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color4">CNN</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color5">连读发音</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color4">GAN</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color2">协作开发软件</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color5">Flex</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color1">JavaScript</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color5">LSTM</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color4">Ted</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color1">Typescript</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color4">Q网络</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color4">GCN</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color5">电影台词</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color2">沉默的大多数</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color3">算法</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color2">Python</a>
-    </li>
-    
-    <div class="clearfix"></div>
-</div>
-
-    
-    <nav id="title-list-nav">
-        
-        <a  class="深度学习 "
-           href="/2019/12/23/AdvancedAutoEncoder/"
-           data-tag="AutoEncoder"
-           data-author="" >
-            <span class="post-title" title="AdvancedAutoEncoder">AdvancedAutoEncoder</span>
-            <span class="post-date" title="2019-12-23 00:12:21">2019/12/23</span>
-        </a>
-        
-        <a  class="深度学习 "
-           href="/2019/12/23/AutoEncoder/"
-           data-tag="AutoEncoder"
-           data-author="" >
-            <span class="post-title" title="AutoEncoder">AutoEncoder</span>
-            <span class="post-date" title="2019-12-23 00:12:21">2019/12/23</span>
-        </a>
-        
-        <a  class="深度学习 "
-           href="/2019/12/23/CNNAutoEncoder/"
-           data-tag="AutoEncoder,CNN"
-           data-author="" >
-            <span class="post-title" title="卷积自编码器">卷积自编码器</span>
-            <span class="post-date" title="2019-12-23 00:12:21">2019/12/23</span>
-        </a>
-        
-        <a  class="深度学习 "
-           href="/2019/12/23/CNN/"
-           data-tag="CNN"
-           data-author="" >
-            <span class="post-title" title="卷积神经网络">卷积神经网络</span>
-            <span class="post-date" title="2019-12-23 00:12:21">2019/12/23</span>
-        </a>
-        
-        <a  class="英语 "
-           href="/2019/12/23/EnglishPronunciation/"
-           data-tag="连读发音"
-           data-author="" >
-            <span class="post-title" title="连读规则">连读规则</span>
-            <span class="post-date" title="2019-12-23 00:12:21">2019/12/23</span>
-        </a>
-        
-        <a  class="深度学习 "
-           href="/2019/12/23/GAN/"
-           data-tag="GAN"
-           data-author="" >
-            <span class="post-title" title="GAN网络代码">GAN网络代码</span>
-            <span class="post-date" title="2019-12-23 00:12:21">2019/12/23</span>
-        </a>
-        
-        <a  class="常用技术 "
-           href="/2019/12/23/Git/"
-           data-tag="协作开发软件"
-           data-author="" >
-            <span class="post-title" title="Git教程">Git教程</span>
-            <span class="post-date" title="2019-12-23 00:12:21">2019/12/23</span>
-        </a>
-        
-        <a  class="前端技术 "
-           href="/2019/01/23/Flex/"
-           data-tag="Flex"
-           data-author="" >
-            <span class="post-title" title="Flex 布局">Flex 布局</span>
-            <span class="post-date" title="2019-01-23 00:12:21">2019/01/23</span>
-        </a>
-        
-        <a  class="前端技术 "
-           href="/2019/12/23/JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/"
-           data-tag="JavaScript"
-           data-author="" >
-            <span class="post-title" title="JavaScript 高级程序设计">JavaScript 高级程序设计</span>
-            <span class="post-date" title="2019-12-23 00:12:21">2019/12/23</span>
-        </a>
-        
-        <a  class="深度学习 "
-           href="/2019/12/23/LSTM/"
-           data-tag="LSTM"
-           data-author="" >
-            <span class="post-title" title="LSTM简介及代码">LSTM简介及代码</span>
-            <span class="post-date" title="2019-12-23 00:12:21">2019/12/23</span>
-        </a>
-        
-        <a  class="英语 "
-           href="/2019/12/23/Ted_%E7%BB%99%E9%99%8C%E7%94%9F%E4%BA%BA%E7%9A%84%E6%83%85%E4%B9%A6/"
-           data-tag="Ted"
-           data-author="" >
-            <span class="post-title" title="汉娜·布伦雪尔：给陌生人的情书">汉娜·布伦雪尔：给陌生人的情书</span>
-            <span class="post-date" title="2019-12-23 00:12:21">2019/12/23</span>
-        </a>
-        
-        <a  class="前端技术 "
-           href="/2020/12/01/Typescript/"
-           data-tag="Typescript"
-           data-author="" >
-            <span class="post-title" title="Typescript 学习笔记">Typescript 学习笔记</span>
-            <span class="post-date" title="2020-12-01 10:12:21">2020/12/01</span>
-        </a>
-        
-        <a  class="强化学习 "
-           href="/2019/12/23/ReinforcementLearning/"
-           data-tag="Q网络"
-           data-author="" >
-            <span class="post-title" title="强化学习简介">强化学习简介</span>
-            <span class="post-date" title="2019-12-23 00:12:21">2019/12/23</span>
-        </a>
-        
-        <a  class="深度学习 "
-           href="/2019/12/23/STGCN/"
-           data-tag="GCN"
-           data-author="" >
-            <span class="post-title" title="时空图卷积网络">时空图卷积网络</span>
-            <span class="post-date" title="2019-12-23 00:12:21">2019/12/23</span>
-        </a>
-        
-        <a  class=""
-           href="/2020/06/17/Vue/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="Vue">Vue</span>
-            <span class="post-date" title="2020-06-17 19:03:09">2020/06/17</span>
-        </a>
-        
-        <a  class="英语 "
-           href="/2020/02/17/V%E5%BC%80%E5%9C%BA%E5%8F%B0%E8%AF%8D/"
-           data-tag="电影台词"
-           data-author="" >
-            <span class="post-title" title="V 开场自我介绍">V 开场自我介绍</span>
-            <span class="post-date" title="2020-02-17 14:20:11">2020/02/17</span>
-        </a>
-        
-        <a  class="读书笔记 "
-           href="/2019/12/23/%E6%B2%89%E9%BB%98%E7%9A%84%E5%A4%A7%E5%A4%9A%E6%95%B0/"
-           data-tag="沉默的大多数"
-           data-author="" >
-            <span class="post-title" title="沉默的大多数">沉默的大多数</span>
-            <span class="post-date" title="2019-12-23 00:12:21">2019/12/23</span>
-        </a>
-        
-        <a  class="算法 "
-           href="/2019/12/23/%E7%AE%97%E6%B3%95/"
-           data-tag="算法"
-           data-author="" >
-            <span class="post-title" title="算法速查">算法速查</span>
-            <span class="post-date" title="2019-12-23 00:12:21">2019/12/23</span>
-        </a>
-        
-        <a  class="后台技术 "
-           href="/2019/12/23/python/"
-           data-tag="Python"
-           data-author="" >
-            <span class="post-title" title="Python教程">Python教程</span>
-            <span class="post-date" title="2019-12-23 00:12:21">2019/12/23</span>
-        </a>
-        
-    </nav>
-</div>
-    </div>
-    <div class="hide-list">
-        <div class="semicircle">
-            <div class="brackets first"><</div>
-            <div class="brackets">&gt;</div>
-        </div>
-    </div>
-</aside>
-<div class="post">
-    <div class="pjax">
-        <article id="post-Typescript" class="article article-type-post" itemscope itemprop="blogPost">
-    
-        <h1 class="article-title">Typescript 学习笔记</h1>
-    
-    <div class="article-meta">
-        
-        
-        
-        <span class="book">
-            
-                <a  data-rel="前端技术">前端技术</a>
-            
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a class="color1">Typescript</a>
-            
-        </span>
-        
-    </div>
-    <div class="article-meta">
-        
-        创建时间:<time class="date" title='更新时间: 2020-12-07 22:55:40'>2020-12-01 10:12</time>
-        
-    </div>
-    <div class="article-meta">
-        
-        
-        <span id="busuanzi_container_page_pv">
-            阅读:<span id="busuanzi_value_page_pv">
-                <span class="count-comment">
-                    <span class="spinner">
-                      <div class="cube1"></div>
-                      <div class="cube2"></div>
-                    </span>
-                </span>
-            </span>
-        </span>
-        
-        
-    </div>
-    
-    <div class="toc-ref">
-    
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Typescript"><span class="toc-text">Typescript</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#基础"><span class="toc-text">基础</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#原始数据类型"><span class="toc-text">原始数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#1-布尔值"><span class="toc-text">1. 布尔值</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#2-空值"><span class="toc-text">2. 空值</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#3-Null-Undefined"><span class="toc-text">3. Null Undefined</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#任意值-Any"><span class="toc-text">任意值(Any)</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#1-什么是任意值类型"><span class="toc-text">1. 什么是任意值类型</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#2-任意值的属性和方法"><span class="toc-text">2. 任意值的属性和方法</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#3-未声明类型的变量"><span class="toc-text">3. 未声明类型的变量</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#类型推论"><span class="toc-text">类型推论</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#联合类型"><span class="toc-text">联合类型</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#1-定义"><span class="toc-text">1. 定义</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#2-访问联合类型的属性或方法"><span class="toc-text">2. 访问联合类型的属性或方法</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#3-联合属性的赋值"><span class="toc-text">3. 联合属性的赋值</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#接口"><span class="toc-text">接口</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#1-什么是接口"><span class="toc-text">1. 什么是接口</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#2-可选属性"><span class="toc-text">2. 可选属性</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#3-任意属性"><span class="toc-text">3. 任意属性</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#4-只读属性"><span class="toc-text">4. 只读属性</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#数组的类型"><span class="toc-text">数组的类型</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#1-「类型-方括号」表示法"><span class="toc-text">1. 「类型 + 方括号」表示法</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#2-数组泛型"><span class="toc-text">2. 数组泛型</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#3-用接口表示数组"><span class="toc-text">3. 用接口表示数组</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#4-类数组"><span class="toc-text">4. 类数组</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#5-Any在数组中的应用"><span class="toc-text">5. Any在数组中的应用</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#函数的类型"><span class="toc-text">函数的类型</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#1-函数声明与函数表达式"><span class="toc-text">1. 函数声明与函数表达式</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#2-用接口定义函数的形状"><span class="toc-text">2. 用接口定义函数的形状</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#3-可选参数"><span class="toc-text">3. 可选参数</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#4-参数默认值"><span class="toc-text">4. 参数默认值</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#5-剩余参数"><span class="toc-text">5. 剩余参数</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#6-重载"><span class="toc-text">6. 重载</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#类型断言"><span class="toc-text">类型断言</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#1-语法"><span class="toc-text">1. 语法</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#2-断言的用途"><span class="toc-text">2. 断言的用途</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#3-类型断言的限制"><span class="toc-text">3. 类型断言的限制</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#4-双重断言"><span class="toc-text">4. 双重断言</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#5-类型断言-vs-类型转换"><span class="toc-text">5. 类型断言 vs 类型转换</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#6-类型断言-vs-类型声明"><span class="toc-text">6. 类型断言 vs 类型声明</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#7-类型断言-vs-泛型"><span class="toc-text">7. 类型断言 vs 泛型</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#声明文件"><span class="toc-text">声明文件</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#1-什么是声明语句"><span class="toc-text">1. 什么是声明语句</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#2-什么是声明文件"><span class="toc-text">2. 什么是声明文件</span></a></li></ol></li></ol></li></ol></li></ol>
-    
-<style>
-    .left-col .switch-btn,
-    .left-col .switch-area {
-        display: none;
-    }
-    .toc-level-3 i,
-    .toc-level-3 ol {
-        display: none !important;
-    }
-</style>
-</div>
-    
-    <div class="article-entry" itemprop="articleBody">
+  <body>
+    <header>
       
-        <p>[TOC]</p>
-<h3 id="Typescript"><a href="#Typescript" class="headerlink" title="Typescript"></a>Typescript</h3><h4 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h4><h5 id="原始数据类型"><a href="#原始数据类型" class="headerlink" title="原始数据类型"></a>原始数据类型</h5><h6 id="1-布尔值"><a href="#1-布尔值" class="headerlink" title="1. 布尔值"></a>1. 布尔值</h6><ul>
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="Lightman&#39;s blog" title="Lightman&#39;s blog"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Lightman&#39;s blog">Lightman&#39;s blog</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2020/12/01/Typescript/" title="Typescript 学习笔记" itemprop="url">Typescript 学习笔记</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Lightman" target="_blank" itemprop="author">Lightman</a>
+		
+  <p class="article-time">
+    <time datetime="2020-12-01T02:12:21.000Z" itemprop="datePublished"> Published 2020-12-01</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#基础"><span class="toc-number">1.</span> <span class="toc-text">基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#原始数据类型"><span class="toc-number">1.1.</span> <span class="toc-text">原始数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-布尔值"><span class="toc-number">1.1.1.</span> <span class="toc-text">1. 布尔值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-空值"><span class="toc-number">1.1.2.</span> <span class="toc-text">2. 空值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-Null-Undefined"><span class="toc-number">1.1.3.</span> <span class="toc-text">3. Null Undefined</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#任意值-Any"><span class="toc-number">1.2.</span> <span class="toc-text">任意值(Any)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-什么是任意值类型"><span class="toc-number">1.2.1.</span> <span class="toc-text">1. 什么是任意值类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-任意值的属性和方法"><span class="toc-number">1.2.2.</span> <span class="toc-text">2. 任意值的属性和方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-未声明类型的变量"><span class="toc-number">1.2.3.</span> <span class="toc-text">3. 未声明类型的变量</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#类型推论"><span class="toc-number">1.3.</span> <span class="toc-text">类型推论</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#联合类型"><span class="toc-number">1.4.</span> <span class="toc-text">联合类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-定义"><span class="toc-number">1.4.1.</span> <span class="toc-text">1. 定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-访问联合类型的属性或方法"><span class="toc-number">1.4.2.</span> <span class="toc-text">2. 访问联合类型的属性或方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-联合属性的赋值"><span class="toc-number">1.4.3.</span> <span class="toc-text">3. 联合属性的赋值</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#接口"><span class="toc-number">1.5.</span> <span class="toc-text">接口</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-什么是接口"><span class="toc-number">1.5.1.</span> <span class="toc-text">1. 什么是接口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-可选属性"><span class="toc-number">1.5.2.</span> <span class="toc-text">2. 可选属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-任意属性"><span class="toc-number">1.5.3.</span> <span class="toc-text">3. 任意属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-只读属性"><span class="toc-number">1.5.4.</span> <span class="toc-text">4. 只读属性</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数组的类型"><span class="toc-number">1.6.</span> <span class="toc-text">数组的类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-「类型-方括号」表示法"><span class="toc-number">1.6.1.</span> <span class="toc-text">1. 「类型 + 方括号」表示法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-数组泛型"><span class="toc-number">1.6.2.</span> <span class="toc-text">2. 数组泛型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-用接口表示数组"><span class="toc-number">1.6.3.</span> <span class="toc-text">3. 用接口表示数组</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-类数组"><span class="toc-number">1.6.4.</span> <span class="toc-text">4. 类数组</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-Any在数组中的应用"><span class="toc-number">1.6.5.</span> <span class="toc-text">5. Any在数组中的应用</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#函数的类型"><span class="toc-number">1.7.</span> <span class="toc-text">函数的类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-函数声明与函数表达式"><span class="toc-number">1.7.1.</span> <span class="toc-text">1. 函数声明与函数表达式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-用接口定义函数的形状"><span class="toc-number">1.7.2.</span> <span class="toc-text">2. 用接口定义函数的形状</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-可选参数"><span class="toc-number">1.7.3.</span> <span class="toc-text">3. 可选参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-参数默认值"><span class="toc-number">1.7.4.</span> <span class="toc-text">4. 参数默认值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-剩余参数"><span class="toc-number">1.7.5.</span> <span class="toc-text">5. 剩余参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-重载"><span class="toc-number">1.7.6.</span> <span class="toc-text">6. 重载</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#类型断言"><span class="toc-number">1.8.</span> <span class="toc-text">类型断言</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-语法"><span class="toc-number">1.8.1.</span> <span class="toc-text">1. 语法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-断言的用途"><span class="toc-number">1.8.2.</span> <span class="toc-text">2. 断言的用途</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-类型断言的限制"><span class="toc-number">1.8.3.</span> <span class="toc-text">3. 类型断言的限制</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#4-双重断言"><span class="toc-number">1.8.3.0.1.</span> <span class="toc-text">4. 双重断言</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-类型断言-vs-类型转换"><span class="toc-number">1.8.4.</span> <span class="toc-text">5. 类型断言 vs 类型转换</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-类型断言-vs-类型声明"><span class="toc-number">1.8.5.</span> <span class="toc-text">6. 类型断言 vs 类型声明</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-类型断言-vs-泛型"><span class="toc-number">1.8.6.</span> <span class="toc-text">7. 类型断言 vs 泛型</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#声明文件"><span class="toc-number">1.9.</span> <span class="toc-text">声明文件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-什么是声明语句"><span class="toc-number">1.9.1.</span> <span class="toc-text">1. 什么是声明语句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-什么是声明文件"><span class="toc-number">1.9.2.</span> <span class="toc-text">2. 什么是声明文件</span></a></li></ol></li></ol></li></ol>
+		
+		</div>
+		
+		<h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><h3 id="原始数据类型"><a href="#原始数据类型" class="headerlink" title="原始数据类型"></a>原始数据类型</h3><h4 id="1-布尔值"><a href="#1-布尔值" class="headerlink" title="1. 布尔值"></a>1. 布尔值</h4><ul>
 <li><p>Typescript中使用boolean来定义布尔值，而不是Boolean，其他的基础类型也是一样</p>
 </li>
 <li><p>例如：</p>
@@ -491,14 +118,14 @@
 
 </li>
 </ul>
-<h6 id="2-空值"><a href="#2-空值" class="headerlink" title="2. 空值"></a>2. 空值</h6><ul>
+<h4 id="2-空值"><a href="#2-空值" class="headerlink" title="2. 空值"></a>2. 空值</h4><ul>
 <li><p>JavaScript 没有空值（Void）的概念，在 TypeScript 中，可以用 void 表示没有任何返回值的函数：</p>
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function alertName(): void &#123;</span><br><span class="line">    alert(&#39;My name is Tom&#39;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>声明一个 void 类型的变量没有什么用，因为你只能将它赋值为 undefined 和 null</p>
 </li>
 </ul>
-<h6 id="3-Null-Undefined"><a href="#3-Null-Undefined" class="headerlink" title="3. Null Undefined"></a>3. Null Undefined</h6><ul>
+<h4 id="3-Null-Undefined"><a href="#3-Null-Undefined" class="headerlink" title="3. Null Undefined"></a>3. Null Undefined</h4><ul>
 <li><p>在 TypeScript 中，可以使用 null 和 undefined 来定义这两个原始数据类型：</p>
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let u: undefined &#x3D; undefined;</span><br><span class="line">let n: null &#x3D; null;</span><br></pre></td></tr></table></figure>
 
@@ -510,7 +137,7 @@
 
 </li>
 </ul>
-<h5 id="任意值-Any"><a href="#任意值-Any" class="headerlink" title="任意值(Any)"></a>任意值(Any)</h5><h6 id="1-什么是任意值类型"><a href="#1-什么是任意值类型" class="headerlink" title="1. 什么是任意值类型"></a>1. 什么是任意值类型</h6><ul>
+<h3 id="任意值-Any"><a href="#任意值-Any" class="headerlink" title="任意值(Any)"></a>任意值(Any)</h3><h4 id="1-什么是任意值类型"><a href="#1-什么是任意值类型" class="headerlink" title="1. 什么是任意值类型"></a>1. 什么是任意值类型</h4><ul>
 <li><p>任意值：一个普通类型在定义完之后，是不允许被赋值为其他类型的：</p>
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let myFavoriteNumber: string &#x3D; &#39;seven&#39;;</span><br><span class="line">myFavoriteNumber &#x3D; 7;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; index.ts(2,1): error TS2322: Type &#39;number&#39; is not assignable to type &#39;string&#39;.</span><br></pre></td></tr></table></figure>
 
@@ -519,16 +146,16 @@
 
 </li>
 </ul>
-<h6 id="2-任意值的属性和方法"><a href="#2-任意值的属性和方法" class="headerlink" title="2. 任意值的属性和方法"></a>2. 任意值的属性和方法</h6><ul>
+<h4 id="2-任意值的属性和方法"><a href="#2-任意值的属性和方法" class="headerlink" title="2. 任意值的属性和方法"></a>2. 任意值的属性和方法</h4><ul>
 <li>任意值可以访问任何属性，也可以调用任何方法</li>
 </ul>
-<h6 id="3-未声明类型的变量"><a href="#3-未声明类型的变量" class="headerlink" title="3. 未声明类型的变量"></a>3. 未声明类型的变量</h6><ul>
+<h4 id="3-未声明类型的变量"><a href="#3-未声明类型的变量" class="headerlink" title="3. 未声明类型的变量"></a>3. 未声明类型的变量</h4><ul>
 <li><p>在ts中，如果没有给变量定义类型，那么它默认为<code>任意值</code>类型</p>
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let something;</span><br><span class="line">something &#x3D; &#39;seven&#39;;</span><br><span class="line">something &#x3D; 7;</span><br><span class="line"></span><br><span class="line">something.setName(&#39;Tom&#39;);</span><br></pre></td></tr></table></figure>
 
 </li>
 </ul>
-<h5 id="类型推论"><a href="#类型推论" class="headerlink" title="类型推论"></a>类型推论</h5><ul>
+<h3 id="类型推论"><a href="#类型推论" class="headerlink" title="类型推论"></a>类型推论</h3><ul>
 <li><p>如果没有明确指出，那么TS会依照类型推论原则，推断出一个类型： </p>
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let myFavoriteNumber &#x3D; &#39;seven&#39;;</span><br><span class="line">myFavoriteNumber &#x3D; 7;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; index.ts(2,1): error TS2322: Type &#39;number&#39; is not assignable to type &#39;string&#39;.</span><br></pre></td></tr></table></figure>
 
@@ -540,26 +167,26 @@
 
 </li>
 </ul>
-<h5 id="联合类型"><a href="#联合类型" class="headerlink" title="联合类型"></a>联合类型</h5><h6 id="1-定义"><a href="#1-定义" class="headerlink" title="1. 定义"></a>1. 定义</h6><ul>
+<h3 id="联合类型"><a href="#联合类型" class="headerlink" title="联合类型"></a>联合类型</h3><h4 id="1-定义"><a href="#1-定义" class="headerlink" title="1. 定义"></a>1. 定义</h4><ul>
 <li><p>联合类型（Union Types）表示取值可以为多种类型中的一种:</p>
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let myFavoriteNumber: string | number;</span><br><span class="line">myFavoriteNumber &#x3D; &#39;seven&#39;;</span><br><span class="line">myFavoriteNumber &#x3D; 7;</span><br></pre></td></tr></table></figure>
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let myFavoriteNumber: string | number;</span><br><span class="line">myFavoriteNumber &#x3D; true;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; index.ts(2,1): error TS2322: Type &#39;boolean&#39; is not assignable to type &#39;string | number&#39;.</span><br><span class="line">&#x2F;&#x2F;   Type &#39;boolean&#39; is not assignable to type &#39;number&#39;.</span><br></pre></td></tr></table></figure>
 
 </li>
 </ul>
-<h6 id="2-访问联合类型的属性或方法"><a href="#2-访问联合类型的属性或方法" class="headerlink" title="2. 访问联合类型的属性或方法"></a>2. 访问联合类型的属性或方法</h6><ul>
+<h4 id="2-访问联合类型的属性或方法"><a href="#2-访问联合类型的属性或方法" class="headerlink" title="2. 访问联合类型的属性或方法"></a>2. 访问联合类型的属性或方法</h4><ul>
 <li><p>在使用联合类型时，因为<code>typescript</code>不确定使用的是哪种类型，所以在调用变量的方式时，只能调用所有联合类型共有的方法：</p>
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function getLength(something: string | number): number &#123;</span><br><span class="line">    return something.length;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; index.ts(2,22): error TS2339: Property &#39;length&#39; does not exist on type &#39;string | number&#39;.</span><br><span class="line">&#x2F;&#x2F;   Property &#39;length&#39; does not exist on type &#39;number&#39;.</span><br></pre></td></tr></table></figure>
 
 </li>
 </ul>
-<h6 id="3-联合属性的赋值"><a href="#3-联合属性的赋值" class="headerlink" title="3. 联合属性的赋值"></a>3. 联合属性的赋值</h6><ul>
+<h4 id="3-联合属性的赋值"><a href="#3-联合属性的赋值" class="headerlink" title="3. 联合属性的赋值"></a>3. 联合属性的赋值</h4><ul>
 <li><p>联合类型在被赋值时，会根据类型推论的规则推断出一个类型：</p>
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">let myFavoriteNumber: string | number;</span><br><span class="line">myFavoriteNumber &#x3D; &#39;seven&#39;;</span><br><span class="line">console.log(myFavoriteNumber.length); &#x2F;&#x2F; 5</span><br><span class="line">myFavoriteNumber &#x3D; 7;</span><br><span class="line">console.log(myFavoriteNumber.length); &#x2F;&#x2F; 编译时报错</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; index.ts(5,30): error TS2339: Property &#39;length&#39; does not exist on type &#39;number&#39;.</span><br></pre></td></tr></table></figure>
 <p>  上例中，第二行的 myFavoriteNumber 被推断成了 string，访问它的 length 属性不会报错。<br>  而第四行的 myFavoriteNumber 被推断成了 number，访问它的 length 属性时就报错了。</p>
 </li>
 </ul>
-<h5 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h5><h6 id="1-什么是接口"><a href="#1-什么是接口" class="headerlink" title="1. 什么是接口"></a>1. 什么是接口</h6><ul>
+<h3 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h3><h4 id="1-什么是接口"><a href="#1-什么是接口" class="headerlink" title="1. 什么是接口"></a>1. 什么是接口</h4><ul>
 <li><p>定义：TypeScript 中的接口是一个非常灵活的概念，除了可用于对类的一部分行为进行抽象以外，也常用于对「对象的形状（Shape）」进行描述。</p>
 </li>
 <li><p>简单实例</p>
@@ -567,14 +194,14 @@
 <p>  注意：变量类型为接口的变量的形状必须与接口一致，多属性或者少属性都是不允许的，都会报错</p>
 </li>
 </ul>
-<h6 id="2-可选属性"><a href="#2-可选属性" class="headerlink" title="2. 可选属性"></a>2. 可选属性</h6><ul>
+<h4 id="2-可选属性"><a href="#2-可选属性" class="headerlink" title="2. 可选属性"></a>2. 可选属性</h4><ul>
 <li><p>可选属性：希望不用完全匹配时，使用可选属性（但是只能使用定义好的可选属性，还是不能随意添加）</p>
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">interface Person &#123;</span><br><span class="line">    name: string;</span><br><span class="line">    age?: number;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let tom: Person &#x3D; &#123;</span><br><span class="line">    name: &#39;Tom&#39;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">interface Person &#123;</span><br><span class="line">    name: string;</span><br><span class="line">    age?: number;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let tom: Person &#x3D; &#123;</span><br><span class="line">    name: &#39;Tom&#39;,</span><br><span class="line">    age: 25</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 </li>
 </ul>
-<h6 id="3-任意属性"><a href="#3-任意属性" class="headerlink" title="3. 任意属性"></a>3. 任意属性</h6><ul>
+<h4 id="3-任意属性"><a href="#3-任意属性" class="headerlink" title="3. 任意属性"></a>3. 任意属性</h4><ul>
 <li><p>任意属性：允许接口有任意属性时，使用该属性</p>
 <ul>
 <li><p>注意：使用任意属性时，确定属性和可选属性的类型都必须是任意属性的子类型</p>
@@ -588,7 +215,7 @@
 </ul>
 </li>
 </ul>
-<h6 id="4-只读属性"><a href="#4-只读属性" class="headerlink" title="4. 只读属性"></a>4. 只读属性</h6><ul>
+<h4 id="4-只读属性"><a href="#4-只读属性" class="headerlink" title="4. 只读属性"></a>4. 只读属性</h4><ul>
 <li><p>只读属性：只能用来读取，不能被赋值，使用readonly来定义</p>
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">interface Person &#123;</span><br><span class="line">    readonly id: number;</span><br><span class="line">    name: string;</span><br><span class="line">    age?: number;</span><br><span class="line">    [propName: string]: any;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let tom: Person &#x3D; &#123;</span><br><span class="line">    id: 89757,</span><br><span class="line">    name: &#39;Tom&#39;,</span><br><span class="line">    gender: &#39;male&#39;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">tom.id &#x3D; 9527;</span><br></pre></td></tr></table></figure>
 <p>  <strong>注意：注意，只读的约束存在于第一次给对象赋值的时候，而不是第一次给只读属性赋值的时候：</strong></p>
@@ -596,7 +223,7 @@
 <p>  上例中，报错信息有两处，第一处是在对 tom 进行赋值的时候，没有给 id 赋值。<br>  第二处是在给 tom.id 赋值的时候，由于它是只读属性，所以报错了。</p>
 </li>
 </ul>
-<h5 id="数组的类型"><a href="#数组的类型" class="headerlink" title="数组的类型"></a>数组的类型</h5><h6 id="1-「类型-方括号」表示法"><a href="#1-「类型-方括号」表示法" class="headerlink" title="1. 「类型 + 方括号」表示法"></a>1. 「类型 + 方括号」表示法</h6><ul>
+<h3 id="数组的类型"><a href="#数组的类型" class="headerlink" title="数组的类型"></a>数组的类型</h3><h4 id="1-「类型-方括号」表示法"><a href="#1-「类型-方括号」表示法" class="headerlink" title="1. 「类型 + 方括号」表示法"></a>1. 「类型 + 方括号」表示法</h4><ul>
 <li><p>基本定义： 类型+方括号</p>
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let fibonacci: number[] &#x3D; [1, 1, 2, 3, 5];</span><br></pre></td></tr></table></figure>
 <p>  不允许出现其他类型的变量</p>
@@ -606,19 +233,19 @@
 
 </li>
 </ul>
-<h6 id="2-数组泛型"><a href="#2-数组泛型" class="headerlink" title="2. 数组泛型"></a>2. 数组泛型</h6><ul>
+<h4 id="2-数组泛型"><a href="#2-数组泛型" class="headerlink" title="2. 数组泛型"></a>2. 数组泛型</h4><ul>
 <li><p>数组泛型：</p>
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let fibonacci: Array&lt;number&gt; &#x3D; [1, 1, 2, 3, 5];</span><br></pre></td></tr></table></figure>
 
 </li>
 </ul>
-<h6 id="3-用接口表示数组"><a href="#3-用接口表示数组" class="headerlink" title="3. 用接口表示数组"></a>3. 用接口表示数组</h6><ul>
+<h4 id="3-用接口表示数组"><a href="#3-用接口表示数组" class="headerlink" title="3. 用接口表示数组"></a>3. 用接口表示数组</h4><ul>
 <li><p>用接口表示数组：这种方法<strong>不常用</strong></p>
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">interface NumberArray &#123;</span><br><span class="line">    [index: number]: number;</span><br><span class="line">&#125;</span><br><span class="line">let fibonacci: NumberArray &#x3D; [1, 1, 2, 3, 5];</span><br></pre></td></tr></table></figure>
 <p>  NumberArray 表示：只要索引的类型是数字时，那么值的类型必须是数字。<br>  <strong>不过它经常用来表示类数组</strong></p>
 </li>
 </ul>
-<h6 id="4-类数组"><a href="#4-类数组" class="headerlink" title="4. 类数组"></a>4. 类数组</h6><ul>
+<h4 id="4-类数组"><a href="#4-类数组" class="headerlink" title="4. 类数组"></a>4. 类数组</h4><ul>
 <li><p>类数组：比如说arguments</p>
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function sum() &#123;</span><br><span class="line">    let args: number[] &#x3D; arguments;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; Type &#39;IArguments&#39; is missing the following properties from type &#39;number[]&#39;: pop, push, concat, join, and 24 more.</span><br></pre></td></tr></table></figure>
 <p>  它不能用普通的数组来表示，一般使用<strong>接口</strong>的方式来表示</p>
@@ -631,13 +258,13 @@
 
 </li>
 </ul>
-<h6 id="5-Any在数组中的应用"><a href="#5-Any在数组中的应用" class="headerlink" title="5. Any在数组中的应用"></a>5. Any在数组中的应用</h6><ul>
+<h4 id="5-Any在数组中的应用"><a href="#5-Any在数组中的应用" class="headerlink" title="5. Any在数组中的应用"></a>5. Any在数组中的应用</h4><ul>
 <li><p>any在数组中的应用：表示数组中的变量可以为任意类型</p>
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let list: any[] &#x3D; [&#39;xcatliu&#39;, 25, &#123; website: &#39;http:&#x2F;&#x2F;xcatliu.com&#39; &#125;];</span><br></pre></td></tr></table></figure>
 
 </li>
 </ul>
-<h5 id="函数的类型"><a href="#函数的类型" class="headerlink" title="函数的类型"></a>函数的类型</h5><h6 id="1-函数声明与函数表达式"><a href="#1-函数声明与函数表达式" class="headerlink" title="1. 函数声明与函数表达式"></a>1. 函数声明与函数表达式</h6><ul>
+<h3 id="函数的类型"><a href="#函数的类型" class="headerlink" title="函数的类型"></a>函数的类型</h3><h4 id="1-函数声明与函数表达式"><a href="#1-函数声明与函数表达式" class="headerlink" title="1. 函数声明与函数表达式"></a>1. 函数声明与函数表达式</h4><ul>
 <li><p>函数声明在JS中有两种方式：函数声明和函数表达式。在TS中，需要对函数的输入和输出都进行约束</p>
 <ul>
 <li><p>函数声明在TS中很简单：</p>
@@ -655,13 +282,13 @@
 </ul>
 </li>
 </ul>
-<h6 id="2-用接口定义函数的形状"><a href="#2-用接口定义函数的形状" class="headerlink" title="2. 用接口定义函数的形状"></a>2. 用接口定义函数的形状</h6><ul>
+<h4 id="2-用接口定义函数的形状"><a href="#2-用接口定义函数的形状" class="headerlink" title="2. 用接口定义函数的形状"></a>2. 用接口定义函数的形状</h4><ul>
 <li><p>用接口的形状来定义函数：</p>
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">interface SearchFunc &#123;</span><br><span class="line">    (source: string, subString: string): boolean;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let mySearch: SearchFunc;</span><br><span class="line">mySearch &#x3D; function(source: string, subString: string) &#123;</span><br><span class="line">    return source.search(subString) !&#x3D;&#x3D; -1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>  采用函数表达式|接口定义函数的方式时，对等号左侧进行类型限制，可以保证以后对函数名赋值时保证参数个数、参数类型、返回值类型不变。</p>
 </li>
 </ul>
-<h6 id="3-可选参数"><a href="#3-可选参数" class="headerlink" title="3. 可选参数"></a>3. 可选参数</h6><ul>
+<h4 id="3-可选参数"><a href="#3-可选参数" class="headerlink" title="3. 可选参数"></a>3. 可选参数</h4><ul>
 <li><p>可选参数：它的用法和接口中很类似，都是使用<code>?</code>来定义</p>
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function buildName(firstName: string, lastName?: string) &#123;</span><br><span class="line">    if (lastName) &#123;</span><br><span class="line">        return firstName + &#39; &#39; + lastName;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        return firstName;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">let tomcat &#x3D; buildName(&#39;Tom&#39;, &#39;Cat&#39;);</span><br><span class="line">let tom &#x3D; buildName(&#39;Tom&#39;);</span><br></pre></td></tr></table></figure>
 <p>  <strong>注意，可选参数后边不能再接必需参数</strong></p>
@@ -669,7 +296,7 @@
 
 </li>
 </ul>
-<h6 id="4-参数默认值"><a href="#4-参数默认值" class="headerlink" title="4. 参数默认值"></a>4. 参数默认值</h6><ul>
+<h4 id="4-参数默认值"><a href="#4-参数默认值" class="headerlink" title="4. 参数默认值"></a>4. 参数默认值</h4><ul>
 <li><p>参数默认值：ES6中允许给函数添加默认值，TS中会把添加了默认值的参数识别成<strong>可选参数</strong></p>
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function buildName(firstName: string, lastName: string &#x3D; &#39;Cat&#39;) &#123;</span><br><span class="line">    return firstName + &#39; &#39; + lastName;</span><br><span class="line">&#125;</span><br><span class="line">let tomcat &#x3D; buildName(&#39;Tom&#39;, &#39;Cat&#39;);</span><br><span class="line">let tom &#x3D; buildName(&#39;Tom&#39;);</span><br></pre></td></tr></table></figure>
 <p>  <strong>此时就不再受可选参数必需在必需参数之后的约束了</strong></p>
@@ -677,13 +304,13 @@
 
 </li>
 </ul>
-<h6 id="5-剩余参数"><a href="#5-剩余参数" class="headerlink" title="5. 剩余参数"></a>5. 剩余参数</h6><ul>
+<h4 id="5-剩余参数"><a href="#5-剩余参数" class="headerlink" title="5. 剩余参数"></a>5. 剩余参数</h4><ul>
 <li><p>剩余参数：ES6 中，可以使用 …rest 的方式获取函数中的剩余参数（rest 参数），事实上，…rest是一个数组。所以我们可以用数组的类型来定义它：</p>
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function push(array: any[], ...items: any[]) &#123;</span><br><span class="line">    items.forEach(function(item) &#123;</span><br><span class="line">        array.push(item);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let a &#x3D; [];</span><br><span class="line">push(a, 1, 2, 3);</span><br></pre></td></tr></table></figure>
 
 </li>
 </ul>
-<h6 id="6-重载"><a href="#6-重载" class="headerlink" title="6. 重载"></a>6. 重载</h6><ul>
+<h4 id="6-重载"><a href="#6-重载" class="headerlink" title="6. 重载"></a>6. 重载</h4><ul>
 <li><p>重载：<strong>重载允许一个函数接受不同数量或类型的参数时，作出不同的处理。</strong><br>  比如，我们需要实现一个函数 reverse，输入数字 123 的时候，输出反转的数字 321，输入字符串 ‘hello’ 的时候，输出反转的字符串 ‘olleh’。</p>
 <p>  利用联合类型，我们可以这么实现：</p>
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function reverse(x: number | string): number | string &#123;</span><br><span class="line">    if (typeof x &#x3D;&#x3D;&#x3D; &#39;number&#39;) &#123;</span><br><span class="line">        return Number(x.toString().split(&#39;&#39;).reverse().join(&#39;&#39;));</span><br><span class="line">    &#125; else if (typeof x &#x3D;&#x3D;&#x3D; &#39;string&#39;) &#123;</span><br><span class="line">        return x.split(&#39;&#39;).reverse().join(&#39;&#39;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -694,8 +321,8 @@
 <p>  注意，TypeScript 会优先从最前面的函数定义开始匹配，所以多个函数定义如果有包含关系，需要优先把精确的定义写在前面。</p>
 </li>
 </ul>
-<h5 id="类型断言"><a href="#类型断言" class="headerlink" title="类型断言"></a>类型断言</h5><p><strong>类型断言（Type Assertion）可以用来手动指定一个值的类型。</strong></p>
-<h6 id="1-语法"><a href="#1-语法" class="headerlink" title="1. 语法"></a>1. 语法</h6><ul>
+<h3 id="类型断言"><a href="#类型断言" class="headerlink" title="类型断言"></a>类型断言</h3><p><strong>类型断言（Type Assertion）可以用来手动指定一个值的类型。</strong></p>
+<h4 id="1-语法"><a href="#1-语法" class="headerlink" title="1. 语法"></a>1. 语法</h4><ul>
 <li><p>语法： </p>
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">值 as 类型</span><br></pre></td></tr></table></figure>
 <p>  或</p>
@@ -705,7 +332,7 @@
 <p>  故建议大家在使用类型断言时，统一使用 值 as 类型 这样的语法  </p>
 </li>
 </ul>
-<h6 id="2-断言的用途"><a href="#2-断言的用途" class="headerlink" title="2. 断言的用途"></a>2. 断言的用途</h6><ul>
+<h4 id="2-断言的用途"><a href="#2-断言的用途" class="headerlink" title="2. 断言的用途"></a>2. 断言的用途</h4><ul>
 <li><p>断言的用途：</p>
 <ul>
 <li><p>将一个联合类型断言为其中一个类型</p>
@@ -737,14 +364,14 @@
 </ul>
 </li>
 </ul>
-<h6 id="3-类型断言的限制"><a href="#3-类型断言的限制" class="headerlink" title="3. 类型断言的限制"></a>3. 类型断言的限制</h6><ul>
+<h4 id="3-类型断言的限制"><a href="#3-类型断言的限制" class="headerlink" title="3. 类型断言的限制"></a>3. 类型断言的限制</h4><ul>
 <li>明确一点：<strong>并不是任何一个类型都可以被断言为任何另一个类型，</strong>具体来说，若 A 兼容 B，那么 A 能够被断言为 B，B 也能被断言为 A。</li>
 </ul>
 <h6 id="4-双重断言"><a href="#4-双重断言" class="headerlink" title="4. 双重断言"></a>4. 双重断言</h6><ul>
 <li>因为任何类型都可以被断言为any，any 可以被断言为任何类型，所以使用双重断言<code>as any as Foo</code>就可以将任何一个类型转换为任何另一个类型</li>
 <li>若你使用了这种双重断言，那么十有八九是非常错误的，它很可能会导致运行时错误。除非迫不得已，千万别用双重断言。**</li>
 </ul>
-<h6 id="5-类型断言-vs-类型转换"><a href="#5-类型断言-vs-类型转换" class="headerlink" title="5. 类型断言 vs 类型转换"></a>5. 类型断言 vs 类型转换</h6><ul>
+<h4 id="5-类型断言-vs-类型转换"><a href="#5-类型断言-vs-类型转换" class="headerlink" title="5. 类型断言 vs 类型转换"></a>5. 类型断言 vs 类型转换</h4><ul>
 <li><p>类型断言只会影响 TypeScript 编译时的类型，类型断言语句在编译结果中会被删除：</p>
  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function toBoolean(something: any): boolean &#123;</span><br><span class="line">    return something as boolean;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">toBoolean(1);</span><br></pre></td></tr></table></figure>
 <p> // 返回值为 1<br> 在上面的例子中，将 something 断言为 boolean 虽然可以通过编译，但是并没有什么用，代码在编译后会变成：</p>
@@ -756,267 +383,401 @@
 
 </li>
 </ul>
-<h6 id="6-类型断言-vs-类型声明"><a href="#6-类型断言-vs-类型声明" class="headerlink" title="6. 类型断言 vs 类型声明"></a>6. 类型断言 vs 类型声明</h6><ul>
+<h4 id="6-类型断言-vs-类型声明"><a href="#6-类型断言-vs-类型声明" class="headerlink" title="6. 类型断言 vs 类型声明"></a>6. 类型断言 vs 类型声明</h4><ul>
 <li>他们两个的区别主要体现在兼容性上</li>
 <li>animal 断言为 Cat，只需要满足 Animal 兼容 Cat 或 Cat 兼容 Animal 即可</li>
 <li>animal 赋值给 tom，需要满足 Cat 兼容 Animal 才行</li>
 <li><strong>类型声明是比类型断言更加严格的。</strong>所以为了增加代码的质量，我们最好优先使用类型声明，这也比类型断言的 as 语法更加优雅。</li>
 </ul>
-<h6 id="7-类型断言-vs-泛型"><a href="#7-类型断言-vs-泛型" class="headerlink" title="7. 类型断言 vs 泛型"></a>7. 类型断言 vs 泛型</h6><h5 id="声明文件"><a href="#声明文件" class="headerlink" title="声明文件"></a>声明文件</h5><p>当使用第三方库时，我们需要引用它的声明文件，才能获得对应的代码补全、接口提示等功能。</p>
-<h6 id="1-什么是声明语句"><a href="#1-什么是声明语句" class="headerlink" title="1. 什么是声明语句"></a>1. 什么是声明语句</h6><h6 id="2-什么是声明文件"><a href="#2-什么是声明文件" class="headerlink" title="2. 什么是声明文件"></a>2. 什么是声明文件</h6><ul>
+<h4 id="7-类型断言-vs-泛型"><a href="#7-类型断言-vs-泛型" class="headerlink" title="7. 类型断言 vs 泛型"></a>7. 类型断言 vs 泛型</h4><h3 id="声明文件"><a href="#声明文件" class="headerlink" title="声明文件"></a>声明文件</h3><p>当使用第三方库时，我们需要引用它的声明文件，才能获得对应的代码补全、接口提示等功能。</p>
+<h4 id="1-什么是声明语句"><a href="#1-什么是声明语句" class="headerlink" title="1. 什么是声明语句"></a>1. 什么是声明语句</h4><h4 id="2-什么是声明文件"><a href="#2-什么是声明文件" class="headerlink" title="2. 什么是声明文件"></a>2. 什么是声明文件</h4><ul>
 <li></li>
 </ul>
 <ul>
 <li>又一个小标签</li>
 </ul>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
 
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/">前端技术</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Typescript/">Typescript</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://yoursite.com/2020/12/01/Typescript/" data-title="Typescript 学习笔记 | Lightman&#39;s blog" data-tsina="" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2020/06/17/Vue/"  title="Vue">
+ <strong>下一篇：</strong><br/> 
+ <span>Vue
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#基础"><span class="toc-number">1.</span> <span class="toc-text">基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#原始数据类型"><span class="toc-number">1.1.</span> <span class="toc-text">原始数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-布尔值"><span class="toc-number">1.1.1.</span> <span class="toc-text">1. 布尔值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-空值"><span class="toc-number">1.1.2.</span> <span class="toc-text">2. 空值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-Null-Undefined"><span class="toc-number">1.1.3.</span> <span class="toc-text">3. Null Undefined</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#任意值-Any"><span class="toc-number">1.2.</span> <span class="toc-text">任意值(Any)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-什么是任意值类型"><span class="toc-number">1.2.1.</span> <span class="toc-text">1. 什么是任意值类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-任意值的属性和方法"><span class="toc-number">1.2.2.</span> <span class="toc-text">2. 任意值的属性和方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-未声明类型的变量"><span class="toc-number">1.2.3.</span> <span class="toc-text">3. 未声明类型的变量</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#类型推论"><span class="toc-number">1.3.</span> <span class="toc-text">类型推论</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#联合类型"><span class="toc-number">1.4.</span> <span class="toc-text">联合类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-定义"><span class="toc-number">1.4.1.</span> <span class="toc-text">1. 定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-访问联合类型的属性或方法"><span class="toc-number">1.4.2.</span> <span class="toc-text">2. 访问联合类型的属性或方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-联合属性的赋值"><span class="toc-number">1.4.3.</span> <span class="toc-text">3. 联合属性的赋值</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#接口"><span class="toc-number">1.5.</span> <span class="toc-text">接口</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-什么是接口"><span class="toc-number">1.5.1.</span> <span class="toc-text">1. 什么是接口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-可选属性"><span class="toc-number">1.5.2.</span> <span class="toc-text">2. 可选属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-任意属性"><span class="toc-number">1.5.3.</span> <span class="toc-text">3. 任意属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-只读属性"><span class="toc-number">1.5.4.</span> <span class="toc-text">4. 只读属性</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数组的类型"><span class="toc-number">1.6.</span> <span class="toc-text">数组的类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-「类型-方括号」表示法"><span class="toc-number">1.6.1.</span> <span class="toc-text">1. 「类型 + 方括号」表示法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-数组泛型"><span class="toc-number">1.6.2.</span> <span class="toc-text">2. 数组泛型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-用接口表示数组"><span class="toc-number">1.6.3.</span> <span class="toc-text">3. 用接口表示数组</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-类数组"><span class="toc-number">1.6.4.</span> <span class="toc-text">4. 类数组</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-Any在数组中的应用"><span class="toc-number">1.6.5.</span> <span class="toc-text">5. Any在数组中的应用</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#函数的类型"><span class="toc-number">1.7.</span> <span class="toc-text">函数的类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-函数声明与函数表达式"><span class="toc-number">1.7.1.</span> <span class="toc-text">1. 函数声明与函数表达式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-用接口定义函数的形状"><span class="toc-number">1.7.2.</span> <span class="toc-text">2. 用接口定义函数的形状</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-可选参数"><span class="toc-number">1.7.3.</span> <span class="toc-text">3. 可选参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-参数默认值"><span class="toc-number">1.7.4.</span> <span class="toc-text">4. 参数默认值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-剩余参数"><span class="toc-number">1.7.5.</span> <span class="toc-text">5. 剩余参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-重载"><span class="toc-number">1.7.6.</span> <span class="toc-text">6. 重载</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#类型断言"><span class="toc-number">1.8.</span> <span class="toc-text">类型断言</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-语法"><span class="toc-number">1.8.1.</span> <span class="toc-text">1. 语法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-断言的用途"><span class="toc-number">1.8.2.</span> <span class="toc-text">2. 断言的用途</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-类型断言的限制"><span class="toc-number">1.8.3.</span> <span class="toc-text">3. 类型断言的限制</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#4-双重断言"><span class="toc-number">1.8.3.0.1.</span> <span class="toc-text">4. 双重断言</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-类型断言-vs-类型转换"><span class="toc-number">1.8.4.</span> <span class="toc-text">5. 类型断言 vs 类型转换</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-类型断言-vs-类型声明"><span class="toc-number">1.8.5.</span> <span class="toc-text">6. 类型断言 vs 类型声明</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-类型断言-vs-泛型"><span class="toc-number">1.8.6.</span> <span class="toc-text">7. 类型断言 vs 泛型</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#声明文件"><span class="toc-number">1.9.</span> <span class="toc-text">声明文件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-什么是声明语句"><span class="toc-number">1.9.1.</span> <span class="toc-text">1. 什么是声明语句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-什么是声明文件"><span class="toc-number">1.9.2.</span> <span class="toc-text">2. 什么是声明文件</span></a></li></ol></li></ol></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
+
+  
+
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">Categories</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/前端技术/" title="前端技术">前端技术<sup>3</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/后台技术/" title="后台技术">后台技术<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/常用技术/" title="常用技术">常用技术<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/强化学习/" title="强化学习">强化学习<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/深度学习/" title="深度学习">深度学习<sup>7</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/算法/" title="算法">算法<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/英语/" title="英语">英语<sup>3</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/读书笔记/" title="读书笔记">读书笔记<sup>1</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">Tags</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/AutoEncoder/" title="AutoEncoder">AutoEncoder<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/CNN/" title="CNN">CNN<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/连读发音/" title="连读发音">连读发音<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/GAN/" title="GAN">GAN<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/协作开发软件/" title="协作开发软件">协作开发软件<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Flex/" title="Flex">Flex<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/JavaScript/" title="JavaScript">JavaScript<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/LSTM/" title="LSTM">LSTM<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Ted/" title="Ted">Ted<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Typescript/" title="Typescript">Typescript<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Q网络/" title="Q网络">Q网络<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/GCN/" title="GCN">GCN<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/电影台词/" title="电影台词">电影台词<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/沉默的大多数/" title="沉默的大多数">沉默的大多数<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/算法/" title="算法">算法<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Python/" title="Python">Python<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">Links</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="https://coderq.com" target="_blank" title="一个面向程序员交流分享的新一代社区">码农圈</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://wuchong.me" target="_blank" title="Jark&#39;s Blog">Jark&#39;s Blog</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
+</div>
+
+  <div class="weiboshow">
+  <p class="asidetitle">Weibo</p>
+    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=&verifier=b3593ceb&dpc=1"></iframe>
+</div>
+
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello ,I&#39;m Larry Page in Google. <br/>
+			This is my blog,believe it or not.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/2176287895" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2020 
+		
+		<a href="/about" target="_blank" title="Lightman">Lightman</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
       
-       
-    </div>
-</article>
-
-
-
-
-
-
-
-    
-
-
-
-
-    </div>
-    <div class="copyright">
-        <p class="footer-entry">©2016-2019 Lightman</p>
-<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
-
-    </div>
-    <div class="full-toc">
-        <button class="full"><span class="min "></span></button>
-<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
-<div class="post-toc"><span class="post-toc-title">目录</span>
-    <div class="post-toc-content">
-
-    </div>
-</div>
-<a class="" id="rocket" ></a>
-
-    </div>
-</div>
-<div class="acParent"></div>
-
-</body>
-<script src="/js/jquery.pjax.js?v=1.0.1" ></script>
-
-<script src="/js/script.js?v=1.0.1" ></script>
-<script>
-    var img_resize = 'default';
-    /*作者、标签的自动补全*/
-    $(function () {
-        $('.search').AutoComplete({
-            'data': ['#AutoEncoder','#CNN','#连读发音','#GAN','#协作开发软件','#Flex','#JavaScript','#LSTM','#Ted','#Typescript','#Q网络','#GCN','#电影台词','#沉默的大多数','#算法','#Python',],
-            'itemHeight': 20,
-            'width': 418
-        }).AutoComplete('show');
-    })
-    function initArticle() {
-        /*渲染对应的表格样式*/
-        
-            $(".post .pjax table").addClass("green_title");
-        
-
-        /*渲染打赏样式*/
-        
-
-        /*高亮代码块行号*/
-        
-        $('pre code').each(function(){
-            var lines = $(this).text().split('\n').length - 1, widther='';
-            if (lines>99) {
-                widther = 'widther'
-            }
-            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
-            $(this).addClass('has-numbering ' + widther)
-                    .parent()
-                    .append($numbering);
-            for(var i=1;i<=lines;i++){
-                $numbering.append($('<li/>').text(i));
-            }
-        });
-        
-
-        /*访问数量*/
-        
-        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
-        
-
-        /*代码高亮，行号对齐*/
-        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
-
-        
+      $('#toc.toc-aside').css('display', 'none');
         
     }
-
-    /*打赏页面隐藏与展示*/
-    
-
+  });
+});
 </script>
 
-<!--加入行号的高亮代码块样式-->
-
-<style>
-    pre{
-        position: relative;
-        margin-bottom: 24px;
-        border-radius: 10px;
-        border: 1px solid #e2dede;
-        background: #FFF;
-        overflow: hidden;
-    }
-    code.has-numbering{
-        margin-left: 30px;
-    }
-    code.has-numbering.widther{
-        margin-left: 35px;
-    }
-    .pre-numbering{
-        margin: 0px;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 20px;
-        padding: 0.5em 3px 0.7em 5px;
-        border-right: 1px solid #C3CCD0;
-        text-align: right;
-        color: #AAA;
-        background-color: #fafafa;
-    }
-    .pre-numbering.widther {
-        width: 35px;
-    }
-</style>
-
-<!--自定义样式设置-->
-<style>
-    
-    
-    .nav {
-        width: 542px;
-    }
-    .nav.fullscreen {
-        margin-left: -542px;
-    }
-    .nav-left {
-        width: 120px;
-    }
-    
-    
-    @media screen and (max-width: 1468px) {
-        .nav {
-            width: 492px;
-        }
-        .nav.fullscreen {
-            margin-left: -492px;
-        }
-        .nav-left {
-            width: 100px;
-        }
-    }
-    
-    
-    @media screen and (max-width: 1024px) {
-        .nav {
-            width: 492px;
-            margin-left: -492px
-        }
-        .nav.fullscreen {
-            margin-left: 0;
-        }
-        .nav .hide-list.fullscreen {
-            left: 492px
-        }
-    }
-    
-    @media screen and (max-width: 426px) {
-        .nav {
-            width: 100%;
-        }
-        .nav-left {
-            width: 100%;
-        }
-    }
-    
-    
-    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
-        color: #383636;
-    }
-    
-    
-    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
-        color: #5e5e5f;
-    }
-    
-    
-    .nav-right nav a.hover, #local-search-result a.hover{
-        background-color: #e2e0e0;
-    }
-    
-    
-
-    /*列表样式*/
-    
-    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
-        border: #e2dede solid 1px;
-        border-radius: 10px;
-        padding: 10px 32px 10px 56px;
-    }
-    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
-        padding-top: 5px;
-        padding-bottom: 5px;
-    }
-    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
-        margin-bottom: auto;
-        margin-left: auto;
-    }
-    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
-        margin-bottom: auto;
-        margin-left: auto;
-    }
-    
-
-    /* 背景图样式 */
-    
-    
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
 
 
-    /*引用块样式*/
-    
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
 
-    /*文章列表背景图*/
-    
-    .nav-right:before {
-        content: ' ';
-        display: block;
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        opacity: 0.3;
-        background: url("https://i.loli.net/2019/07/22/5d3521411f3f169375.png");
-        background-repeat: no-repeat;
-        background-position: 50% 0;
-        -ms-background-size: cover;
-        -o-background-size: cover;
-        -moz-background-size: cover;
-        -webkit-background-size: cover;
-        background-size: cover;
-    }
-    
+  $('.hoverqrcode').hide();
 
-    
-</style>
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
 
 
 
@@ -1024,4 +785,69 @@
 
 
 
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
 </html>
